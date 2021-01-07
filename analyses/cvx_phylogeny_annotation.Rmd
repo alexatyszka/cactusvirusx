@@ -1,27 +1,39 @@
 ---
 title: "cvx_phylogeny_annotation"
-author: "alexa tyszka"
-date: "12/27/2020"
+author: "Alexa & Boris"
+date: date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
-```{r echo=FALSE}
+
+> This is a one-time package installation to help get libraries likely to be missing at the start.
+
+```{r eval=FALSE}
 #install needed packages
-install.packages('BiocManager', repos=c('https://cran.rstudio.com'), ask=F)
+install.packages('BiocManager')# This option gave B errors; repos=c('https://cran.rstudio.com'), ask=F)
 BiocManager::install('DECIPHER')
 BiocManager::install("ggtree")
 BiocManager::install("phytools")
-library(ggtree)
+```
+
+## Loading Libraries
+
+```{r load-libraries}
+library(ggtree) # tree plotting
 library(DECIPHER)
-library(RCurl)
+library(RCurl) # web page loading
 library(phangorn)
 library(phytools)
 ```
-Fetch alignment and metadata:
+
+## Data Files and Locations
+
+Specify location of RNA sequence alignment and metadata:
 ```{r}
 metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/meatdata.csv'
 aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/align.fasta'
 ```
-Download alignment and metadata, convert alignment:
+
+Fetch alignment and metadata, convert alignment:
 ```{r}
 aln.fasta <- getURL(aln.fasta.loc)
 #convert U to T, then adjust for U characters in sequence names
@@ -29,7 +41,9 @@ aln.fasta <- gsub("U", "T", aln.fasta, ignore.case = FALSE)
 aln.fasta <- gsub("KT8", "KU8", aln.fasta, ignore.case = FALSE)
 seq.metadata.csv <-getURL(metadata.loc)
 ```
-Write to working directory, then read again:
+
+Write (save) to working directory, then read again; beware of overwriting previous files!:
+
 ```{r}
 write(x=seq.metadata.csv, file='seq.metadata.csv')
 cvx.metadata <- read.csv('seq.metadata.csv', stringsAsFactors = FALSE)
@@ -42,11 +56,19 @@ cacti.aln <- read.dna(file = 'aln.fasta', format= "fasta")
 aln.phy <- read.phyDat('aln.fasta', format='fasta', type='DNA')
 aln.bin <- as.DNAbin(aln.phy)
 ```
-Create NJ tree.
+
+## Making and Editing a Phylogenetic Tree
+
+For now, make a simple guide neighbor-joining tree, which will be used for annotation.
+
 ```{r}
 cacti.nj <- NJ(dist.dna(aln.bin))
 ```
-Adjust the tip names in NJ tree.
+
+> Note: it would likely be better to perform this on the alignment file, so that the alignment and tree file can be easily compared later, without having to back-convert names. Also, it is very useful to provide a detailed accounting of what "adjust" means. It's not adjusting, but renaming, and the rationale for the renaming is missing, as well as the sources of the introduced information. e.g.: why is "NC_002815" converted to "Cactus virus X_AF308158" and where is that information? This would be very, very, hard to understand or recover independently and the goal is to make a document for someone else to follow (or yourself much later).
+
+Adjust the tip names in NJ tree. 
+
 ```{r}
 host.names <- c()
 for (i in 1:length(cacti.nj$tip.label)) {
