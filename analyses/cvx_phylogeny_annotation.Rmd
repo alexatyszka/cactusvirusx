@@ -4,6 +4,10 @@ author: "Alexa & Boris"
 date: date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
+To do:
+-collapse branches
+-recolor based on host/virus
+-rename tips
 
 > This is a one-time package installation to help get libraries likely to be missing at the start.
 
@@ -21,11 +25,13 @@ BiocManager::install("phytools")
 library(ggtree) # tree plotting
 library(DECIPHER)
 library(RCurl) # web page loading
+library(httr)# web page loading for windows
 library(phangorn)
 library(phytools)
 ```
 
 ## Data Files and Locations
+Note: Errors on windows still to be resolved
 
 Specify location of RNA sequence alignment and metadata:
 ```{r}
@@ -40,6 +46,7 @@ aln.fasta <- getURL(aln.fasta.loc)
 aln.fasta <- gsub("U", "T", aln.fasta, ignore.case = FALSE)
 aln.fasta <- gsub("KT8", "KU8", aln.fasta, ignore.case = FALSE)
 seq.metadata.csv <-getURL(metadata.loc)
+write(x=seq.metadata.csv, file='seq.metadata.csv')
 ```
 
 Write (save) to working directory, then read again; beware of overwriting previous files!:
@@ -65,9 +72,12 @@ For now, make a simple guide neighbor-joining tree, which will be used for annot
 cacti.nj <- NJ(dist.dna(aln.bin))
 ```
 
-> Note: it would likely be better to perform this on the alignment file, so that the alignment and tree file can be easily compared later, without having to back-convert names. Also, it is very useful to provide a detailed accounting of what "adjust" means. It's not adjusting, but renaming, and the rationale for the renaming is missing, as well as the sources of the introduced information. e.g.: why is "NC_002815" converted to "Cactus virus X_AF308158" and where is that information? This would be very, very, hard to understand or recover independently and the goal is to make a document for someone else to follow (or yourself much later).
+> Note: it would likely be better to perform this on the alignment file, so that the alignment and tree file can be easily compared later, without having to back-convert name
+s. Also, it is very useful to provide a detailed accounting of what "adjust" means. It's not adjusting, but renaming, and the rationale for the renaming is missing, as well as the sources of the introduced information. e.g.: why is "NC_002815" converted to "Cactus virus X_AF308158" and where is that information? This would be very, very, hard to understand or recover independently and the goal is to make a document for someone else to follow (or yourself much later).
+> To do: add separate document with host names in NJ tree.
 
-Adjust the tip names in NJ tree. 
+
+Rename the tip names in NJ tree to add cvx data. 
 
 ```{r}
 host.names <- c()
