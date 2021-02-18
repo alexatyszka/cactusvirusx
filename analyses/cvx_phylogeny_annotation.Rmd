@@ -30,12 +30,16 @@ library(phytools)
 ```
 
 ## Data Files and Locations
-Note: Errors on windows still to be resolved
+>Note: Errors on windows still to be resolved
 
 Specify location of RNA sequence alignment and metadata:
 ```{r}
-metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/meatdata.csv'
-aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_aln.fasta'
+metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/meatdata_v2.csv'
+aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_aln_v2.fasta'
+#Notes: These have been exported from geneious, aligned using MAFFT[KR], exported as both .fasta and as .csv for relevant columns.
+#Note: For .fasta files, U has been converted to T, and then "KT8" to "KU8" to conserve naming.
+#Note: hosts have been added to organisms that lacked them.
+
 ```
 
 Fetch alignment and metadata, convert alignment:
@@ -51,7 +55,6 @@ Write (save) to working directory, then read again; beware of overwriting previo
 cvx.metadata <- read.csv('seq.metadata.csv', stringsAsFactors = FALSE)
 #adjust metadata for correct organism names
 
-cvx.metadata$Name <- gsub(" ", "_", cvx.metadata$Name)
 write(aln.fasta, file = 'aln.fasta')
 cacti.aln <- read.dna(file = 'aln.fasta', format= "fasta")
 aln.phy <- read.phyDat('aln.fasta', format='fasta', type='DNA')
@@ -68,52 +71,44 @@ cacti.nj <- NJ(dist.dna(aln.bin))
 
 > Note: it would likely be better to perform this on the alignment file, so that the alignment and tree file can be easily compared later, without having to back-convert name
 s. Also, it is very useful to provide a detailed accounting of what "adjust" means. It's not adjusting, but renaming, and the rationale for the renaming is missing, as well as the sources of the introduced information. e.g.: why is "NC_002815" converted to "Cactus virus X_AF308158" and where is that information? This would be very, very, hard to understand or recover independently and the goal is to make a document for someone else to follow (or yourself much later).
-> To do: add separate document with host names in NJ tree.
 
 
-Rename the tip names in NJ tree to add cvx data. 
+Edit host names to add placeholder for unknown host, and root the tree:
+>Note: figure out which 
 
 ```{r}
-host.names <- c()
-for (i in 1:length(cacti.nj$tip.label)) {
-  l <- cacti.nj$tip.label[i]
-  if (nchar(l)<20) {
-    cacti.nj$tip.label[i] <- paste(cvx.metadata$Organism[which(cvx.metadata$Name==l)], l, sep='_')
-    
-    } else { 
-    cvx.metadata$Description[which(cvx.metadata$Name==l)] <- gsub("NC_002815", "Cactus virus X_AF308158", cvx.metadata$Description[which(cvx.metadata$Name==l)], ignore.case = FALSE)
-    cvx.metadata$Description[which(cvx.metadata$Name==l)] <- gsub("NC_006059", "Zygocactus virus X_AY366208", cvx.metadata$Description[which(cvx.metadata$Name==l)], ignore.case = FALSE)
-    cvx.metadata$Description[which(cvx.metadata$Name==l)] <- gsub("NC_011659", "Schlumbergera virus X_AY366207", cvx.metadata$Description[which(cvx.metadata$Name==l)], ignore.case = FALSE)
-    cvx.metadata$Description[which(cvx.metadata$Name==l)] <- gsub("NC_024458", "Pitaya virus X_JF930327", cvx.metadata$Description[which(cvx.metadata$Name==l)], ignore.case = FALSE)
-    cvx.metadata$host[which(cvx.metadata$Name==l)] <- gsub(",", "", toString(strsplit(l, "_")[[1]][1:2]))
-    cacti.nj$tip.label[i] <- paste(cvx.metadata$Description[which(cvx.metadata$Name==l)])
-    }
-  host.names[i] <- paste(cvx.metadata$host[which(cvx.metadata$Name==l)])
-}
+#Notes on translating ref seq names to organism names:  gsub("NC_002815", "Cactus virus X_AF308158"; "NC_006059", "Zygocactus virus X_AY366208"; "NC_011659", "Schlumbergera virus X_AY366207";"NC_024458", "Pitaya virus X_JF930327"
 for (i in 1:length(host.names)) {
   if (host.names[i]==""){
     host.names[i] <- "Host unknown"
   }
 }
-names <- cacti.nj$tip.label
-names <- append(names, rep("nodetest",89))
-hosts <- as.character(append(host.names, rep("nodetest",89)))
-df <- data.frame(names, hosts)
+#names <- cacti.nj$tip.label
+#names <- append(names, rep("nodetest",89))
+#hosts <- as.character(append(host.names, rep("nodetest",89)))
+#df <- data.frame(names, hosts)
 cacti.njtree <- cacti.nj
 cacti.njtree <- root(cacti.nj, outgroup=c(88:90), resolve.root=T)
 
 is.rooted(cacti.njtree)
+```
+
+
+```{r}
 #plot.phylo(ladderize(cacti.njtree), type='phylo', no.margin=F, cex=0.5, label.offset=0.0025)
 write.tree(cacti.njtree, file="cacti.njtree.nwk")
 nj.gg <- read.tree(file="cacti.njtree.nwk")
-for (i in 1:length(nj.gg$tip.label)) {
-  nj.gg$tip.label[i] <- gsub("_", " ", x = nj.gg$tip.label[i])
-  nj.gg$tip.label[i] <- gsub("-", ",", x = nj.gg$tip.label[i])
+#for (i in 1:length(nj.gg$tip.label)) {
+ # nj.gg$tip.label[i] <- gsub("_", " ", x = nj.gg$tip.label[i])
+  #nj.gg$tip.label[i] <- gsub("-", ",", x = nj.gg$tip.label[i])
   
-}
+#}
 hosts.df <- data.frame(hosts)
 is.rooted(nj.gg)
+```
 
+Rooting options.
+```{r}
 #ape:
 #nj.gg <- unroot(nj.gg)
 #nj.gg <- root(nj.gg, outgroup=c(88:90), resolve.root=FALSE)
@@ -123,16 +118,20 @@ is.rooted(nj.gg)
 nj.gg<-phytools::reroot(nj.gg, node=91, edgelabel=TRUE, position=0)
 
 #ggtree: (not working)
-nj.gg <-rroot(nj.gg, node=91, outgroup= c(88:90), resolve.root=TRUE)
+#nj.gg <-rroot(nj.gg, node=91, outgroup= c(88:90), resolve.root=TRUE)
+```
 
+Create tree using ggtree. 
+```{r}
 par( mar=c(1, 1, 0, 1))
-ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE) %<+% hosts.df %<+% df  +
+ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE)+
+#%<+% hosts.df %<+% df  +
   
   #name tip labels:
   geom_tiplab(aes(), hjust=0, offset=0, align=T, linetype = "dashed" )+
   #host tip labels:
-  geom_tiplab(aes(label=hosts.df$hosts), align = T, linetype = 'blank',
-              na.rm=FALSE, offset=0.2) +
+#  geom_tiplab(aes(label=hosts.df$hosts), align = T, linetype = 'blank',
+#              na.rm=FALSE, offset=0.2) +
   #scale
   geom_treescale(x=0.05, y=25, offset=2, fontsize = 3)+
   #numbered tip labels for checking data addition
@@ -143,9 +142,16 @@ ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE) %<+% hosts.df %<+% df  +
   #highlight specified node:
   #geom_hilight(node=101,fill="yellow", alpha=.6)+
   xlim(0,0.75)
+```
 
+Save the tree to working directory in pdf format.
+```{r}
+filename = paste(gsub(":", "-", Sys.time()),"_names_hosts_nj.pdf",sep="")
+ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
+```
 
-ggsave("names_hosts_nj.pdf", width = 60, height = 40, units = "cm", limitsize = FALSE)
+Parsimony calculations.
+```{r}
 #parsimony for nj tree
 cacti.nj <- NJ(dist.dna(cacti.bin))
 parsimony(tree=cacti.nj, data=aln.phy)
@@ -153,84 +159,9 @@ cacti.nj.optim <- optim.parsimony(cacti.nj, aln.phy)
 cacti.nj.pratchet <- pratchet(aln.phy)
 ```
 
+Cleaning up:
+```{r}
+unlink("aln.fasta")
+unlink("seq.metadata.csv")
+```
 
-# ```{r echo=FALSE}
-# #upgma tree
-# cacti.UPGMA <- upgma(dist.dna(as.DNAbin(aln.phy)))
-# cacti.UPGMAtree <- root(cacti.UPGMA, 88:90, resolve.root=T)
-# hostcol <- c()
-# 
-# for (i in 1:length(cacti.UPGMAtree$tip.label)) {
-#   l <- cacti.UPGMAtree$tip.label[i]
-#   if (nchar(l)<20) {
-#     cacti.UPGMAtree$tip.label[i] <- paste(seq$Organism[which(seq$Name==l)], l, sep='_')
-#     
-#   } else { 
-#     seq$Description[which(seq$Name==l)] <- gsub("NC_002815", "Cactus virus X_AF308158", seq$Description[which(seq$Name==l)], ignore.case = FALSE)
-#     seq$Description[which(seq$Name==l)] <- gsub("NC_006059", "Zygocactus virus X_AY366208", seq$Description[which(seq$Name==l)], ignore.case = FALSE)
-#     seq$Description[which(seq$Name==l)] <- gsub("NC_011659", "Schlumbergera virus X_AY366207", seq$Description[which(seq$Name==l)], ignore.case = FALSE)
-#     seq$Description[which(seq$Name==l)] <- gsub("NC_024458", "Pitaya virus X_JF930327", seq$Description[which(seq$Name==l)], ignore.case = FALSE)
-#     seq$host[which(seq$Name==l)] <- gsub(",", "", toString(strsplit(l, "_")[[1]][1:2]))
-#     cacti.UPGMAtree$tip.label[i] <- paste(seq$Description[which(seq$Name==l)])
-#   }
-#   hostcol[i] <- paste(seq$host[which(seq$Name==l)])
-# }
-# 
-# for (i in 1:length(hostcol)) {
-#   if (hostcol[i]==""){
-#     hostcol[i] <- "Host unknown"
-#   }
-# }
-# namesup <- cacti.UPGMA$tip.label
-# namesup <- append(namesup, rep("nodetest",89))
-# hosts <- as.character(append(hostcol, rep("nodetest",89)))
-# df.up <- data.frame(namesup, hosts)
-# 
-# is.rooted(cacti.UPGMAtree)
-# #plot.phylo(ladderize(cacti.njtree), type='phylo', no.margin=F, cex=0.5, label.offset=0.0025)
-# write.tree(cacti.UPGMAtree, file="cacti.UPGMAtree.nwk")
-# UPGMA.gg <- read.tree(file="cacti.UPGMAtree.nwk")
-# for (i in 1:length(UPGMA.gg$tip.label)) {
-#   UPGMA.gg$tip.label[i] <- gsub("_", " ", x = UPGMA.gg$tip.label[i])
-#   UPGMA.gg$tip.label[i] <- gsub("-", ",", x = UPGMA.gg$tip.label[i])
-#   
-# }
-# finallyworks <- data.frame(hosts)
-# is.rooted(UPGMA.gg)
-# #ape:
-#   #nj.gg <- unroot(nj.gg)
-#   #nj.gg <- root(nj.gg, outgroup=c(88:90), resolve.root=FALSE)
-# #ape option 2:
-#   #nj.gg <- ape::plot.phylo(nj.gg,  root.edge = T)
-# #phytools:
-#   UPGMA.gg<-phytools::reroot(UPGMA.gg, node=91, edgelabel=TRUE, position=0)
-# #ggtree: (not working)
-#   #nj.gg <-ggtree::reroot(nj.gg, node=91)
-# par( mar=c(1, 1, 0, 1))
-# 
-# ggtree(UPGMA.gg, ladderize=T, aes(), show.legend = TRUE) %<+% finallyworks %<+% df  +
-#   #name tip labels:
-#   geom_tiplab(aes(), hjust=0, offset=0, align=T, linetype = "dashed" )+
-#   #host tip labels:
-#   geom_tiplab(aes(label=finallyworks$hosts), align = T, linetype = 'blank',
-#               na.rm=FALSE, offset=0.2) +
-#   #scale
-#   geom_treescale(x=0.05, y=25, offset=2, fontsize = 3)+
-#   #numbered tip labels for checking data addition
-#   #geom_tiplab(aes(label=c(1:179)), size= 2, align = T, linetype = 'blank',
-#   #         na.rm=FALSE, offset=0.2) +
-#   #display/check node labels:
-#   #geom_text2(aes(subset=!isTip, label=node), hjust=-.3)+
-#   #highlight specified node:
-#   #geom_hilight(node=101,fill="yellow", alpha=.6)+
-#   xlim(0,0.75)
-# 
-# ggsave("names_hosts_UPGMA.pdf", width = 60, height = 40, units = "cm", limitsize = FALSE)
-# 
-# #parsimony for upgma tree
-# cacti.UPGMAtree <- upgma(dist.dna(as.DNAbin(aln.phy)))
-# parsimony(tree=cacti.UPGMAtree, data=aln.phy)
-# cacti.u.optim <- optim.parsimony(cacti.UPGMA, aln.phy)
-# cacti.u.pratchet <- pratchet(aln.phy)
-# plot(cacti.u.pratchet)
-# ```
