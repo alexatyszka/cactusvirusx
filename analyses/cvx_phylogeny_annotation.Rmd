@@ -25,7 +25,6 @@ BiocManager::install("phytools")
 library(ggtree) # tree plotting
 library(DECIPHER)
 library(RCurl) # web page loading
-library(httr)# web page loading for windows
 library(phangorn)
 library(phytools)
 ```
@@ -36,15 +35,12 @@ Note: Errors on windows still to be resolved
 Specify location of RNA sequence alignment and metadata:
 ```{r}
 metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/meatdata.csv'
-aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/align.fasta'
+aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_aln.fasta'
 ```
 
 Fetch alignment and metadata, convert alignment:
 ```{r}
 aln.fasta <- getURL(aln.fasta.loc)
-#convert U to T, then adjust for U characters in sequence names
-aln.fasta <- gsub("U", "T", aln.fasta, ignore.case = FALSE)
-aln.fasta <- gsub("KT8", "KU8", aln.fasta, ignore.case = FALSE)
 seq.metadata.csv <-getURL(metadata.loc)
 write(x=seq.metadata.csv, file='seq.metadata.csv')
 ```
