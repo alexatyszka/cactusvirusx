@@ -48,11 +48,9 @@ write(x=seq.metadata.csv, file='seq.metadata.csv')
 Write (save) to working directory, then read again; beware of overwriting previous files!:
 
 ```{r}
-write(x=seq.metadata.csv, file='seq.metadata.csv')
 cvx.metadata <- read.csv('seq.metadata.csv', stringsAsFactors = FALSE)
 #adjust metadata for correct organism names
-cvx.metadata$Organism[67:70] <- "Zygocactus virus X"
-cvx.metadata$Organism[80] <- "Mytcor virus 1"
+
 cvx.metadata$Name <- gsub(" ", "_", cvx.metadata$Name)
 write(aln.fasta, file = 'aln.fasta')
 cacti.aln <- read.dna(file = 'aln.fasta', format= "fasta")
