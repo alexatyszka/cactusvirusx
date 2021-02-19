@@ -5,6 +5,7 @@ date: date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
 output: html_document
 ---
 To do:
+-add more hosts
 -collapse branches
 -recolor based on host/virus
 -rename tips
@@ -34,8 +35,8 @@ library(phytools)
 
 Specify location of RNA sequence alignment and metadata:
 ```{r}
-metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/meatdata_v2.csv'
-aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_aln_v2.fasta'
+metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/meatdata_v3.csv'
+aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_aln_v3.fasta'
 #Notes: These have been exported from geneious, aligned using MAFFT[KR], exported as both .fasta and as .csv for relevant columns.
 #Note: For .fasta files, U has been converted to T, and then "KT8" to "KU8" to conserve naming.
 #Note: hosts have been added to organisms that lacked them.
@@ -53,6 +54,10 @@ Write (save) to working directory, then read again; beware of overwriting previo
 
 ```{r}
 cvx.metadata <- read.csv('seq.metadata.csv', stringsAsFactors = FALSE)
+#alphabetize metadata, only needs to be done once:
+#cvx.metadata <- cvx.metadata[order(cvx.metadata$Name),]
+write(x=seq.metadata.csv, file='seq.metadata.csv')
+
 #adjust metadata for correct organism names
 
 write(aln.fasta, file = 'aln.fasta')
@@ -73,20 +78,17 @@ cacti.nj <- NJ(dist.dna(aln.bin))
 s. Also, it is very useful to provide a detailed accounting of what "adjust" means. It's not adjusting, but renaming, and the rationale for the renaming is missing, as well as the sources of the introduced information. e.g.: why is "NC_002815" converted to "Cactus virus X_AF308158" and where is that information? This would be very, very, hard to understand or recover independently and the goal is to make a document for someone else to follow (or yourself much later).
 
 
-Edit host names to add placeholder for unknown host, and root the tree:
->Note: figure out which 
+Edit host names to add placeholder for unknown host, and root the tree (any root will do for now, as we can reroot it later):
+>Note: figure out which organisms and hosts belong to which viruses. Then, root the tree appropriately with clover virus.
 
 ```{r}
 #Notes on translating ref seq names to organism names:  gsub("NC_002815", "Cactus virus X_AF308158"; "NC_006059", "Zygocactus virus X_AY366208"; "NC_011659", "Schlumbergera virus X_AY366207";"NC_024458", "Pitaya virus X_JF930327"
-for (i in 1:length(host.names)) {
-  if (host.names[i]==""){
-    host.names[i] <- "Host unknown"
-  }
-}
-#names <- cacti.nj$tip.label
-#names <- append(names, rep("nodetest",89))
-#hosts <- as.character(append(host.names, rep("nodetest",89)))
-#df <- data.frame(names, hosts)
+#for (i in 1:length(host.names)) {
+ # if (host.names[i]==""){
+  #  host.names[i] <- "Host unknown"
+  #}
+#}
+
 cacti.njtree <- cacti.nj
 cacti.njtree <- root(cacti.nj, outgroup=c(88:90), resolve.root=T)
 
@@ -103,8 +105,17 @@ nj.gg <- read.tree(file="cacti.njtree.nwk")
   #nj.gg$tip.label[i] <- gsub("-", ",", x = nj.gg$tip.label[i])
   
 #}
-hosts.df <- data.frame(hosts)
 is.rooted(nj.gg)
+```
+
+Compare hosts/organism data, using index numbers and tip labels.
+```{r}
+#names.label <- cacti.nj$tip.label
+#names <- append(names, rep("nodetest",89))
+#hosts <- as.character(append(host.names, rep("nodetest",89)))
+ #<- data.frame(names, hosts)
+#hosts.df <- data.frame(hosts)
+
 ```
 
 Rooting options.
@@ -163,5 +174,6 @@ Cleaning up:
 ```{r}
 unlink("aln.fasta")
 unlink("seq.metadata.csv")
+unlink("cacti.njtree.nwk")
 ```
 
