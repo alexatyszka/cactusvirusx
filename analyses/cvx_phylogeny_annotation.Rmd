@@ -58,7 +58,6 @@ cvx.metadata <- read.csv('seq.metadata.csv', stringsAsFactors = FALSE)
 #cvx.metadata <- cvx.metadata[order(cvx.metadata$Name),]
 write(x=seq.metadata.csv, file='seq.metadata.csv')
 
-#adjust metadata for correct organism names
 
 write(aln.fasta, file = 'aln.fasta')
 cacti.aln <- read.dna(file = 'aln.fasta', format= "fasta")
@@ -110,6 +109,7 @@ is.rooted(nj.gg)
 
 Compare hosts/organism data, using index numbers and tip labels.
 ```{r}
+data.frame()
 #names.label <- cacti.nj$tip.label
 #names <- append(names, rep("nodetest",89))
 #hosts <- as.character(append(host.names, rep("nodetest",89)))
@@ -121,7 +121,7 @@ Compare hosts/organism data, using index numbers and tip labels.
 Rooting options.
 ```{r}
 #ape:
-#nj.gg <- unroot(nj.gg)
+nj.gg <- unroot(nj.gg)
 #nj.gg <- root(nj.gg, outgroup=c(88:90), resolve.root=FALSE)
 #ape option 2:
 #nj.gg <- ape::plot.phylo(nj.gg,  root.edge = T)
@@ -139,15 +139,16 @@ ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE)+
 #%<+% hosts.df %<+% df  +
   
   #name tip labels:
-  geom_tiplab(aes(), hjust=0, offset=0, align=T, linetype = "dashed" )+
+  geom_tiplab(cex=0.9)+
+  #geom_tiplab(aes(), hjust=0, offset=0, align=T, linetype = "dashed" )+
   #host tip labels:
 #  geom_tiplab(aes(label=hosts.df$hosts), align = T, linetype = 'blank',
 #              na.rm=FALSE, offset=0.2) +
   #scale
   geom_treescale(x=0.05, y=25, offset=2, fontsize = 3)+
   #numbered tip labels for checking data addition
-  #geom_tiplab(aes(label=c(1:179)), size= 2, align = T, linetype = 'blank',
-     #         na.rm=FALSE, offset=0.2) +
+      #geom_tiplab(aes(label=c(1:179)), size= 2, align = T, linetype = 'blank',
+       #         na.rm=FALSE, offset=0.2) +
   #display/check node labels:
   #geom_text2(aes(subset=!isTip, label=node), hjust=-.3)+
   #highlight specified node:
