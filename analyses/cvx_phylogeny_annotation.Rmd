@@ -47,7 +47,7 @@ Fetch alignment and metadata, convert alignment:
 ```{r}
 aln.fasta <- getURL(aln.fasta.loc)
 seq.metadata.csv <-getURL(metadata.loc)
-write(x=seq.metadata.csv, file='seq.metadata.csv')
+write(x=seq.metadatwa.csv, file='seq.metadata.csv')
 ```
 
 Write (save) to working directory, then read again; beware of overwriting previous files!:
@@ -56,6 +56,8 @@ Write (save) to working directory, then read again; beware of overwriting previo
 cvx.metadata <- read.csv('seq.metadata.csv', stringsAsFactors = FALSE)
 #alphabetize metadata, only needs to be done once:
 #cvx.metadata <- cvx.metadata[order(cvx.metadata$Name),]
+write.csv(cvx.metadata, file="test.csv")
+cvx.metadata <- read.csv('test.csv', stringsAsFactors = FALSE)
 write(x=seq.metadata.csv, file='seq.metadata.csv')
 
 
@@ -89,7 +91,7 @@ Edit host names to add placeholder for unknown host, and root the tree (any root
 #}
 
 cacti.njtree <- cacti.nj
-cacti.njtree <- root(cacti.nj, outgroup=c(88:90), resolve.root=T)
+#cacti.njtree <- root(cacti.nj, outgroup=c(88:90), resolve.root=T)
 
 is.rooted(cacti.njtree)
 ```
@@ -105,17 +107,6 @@ nj.gg <- read.tree(file="cacti.njtree.nwk")
   
 #}
 is.rooted(nj.gg)
-```
-
-Compare hosts/organism data, using index numbers and tip labels.
-```{r}
-data.frame()
-#names.label <- cacti.nj$tip.label
-#names <- append(names, rep("nodetest",89))
-#hosts <- as.character(append(host.names, rep("nodetest",89)))
- #<- data.frame(names, hosts)
-#hosts.df <- data.frame(hosts)
-
 ```
 
 Rooting options.
@@ -134,29 +125,22 @@ nj.gg<-phytools::reroot(nj.gg, node=91, edgelabel=TRUE, position=0)
 
 Create tree using ggtree. 
 ```{r}
-par( mar=c(1, 1, 0, 1))
-ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE)+
-#%<+% hosts.df %<+% df  +
-  
+par( mar=c(1, 3, 0, 0))
+ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size = 1,)  %<+% cvx.metadata +
   #name tip labels:
-  geom_tiplab(cex=0.9)+
-  #geom_tiplab(aes(), hjust=0, offset=0, align=T, linetype = "dashed" )+
+  geom_tiplab(size=2,aes(label=cvx.metadata$Organism[1:210]), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
-#  geom_tiplab(aes(label=hosts.df$hosts), align = T, linetype = 'blank',
-#              na.rm=FALSE, offset=0.2) +
+  geom_tiplab(size=2,aes(label=cvx.metadata$host[1:210]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.1) +
+    geom_tiplab(aes(label=cvx.metadata$country[1:210]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.2) +
+    geom_tiplab(aes(label=cvx.metadata$Name[1:210]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.25) +
   #scale
   geom_treescale(x=0.05, y=25, offset=2, fontsize = 3)+
-  #numbered tip labels for checking data addition
-      #geom_tiplab(aes(label=c(1:179)), size= 2, align = T, linetype = 'blank',
-       #         na.rm=FALSE, offset=0.2) +
-  #display/check node labels:
-  #geom_text2(aes(subset=!isTip, label=node), hjust=-.3)+
-  #highlight specified node:
-  #geom_hilight(node=101,fill="yellow", alpha=.6)+
-  xlim(0,0.75)
+  #node labels:
+  geom_nodelab() +
+  xlim(0,1)
 ```
 
-Save the tree to working directory in pdf format.
+Save the tree to folder in pdf format.
 ```{r}
 filename = paste(gsub(":", "-", Sys.time()),"_names_hosts_nj.pdf",sep="")
 ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)

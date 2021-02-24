@@ -21,3 +21,5 @@ old/
 *.fls
 .DS_Store
 .DS_Store
+analyses/.RData
+analyses/.Rhistory
