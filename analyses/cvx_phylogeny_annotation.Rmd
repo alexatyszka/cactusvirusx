@@ -13,6 +13,7 @@ To do:
 > This is a one-time package installation to help get libraries likely to be missing at the start.
 
 ```{r eval=FALSE}
+knitr::opts_chunk$set(error = TRUE)
 #install needed packages
 install.packages('BiocManager')# This option gave B errors; repos=c('https://cran.rstudio.com'), ask=F)
 BiocManager::install('DECIPHER')
@@ -75,11 +76,7 @@ For now, make a simple guide neighbor-joining tree, which will be used for annot
 cacti.nj <- NJ(dist.dna(aln.bin))
 ```
 
-> Note: it would likely be better to perform this on the alignment file, so that the alignment and tree file can be easily compared later, without having to back-convert name
-s. Also, it is very useful to provide a detailed accounting of what "adjust" means. It's not adjusting, but renaming, and the rationale for the renaming is missing, as well as the sources of the introduced information. e.g.: why is "NC_002815" converted to "Cactus virus X_AF308158" and where is that information? This would be very, very, hard to understand or recover independently and the goal is to make a document for someone else to follow (or yourself much later).
 
-
-Edit host names to add placeholder for unknown host, and root the tree (any root will do for now, as we can reroot it later):
 >Note: figure out which organisms and hosts belong to which viruses. Then, root the tree appropriately with clover virus.
 
 ```{r}

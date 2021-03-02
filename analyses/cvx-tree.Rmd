@@ -1,0 +1,145 @@
+---
+title: "CVX Trees"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document: default
+---
+
+> This is a CVX tree and data manipulation markdown file
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(error = TRUE)
+```
+
+
+```{r import-data}
+library(ape)
+library("knitr")
+cvx.tre<-ape::read.tree("cacti.njtree.nwk")
+
+# Won't use tree tip names to re-import NCBI data
+# cvx.seq <- read.GenBank(cvx.tre$tip.label, species.names=TRUE)
+#
+# Warning message:
+# In ape::read.GenBank(cvx.acc, species.names = TRUE) :
+#   cannot get the following sequences:
+# CMU62963, CCU23414, PMPRNA, CYMRNA, FXMCGA, BBSCG, 
+# AM1BAMVGR, PVXCGA, PVXX3, PVXCOPR, PVXGEN, PVXCG, 
+# SYVCPE, MNCCGAA
+
+# Importing file sent by Alexa (note: could replace tip names with accessions and go back to NCBI
+cvx.data<-read.csv('seq.metadata.csv')
+```
+
+
+```{r data-summary}
+# Output tree info: note has polytomy somewhere
+cvx.tre
+
+# How many unique organisms do we have? (also, coarse test Organism = db_xref)
+unique(cvx.data$Organism)
+unique(cvx.data$db_xref)
+
+# How many are "* virus X" or "* mosaic virus"
+length(grep("virus X",unique(cvx.data$Organism)))
+length(grep("mosaic",unique(cvx.data$Organism)))
+
+# P.S. They are mutually exclusive!
+intersect(grep("virus X",unique(cvx.data$Organism)),grep("mosaic",unique(cvx.data$Organism)))
+
+# And there there are these one-offs
+length(grep("ringspot",unique(cvx.data$Organism)))
+length(grep("exvir",unique(cvx.data$Organism)))
+length(grep("edge",unique(cvx.data$Organism)))
+length(grep("virus 3",unique(cvx.data$Organism)))
+```
+
+```{r extract-clade}
+choose.node <- function(col,tree) {
+    o <- identify(tree)
+    nodelabels(node=o$nodes, pch = 19, col = col)
+    print(o)
+}
+
+plot(cvx.tre, type="f",cex=0.5)
+
+# Not run
+# Selecting node subtending potexviruses
+#choose.node("red",cvx.tre)
+#Click close to a node of the tree...
+#$nodes
+#[1] 379
+
+# Selecting node subtending potexviruses
+#choose.node("green",cvx.tre)
+#Click close to a node of the tree...
+#$nodes
+#[1] 382
+
+# Drop the rest of the tree; note name
+cvx.tre2<-ape::extract.clade(cvx.tre,382)
+
+plot(cvx.tre2, type="f",cex=0.75)
+
+tip.rename.org = function(tree,dataframe){
+   for(i in 1:length(tree$tip.label)){
+      tree$tip.label[i]<-dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)]
+   }
+tree
+}
+
+tip.rename.host = function(tree,dataframe){
+   for(i in 1:length(tree$tip.label)){
+      tree$tip.label[i]<-dataframe$bi_host_binomial [grep(tree$tip.label[i],dataframe$Name)]
+   }
+tree
+}
+
+#tip.rename.host(
+
+#Remove some Plantago asiatica mosaic virus samples
+cvx.tre3<-drop.tip(cvx.tre2,cvx.tre2$tip.label[grep(c("KU159"),cvx.tre2$tip.label)])
+cvx.tre4<-drop.tip(cvx.tre3,cvx.tre3$tip.label[grep(c("MH360"),cvx.tre3$tip.label)])
+
+```
+
+```{r plots}
+# Adjust outer margin to avoid overplotting, leaking off the edge
+par(oma=c(3,3,3,3))
+
+plot(ladderize(tip.rename.host(cvx.tre4,cvx.data)), type="f",cex=0.65, align.tip.label = TRUE)
+plot(ladderize(tip.rename.org(cvx.tre4,cvx.data)), type="f",cex=0.65, align.tip.label = TRUE)
+plot(ladderize(cvx.tre4), type="f",cex=0.65, align.tip.label = TRUE)
+
+plot(ladderize(tip.rename.org(cvx.tre4,cvx.data)), type="p",cex=0.65, label.offset=0.001)
+plot(ladderize(tip.rename.host(cvx.tre4,cvx.data)), type="p",cex=0.65, label.offset=0.001)
+plot(ladderize(cvx.tre4), type="p",cex=0.65, label.offset=0.001)
+```
+
+```{r pdfs, eval=FALSE}
+pdf("/trees-phylograms.pdf",
+    width=10,
+    height=10,
+    pointsize=12,
+    bg='transparent',
+    )
+par(oma=c(3,3,3,3))
+plot(ladderize(tip.rename.host(cvx.tre4,cvx.data)), type="f",cex=0.65, align.tip.label = TRUE)
+plot(ladderize(tip.rename.org(cvx.tre4,cvx.data)), type="f",cex=0.65, align.tip.label = TRUE)
+plot(ladderize(cvx.tre4), type="f",cex=0.65, align.tip.label = TRUE)
+dev.off()
+
+pdf("/trees-phylograms.pdf",
+    width=8.5,
+    height=11,
+    pointsize=12,
+    bg='transparent',
+    )
+#par(oma=c(3,3,3,3))
+plot(ladderize(tip.rename.org(cvx.tre4,cvx.data)), type="p",cex=0.65, align.tip.label = TRUE)
+plot(ladderize(tip.rename.host(cvx.tre4,cvx.data)), type="p",cex=0.65, align.tip.label = TRUE)
+plot(ladderize(cvx.tre4), type="p",cex=0.65, align.tip.label = TRUE)
+dev.off()
+
+```
