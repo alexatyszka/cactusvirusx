@@ -1,8 +1,11 @@
 ---
 title: "cvx_phylogeny_annotation"
 author: "Alexa & Boris"
-date: date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
-output: html_document
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document: default
 ---
 To do:
 -add more hosts
@@ -19,6 +22,9 @@ install.packages('BiocManager')# This option gave B errors; repos=c('https://cra
 BiocManager::install('DECIPHER')
 BiocManager::install("ggtree")
 BiocManager::install("phytools")
+tinytex::install_tinytex()
+rmarkdown::render('test.rmd', output_format = 'html_document')
+
 ```
 
 ## Loading Libraries
@@ -29,6 +35,8 @@ library(DECIPHER)
 library(RCurl) # web page loading
 library(phangorn)
 library(phytools)
+library(ape)
+library("knitr")
 ```
 
 ## Data Files and Locations
@@ -39,7 +47,10 @@ Specify location of RNA sequence alignment and metadata:
 metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/meatdata_v3.csv'
 aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_aln_v3.fasta'
 #Notes: These have been exported from geneious, aligned using MAFFT[KR], exported as both .fasta and as .csv for relevant columns.
-#Note: For .fasta files, U has been converted to T, and then "KT8" to "KU8" to conserve naming.
+#Note: For .fasta files, U has been converted to T, and then "KT8" to "KU8" to conserve naming. 
+#KT15 ->KU15
+#KT6 -> KU6
+#Notes on translating ref seq names to organism names:  gsub("NC_002815", "Cactus virus X_AF308158"; "NC_006059", "Zygocactus virus X_AY366208"; "NC_011659", "Schlumbergera virus X_AY366207";"NC_024458", "Pitaya virus X_JF930327"
 #Note: hosts have been added to organisms that lacked them.
 
 ```
@@ -80,22 +91,15 @@ cacti.nj <- NJ(dist.dna(aln.bin))
 >Note: figure out which organisms and hosts belong to which viruses. Then, root the tree appropriately with clover virus.
 
 ```{r}
-#Notes on translating ref seq names to organism names:  gsub("NC_002815", "Cactus virus X_AF308158"; "NC_006059", "Zygocactus virus X_AY366208"; "NC_011659", "Schlumbergera virus X_AY366207";"NC_024458", "Pitaya virus X_JF930327"
-#for (i in 1:length(host.names)) {
- # if (host.names[i]==""){
-  #  host.names[i] <- "Host unknown"
-  #}
-#}
-
-cacti.njtree <- cacti.nj
-#cacti.njtree <- root(cacti.nj, outgroup=c(7), resolve.root=T)
-is.rooted(cacti.njtree)
+#cacti.nj <- root(cacti.nj, outgroup=c(7), resolve.root=T)
+is.rooted(cacti.nj)
 ```
 
 
+Rooting options.
 ```{r}
 #plot.phylo(ladderize(cacti.njtree), type='phylo', no.margin=F, cex=0.5, label.offset=0.0025)
-write.tree(cacti.njtree, file="cacti.njtree.nwk")
+write.tree(cacti.nj, file="cacti.njtree.nwk")
 nj.gg <- read.tree(file="cacti.njtree.nwk")
 #for (i in 1:length(nj.gg$tip.label)) {
  # nj.gg$tip.label[i] <- gsub("_", " ", x = nj.gg$tip.label[i])
@@ -103,10 +107,6 @@ nj.gg <- read.tree(file="cacti.njtree.nwk")
   
 #}
 is.rooted(nj.gg)
-```
-
-Rooting options.
-```{r}
 #find internal node number:
 MRCA(nj.gg, "D29630.1", "GQ179647")
 #ape:
@@ -117,6 +117,55 @@ nj.gg<-phytools::reroot(nj.gg, node=138, edgelabel=TRUE, position=0)
 #ggtree: (not working)
 #nj.gg <-rroot(nj.gg, outgroup= c(88:90), resolve.root=TRUE)
 ```
+Plotting tree using plot()
+```{r extract-clade}
+choose.node <- function(col,tree) {
+    o <- identify(tree)
+    nodelabels(node=o$nodes, pch = 19, col = col)
+    print(o)
+}
+
+plot(nj.gg, type="f",cex=0.5)
+
+# Not run
+# Selecting node subtending potexviruses
+choose.node("red",nj.gg)
+#Click close to a node of the tree...
+#$nodes
+#[1] 379
+
+# Selecting node subtending potexviruses
+#choose.node("green",cvx.tre)
+#Click close to a node of the tree...
+#$nodes
+#[1] 382
+
+```
+
+```{r tip-rename}
+
+tip.rename.org = function(tree,dataframe){
+   for(i in 1:length(tree$tip.label)){
+      tree$tip.label[i]<-dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)]
+   }
+tree
+}
+
+tip.rename.host = function(tree,dataframe){
+   for(i in 1:length(tree$tip.label)){
+      print(tree$tip.label[i])
+      print(dataframe$host[grep(tree$tip.label[i],dataframe$Name)])
+      print(dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)])
+      tree$tip.label[i]<-dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
+
+   }
+tree
+}
+nj.gg <- read.tree(file="cacti.njtree.nwk")
+plot(ladderize(tip.rename.host(nj.gg,cvx.metadata)), type="f",cex=0.65, align.tip.label = TRUE)
+```
+
+
 
 Create tree using ggtree. 
 ```{r}
@@ -142,7 +191,7 @@ ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
 ```
 
 Parsimony calculations.
-```{r}
+```{r eval=F, echo=F}
 #parsimony for nj tree
 cacti.nj <- NJ(dist.dna(cacti.bin))
 parsimony(tree=cacti.nj, data=aln.phy)
