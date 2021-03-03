@@ -149,15 +149,14 @@ hostinfo <- data.frame(nj.gg$tip.label)
 tip.rename.org = function(tree,dataframe){
    for(i in 1:length(tree$tip.label)){
       hostinfo[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
-      
       tree$tip.label[i]<-dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)]
-      
    }
 hostinfo
 tree
 }
 
 nj.gg <- read.tree(file="cacti.njtree.nwk")
+nj.gg <- midpoint.root(nj.gg)
 nj.gg.v1 <- tip.rename.org(nj.gg,cvx.metadata)
 
 ```
