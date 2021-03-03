@@ -171,7 +171,7 @@ ggtree(nj.gg.v1, ladderize=T, aes(), show.legend = TRUE,)  %<+% hostinfo +
   #name tip labels:
   geom_tiplab(aes(label=nj.gg.v1$tip.label[1:210]), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
-  geom_tiplab(aes(label=hostinfo$[1:210]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.1) +
+  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:210]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.1) +
    # geom_tiplab(aes(label=cvx.metadata$Name[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.2) +
     #geom_tiplab(aes(label=nj.gg$tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.3) +
   #scale
