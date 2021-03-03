@@ -143,26 +143,23 @@ choose.node("red",nj.gg)
 ```
 
 ```{r tip-rename}
-
+#create vector for host information
+hostinfo <- data.frame(nj.gg$tip.label)
+#rename tree tips and populate vector
 tip.rename.org = function(tree,dataframe){
    for(i in 1:length(tree$tip.label)){
+      hostinfo[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
+      
       tree$tip.label[i]<-dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)]
+      
    }
+hostinfo
 tree
 }
 
-tip.rename.host = function(tree,dataframe){
-   for(i in 1:length(tree$tip.label)){
-      print(tree$tip.label[i])
-      print(dataframe$host[grep(tree$tip.label[i],dataframe$Name)])
-      print(dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)])
-      tree$tip.label[i]<-dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
-
-   }
-tree
-}
 nj.gg <- read.tree(file="cacti.njtree.nwk")
-plot(ladderize(tip.rename.host(nj.gg,cvx.metadata)), type="f",cex=0.65, align.tip.label = TRUE)
+nj.gg.v1 <- tip.rename.org(nj.gg,cvx.metadata)
+
 ```
 
 
@@ -170,17 +167,17 @@ plot(ladderize(tip.rename.host(nj.gg,cvx.metadata)), type="f",cex=0.65, align.ti
 Create tree using ggtree. 
 ```{r}
 par( mar=c(1, 4, 0, 0))
-ggtree(nj.gg, ladderize=F, aes(), show.legend = TRUE,)  %<+% cvx.metadata +
+ggtree(nj.gg.v1, ladderize=T, aes(), show.legend = TRUE,)  %<+% hostinfo +
   #name tip labels:
-  geom_tiplab(aes(label=cvx.metadata$Organism[1:211]), hjust=0, offset=0, align=T, linetype = "dotted")+
+  geom_tiplab(aes(label=nj.gg.v1$tip.label[1:210]), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
-  geom_tiplab(aes(label=cvx.metadata$host[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.1) +
-    geom_tiplab(aes(label=cvx.metadata$Name[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.2) +
-    geom_tiplab(aes(label=nj.gg$tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.3) +
+  geom_tiplab(aes(label=hostinfo$[1:210]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.1) +
+   # geom_tiplab(aes(label=cvx.metadata$Name[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.2) +
+    #geom_tiplab(aes(label=nj.gg$tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.3) +
   #scale
   geom_treescale(x=0, y=60, offset=2, fontsize = 3)+
   #node labels:
-  geom_text(aes(label=node), hjust=0.1) +
+  #geom_text(aes(label=), hjust=0.1) +
   xlim(0,1.2)
 ```
 
