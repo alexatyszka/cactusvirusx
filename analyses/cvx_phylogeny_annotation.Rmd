@@ -27,7 +27,7 @@ tinytex::install_tinytex()
 
 ## Loading Libraries
 
-```{r load-libraries}
+```{r load-libraries, echo=FALSE}
 library(ggtree) # tree plotting
 library(DECIPHER)
 library(RCurl) # web page loading
@@ -96,27 +96,20 @@ is.rooted(cvx.nj)
 
 Rooting options.
 ```{r}
-#plot.phylo(ladderize(cacti.njtree), type='phylo', no.margin=F, cex=0.5, label.offset=0.0025)
+
 write.tree(cvx.nj, file="cvx.njtree.nwk")
 nj.gg <- read.tree(file="cvx.njtree.nwk")
-#for (i in 1:length(nj.gg$tip.label)) {
- # nj.gg$tip.label[i] <- gsub("_", " ", x = nj.gg$tip.label[i])
-  #nj.gg$tip.label[i] <- gsub("-", ",", x = nj.gg$tip.label[i])
-  
-#}
-is.rooted(nj.gg)
-#find internal node number:
-MRCA(nj.gg, "D29630.1", "GQ179647")
-#ape:
-nj.gg <- unroot(nj.gg)
-#phytools:
-##nj.gg<-phytools::reroot(nj.gg, node=138, edgelabel=TRUE, position=0)
 
-#ggtree: (not working)
-#nj.gg <-rroot(nj.gg, outgroup= c(88:90), resolve.root=TRUE)
+is.rooted(nj.gg)
+nj.gg <- midpoint.root(nj.gg)
+#find internal node number:
+#MRCA(nj.gg, "D29630.1", "GQ179647")
+#ape:
+#nj.gg <- unroot(nj.gg)
+
 ```
 Plotting tree using plot()
-```{r extract-clade}
+```{r extract-clade, eval=FALSE}
 choose.node <- function(col,tree) {
     o <- identify(tree)
     nodelabels(node=o$nodes, pch = 19, col = col)
@@ -146,10 +139,9 @@ hostinfo <- data.frame(nj.gg$tip.label)
 #rename tree tips and populate vector
 tip.rename.org = function(tree,dataframe){
    for(i in 1:length(tree$tip.label)){
-      hostinfo[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
+      hostinfo$nj.gg.tip.label[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
       tree$tip.label[i]<-dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)]
    }
-hostinfo
 tree
 }
 
@@ -164,11 +156,11 @@ nj.gg <- tip.rename.org(nj.gg,cvx.metadata)
 Create tree using ggtree. 
 ```{r}
 par( mar=c(1, 4, 0, 0))
-ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE,)  %<+% hostinfo +
+ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo +
   #name tip labels:
   geom_tiplab(aes(label=nj.gg$tip.label[1:211]), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
-  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.1) +
+  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.2) +
    # geom_tiplab(aes(label=cvx.metadata$Name[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.2) +
     #geom_tiplab(aes(label=nj.gg$tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.3) +
   #scale
@@ -179,13 +171,13 @@ ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE,)  %<+% hostinfo +
 ```
 
 Save the tree to folder in pdf format, if wanted:
-```{r}
-#filename = paste(gsub(":", "-", Sys.time()),"_names_hosts_nj.pdf",sep="")
-#ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
+```{r eval=F}
+filename = paste(gsub(":", "-", Sys.time()),"_names_hosts_nj.pdf",sep="")
+ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
 ```
 
 Parsimony calculations:
-```{r eval=F, echo=F}
+```{r eval=F}
 #parsimony for nj tree
 cvx.nj <- NJ(dist.dna(cvx.bin))
 parsimony(tree=cvx.nj, data=cvx.aln.phy)
@@ -195,8 +187,8 @@ cvx.nj.pratchet <- pratchet(cvx.aln.phy)
 
 Cleaning up:
 ```{r}
-unlink("cvx.aln.fasta")
-unlink("seq.metadata.csv")
-unlink("cacti.njtree.nwk")
+unlink("cvx.init.aln.fasta")
+unlink("cvx.seq.metadata.csv")
+unlink("cvx.njtree.nwk")
 ```
 
