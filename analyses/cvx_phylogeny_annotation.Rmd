@@ -180,8 +180,8 @@ ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE,)  %<+% hostinfo +
 
 Save the tree to folder in pdf format, if wanted:
 ```{r}
-filename = paste(gsub(":", "-", Sys.time()),"_names_hosts_nj.pdf",sep="")
-ggsave(alexasandbox/filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
+#filename = paste(gsub(":", "-", Sys.time()),"_names_hosts_nj.pdf",sep="")
+#ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
 ```
 
 Parsimony calculations:
