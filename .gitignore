@@ -13,13 +13,14 @@
 *.diff.tex
 *.bak
 .DS_Store
+images/.DS_Store
+data/.DS_Store
 "Icon\r"
 *Icon*
 .Rapp.history
 old/
 *.fdb_latexmk
 *.fls
-.DS_Store
 analyses/.RData
 analyses/.Rhistory
 ~$*
