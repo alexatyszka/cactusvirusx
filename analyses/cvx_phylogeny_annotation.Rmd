@@ -5,11 +5,6 @@ date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
 output:
   html_document: default
 ---
-To do:
--add more hosts
--collapse branches
--recolor based on host/virus
--rename tips
 
 > This is a one-time package installation to help get libraries likely to be missing at the start.
 
@@ -27,7 +22,7 @@ tinytex::install_tinytex()
 
 ## Loading Libraries
 
-```{r load-libraries, echo=FALSE}
+```{r load-libraries, message=FALSE}
 library(ggtree) # tree plotting
 library(DECIPHER)
 library(RCurl) # web page loading
@@ -96,20 +91,16 @@ is.rooted(cvx.nj)
 
 Rooting options.
 ```{r}
-
 write.tree(cvx.nj, file="cvx.njtree.nwk")
 nj.gg <- read.tree(file="cvx.njtree.nwk")
 
 is.rooted(nj.gg)
 nj.gg <- midpoint.root(nj.gg)
-#find internal node number:
-#MRCA(nj.gg, "D29630.1", "GQ179647")
-#ape:
-#nj.gg <- unroot(nj.gg)
-
 ```
+
+
 Plotting tree using plot()
-```{r extract-clade, eval=FALSE}
+```{r extract-clade, eval=FALSE, message=FALSE}
 choose.node <- function(col,tree) {
     o <- identify(tree)
     nodelabels(node=o$nodes, pch = 19, col = col)
@@ -151,24 +142,32 @@ nj.gg <- tip.rename.org(nj.gg,cvx.metadata)
 
 ```
 
+Collapse nodes:
+```{r}
+#find internal node numbers:
+MRCA(nj.gg, 7, 9)
 
+
+```
 
 Create tree using ggtree. 
-```{r}
-par( mar=c(1, 4, 0, 0))
-ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo +
+```{r fig.width=6}
+par( mar=c(1, 1, 0, 0))
+p <- ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo
+ggtree::collapse(p, node=135 , clade_name="Virus from Hylocereus Plant BJS") +
   #name tip labels:
   geom_tiplab(aes(label=nj.gg$tip.label[1:211]), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
-  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.2) +
-   # geom_tiplab(aes(label=cvx.metadata$Name[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.2) +
-    #geom_tiplab(aes(label=nj.gg$tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.3) +
+  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.15) +
   #scale
   geom_treescale(x=0, y=60, offset=2, fontsize = 3)+
   #node labels:
-  #geom_text(aes(label=), hjust=0.1) +
-  xlim(0,1.2)
+  geom_text(aes(label=node), hjust=0.2) +
+  #geom_hilight(node=136, fill="steelblue", alpha=.6, extend=0.5)+
+  xlim(0,0.6) 
+
 ```
+
 
 Save the tree to folder in pdf format, if wanted:
 ```{r eval=F}
