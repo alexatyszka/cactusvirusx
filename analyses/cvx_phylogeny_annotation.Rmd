@@ -38,7 +38,7 @@ library("knitr")
 Specify location of RNA sequence alignment and metadata:
 ```{r}
 metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/cvx_hostdata_v3.csv'
-aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_aln_v3.fasta'
+aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_consensus_aln.fasta'
 #Notes: These have been exported from geneious, aligned using MAFFT[KR], exported as both .fasta and as .csv for relevant columns.
 #Note: For .fasta files, U has been converted to T, and then "KT8" to "KU8" to conserve naming. 
 #KT15 ->KU15
