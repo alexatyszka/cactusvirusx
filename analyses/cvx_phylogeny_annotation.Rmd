@@ -93,8 +93,6 @@ Rooting options.
 ```{r}
 write.tree(cvx.nj, file="cvx.njtree.nwk")
 nj.gg <- read.tree(file="cvx.njtree.nwk")
-
-is.rooted(nj.gg)
 nj.gg <- midpoint.root(nj.gg)
 ```
 
@@ -153,8 +151,7 @@ MRCA(nj.gg, 7, 9)
 Create tree using ggtree. 
 ```{r fig.width=6}
 par( mar=c(1, 1, 0, 0))
-p <- ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo
-ggtree::collapse(p, node=135 , clade_name="Virus from Hylocereus Plant BJS") +
+ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
   #name tip labels:
   geom_tiplab(aes(label=nj.gg$tip.label[1:211]), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
