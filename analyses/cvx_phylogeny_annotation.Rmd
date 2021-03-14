@@ -97,7 +97,7 @@ nj.gg <- midpoint.root(nj.gg)
 ```
 
 
-Plotting tree using plot()
+Plotting tree using plot(), and choosing nodes:
 ```{r extract-clade, eval=FALSE, message=FALSE}
 choose.node <- function(col,tree) {
     o <- identify(tree)
