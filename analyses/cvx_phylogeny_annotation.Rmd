@@ -146,7 +146,7 @@ nj.gg <- tip.rename.org(nj.gg,cvx.metadata)
 Collapse nodes:
 ```{r}
 #find internal node numbers:
-MRCA(nj.gg, 7, 9)
+#MRCA(nj.gg, 7, 9)
 
 
 ```
