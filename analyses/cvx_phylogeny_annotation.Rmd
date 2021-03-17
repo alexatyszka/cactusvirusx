@@ -81,8 +81,6 @@ cvx.nj <- NJ(dist.dna(cvx.aln.bin))
 ```
 
 
->Note: figure out which organisms and hosts belong to which viruses. Then, root the tree appropriately with clover virus.
-
 ```{r}
 #cacti.nj <- root(cacti.nj, outgroup=c(7), resolve.root=T)
 is.rooted(cvx.nj)
@@ -129,9 +127,10 @@ hostinfo <- data.frame(nj.gg$tip.label)
 tip.rename.org = function(tree,dataframe){
    for(i in 1:length(tree$tip.label)){
       hostinfo$nj.gg.tip.label[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
-      print(i)
-      print(tree$tip.label[i])
-      print(dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)])
+      #uncomment these for troubleshooting:
+      #print(i)
+      #print(tree$tip.label[i])
+      #print(dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)])
       tree$tip.label[i]<-dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)]
         
    }
@@ -155,11 +154,12 @@ MRCA(nj.gg, 7, 9)
 Create tree using ggtree. 
 ```{r fig.width=6}
 par( mar=c(1, 1, 0, 0))
+L <- nj.gg$Nnode + length(nj.gg$tip.label)
 ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
   #name tip labels:
-  geom_tiplab(aes(label=nj.gg$tip.label[1:211]), hjust=0, offset=0, align=T, linetype = "dotted")+
+  geom_tiplab(aes(label=nj.gg$tip.label[1:L]), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
-  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:211]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.15) +
+  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:L]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.15) +
   #scale
   geom_treescale(x=0, y=60, offset=2, fontsize = 3)+
   #node labels:
