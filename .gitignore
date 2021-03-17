@@ -24,3 +24,6 @@ old/
 analyses/.RData
 analyses/.Rhistory
 ~$*
+analyses/cvx.init.aln.fasta
+analyses/cvx.njtree.nwk
+analyses/cvx.seq.metadata.csv
