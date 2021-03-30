@@ -16,6 +16,9 @@ BiocManager::install('DECIPHER')
 BiocManager::install("ggtree")
 BiocManager::install("phytools")
 tinytex::install_tinytex()
+install.packages('BiocManager', repos=c('https://cran.rstudio.com'), ask=FALSE)
+BiocManager::install('DECIPHER')
+
 
 
 ```
@@ -30,6 +33,7 @@ library(phangorn)
 library(phytools)
 library(ape)
 library("knitr")
+library(DECIPHER)
 ```
 
 ## Data Files and Locations
@@ -50,10 +54,34 @@ aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/ma
 
 Fetch alignment and metadata, convert alignment:
 ```{r}
+
 cvx.init.aln.fasta <- getURL(aln.fasta.loc)
 cvx.seq.metadata.csv <-getURL(metadata.loc)
 write(x=cvx.seq.metadata.csv, file='cvx.seq.metadata.csv')
 ```
+
+Alignment tools with DECIPHER.
+```{r}
+#note: fasta file without gaps has been produced by geneious 11.5 extraction of sequences and deletion of the consensus sequence 
+unal.f <- 'cvx.init.aln.fasta'
+unal.dna <- readDNAStringSet(unal.f)
+al.dan <- AlignTranslation(unal.dna)
+BrowseSeqs(al.dan, highlight=1)
+```
+```{r}
+require(ape)
+get.tree.dist = function(solcross.data,pathd8.tre)
+{	
+	for(i in 1:length(solcross.data$pollen_parent))
+	{
+		ifelse(is.na(match(solcross.data$pollen_parent[i],pathd8.tre$tip.label)) | is.na(match(solcross.data$seed_parent[i],
+		pathd8.tre$tip.label)),d[i]<-NA,
+		d[i]<-cophenetic.phylo(pathd8.tre)[solcross.data$pollen_parent[i],solcross.data$seed_parent[i]])
+	}
+	return(d)
+}
+```
+
 
 Write (save) to working directory, then read again; beware of overwriting previous files!:
 
@@ -163,7 +191,7 @@ ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
   #scale
   geom_treescale(x=0, y=60, offset=2, fontsize = 3)+
   #node labels:
-  geom_text(aes(label=node), hjust=0.2) +
+  #geom_text(aes(label=node), hjust=0.2) +
   #geom_hilight(node=136, fill="steelblue", alpha=.6, extend=0.5)+
   xlim(0,0.6) 
 
