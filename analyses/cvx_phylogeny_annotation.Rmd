@@ -42,6 +42,7 @@ library(DECIPHER)
 Specify location of RNA sequence alignment and metadata:
 ```{r}
 metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/cvx_hostdata_v3.csv'
+cvx.unaln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_consensus_extraction_unal.fasta'
 aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_consensus_aln.fasta'
 #Notes: These have been exported from geneious, aligned using MAFFT[KR], exported as both .fasta and as .csv for relevant columns.
 #Note: For .fasta files, U has been converted to T, and then "KT8" to "KU8" to conserve naming. 
@@ -56,6 +57,7 @@ Fetch alignment and metadata, convert alignment:
 ```{r}
 
 cvx.init.aln.fasta <- getURL(aln.fasta.loc)
+cvx.unaln.fasta <- getURL(cvx.unaln.fasta.loc)
 cvx.seq.metadata.csv <-getURL(metadata.loc)
 write(x=cvx.seq.metadata.csv, file='cvx.seq.metadata.csv')
 ```
@@ -63,7 +65,7 @@ write(x=cvx.seq.metadata.csv, file='cvx.seq.metadata.csv')
 Alignment tools with DECIPHER.
 ```{r}
 #note: fasta file without gaps has been produced by geneious 11.5 extraction of sequences and deletion of the consensus sequence 
-unal.f <- 'cvx.init.aln.fasta'
+unal.f <- 'cvx.unaln.fasta'
 unal.dna <- readDNAStringSet(unal.f)
 al.dan <- AlignTranslation(unal.dna)
 BrowseSeqs(al.dan, highlight=1)
