@@ -44,6 +44,7 @@ Specify location of RNA sequence alignment and metadata:
 metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/cvx_hostdata_v3.csv'
 cvx.unaln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_kr_consensus_extraction_unal.fasta'
 aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_consensus_aln.fasta'
+
 #Notes: These have been exported from geneious, aligned using MAFFT[KR], exported as both .fasta and as .csv for relevant columns.
 #Note: For .fasta files, U has been converted to T, and then "KT8" to "KU8" to conserve naming. 
 #KT15 ->KU15
@@ -82,19 +83,6 @@ unlink('cvx.unaln.fasta')
 ```
 
 
-```{r}
-require(ape)
-get.tree.dist = function(solcross.data,pathd8.tre)
-{	
-	for(i in 1:length(solcross.data$pollen_parent))
-	{
-		ifelse(is.na(match(solcross.data$pollen_parent[i],pathd8.tre$tip.label)) | is.na(match(solcross.data$seed_parent[i],
-		pathd8.tre$tip.label)),d[i]<-NA,
-		d[i]<-cophenetic.phylo(pathd8.tre)[solcross.data$pollen_parent[i],solcross.data$seed_parent[i]])
-	}
-	return(d)
-}
-```
 
 
 Write (save) to working directory, then read again; beware of overwriting previous files!:
@@ -216,6 +204,30 @@ Save the tree to folder in pdf format, if wanted:
 ```{r eval=F}
 filename = paste(gsub(":", "-", Sys.time()),"_names_hosts_nj.pdf",sep="")
 ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
+```
+
+Distance calculations, requiring list of the comparisons requested.
+```{r}
+#create example list, or use your own for specific pairs. for all combos use dist.nodes(nj.gg)
+data <- c("Virus from SRR11190799 Plant: BSJ-3", "Virus from SRR11190791 Plant: BSJ-1", "Virus from SRR11190800 Plant: BSJ-2")
+data <- c("Virus from SRR11190798 Plant: DH-3", "Virus from SRR11190801 Plant: DH-2")
+data <- c("Virus from SRR11603183 GW-peel-2", "Virus from SRR11603182 GW-peel-3")
+cross.data <- expand.grid(tip1 = data, tip2 = data)
+
+d<- c()
+get.tree.dist = function(solcross.data,pathd8.tre)
+{	
+	for(i in 1:length(solcross.data$tip1))
+	{
+		ifelse(is.na(match(solcross.data$tip1[i],pathd8.tre$tip.label)) | is.na(match(solcross.data$tip2[i],pathd8.tre$tip.label)),d[i]<-NA,
+		d[i]<-cophenetic.phylo(pathd8.tre)[solcross.data$tip1[i],solcross.data$tip2[i]])
+	}
+	return(d)
+}
+test <- get.tree.dist(cross.data,nj.gg)
+mean(test[test!=0])
+par( mar=c(2, 2, 2, 2))
+heatmap(cophenetic.phylo(nj.gg))
 ```
 
 Parsimony calculations:
