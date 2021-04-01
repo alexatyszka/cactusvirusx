@@ -77,7 +77,7 @@ Alignment tools with DECIPHER.
 unal.f <- 'cvx.unaln.fasta'
 unal.dna <- readDNAStringSet(unal.f)
 #note: error appears, "reading FASTA file cvx.unaln.fasta: ignored 361 invalid one-letter sequence codes"
-al.dan <- AlignTranslation(unal.dna)
+al.dan <- AlignSeqs(unal.dna)
 BrowseSeqs(al.dan, highlight=1)
 unlink('cvx.unaln.fasta')
 ```
@@ -212,7 +212,9 @@ Distance calculations, requiring list of the comparisons requested.
 data <- c("Virus from SRR11190799 Plant: BSJ-3", "Virus from SRR11190791 Plant: BSJ-1", "Virus from SRR11190800 Plant: BSJ-2")
 data <- c("Virus from SRR11190798 Plant: DH-3", "Virus from SRR11190801 Plant: DH-2")
 data <- c("Virus from SRR11603183 GW-peel-2", "Virus from SRR11603182 GW-peel-3")
+data <- c("Virus from 15H-03_pol_S48", "Virus from 15H3_sty_S73","Virus from 15H3__s_S50")
 cross.data <- expand.grid(tip1 = data, tip2 = data)
+cross.data <- expand.grid(tip1 = nj.gg$tip.label, tip2 = nj.gg$tip.label)
 
 d<- c()
 get.tree.dist = function(solcross.data,pathd8.tre)
@@ -225,9 +227,10 @@ get.tree.dist = function(solcross.data,pathd8.tre)
 	return(d)
 }
 test <- get.tree.dist(cross.data,nj.gg)
+test
 mean(test[test!=0])
 par( mar=c(2, 2, 2, 2))
-heatmap(cophenetic.phylo(nj.gg))
+heatmap(cophenetic.phylo(nj.gg), cexRow = 0.2, cexCol = 0.2)
 ```
 
 Parsimony calculations:
