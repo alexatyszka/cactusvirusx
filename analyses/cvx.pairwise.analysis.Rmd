@@ -47,12 +47,12 @@ cvx.metadata <- read.csv('cvx.seq.metadata.csv', stringsAsFactors = FALSE)
 
 
 ```{r tip-rename}
-#create vector for host information
-hostinfo <- data.frame(nj.gg$tip.label)
+#create vector for host information (this is to insure that the vector is the right size -- tip labels will be overwritten)
+hostinfo <- data.frame(cvx.newick.tree$tip.label)
 #rename tree tips and populate vector
 tip.rename.org = function(tree,dataframe){
    for(i in 1:length(tree$tip.label)){
-      hostinfo$nj.gg.tip.label[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
+      hostinfo$cvx.newick.tree.tip.label[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
       #uncomment these for troubleshooting:
       print(i)
       print(tree$tip.label[i])
@@ -63,9 +63,8 @@ tip.rename.org = function(tree,dataframe){
 tree
 }
 
-nj.gg <- read.tree(file="cvx.njtree.nwk")
-nj.gg <- midpoint.root(nj.gg)
-nj.gg <- tip.rename.org(nj.gg,cvx.metadata)
+nj.gg <- midpoint.root(cvx.newick.tree)
+nj.gg <- tip.rename.org(cvx.newick.tree, cvx.metadata)
 ```
 
 ```{r}
