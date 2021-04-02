@@ -18,9 +18,6 @@ BiocManager::install("phytools")
 tinytex::install_tinytex()
 install.packages('BiocManager', repos=c('https://cran.rstudio.com'), ask=FALSE)
 BiocManager::install('DECIPHER')
-
-
-
 ```
 
 ## Loading Libraries
@@ -34,6 +31,8 @@ library(phytools)
 library(ape)
 library("knitr")
 library(DECIPHER)
+library(treeio)
+
 ```
 
 ## Data Files and Locations
@@ -44,6 +43,8 @@ Specify location of RNA sequence alignment and metadata:
 metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/cvx_hostdata_v3.csv'
 cvx.unaln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_kr_consensus_extraction_unal.fasta'
 aln.fasta.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/genbank_KR_viruses_consensus_aln.fasta'
+
+
 
 #Notes: These have been exported from geneious, aligned using MAFFT[KR], exported as both .fasta and as .csv for relevant columns.
 #Note: For .fasta files, U has been converted to T, and then "KT8" to "KU8" to conserve naming. 
@@ -60,11 +61,7 @@ Fetch alignment and metadata, convert alignment:
 cvx.init.aln.fasta <- getURL(aln.fasta.loc)
 cvx.unaln.fasta <- getURL(cvx.unaln.fasta.loc)
 write(cvx.unaln.fasta, file = 'cvx.unaln.fasta')
-
-
-
 cvx.seq.metadata.csv <-getURL(metadata.loc)
-
 write(x=cvx.seq.metadata.csv, file='cvx.seq.metadata.csv')
 
 ```
