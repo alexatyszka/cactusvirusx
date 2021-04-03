@@ -38,10 +38,7 @@ cvx.newick.tree <- read.newick(tre.f)
 ```
 
 ```{r}
-metadata.loc <- 'https://raw.githubusercontent.com/pseudocrater/cactusvirusx/master/data/cvx_hostdata_v3.csv'
-cvx.seq.metadata.csv <-getURL(metadata.loc)
-write(x=cvx.seq.metadata.csv, file='cvx.seq.metadata.csv')
-cvx.metadata <- read.csv('cvx.seq.metadata.csv', stringsAsFactors = FALSE)
+cvx.metadata <- read.csv('../data/cvx_hostdata_v3.csv', stringsAsFactors = FALSE)
 ```
 
 
@@ -63,8 +60,8 @@ tip.rename.org = function(tree,dataframe){
 tree
 }
 
-nj.gg <- midpoint.root(cvx.newick.tree)
-nj.gg <- tip.rename.org(cvx.newick.tree, cvx.metadata)
+cvx.newick.tree <- midpoint.root(cvx.newick.tree)
+cvx.newick.tree <- tip.rename.org(cvx.newick.tree, cvx.metadata)
 ```
 
 ```{r}
@@ -74,7 +71,7 @@ data <- c("Virus from SRR11190798 Plant: DH-3", "Virus from SRR11190801 Plant: D
 data <- c("Virus from SRR11603183 GW-peel-2", "Virus from SRR11603182 GW-peel-3")
 data <- c("Virus from 15H-03_pol_S48", "Virus from 15H3_sty_S73","Virus from 15H3__s_S50")
 cross.data <- expand.grid(tip1 = data, tip2 = data)
-cross.data <- expand.grid(tip1 = nj.gg$tip.label, tip2 = nj.gg$tip.label)
+cross.data <- expand.grid(tip1 = cvx.newick.tree$tip.label, tip2 = cvx.newick.tree$tip.label)
 
 d<- c()
 get.tree.dist = function(solcross.data,pathd8.tre)
@@ -86,9 +83,9 @@ get.tree.dist = function(solcross.data,pathd8.tre)
 	}
 	return(d)
 }
-test <- get.tree.dist(cross.data,nj.gg)
+test <- get.tree.dist(cross.data,cvx.newick.tree)
 test
 mean(test[test!=0])
 par( mar=c(2, 2, 2, 2))
-heatmap(cophenetic.phylo(nj.gg), cexRow = 0.2, cexCol = 0.2)
+heatmap(cophenetic.phylo(cvx.newick.tree), cexRow = 0.4, cexCol = 0.4)
 ```
