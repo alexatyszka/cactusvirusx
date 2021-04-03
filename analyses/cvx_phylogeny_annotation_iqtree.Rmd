@@ -1,0 +1,95 @@
+---
+title: "Untitled"
+author: "A"
+date: "4/3/2021"
+output: html_document
+---
+
+
+> This is a one-time package installation to help get libraries likely to be missing at the start.
+
+```{r eval=FALSE}
+knitr::opts_chunk$set(error = TRUE)
+#install needed packages
+install.packages('BiocManager')# This option gave B errors; repos=c('https://cran.rstudio.com'), ask=F)
+BiocManager::install('DECIPHER')
+BiocManager::install("ggtree")
+BiocManager::install("phytools")
+tinytex::install_tinytex()
+install.packages('BiocManager', repos=c('https://cran.rstudio.com'), ask=FALSE)
+BiocManager::install('DECIPHER')
+```
+
+## Loading Libraries
+
+```{r load-libraries, message=FALSE}
+library(ggtree) # tree plotting
+library(DECIPHER)
+library(RCurl) # web page loading
+library(phangorn)
+library(phytools)
+library(ape)
+library("knitr")
+library(DECIPHER)
+library(treeio)
+
+```
+Fetch tree and metadata:
+```{r}
+
+cvx.metadata <- read.csv('../data/cvx_hostdata_v3.csv', stringsAsFactors = FALSE)
+tre.f  <- "../data/iqtree-output/genbank_kr_consensus_extraction_al_trimmed.fasta.newick"
+cvx.newick.tree <- read.newick(tre.f)
+
+```
+Rename tips by comparing metadata file to $tip.names.
+```{r tip-rename}
+#create vector for host information
+nj.gg <- reroot(cvx.newick.tree, node.number = 114)
+hostinfo <- c()
+hostinfo <- data.frame(nj.gg$tip.label)
+#rename tree tips and populate vector
+tip.rename.org = function(tree,dataframe){
+   for(i in 1:length(tree$tip.label)){
+      hostinfo$nj.gg.tip.label[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
+      #uncomment these for troubleshooting:
+      print(i)
+      print(tree$tip.label[i])
+      print(dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)])
+      tree$tip.label[i]<-dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)]
+        
+   }
+tree
+}
+
+#find internal node numbers based on tip numbers:
+#MRCA(nj.gg, 7, 9)
+nj.gg <- tip.rename.org(nj.gg,cvx.metadata)
+
+
+```
+
+Create image using ggtree. 
+```{r fig.width=6, echo=F}
+par( mar=c(1, 1, 0, 0))
+L <- nj.gg$Nnode + length(nj.gg$tip.label)
+ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
+  #name tip labels:
+  geom_tiplab(aes(label=nj.gg$tip.label[1:L]), hjust=0, offset=0, align=T, linetype = "dotted")+
+  #host tip labels:
+  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:L]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.3) +
+  #scale
+  geom_treescale(x=0, y=60, fontsize = 3) +
+  #node labels:
+  geom_text2(aes(subset = !isTip, label=label, hjust=-0.5)) +
+  #geom_hilight(node=136, fill="steelblue", alpha=.6, extend=0.5)+
+  xlim(0,2) 
+
+```
+
+
+Save the tree to folder in pdf format, if desired:
+```{r eval=F}
+filename = paste(gsub(":", "-", Sys.time()),"_bootstrap_tree.pdf",sep="")
+ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
+```
