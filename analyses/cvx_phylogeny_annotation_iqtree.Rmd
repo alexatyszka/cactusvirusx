@@ -53,20 +53,45 @@ tip.rename.org = function(tree,dataframe){
    for(i in 1:length(tree$tip.label)){
       hostinfo$nj.gg.tip.label[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
       #uncomment these for troubleshooting:
-      print(i)
-      print(tree$tip.label[i])
-      print(dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)])
+      #print(i)
+      #print(tree$tip.label[i])
+      #print(dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)])
       tree$tip.label[i]<-dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)]
         
    }
 tree
 }
-
-#find internal node numbers based on tip numbers:
-#MRCA(nj.gg, 7, 9)
+```
+Use renaming function:
+```{r tip-rename}
 nj.gg <- tip.rename.org(nj.gg,cvx.metadata)
+```
+Use plotted tree to select clade for pairwise analysis.
+```{r}
+plot.new()
+plot(nj.gg,cex=0.25)
+tips.store <- identify(nj.gg, nodes = TRUE, tips = TRUE,labels = FALSE, quiet = FALSE)$tips
+tips.cross <- c()
+for (i in 1:length(tips.store)){
+  tips.cross[i] <- nj.gg$tip.label[tips.store[i]]
+}
+cross.data <- expand.grid(tip1 = tips.cross, tip2 = tips.cross)
+```
 
-
+Get distances.
+```{r}
+d<- c()
+get.tree.dist = function(solcross.data,pathd8.tre)
+{	
+	for(i in 1:length(solcross.data$tip1))
+	{
+		ifelse(is.na(match(solcross.data$tip1[i],pathd8.tre$tip.label)) | is.na(match(solcross.data$tip2[i],pathd8.tre$tip.label)),d[i]<-NA,
+		d[i]<-cophenetic.phylo(pathd8.tre)[solcross.data$tip1[i],solcross.data$tip2[i]])
+	}
+	return(d)
+}
+pairwise.dist <- get.tree.dist(cross.data,nj.gg)
+max(pairwise.dist[pairwise.dist!=0])
 ```
 
 Create image using ggtree. 
