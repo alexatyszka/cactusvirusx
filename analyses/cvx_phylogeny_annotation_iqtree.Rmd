@@ -1,7 +1,7 @@
 ---
-title: "Untitled"
+title: "Annotation of IQTree tree from KR"
 author: "A"
-date: "4/3/2021"
+date: "4/5/2021"
 output: html_document
 ---
 
@@ -63,14 +63,16 @@ tree
 }
 ```
 Use renaming function:
-```{r tip-rename}
+```{r tip-rename-org}
 nj.gg <- tip.rename.org(nj.gg,cvx.metadata)
 ```
 Use plotted tree to select clade for pairwise analysis.
 ```{r}
 plot.new()
+nj.gg <- ladderize(nj.gg, right=FALSE)
 plot(nj.gg,cex=0.25)
-tips.store <- identify(nj.gg, nodes = TRUE, tips = TRUE,labels = FALSE, quiet = FALSE)$tips
+#tips.store <- identify(nj.gg, nodes = TRUE, tips = TRUE,labels = FALSE, quiet = FALSE)$tips
+tips.store <- c(1,2,3,4,5,6,7,8,9,10,43,44,45,46,47,48,49,50)
 tips.cross <- c()
 for (i in 1:length(tips.store)){
   tips.cross[i] <- nj.gg$tip.label[tips.store[i]]

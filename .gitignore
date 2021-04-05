@@ -27,3 +27,4 @@ analyses/.Rhistory
 analyses/cvx.init.aln.fasta
 analyses/cvx.njtree.nwk
 analyses/cvx.seq.metadata.csv
+data/viral_translation_table_updated_names.csv
