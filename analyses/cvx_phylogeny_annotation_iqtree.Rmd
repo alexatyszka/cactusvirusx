@@ -71,10 +71,11 @@ Use plotted tree to select clade for pairwise analysis.
 plot.new()
 nj.gg <- ladderize(nj.gg, right=FALSE)
 plot(nj.gg,cex=0.25)
-#tips.store <- identify(nj.gg, nodes = TRUE, tips = TRUE,labels = FALSE, quiet = FALSE)$tips
-tips.store <- c(1,2,3,4,5,6,7,8,9,10,43,44,45,46,47,48,49,50)
+tips.store <- identify(nj.gg, nodes = TRUE, tips = TRUE,labels = FALSE, quiet = FALSE)$tips
+
 tips.cross <- c()
 for (i in 1:length(tips.store)){
+  print(nj.gg$tip.label[tips.store[i]])
   tips.cross[i] <- nj.gg$tip.label[tips.store[i]]
 }
 cross.data <- expand.grid(tip1 = tips.cross, tip2 = tips.cross)

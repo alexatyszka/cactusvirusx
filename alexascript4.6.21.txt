@@ -1,0 +1,34 @@
+Alexa's 4/6 talk script
+{Slide 1}
+Hello everyone, thanks for coming to this presentation. My name is Alexa Tyszka and I'll be talking about Cactus Virus X today, which is the virus I've been studying for the past two years. Today we will be covering its transmission, infection, and phylogeny. 
+{Slide 2}
+Acknowledgments: 
+Before we start, I need to thank Dr. Boris Igic, my advisor, who has so graciously been guiding me through the process of this research. I'd also like to thank his graduate student Karolis Ramanauskas for his continued support and advice on my code.
+{Slide 3}
+You may have heard of Christmas, or Easter, cacti, or seen them, or maybe you even own some. They are members of the genus Schlumbergera, and our lab studies have focused on a population of Schlumbergera truncata, which Dr. Igic has been studying for a separate project. These are both Schlumbergera truncata plants, but the individual on the right, named H6 is one of our "lab cacti", and this plant has some physical differences from the one on the left, most notably that it's wilting and it has really red stems. This plant, when sampled, had high levels of a virus called Cactus Virus X.
+{Slide 4}
+Other cacti that are commonly infected with CVX include some really important crop plants, shown here. You might have eaten some of these, or seen them at the store. There's some dragonfruit, also known as the genus Hylocereus, cactus pads, and prickly pear fruit, which are both in the genus Opuntia, and I've also included the live Schlumbergera plants being sold as houseplants.
+{Slide 5}
+We know very little about the transmission of CVX, or how it might jump from plant to plant. We also don't know why the virus infects some plants worse than others -- we have found CVX in cacti that look otherwise normal, so these can potentially act as asymptomatic carriers of the virus. 
+We are also trying to figure out the relationship between CVX and other plant viruses. 
+{Slide 6]
+Here is the phylogeny that I have assembled based on 1) Sequences from publicly available databases of viruses, 2) Publicly available plant samples that incidentally contain CVX -- the publishers of the data didn't even know their plants were infected!, and 3) Samples from our own lab cacti, like H6, who you met earlier. It's hard to read right now, so let's zoom in on some spots that I hope will demonstrate some of the troubles with viral taxonomy.
+{Slide 7}
+{Slide 8}
+Here we can see the relationships between the viruses we have right now, and on the right I have listed the host plants for each virus. These viruses, when we read the assigned names, all seem to be the same as "Cactus Virus X", but this raises the question: what is Cactus Virus X? Of course, it infects some cacti, but the hosts here are a small subset of cacti within the larger order Caryophyllales. The name is based on an old genus, Zygocactus, which has been reclassified to Schlumbergera. The name CVX has stuck around, but all originally reported strains of CVX have been renamed. Further, this larger group on top seems to infect both Hylocereus and Schlumbergera, while the lower group seems to infect only Hylocereus.
+{Slide 9}
+Let's go back to Zygocactus here.
+{Slide 10} 
+Although it seems straightforward to name these viruses Zygocactus Virus X, as I said before, the genus Zygocactus has been reclassified, so all Zygocactus species have since become Schlumbergera. And even though the virus supposedly infects Schlumbergera, we see some Hylocereus hosts in there regardless. I am hoping you can see where the issues arise here: as we gain more sequencing data, the original names make less sense.
+{Slide 11}
+What can we do with this information?
+Viral phylogeny will inform us about its host specificity.
+We can avoid making naming confusing to biologists, virologists, and farmers.
+Phylogeny (roughly tripled) guides our taxonomic recommendations. 
+We can consider transmission events and symptomatic/asymptomatic differences.
+How do we deal with the infected plants when we don't even know that they are infected? Because these plants can be such important crops, greenhouses should dispose of infected plants, but first they need to know how to reduce transmission, and which plants are infected. We can make recommendations for these growers in the future using this information.
+{Slide 12}
+That concludes my discussion of cactus virus x. I hope you have learned some interesting information about a virus that infects cacti you might see at the greenhouse, or in a fruit bowl. If there are any questions I would be happy to take them now. Thank you for listening.
+
+
+
