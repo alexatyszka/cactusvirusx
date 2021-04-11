@@ -72,7 +72,7 @@ plot.new()
 nj.gg <- ladderize(nj.gg, right=FALSE)
 plot(nj.gg,cex=0.25)
 tips.store <- identify(nj.gg, nodes = TRUE, tips = TRUE,labels = FALSE, quiet = FALSE)$tips
-
+#optional tip selection here, otherwise use tip numbers of desired clade
 tips.cross <- c()
 for (i in 1:length(tips.store)){
   print(nj.gg$tip.label[tips.store[i]])
@@ -95,6 +95,8 @@ get.tree.dist = function(solcross.data,pathd8.tre)
 }
 pairwise.dist <- get.tree.dist(cross.data,nj.gg)
 max(pairwise.dist[pairwise.dist!=0])
+dist.nodes(nj.gg)
+#kr look here for bugs please
 ```
 
 Create image using ggtree. 
