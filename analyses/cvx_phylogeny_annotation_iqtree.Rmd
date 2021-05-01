@@ -123,3 +123,4 @@ Save the tree to folder in pdf format, if desired:
 filename = paste(gsub(":", "-", Sys.time()),"_bootstrap_tree.pdf",sep="")
 ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
 ```
+

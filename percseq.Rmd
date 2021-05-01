@@ -1,0 +1,41 @@
+---
+title: "Untitled"
+author: "a"
+date: "4/28/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#install needed packages
+install.packages('BiocManager')# This option gave B errors; repos=c('https://cran.rstudio.com'), ask=F)
+BiocManager::install('DECIPHER')
+BiocManager::install("ggtree")
+BiocManager::install("phytools")
+install.packages('BiocManager', repos=c('https://cran.rstudio.com'), ask=FALSE)
+BiocManager::install('DECIPHER')
+```
+
+```{r pressure, echo=FALSE}
+library(ggtree) # tree plotting
+library(DECIPHER)
+library(RCurl) # web page loading
+library(phangorn)
+library(phytools)
+library(ape)
+library("knitr")
+library(DECIPHER)
+library(treeio)
+```
+
+
+```{r pressure, echo=FALSE}
+##percent sequence identity test
+unal.f <- '../data/genbank_kr_consensus_extraction_unal.fasta'
+al.f <- '../data/genbank_kr_consensus_extraction_al_trimmed.fasta'
+unal.dna <- readDNAStringSet(unal.f)
+aligned.cvx.phydat <- read.phyDat(aligned.cvx.fasta, format='fasta', type='DNA')
+aligned.cvx.bin <- as.DNAbin(aligned.cvx.phydat)
+dist.matrix <- dist.dna(, model = "raw")
+```
+
