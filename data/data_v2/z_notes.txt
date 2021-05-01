@@ -1,0 +1,7 @@
+2021-04-30 - KR - The Geneious backup in this directory does not contain mapped reads beacause of the large archive file size. If need be, full backup can be found here:
+
+https://www.dropbox.com/s/ctqi68d06or0ztr/2021-04-30%20-%20CVX%20Data%20v2.geneious?dl=0
+
+The names of the FASTA files are identical to the document names in the Geneious path:
+
+"CVX Data v2" / "2 - KR and Alexa Merged" / "2 - Merged Set Aligned"
