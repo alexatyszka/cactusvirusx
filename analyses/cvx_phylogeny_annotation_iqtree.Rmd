@@ -37,8 +37,8 @@ library(treeio)
 Fetch tree and metadata:
 ```{r}
 
-cvx.metadata <- read.csv('../data/cvx_hostdata_v3.csv', stringsAsFactors = FALSE)
-tre.f  <- "../data/iqtree-output/genbank_kr_consensus_extraction_al_trimmed.fasta.newick"
+cvx.metadata <- read.csv('../data/data_v1/cvx_hostdata_v3.csv', stringsAsFactors = FALSE)
+tre.f  <- "../data/data_v1/iqtree-output/genbank_kr_consensus_extraction_al_trimmed.fasta.newick"
 cvx.newick.tree <- read.newick(tre.f)
 
 ```
