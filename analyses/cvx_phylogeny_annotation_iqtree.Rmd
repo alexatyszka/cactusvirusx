@@ -42,6 +42,8 @@ tre.f  <- "../data/data_v1/iqtree-output/genbank_kr_consensus_extraction_al_trim
 cvx.newick.tree <- read.newick(tre.f)
 
 ```
+
+
 Rename tips by comparing metadata file to $tip.names.
 ```{r tip-rename}
 #create vector for host information
@@ -81,29 +83,29 @@ for (i in 1:length(tips.store)){
 cross.data <- expand.grid(tip1 = tips.cross, tip2 = tips.cross)
 ```
 
-Get distances.
 ```{r}
-d<- c()
-get.tree.dist = function(solcross.data,pathd8.tre)
-{	
-	for(i in 1:length(solcross.data$tip1))
-	{
-		ifelse(is.na(match(solcross.data$tip1[i],pathd8.tre$tip.label)) | is.na(match(solcross.data$tip2[i],pathd8.tre$tip.label)),d[i]<-NA,
-		d[i]<-cophenetic.phylo(pathd8.tre)[solcross.data$tip1[i],solcross.data$tip2[i]])
-	}
-	return(d)
-}
-pairwise.dist <- get.tree.dist(cross.data,nj.gg)
-max(pairwise.dist[pairwise.dist!=0])
-dist.nodes(nj.gg)
-#kr look here for bugs please
+nj.gg <- groupClade(nj.gg, c(72,89,93,105,98,115))
+cls <- list(c1=c("Cactus virus X: AF308158.2","SRR11190795 Plant: FR-3 NC_002815", "SRR11603184 GW-peel-1 NC_002815" ,"Plant DH-consensus 2 (2)","Plant GW-consensus 2 (2)","Plant BSJ-consensus 1 (3)" ,"15H5P__p_S54"  ,"SF19-1_sty_S45" ,"Plant 15H4,15H6-consensus(5)","15H3-consensus (3)","SRR11190793 Plant: BR-2 NC_002815","Plant RR-consensus 3 (5)","Cactus virus X: LC128411.1","Cactus virus X: KM365479.1","SRR11190796 Plant: FR-2 NC_002815", "SRR11190797 Plant: FR-1 NC_002815","SRR11190802 Plant: DH-1 NC_002815","SRR11190792 Plant: BR-3 NC_002815"),
+            c2=c("Cactus virus X: JF937699.1", "Cactus virus X: SCM51431" ,"Cactus virus X: KM288847.1" ,"Cactus virus X: KM288846.1"),
+            c3=c("Zygocactus virus X: Strain B1","Zygocactus virus X: KM288844.1_1","Zygocactus virus X-consensus (4)", "Plant RR-consensus 1 (5)","Plant DH,FR-consensus (5)"),
+           # c4=c("Zygocactus virus X: KM288845.1_1"),
+            c5=c("SRR11190795 Plant: FR-3 NC_024458","SRR11190801 Plant: DH-2 NC_024458","Pitaya virus X","Plant DH-consensus 3 (2)"  ,"SRR11603184 GW-peel-1 NC_024458","Plant GW-consensus 1 (2)"     ,"Plant BSJ-consensus 2 (3)","Plant BR-consensus (2)","Plant FR-consensus 2 (2)" , "Plant RR-consensus 2 (5)","Mytcor virus 1"),
+c6=c("Schlumbergera virus X: Strain K11","Schlumbergera virus X: KP090203"  ,"SRR11190802 Plant: DH-1 NC_011659","Plant DH-consensus 1 (2)","Plant FR-consensus 1 (3)","SRR11603184 GW-peel-1 NC_011659"  ,"Plant RR-GW-consensus-3","Schlumbergera virus X: KU854929"  ),
+c7=c("Opuntia virus: Strain CC10","Opuntia virus X: KU854931", "Opuntia virus X: KY348771")
+  
+)
+
 ```
 
+
 Create image using ggtree. 
+
 ```{r fig.width=6, echo=F}
 par( mar=c(1, 1, 0, 0))
 L <- nj.gg$Nnode + length(nj.gg$tip.label)
-ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
+ggtree(nj.gg, ladderize=T, aes(color=group), show.legend = FALSE, size=0.2)  %<+% hostinfo+
+  theme(legend.position='none')+
+  scale_color_manual(values=c("black","tomato", "royalblue", "chocolate","darkorchid4", "seagreen", "steelblue4")) +
   #name tip labels:
   geom_tiplab(aes(label=nj.gg$tip.label[1:L]), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
@@ -113,7 +115,16 @@ ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
   #node labels:
   geom_text2(aes(subset = !isTip, label=label, hjust=-0.5)) +
   #geom_hilight(node=136, fill="steelblue", alpha=.6, extend=0.5)+
-  xlim(0,2) 
+  xlim(0,2.2) +
+#CLADE LABELS
+geom_cladelabel(node=72, label="CVX Variant A", align=TRUE,  offset = .45, color='tomato') +
+    geom_cladelabel(node=89, label="CVX Variant B", align=TRUE, offset = .45, color='royalblue') +
+    geom_cladelabel(node=93, label="ZyVX Variant B1", align=TRUE, offset = .55, color='chocolate') +
+      geom_strip("Zygocactus virus X: KM288845.1_1", "Zygocactus virus X: KM288845.1_1", label="ZyVX Variant A", align=TRUE, offset = .46, barsize=2, color='plum') +
+      geom_cladelabel(node=105, label="Pitaya Virus X", align=TRUE, offset = .45, color='darkorchid4') +
+      geom_cladelabel(node=98, label="Schlumbergera Virus X", align=TRUE, offset = .45, color='seagreen') +
+      geom_cladelabel(node=115, label="Opuntia Virus X", align=TRUE,  offset = .45, color='steelblue4') +
+  ggplot2::annotate("text", 0.2, 60.4, label="Substitutions per site")
 
 ```
 

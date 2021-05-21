@@ -1,5 +1,4 @@
 library(ggtree) # tree plotting
-library(RCurl) # web page loading
 library(phangorn)
 library(phytools)
 library(ape)
@@ -14,4 +13,6 @@ aligned.cvx.phydat <- read.phyDat(al.fCP, format='fasta', type='DNA')
 aligned.cvx.bin <- as.DNAbin(aligned.cvx.phydat)
 dist.matrixCP <- dist.dna(aligned.cvx.bin, model = "raw", as.matrix=TRUE)
 write.csv(dist.matrixCP, file="distmatrixCP.csv")
+
+
 
