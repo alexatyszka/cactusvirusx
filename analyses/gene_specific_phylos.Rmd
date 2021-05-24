@@ -25,7 +25,6 @@ BiocManager::install('DECIPHER')
 ```{r load-libraries, message=FALSE}
 library(ggtree) # tree plotting
 library(DECIPHER)
-library(RCurl) # web page loading
 library(phangorn)
 library(phytools)
 library(ape)
@@ -36,10 +35,14 @@ library(treeio)
 ```
 Fetch tree and metadata:
 ```{r}
-
-cvx.metadata <- read.csv('../data/data_v1/cvx_hostdata_v3.csv', stringsAsFactors = FALSE)
-tre.f  <- "../data/data_v1/iqtree-output/genbank_kr_consensus_extraction_al_trimmed.fasta.newick"
-cvx.newick.tree <- read.newick(tre.f)
+setwd('/Users/alexa/Desktop/cactusvirusx/')
+accesslist <- c("/Users/alexa/Desktop/cactusvirusx/data/data_v3/5_CP.fasta",
+                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/4_TGB3.fasta",
+                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/3_TGB2.fasta",
+                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/2_TGB1.fasta",
+                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/1_RdRp.fasta",
+                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/0_full-aln.fasta")
+al.fCP <- '/Users/alexa/Desktop/cactusvirusx/data/data_v3/5_CP.fasta'
 
 ```
 
