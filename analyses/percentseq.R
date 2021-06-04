@@ -10,15 +10,15 @@ library(treeio)
 ##Set up paths for file access later
 setwd('/Users/alexa/Desktop/cactusvirusx/')
 accesslist <- c(
-  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/5_CP_nostop.fasta",
+  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/5_CP.fasta",
   "/Users/alexa/Desktop/cactusvirusx/data/data_v3/4_TGB3.fasta",
-  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/3_TGB2_nostop.fasta",
+  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/3_TGB2.fasta",
   "/Users/alexa/Desktop/cactusvirusx/data/data_v3/2_TGB1.fasta",
-  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/1_RdRp_nostop.fasta",
+  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/1_RdRp.fasta",
                 "/Users/alexa/Desktop/cactusvirusx/data/data_v3/0_full-aln.fasta")
 
 
-#Renaming fasta function - still needs work
+#Renaming fasta function
 metadatapath <- "/Users/alexa/Desktop/cactusvirusx/data/data_v1/cvx_hostdata_v3.csv"
 md <- read.csv(metadatapath, stringsAsFactors = FALSE)
 
@@ -34,7 +34,7 @@ cvxrename = function(filepath, name) {
 }
 
 #Run this renaming for all ORFs and full genome.
-names <-c("5_CP_nostop_names.fasta", "4_TGB3_names.fasta", "3_TGB2_nostop_names.fasta", "2_TGB1_names.fasta","1_RdRp_nostop_names.fasta", "0_full-aln_names.fasta")
+names <-c("5_CP_names.fasta", "4_TGB3_names.fasta", "3_TGB2_names.fasta", "2_TGB1_names.fasta","1_RdRp_names.fasta", "0_full-aln_names.fasta")
 for (i in (1:length(names))) {
   cvxrename(accesslist[i], names[i])
 }
@@ -45,10 +45,19 @@ aligned.cvx.bin <- as.DNAbin(aligned.cvx.phydat)
 dist.matrix <- dist.dna(aligned.cvx.bin, model = "raw", as.matrix=TRUE)
 
   write.csv(dist.matrix, file=name)
-print(filepath)
 }
 #Run this for all ORFS and full genome.
-for (i in (1:length(c("5_CP_perseq.csv", "4_TGB3_perseq.csv", "3_TGB2_perseq.csv", "2_TGB1_perseq.csv","1_RdRp_perseq.csv")))) {
-  
+accesslist <- c(
+  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/5_CP_names.fasta",
+  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/4_TGB3_names.fasta",
+  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/3_TGB2_names.fasta",
+  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/2_TGB1_names.fasta",
+  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/1_RdRp_names.fasta",
+  "/Users/alexa/Desktop/cactusvirusx/data/data_v3/0_full-aln_names.fasta")
+
+
+namesper <- c("5_CP_perseq.csv", "4_TGB3_perseq.csv", "3_TGB2_perseq.csv", "2_TGB1_perseq.csv","1_RdRp_perseq.csv")
+for (i in (1:length(namesper))) {
+  perc.seq(accesslist[i], namesper[i])
 }
 
