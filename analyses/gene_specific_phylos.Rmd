@@ -1,0 +1,139 @@
+---
+title: "Annotation of IQTree exports for CVX genes"
+author: "A.T."
+date: "5/20/2021"
+output: html_document
+---
+#This will be edited soon. First, the trees themselves will be made.
+
+> This is a one-time package installation to help get libraries likely to be missing at the start.
+
+```{r eval=FALSE}
+knitr::opts_chunk$set(error = TRUE)
+#install needed packages
+install.packages('BiocManager')# This option gave B errors; repos=c('https://cran.rstudio.com'), ask=F)
+BiocManager::install('DECIPHER')
+BiocManager::install("ggtree")
+BiocManager::install("phytools")
+tinytex::install_tinytex()
+install.packages('BiocManager', repos=c('https://cran.rstudio.com'), ask=FALSE)
+BiocManager::install('DECIPHER')
+```
+
+## Loading Libraries
+
+```{r load-libraries, message=FALSE}
+library(ggtree) # tree plotting
+library(DECIPHER)
+library(phangorn)
+library(phytools)
+library(ape)
+library("knitr")
+library(DECIPHER)
+library(treeio)
+
+```
+Set working directory.
+```{r}
+setwd('/Users/alexa/Desktop/cactusvirusx/')
+```
+
+Rename main metadata file to reflect tip groupings.
+```{r}
+md <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v1/cvx_hostdata_v4.csv', stringsAsFactors = FALSE)
+tre.loc  <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_0_full-aln_names/0_full-aln_names.fasta.nwk"
+nj <- read.newick(tre.loc)
+nj.gg <- reroot(nj, node.number = 114)
+plot.new()
+nj.gg <- ladderize(nj.gg, right=FALSE)
+plot(nj.gg,cex=0.25)
+tips.store <- identify(nj.gg, nodes = TRUE, tips = TRUE,labels = TRUE, quiet = FALSE)$tips
+#grep(pattern, location)
+#cat(paste(tips.store, collapse="\", \""))
+#CVX Var A
+tips.store <- c("SRR11190795_Plant_FR-3_NC_002815", "SRR11603183_GW-peel-2_NC_002815", "SRR11603184_GW-peel-1_NC_002815", "SRR11190801_Plant_DH-2_NC_002815", "SRR11190798_Plant_DH-3_NC_002815", "SRR11190799_Plant_BSJ-3_NC_002815", "SRR11190800_Plant_BSJ-2_NC_002815", "SRR11190791_Plant_BSJ-1_NC_002815", "SRR11603182_GW-peel-3_NC_002815", "SRR11190802_Plant_DH-1_NC_002815", "SRR11190797_Plant_FR-1_NC_002815", "SRR11190796_Plant_FR-2_NC_002815", "Schlumbergera_truncata_19JSF_sty__NC_002815", "Schlumbergera_truncata_15H06__cons", "Schlumbergera_truncata_15H04__cons", "Schlumbergera_truncata_15H03__cons", "SRR11603189_RR-peel-3_NC_002815", "SRR11603190_RR-peel-2_NC_002815", "SRR11603186_RR-pulp-3_NC_002815", "SRR11603191_RR-peel-1_NC_002815", "Cactus_virus_X_LC128411.1", "SRR11603187_RR-pulp-2_NC_002815", "SRR11190792_Plant_BR-3_NC_002815", "SRR11190793_Plant_BR-2_NC_002815", "Cactus_virus_X_AF308158.2", "Cactus_virus_X_KM365479.1")
+for(i in 1:length(tips.store)){
+  md$Clade[grep(tips.store[i],md$Organism)] <- "Cactus Virus X Variant A"
+}
+
+#CVX Var B
+tips.store <- c("Cactus virus X: JF937699.1", "Cactus virus X: SCM51431", "Cactus virus X: KM288847.1", "Cactus virus X: KM288846.1")
+for(i in 1:length(tips.store)){
+  md$Clade[grep(tips.store[i],md$Organism)] <- "Cactus Virus X Variant B"
+}
+write.csv(md, "test.csv")
+```
+
+
+Load csv info.
+```{r}
+
+rdrp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/1_RdRp_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
+```
+Select specific information by clade designation within metadata file.
+```{r clade-search}
+#grep(,rownames(rdrp))
+#Given clade name, returns indices of associated pairwise distance values within matrix.
+rdrp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/1_RdRp_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
+cladesearch <- function (cladename){
+  rownam <- md$Organism[grep(cladename, md$Clade)]
+  #change metadata organism names to match csv format
+  rownam <- gsub(" ", "_", rownam)
+  rownam <- gsub(":", "_", rownam)
+  num <<- c()
+  #Note: Schlumbergera samples from gene specific ORF fastas have been renamed, which has been reflected in the metadata csv file.
+  for(i in 1:length(rownam)){
+       num[i] <<- grep(rownam[i], rownames(rdrp))
+      
+  }
+  num
+}
+cva <- cladesearch("Cactus Virus X Variant A")
+cva <- sort(unique(cva))
+
+```
+Create table using `knitr::kable`.
+```{r}
+lnames <- c("Cactus Virus X Variant A", "Cactus Virus X Variant B")
+#matrix selection: matrix[rows, columns]
+rdrpmax <-c()
+rdrpmin <-
+rdrpavg <- 
+sumstats <- list(lnames, )
+```
+
+Store values in table.
+
+
+
+Load phylogenies:
+```{r}
+tre.f  <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_1_RdRp_names/1_RdRp_names.fasta.nwk"
+newick.tree.1 <- read.newick(tre.f)
+```
+
+Create image using ggtree. 
+```{r fig.width=6, echo=F}
+par( mar=c(1, 1, 0, 0))
+L <- nj.gg$Nnode + length(nj.gg$tip.label)
+ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
+  #name tip labels:
+  geom_tiplab(aes(label=nj.gg$tip.label[1:L]), hjust=0, offset=0, align=T, linetype = "dotted")+
+  #host tip labels:
+  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:L]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.3) +
+  #scale
+  geom_treescale(x=0, y=60, fontsize = 3) +
+  #node labels:
+  geom_text2(aes(subset = !isTip, label=label, hjust=-0.5)) +
+  #geom_hilight(node=136, fill="steelblue", alpha=.6, extend=0.5)+
+  xlim(0,2) 
+
+```
+
+
+Save the tree to folder in pdf format, if desired:
+```{r eval=F}
+filename = paste(gsub(":", "-", Sys.time()),"_bootstrap_tree.pdf",sep="")
+ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
+```
+
