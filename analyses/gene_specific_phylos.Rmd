@@ -75,6 +75,7 @@ Select specific information by clade designation within metadata file.
 #grep(,rownames(rdrp))
 #Given clade name, returns indices of associated pairwise distance values within matrix.
 rdrp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/1_RdRp_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
+cp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/1_RdRp_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
 cladesearch <- function (cladename){
   rownam <- md$Organism[grep(cladename, md$Clade)]
   #change metadata organism names to match csv format
@@ -91,19 +92,27 @@ cladesearch <- function (cladename){
 cva <- cladesearch("Cactus Virus X Variant A")
 cva <- sort(unique(cva))
 
+cvafirst <- cva[1]
+cvalast <-tail(cva, n=1)
+
+rdrpmaxcva <-c(max(rdrp[cvafirst:cvalast,cvafirst:cvalast]))
+rdrpavgcva <- c(mean(rowMeans(rdrp[cvafirst:cvalast,cvafirst:cvalast])))
+
 ```
-Create table using `knitr::kable`.
+Fetch values for table.
 ```{r}
-lnames <- c("Cactus Virus X Variant A", "Cactus Virus X Variant B")
+lnames <- rep(c("Full sequence", "Coat Protein", "RdRp"),2)
 #matrix selection: matrix[rows, columns]
-rdrpmax <-c()
-rdrpmin <-
-rdrpavg <- 
-sumstats <- list(lnames, )
+lmax <- c()
+lavg <-  
+
 ```
 
 Store values in table.
 
+```{r}
+sumstats <- list(lnames, lmax, lavg)
+```
 
 
 Load phylogenies:
