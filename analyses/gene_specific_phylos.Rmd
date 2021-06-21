@@ -18,6 +18,7 @@ BiocManager::install("phytools")
 tinytex::install_tinytex()
 install.packages('BiocManager', repos=c('https://cran.rstudio.com'), ask=FALSE)
 BiocManager::install('DECIPHER')
+install.packages("kableExtra")
 ```
 
 ## Loading Libraries
@@ -31,114 +32,212 @@ library(ape)
 library("knitr")
 library(DECIPHER)
 library(treeio)
-
-```
- HEAD
-Fetch tree and metadata:
-```{r}
-setwd('/Users/alexa/Desktop/cactusvirusx/')
-accesslist <- c("/Users/alexa/Desktop/cactusvirusx/data/data_v3/5_CP.fasta",
-                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/4_TGB3.fasta",
-                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/3_TGB2.fasta",
-                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/2_TGB1.fasta",
-                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/1_RdRp.fasta",
-                "/Users/alexa/Desktop/cactusvirusx/data/data_v3/0_full-aln.fasta")
-al.fCP <- '/Users/alexa/Desktop/cactusvirusx/data/data_v3/5_CP.fasta'
+library(kableExtra)
 
 ```
 
-
-Set working directory.
+Rename main metadata file to reflect tip groupings, and grab tips from `plot()`.
 ```{r}
-setwd('/Users/alexa/Desktop/cactusvirusx/')
-```
-
-Rename main metadata file to reflect tip groupings.
-```{r}
-md <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v1/cvx_hostdata_v4.csv', stringsAsFactors = FALSE)
+setwd("/")
+reload.md <- function(){
+  md <<- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v1/cvx_hostdata_v5.csv', stringsAsFactors = FALSE)
+  print("Metadata file loaded")
+}
+reload.md()
 tre.loc  <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_0_full-aln_names/0_full-aln_names.fasta.nwk"
-nj <- read.newick(tre.loc)
-nj.gg <- reroot(nj, node.number = 114)
+new.tree <- read.newick(tre.loc)
+newrerooted <- reroot(new.tree, node.number = 114)
 plot.new()
-nj.gg <- ladderize(nj.gg, right=FALSE)
-plot(nj.gg,cex=0.25)
-tips.store <- identify(nj.gg, nodes = TRUE, tips = TRUE,labels = TRUE, quiet = FALSE)$tips
+newrerooted <- ladderize(newrerooted, right=FALSE)
+plot(newrerooted,cex=0.25)
+tips.store <- identify(newrerooted, nodes = TRUE, tips = TRUE,labels = TRUE, quiet = FALSE)$tips
 #grep(pattern, location)
 #cat(paste(tips.store, collapse="\", \""))
-#CVX Var A
-tips.store <- c("SRR11190795_Plant_FR-3_NC_002815", "SRR11603183_GW-peel-2_NC_002815", "SRR11603184_GW-peel-1_NC_002815", "SRR11190801_Plant_DH-2_NC_002815", "SRR11190798_Plant_DH-3_NC_002815", "SRR11190799_Plant_BSJ-3_NC_002815", "SRR11190800_Plant_BSJ-2_NC_002815", "SRR11190791_Plant_BSJ-1_NC_002815", "SRR11603182_GW-peel-3_NC_002815", "SRR11190802_Plant_DH-1_NC_002815", "SRR11190797_Plant_FR-1_NC_002815", "SRR11190796_Plant_FR-2_NC_002815", "Schlumbergera_truncata_19JSF_sty__NC_002815", "Schlumbergera_truncata_15H06__cons", "Schlumbergera_truncata_15H04__cons", "Schlumbergera_truncata_15H03__cons", "SRR11603189_RR-peel-3_NC_002815", "SRR11603190_RR-peel-2_NC_002815", "SRR11603186_RR-pulp-3_NC_002815", "SRR11603191_RR-peel-1_NC_002815", "Cactus_virus_X_LC128411.1", "SRR11603187_RR-pulp-2_NC_002815", "SRR11190792_Plant_BR-3_NC_002815", "SRR11190793_Plant_BR-2_NC_002815", "Cactus_virus_X_AF308158.2", "Cactus_virus_X_KM365479.1")
-for(i in 1:length(tips.store)){
-  md$Clade[grep(tips.store[i],md$Organism)] <- "Cactus Virus X Variant A"
+```
+
+Store tips for each variant.
+```{r eval=FALSE}
+search.column <- gsub(" ", "_", md$Organism)
+search.column <- gsub("__", "_", search.column)
+rename.tips <- function(cladename, tipnames){
+  #tipnames <- gsub("_", " ", tipnames)
+  #tipnames <- gsub(":", "", tipnames)
+  for(i in 1:length(tipnames)){
+  md$Clade[grep(tipnames[i],search.column)] <<- cladename
+  print(md$Clade[grep(tipnames[i],search.column)])
+  print(tipnames[i])
+  print(i)
+  print(grep(tipnames[i],search.column))
+  
 }
+}
+#CVX Var A
+tips.store <- c("SRR11190795_Plant_FR-3_NC_002815", "SRR11603183_GW-peel-2_NC_002815", "SRR11603184_GW-peel-1_NC_002815", "SRR11190801_Plant_DH-2_NC_002815", "SRR11190798_Plant_DH-3_NC_002815", "SRR11190799_Plant_BSJ-3_NC_002815", "SRR11190800_Plant_BSJ-2_NC_002815", "SRR11190791_Plant_BSJ-1_NC_002815", "SRR11603182_GW-peel-3_NC_002815", "SRR11190802_Plant_DH-1_NC_002815", "SRR11190797_Plant_FR-1_NC_002815", "SRR11190796_Plant_FR-2_NC_002815", "Schlumbergera_truncata_19JSF_sty_NC_002815", "Schlumbergera_truncata_15H06_cons", "Schlumbergera_truncata_15H04_cons", "Schlumbergera_truncata_15H03_cons", "SRR11603189_RR-peel-3_NC_002815", "SRR11603190_RR-peel-2_NC_002815", "SRR11603186_RR-pulp-3_NC_002815", "SRR11603191_RR-peel-1_NC_002815", "Cactus_virus_X_LC128411.1", "SRR11603187_RR-pulp-2_NC_002815", "SRR11190792_Plant_BR-3_NC_002815", "SRR11190793_Plant_BR-2_NC_002815", "Cactus_virus_X_AF308158.2", "Cactus_virus_X_KM365479.1")
+rename.tips("Cactus Virus X Variant A", tips.store)
 
 #CVX Var B
-tips.store <- c("Cactus virus X: JF937699.1", "Cactus virus X: SCM51431", "Cactus virus X: KM288847.1", "Cactus virus X: KM288846.1")
-for(i in 1:length(tips.store)){
-  md$Clade[grep(tips.store[i],md$Organism)] <- "Cactus Virus X Variant B"
-}
-write.csv(md, "test.csv")
+tips.store <- c("Cactus_virus_X_JF937699.1","Cactus_virus_X_KM288846.1", "Cactus_virus_X_KM288847.1", "Cactus_virus_X_SCM51431")
+rename.tips("Cactus Virus X Variant B", tips.store)
+#ZyVX Variant B1
+tips.store <- c("Zygocactus_virus_X_JF930326.1", "SRR11603191_RR-peel-1_NC_006059", "SRR11603190_RR-peel-2_NC_006059", "SRR11603187_RR-pulp-2_NC_006059", "SRR11603189_RR-peel-3_NC_006059", "SRR11603186_RR-pulp-3_NC_006059", "Zygocactus_virus_X_Strain_B1", "KM288842", "KM288843", "KM288844", "SRR11190801_Plant_DH-2_NC_006059", "SRR11190798_Plant_DH-3_NC_006059", "SRR11190797_Plant_FR-1_NC_006059", "SRR11190802_Plant_DH-1_NC_006059", "SRR11190796_Plant_FR-2_NC_006059")
+rename.tips("Zygocactus Virus X Variant B1", tips.store)
+
+#Pitaya Virus X
+tips.store <- c("Mytcor_virus_1", "SRR11190800_Plant_BSJ-2_NC_024458", "SRR11190791_Plant_BSJ-1_NC_024458", "SRR11190793_Plant_BR-2_NC_024458", "SRR11190797_Plant_FR-1_NC_024458", "SRR11190796_Plant_FR-2_NC_024458", "Pitaya_virus_X", "SRR11190795_Plant_FR-3_NC_024458", "SRR11603187_RR-pulp-2_NC_024458", "SRR11603189_RR-peel-3_NC_024458", "SRR11603190_RR-peel-2_NC_024458", "SRR11603186_RR-pulp-3_NC_024458", "SRR11603191_RR-peel-1_NC_024458", "SRR11190801_Plant_DH-2_NC_024458", "SRR11190798_Plant_DH-3_NC_024458", "SRR11603183_GW-peel-2_NC_024458", "SRR11603182_GW-peel-3_NC_024458", "SRR11603184_GW-peel-1_NC_024458", "SRR11190802_Plant_DH-1_NC_024458")
+rename.tips("Pitaya Virus X", tips.store)
+
+#Schlumbergera Virus X
+tips.store <- c("Schlumbergera_virus_X_KU854929", "Schlumbergera_virus_X_KP090203", "Schlumbergera_virus_X_Strain_K11", "SRR11190802_Plant_DH-1_NC_011659", "SRR11603183_GW-peel-2_NC_011659", "SRR11603189_RR-peel-3_NC_011659", "SRR11603187_RR-pulp-2_NC_011659", "SRR11603184_GW-peel-1_NC_011659", "SRR11190798_Plant_DH-3_NC_011659", "SRR11190801_Plant_DH-2_NC_011659")
+rename.tips("Schlumbergera Virus X", tips.store)
+
+#Opuntia Virus X
+tips.store <- c("Opuntia_virus_X_KU854931", "Opuntia_virus_X_KY348771", "Opuntia_virus_Strain_CC10")
+rename.tips("Opuntia Virus X", tips.store)
+
+write.csv(md, "test1.csv")
 ```
 
 
-Load csv info.
+Load csv files for relevant genes.
 ```{r}
-
-rdrp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/1_RdRp_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
-```
-Select specific information by clade designation within metadata file.
-```{r clade-search}
 #grep(,rownames(rdrp))
 #Given clade name, returns indices of associated pairwise distance values within matrix.
+md <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v1/cvx_hostdata_v5.csv', stringsAsFactors = FALSE)
 rdrp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/1_RdRp_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
-cp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/1_RdRp_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
+cp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/5_CP_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
+full <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/0_full-aln_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
+```
+
+Select specific information by clade designation within metadata file.
+```{r clade-search}
 cladesearch <- function (cladename){
-  rownam <- md$Organism[grep(cladename, md$Clade)]
+  metarowname <- c()
+  #fetch organism names from metadata file matching Clade column with clade name
+  metarowname <- md$Organism[grep(cladename, md$Clade)]
   #change metadata organism names to match csv format
-  rownam <- gsub(" ", "_", rownam)
-  rownam <- gsub(":", "_", rownam)
-  num <<- c()
+  metarowname <- gsub(" ", "_", metarowname)
+  metarowname <- gsub(":", "", metarowname)
+
   #Note: Schlumbergera samples from gene specific ORF fastas have been renamed, which has been reflected in the metadata csv file.
-  for(i in 1:length(rownam)){
-       num[i] <<- grep(rownam[i], rownames(rdrp))
-      
+  
+
+  #Fetch the associated csv row/column number for items within list of organism names
+  fullnum <<- c()
+  for(i in 1:length(metarowname)){
+       fullnum[i] <<- grep(metarowname[i], rownames(full))
+       #print(metarowname[i])
   }
-  num
+if (anyNA(fullnum)){
+  print("Warning! One or more full.csv values is NA. Please check naming in all files.")
 }
-cva <- cladesearch("Cactus Virus X Variant A")
-cva <- sort(unique(cva))
+fullcomb <- combn(sort(unique(fullnum)), 2)
 
-cvafirst <- cva[1]
-cvalast <-tail(cva, n=1)
+cpnum <<- c()
+  for(i in 1:length(metarowname)){
+       cpnum[i] <<- grep(metarowname[i], rownames(cp))
+       #print(metarowname[i])
+       #print(cpnum[i])
+  }
+if (anyNA(cpnum)){
+  print("Warning! One or more cp values is NA. Please check naming in all files.")
+}
+cpcomb <- combn(sort(unique(cpnum)), 2)
 
-rdrpmaxcva <-c(max(rdrp[cvafirst:cvalast,cvafirst:cvalast]))
-rdrpavgcva <- c(mean(rowMeans(rdrp[cvafirst:cvalast,cvafirst:cvalast])))
+  #exceptions for missing rows/columns in rdrp file
+searchrdrp <- c("KM288843","Cactus_virus_X_KM288847.1",
+                        "KM288842","KM288844","KM288845", 
+                        "Cactus_virus_X__KM288847.1")
+if(any(metarowname %in%  searchrdrp)){
+    print("Note: removing values because sequences did not cover the rdrp gene. Sequence removed:")
+  print(metarowname[(metarowname %in%
+                      searchrdrp)])
+    metarowname <- metarowname[!(metarowname %in%
+                      searchrdrp)]
+}
+rdrpnum <<- c()
+  for(i in 1:length(metarowname)){
+       rdrpnum[i] <<- grep(metarowname[i], rownames(rdrp))
+       #print(metarowname[i])
+       #print(rdrpnum[i])
+  }
+if (anyNA(rdrpnum)){
+  print("Warning! One or more rdrp values is NA. Please check naming in all files.")
+  print(rdrpnum)
+}
+rdrpcomb <- combn(sort(unique(rdrpnum)), 2)
+
+#Next, use indices to grab maximum and average pairwise distances.
+#full
+  #populate vector...
+numtemp <- vector()
+for (i in 1:length(fullcomb[1,])){
+  numtemp[i] <- i
+}
+#use temporary vector to get values from full genome csv
+for (i in 1:length(fullcomb[1,])){
+  numtemp[i] <- full[fullcomb[1,i],fullcomb[2,i]]
+}
+#now calculate average and maximum values for these pairwise distances
+fullmax <-c(max(numtemp))
+fullavg <- c(mean(numtemp))
+#repeat for the other genes
+#rdrp
+numtemp <- vector()
+for (i in 1:length(rdrpcomb[1,])){
+  numtemp[i] <- i
+}
+for (i in 1:length(rdrpcomb[1,])){
+ numtemp[i] <- rdrp[rdrpcomb[1,i],rdrpcomb[2,i]]
+}
+rdrpmax <-c(max(numtemp))
+rdrpavg <- c(mean(numtemp))
+#cp
+numtemp <- vector()
+for (i in 1:length(cpcomb[1,])){
+  numtemp[i] <- i
+}
+for (i in 1:length(cpcomb[1,])){
+  numtemp[i] <- cp[cpcomb[1,i],cpcomb[2,i]]
+}
+cpmax <-c(max(numtemp))
+cpavg <- c(mean(numtemp))
+nums <- list("Max Values" = format(round(c(fullmax, rdrpmax, cpmax), 3), nsmall = 3), "Avg Values" = format(round(c(fullavg, rdrpavg, cpavg), 3), nsmall = 3) )
+nums
+}
+
 
 ```
+
+Run cladesearch for Variant A
+```{r clade-search-cva}
+cva <- cladesearch("Cactus Virus X Variant A")
+cvb <- cladesearch("Cactus Virus X Variant B")
+zyvx <- cladesearch("Zygocactus Virus X Variant B1")
+pvx <- cladesearch("Pitaya Virus X")
+svx <- cladesearch("Schlumbergera Virus X")
+opvx <- cladesearch("Opuntia Virus X")
+#ZyVX Variant B1 #Pitaya Virus X, #Schlumbergera Virus X, #Opuntia Virus X
+
+```
+
 Fetch values for table.
 ```{r}
-lnames <- rep(c("Full sequence", "Coat Protein", "RdRp"),2)
+clades <- c("Cactus Virus X Variant A", " ", " ", "Cactus Virus X Variant B", " ", " ", "Zygocactus Virus X Variant B1", " ", " ", "Pitaya Virus X", " ", " ","Schlumbergera Virus X", " ", " ","Opuntia Virus X", " ", " ")
+lnames <- rep(c("Full sequence", "RdRp", "Coat Protein"),6)
 #matrix selection: matrix[rows, columns]
-lmax <- c()
-lavg <-  
-
+lmax <- c(cva$`Max Values`[1:3], cvb$`Max Values`[1:3], zyvx$`Max Values`[1:3] ,pvx$`Max Values`[1:3], svx$`Max Values`[1:3], opvx$`Max Values`[1:3])
+lavg <- c(cva$`Avg Values`[1:3], cvb$`Avg Values`[1:3], zyvx$`Avg Values`[1:3], pvx$`Avg Values`[1:3], svx$`Avg Values`[1:3], opvx$`Avg Values`[1:3] ) 
 ```
 
 Store values in table.
 
 ```{r}
-sumstats <- list(lnames, lmax, lavg)
+
+sumstats <- cbind(clades, lnames, lmax, lavg)
+kbl(sumstats, booktabs = T, format="html", col.names = c("Species", "Open Reading Frame (ORF)", "Maximum Pairwise Distance", "Average Pairwise Distance"))  %>% kable_styling() %>% save_kable("test.pdf")
 ```
-
-
-Load phylogenies:
-```{r}
-tre.f  <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_1_RdRp_names/1_RdRp_names.fasta.nwk"
-newick.tree.1 <- read.newick(tre.f)
-
-```
-
 Create image using ggtree. 
-```{r fig.width=6, echo=F}
+```{r fig.width=6, echo=F, eval=F}
 par( mar=c(1, 1, 0, 0))
 L <- nj.gg$Nnode + length(nj.gg$tip.label)
 ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
@@ -152,6 +251,11 @@ ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
   geom_text2(aes(subset = !isTip, label=label, hjust=-0.5)) +
   #geom_hilight(node=136, fill="steelblue", alpha=.6, extend=0.5)+
   xlim(0,2) 
+
+```
+```{r}
+ggtree(newrerooted, size=0.2)+
+  geom_tiplab()
 
 ```
 
