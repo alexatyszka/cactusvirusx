@@ -208,7 +208,7 @@ nums
 
 ```
 
-Run cladesearch for Variant A
+Run cladesearch.
 ```{r clade-search-cva}
 cva <- cladesearch("Cactus Virus X Variant A")
 cvb <- cladesearch("Cactus Virus X Variant B")
@@ -229,40 +229,92 @@ lmax <- c(cva$`Max Values`[1:3], cvb$`Max Values`[1:3], zyvx$`Max Values`[1:3] ,
 lavg <- c(cva$`Avg Values`[1:3], cvb$`Avg Values`[1:3], zyvx$`Avg Values`[1:3], pvx$`Avg Values`[1:3], svx$`Avg Values`[1:3], opvx$`Avg Values`[1:3] ) 
 ```
 
-Store values in table.
+Store values in table, then save table as .pdf file.
 
 ```{r}
 
 sumstats <- cbind(clades, lnames, lmax, lavg)
 kbl(sumstats, booktabs = T, format="html", col.names = c("Species", "Open Reading Frame (ORF)", "Maximum Pairwise Distance", "Average Pairwise Distance"))  %>% kable_styling() %>% save_kable("test.pdf")
 ```
-Create image using ggtree. 
-```{r fig.width=6, echo=F, eval=F}
-par( mar=c(1, 1, 0, 0))
-L <- nj.gg$Nnode + length(nj.gg$tip.label)
-ggtree(nj.gg, ladderize=T, aes(), show.legend = TRUE, size=0.2)  %<+% hostinfo+
+Trees:
+Load trees for each gene.
+```{r}
+loc0 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
+loc1 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
+loc2 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_2_TGB1_names/2_TGB1_names.fasta.treefile"
+loc3 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_3_TGB2_names/3_TGB2_names.fasta.treefile"
+loc4 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
+loc5 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_5_CP_names/5_CP_names.fasta.treefile"
+locs <- c(loc0, loc1, loc2, loc3, loc4, loc5)
+names <- c("full", "rdrp", "tgb1", "tgb2", "tgb3", "cp")
+```
+
+Identify hosts for each tree and create phylogenies for each gene.
+```{r}
+gene.phylos <- function(namevector, locvector) {
+for (i in 1:length(namevector)){
+treetemp <- read.iqtree(locvector[i])
+treename <- namevector[i]
+treetempphylo <- as.phylo(treetemp)
+#create vector for host information
+hostinfo <- c()
+hostinfo <- data.frame(label = treetempphylo$tip.label, host= c(1:length(treetempphylo$tip.label)))
+search <- gsub(" ", "_", md$Organism)
+print(namevector[i])
+#rename tree tips and populate vector
+   for(j in 1:length(treetempphylo$tip.label)){
+      hostinfo$host[j] <- md$host[grep(treetempphylo$tip.label[j],search)]
+      #uncomment these for troubleshooting:
+      #print(treetempphylo$tip.label[j])
+      #print(j)
+      #print("Host:")
+      #print(hostinfo$host[j])
+      #print("Grep result")
+      #print(md$host[grep(treetempphylo$tip.label[j],search)])
+   }
+#reroot tree and join host info
+treetemp <- root(treetempphylo, outgroup=c("Clover_yellow_mosaic_virus"))
+treetemp <- full_join(treetemp, hostinfo, by="label")
+
+#prepare group for colors:
+grp <- list(
+  #CVX Var A
+"Cactus Virus X Variant A" <- c("SRR11190795_Plant_FR-3_NC_002815", "SRR11603183_GW-peel-2_NC_002815", "SRR11603184_GW-peel-1_NC_002815", "SRR11190801_Plant_DH-2_NC_002815", "SRR11190798_Plant_DH-3_NC_002815", "SRR11190799_Plant_BSJ-3_NC_002815", "SRR11190800_Plant_BSJ-2_NC_002815", "SRR11190791_Plant_BSJ-1_NC_002815", "SRR11603182_GW-peel-3_NC_002815", "SRR11190802_Plant_DH-1_NC_002815", "SRR11190797_Plant_FR-1_NC_002815", "SRR11190796_Plant_FR-2_NC_002815", "Schlumbergera_truncata_19JSF_sty_NC_002815", "Schlumbergera_truncata_15H06_cons", "Schlumbergera_truncata_15H04_cons", "Schlumbergera_truncata_15H03_cons", "SRR11603189_RR-peel-3_NC_002815", "SRR11603190_RR-peel-2_NC_002815", "SRR11603186_RR-pulp-3_NC_002815", "SRR11603191_RR-peel-1_NC_002815", "Cactus_virus_X_LC128411.1", "SRR11603187_RR-pulp-2_NC_002815", "SRR11190792_Plant_BR-3_NC_002815", "SRR11190793_Plant_BR-2_NC_002815", "Cactus_virus_X_AF308158.2", "Cactus_virus_X_KM365479.1"),
+#CVX Var B
+"Cactus Virus X Variant B" <- c("Cactus_virus_X_JF937699.1","Cactus_virus_X_KM288846.1", "Cactus_virus_X_KM288847.1", "Cactus_virus_X_SCM51431"),
+#ZyVX Variant B1
+"Zygocactus Virus X Variant B1" <- c("Zygocactus_virus_X_JF930326.1", "SRR11603191_RR-peel-1_NC_006059", "SRR11603190_RR-peel-2_NC_006059", "SRR11603187_RR-pulp-2_NC_006059", "SRR11603189_RR-peel-3_NC_006059", "SRR11603186_RR-pulp-3_NC_006059", "Zygocactus_virus_X_Strain_B1", "KM288842", "KM288843", "KM288844", "SRR11190801_Plant_DH-2_NC_006059", "SRR11190798_Plant_DH-3_NC_006059", "SRR11190797_Plant_FR-1_NC_006059", "SRR11190802_Plant_DH-1_NC_006059", "SRR11190796_Plant_FR-2_NC_006059"),
+"Zygocactus Virus X" <- c("KM288845"),
+#Pitaya Virus X
+"Pitaya Virus X" <- c("MG210801", "SRR11190800_Plant_BSJ-2_NC_024458", "SRR11190791_Plant_BSJ-1_NC_024458", "SRR11190793_Plant_BR-2_NC_024458", "SRR11190797_Plant_FR-1_NC_024458", "SRR11190796_Plant_FR-2_NC_024458", "Pitaya_virus_X", "SRR11190795_Plant_FR-3_NC_024458", "SRR11190799_Plant_BSJ-3_NC_024458", "SRR11603187_RR-pulp-2_NC_024458", "SRR11603189_RR-peel-3_NC_024458", "SRR11603190_RR-peel-2_NC_024458", "SRR11603186_RR-pulp-3_NC_024458", "SRR11603191_RR-peel-1_NC_024458", "SRR11190801_Plant_DH-2_NC_024458", "SRR11190798_Plant_DH-3_NC_024458", "SRR11603183_GW-peel-2_NC_024458", "SRR11603182_GW-peel-3_NC_024458", "SRR11603184_GW-peel-1_NC_024458", "SRR11190802_Plant_DH-1_NC_024458"),
+#Schlumbergera Virus X
+"Schlumbergera Virus X" <- c("Schlumbergera_virus_X_KU854929", "Schlumbergera_virus_X_KP090203", "Schlumbergera_virus_X_Strain_K11", "SRR11190802_Plant_DH-1_NC_011659", "SRR11603183_GW-peel-2_NC_011659", "SRR11603189_RR-peel-3_NC_011659", "SRR11603187_RR-pulp-2_NC_011659", "SRR11603184_GW-peel-1_NC_011659", "SRR11190798_Plant_DH-3_NC_011659", "SRR11190801_Plant_DH-2_NC_011659"),
+#Opuntia Virus X
+"Opuntia Virus X" <- c("Opuntia_virus_X_KU854931", "Opuntia_virus_X_KY348771", "Opuntia_virus_Strain_CC10")
+)
+#now visualize tree:
+treetemp <- groupOTU(treetemp, grp)
+par( mar=c(0, 0, 0, 0))
+#L <- tree1name$Nnode + length(tree1name$tip.label)
+ggtree(treetemp, ladderize=T, show.legend = FALSE)  +
+  aes(color=group) +
+#%<+% hostinfo+
+  scale_color_manual(values=c("black", "#BE81EF", "#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", "#E67E67", "#EC6DC4"))+
+  #theme(legend.position="bottom")+
   #name tip labels:
-  geom_tiplab(aes(label=nj.gg$tip.label[1:L]), hjust=0, offset=0, align=T, linetype = "dotted")+
+  geom_tiplab(aes(), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
-  geom_tiplab(aes(label=hostinfo$nj.gg.tip.label[1:L]), align = T, linetype = 'blank', na.rm=TRUE, offset=0.3) +
+  geom_tiplab(aes(label=host, subset = !is.na(host)), align = T, linetype = 'blank', na.rm=TRUE, offset=0.7) +
   #scale
   geom_treescale(x=0, y=60, fontsize = 3) +
-  #node labels:
-  geom_text2(aes(subset = !isTip, label=label, hjust=-0.5)) +
-  #geom_hilight(node=136, fill="steelblue", alpha=.6, extend=0.5)+
-  xlim(0,2) 
-
-```
-```{r}
-ggtree(newrerooted, size=0.2)+
-  geom_tiplab()
-
-```
-
-
-Save the tree to folder in pdf format, if desired:
-```{r eval=F}
-filename = paste(gsub(":", "-", Sys.time()),"_bootstrap_tree.pdf",sep="")
+  #node labels/bootstrap labels:
+  geom_text2(aes(subset = !isTip, label=label), nudge_x = 0.02)+
+    xlim(0,4.2)
+#Save to pdf format
+filename = paste(namevector[i],"_bootstrap_tree.pdf",sep="")
 ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
+}
+}
+gene.phylos(names, locs)
 ```
 

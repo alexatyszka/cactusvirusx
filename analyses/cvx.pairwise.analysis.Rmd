@@ -83,7 +83,7 @@ identify(cvx.newick.tree, nodes = TRUE, tips = FALSE,labels = FALSE, quiet = FAL
 data <- c("Virus from SRR11190799 Plant: BSJ-3", "Virus from SRR11190791 Plant: BSJ-1", "Virus from SRR11190800 Plant: BSJ-2")
 data <- c("Virus from SRR11190798 Plant: DH-3", "Virus from SRR11190801 Plant: DH-2")
 data <- c("Virus from SRR11603183 GW-peel-2", "Virus from SRR11603182 GW-peel-3")
-data <- c(
+
 cross.data <- expand.grid(tip1 = data, tip2 = data)
 #cross.data <- expand.grid(tip1 = cvx.newick.tree$tip.label, tip2 = cvx.newick.tree$tip.label)
 
