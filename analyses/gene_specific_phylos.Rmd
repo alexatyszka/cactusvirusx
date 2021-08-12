@@ -4,7 +4,7 @@ author: "A.T."
 date: "5/20/2021"
 output: html_document
 ---
-#This will be edited soon. First, the trees themselves will be made.
+#Notes: This is a long file and needs to be deconstructed to smaller loadable files if it is used again. treetemp, used later in the file, is an S4 object and its slots can be accessed by "treetemp@example". 
 
 > This is a one-time package installation to help get libraries likely to be missing at the start.
 
@@ -44,6 +44,7 @@ reload.md <- function(){
   print("Metadata file loaded")
 }
 reload.md()
+#fetching nodes for tree and figuring out roots. outdated and not useful for subsequent file executions
 tre.loc  <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_0_full-aln_names/0_full-aln_names.fasta.nwk"
 new.tree <- read.newick(tre.loc)
 newrerooted <- reroot(new.tree, node.number = 114)
@@ -55,7 +56,7 @@ tips.store <- identify(newrerooted, nodes = TRUE, tips = TRUE,labels = TRUE, qui
 #cat(paste(tips.store, collapse="\", \""))
 ```
 
-Store tips for each variant.
+Store tips for each variant. Use tips.store values for clades.
 ```{r eval=FALSE}
 search.column <- gsub(" ", "_", md$Organism)
 search.column <- gsub("__", "_", search.column)
@@ -96,7 +97,6 @@ rename.tips("Opuntia Virus X", tips.store)
 
 write.csv(md, "test1.csv")
 ```
-
 
 Load csv files for relevant genes.
 ```{r}
@@ -236,7 +236,8 @@ Store values in table, then save table as .pdf file.
 sumstats <- cbind(clades, lnames, lmax, lavg)
 kbl(sumstats, booktabs = T, format="html", col.names = c("Species", "Open Reading Frame (ORF)", "Maximum Pairwise Distance", "Average Pairwise Distance"))  %>% kable_styling() %>% save_kable("test.pdf")
 ```
-Trees:
+
+##Trees:
 Load trees for each gene.
 ```{r}
 loc0 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
@@ -252,18 +253,20 @@ names <- c("full", "rdrp", "tgb1", "tgb2", "tgb3", "cp")
 Identify hosts for each tree and create phylogenies for each gene.
 ```{r}
 gene.phylos <- function(namevector, locvector) {
-for (i in 1:length(namevector)){
-treetemp <- read.iqtree(locvector[i])
-treename <- namevector[i]
-treetempphylo <- as.phylo(treetemp)
+  for (i in 1:length(namevector)){
+  treetemp <- read.iqtree(locvector[i])
+  treename <- namevector[i]
+  treetempphylo <- as.phylo(treetemp)
 #create vector for host information
-hostinfo <- c()
-hostinfo <- data.frame(label = treetempphylo$tip.label, host= c(1:length(treetempphylo$tip.label)))
-search <- gsub(" ", "_", md$Organism)
-print(namevector[i])
+  hostinfo <- c()
+    hostinfo <- data.frame(label = gsub("_", " ", treetempphylo$tip.label), 
+                           host=c(1:length(treetempphylo$tip.label)))
+  search <- gsub(" ", "_", md$Organism)
+  print(namevector[i])
 #rename tree tips and populate vector
    for(j in 1:length(treetempphylo$tip.label)){
       hostinfo$host[j] <- md$host[grep(treetempphylo$tip.label[j],search)]
+      treetempphylo$tip.label[j] <- gsub("_", " ", treetempphylo$tip.label[j])
       #uncomment these for troubleshooting:
       #print(treetempphylo$tip.label[j])
       #print(j)
@@ -272,29 +275,29 @@ print(namevector[i])
       #print("Grep result")
       #print(md$host[grep(treetempphylo$tip.label[j],search)])
    }
-#reroot tree and join host info
-treetemp <- root(treetempphylo, outgroup=c("Clover_yellow_mosaic_virus"))
+#reroot tree and join host info, had trouble with the full_join function
+treetemp <- root(treetempphylo, outgroup=c("Clover yellow mosaic virus"))
 treetemp <- full_join(treetemp, hostinfo, by="label")
 
 #prepare group for colors:
 grp <- list(
   #CVX Var A
-"Cactus Virus X Variant A" <- c("SRR11190795_Plant_FR-3_NC_002815", "SRR11603183_GW-peel-2_NC_002815", "SRR11603184_GW-peel-1_NC_002815", "SRR11190801_Plant_DH-2_NC_002815", "SRR11190798_Plant_DH-3_NC_002815", "SRR11190799_Plant_BSJ-3_NC_002815", "SRR11190800_Plant_BSJ-2_NC_002815", "SRR11190791_Plant_BSJ-1_NC_002815", "SRR11603182_GW-peel-3_NC_002815", "SRR11190802_Plant_DH-1_NC_002815", "SRR11190797_Plant_FR-1_NC_002815", "SRR11190796_Plant_FR-2_NC_002815", "Schlumbergera_truncata_19JSF_sty_NC_002815", "Schlumbergera_truncata_15H06_cons", "Schlumbergera_truncata_15H04_cons", "Schlumbergera_truncata_15H03_cons", "SRR11603189_RR-peel-3_NC_002815", "SRR11603190_RR-peel-2_NC_002815", "SRR11603186_RR-pulp-3_NC_002815", "SRR11603191_RR-peel-1_NC_002815", "Cactus_virus_X_LC128411.1", "SRR11603187_RR-pulp-2_NC_002815", "SRR11190792_Plant_BR-3_NC_002815", "SRR11190793_Plant_BR-2_NC_002815", "Cactus_virus_X_AF308158.2", "Cactus_virus_X_KM365479.1"),
+"Cactus Virus X Variant A" <- c("SRR11190795 Plant FR-3 NC 002815", "SRR11603183 GW-peel-2 NC 002815", "SRR11603184 GW-peel-1 NC 002815", "SRR11190801 Plant DH-2 NC 002815", "SRR11190798 Plant DH-3 NC 002815", "SRR11190799 Plant BSJ-3 NC 002815", "SRR11190800 Plant BSJ-2 NC 002815", "SRR11190791 Plant BSJ-1 NC 002815", "SRR11603182 GW-peel-3 NC 002815", "SRR11190802 Plant DH-1 NC 002815", "SRR11190797 Plant FR-1 NC 002815", "SRR11190796 Plant FR-2 NC 002815", "Schlumbergera truncata 19JSF sty NC 002815", "Schlumbergera truncata 15H06 cons", "Schlumbergera truncata 15H04 cons", "Schlumbergera truncata 15H03 cons", "SRR11603189 RR-peel-3 NC 002815", "SRR11603190 RR-peel-2 NC 002815", "SRR11603186 RR-pulp-3 NC 002815", "SRR11603191 RR-peel-1 NC 002815", "Cactus virus X LC128411.1", "SRR11603187 RR-pulp-2 NC 002815", "SRR11190792 Plant BR-3 NC 002815", "SRR11190793 Plant BR-2 NC 002815", "Cactus virus X AF308158.2", "Cactus virus X KM365479.1"),
 #CVX Var B
-"Cactus Virus X Variant B" <- c("Cactus_virus_X_JF937699.1","Cactus_virus_X_KM288846.1", "Cactus_virus_X_KM288847.1", "Cactus_virus_X_SCM51431"),
+"Cactus Virus X Variant B" <- c("Cactus virus X JF937699.1","Cactus virus X KM288846.1", "Cactus virus X KM288847.1", "Cactus virus X SCM51431"),
 #ZyVX Variant B1
-"Zygocactus Virus X Variant B1" <- c("Zygocactus_virus_X_JF930326.1", "SRR11603191_RR-peel-1_NC_006059", "SRR11603190_RR-peel-2_NC_006059", "SRR11603187_RR-pulp-2_NC_006059", "SRR11603189_RR-peel-3_NC_006059", "SRR11603186_RR-pulp-3_NC_006059", "Zygocactus_virus_X_Strain_B1", "KM288842", "KM288843", "KM288844", "SRR11190801_Plant_DH-2_NC_006059", "SRR11190798_Plant_DH-3_NC_006059", "SRR11190797_Plant_FR-1_NC_006059", "SRR11190802_Plant_DH-1_NC_006059", "SRR11190796_Plant_FR-2_NC_006059"),
+"Zygocactus Virus X Variant B1" <- c("Zygocactus virus X JF930326.1", "SRR11603191 RR-peel-1 NC 006059", "SRR11603190 RR-peel-2 NC 006059", "SRR11603187 RR-pulp-2 NC 006059", "SRR11603189 RR-peel-3 NC 006059", "SRR11603186 RR-pulp-3 NC 006059", "Zygocactus virus X Strain B1", "KM288842", "KM288843", "KM288844", "SRR11190801 Plant DH-2 NC 006059", "SRR11190798 Plant DH-3 NC 006059", "SRR11190797 Plant FR-1 NC 006059", "SRR11190802 Plant DH-1 NC 006059", "SRR11190796 Plant FR-2 NC 006059"),
 "Zygocactus Virus X" <- c("KM288845"),
 #Pitaya Virus X
-"Pitaya Virus X" <- c("MG210801", "SRR11190800_Plant_BSJ-2_NC_024458", "SRR11190791_Plant_BSJ-1_NC_024458", "SRR11190793_Plant_BR-2_NC_024458", "SRR11190797_Plant_FR-1_NC_024458", "SRR11190796_Plant_FR-2_NC_024458", "Pitaya_virus_X", "SRR11190795_Plant_FR-3_NC_024458", "SRR11190799_Plant_BSJ-3_NC_024458", "SRR11603187_RR-pulp-2_NC_024458", "SRR11603189_RR-peel-3_NC_024458", "SRR11603190_RR-peel-2_NC_024458", "SRR11603186_RR-pulp-3_NC_024458", "SRR11603191_RR-peel-1_NC_024458", "SRR11190801_Plant_DH-2_NC_024458", "SRR11190798_Plant_DH-3_NC_024458", "SRR11603183_GW-peel-2_NC_024458", "SRR11603182_GW-peel-3_NC_024458", "SRR11603184_GW-peel-1_NC_024458", "SRR11190802_Plant_DH-1_NC_024458"),
+"Pitaya Virus X" <- c("MG210801", "SRR11190800 Plant BSJ-2 NC 024458", "SRR11190791 Plant BSJ-1 NC 024458", "SRR11190793 Plant BR-2 NC 024458", "SRR11190797 Plant FR-1 NC 024458", "SRR11190796 Plant FR-2 NC 024458", "Pitaya virus X", "SRR11190795 Plant FR-3 NC 024458", "SRR11190799 Plant BSJ-3 NC 024458", "SRR11603187 RR-pulp-2 NC 024458", "SRR11603189 RR-peel-3 NC 024458", "SRR11603190 RR-peel-2 NC 024458", "SRR11603186 RR-pulp-3 NC 024458", "SRR11603191 RR-peel-1 NC 024458", "SRR11190801 Plant DH-2 NC 024458", "SRR11190798 Plant DH-3 NC 024458", "SRR11603183 GW-peel-2 NC 024458", "SRR11603182 GW-peel-3 NC 024458", "SRR11603184 GW-peel-1 NC 024458", "SRR11190802 Plant DH-1 NC 024458"),
 #Schlumbergera Virus X
-"Schlumbergera Virus X" <- c("Schlumbergera_virus_X_KU854929", "Schlumbergera_virus_X_KP090203", "Schlumbergera_virus_X_Strain_K11", "SRR11190802_Plant_DH-1_NC_011659", "SRR11603183_GW-peel-2_NC_011659", "SRR11603189_RR-peel-3_NC_011659", "SRR11603187_RR-pulp-2_NC_011659", "SRR11603184_GW-peel-1_NC_011659", "SRR11190798_Plant_DH-3_NC_011659", "SRR11190801_Plant_DH-2_NC_011659"),
+"Schlumbergera Virus X" <- c("Schlumbergera virus X KU854929", "Schlumbergera virus X KP090203", "Schlumbergera virus X Strain K11", "SRR11190802 Plant DH-1 NC 011659", "SRR11603183 GW-peel-2 NC 011659", "SRR11603189 RR-peel-3 NC 011659", "SRR11603187 RR-pulp-2 NC 011659", "SRR11603184 GW-peel-1 NC 011659", "SRR11190798 Plant DH-3 NC 011659", "SRR11190801 Plant DH-2 NC 011659"),
 #Opuntia Virus X
-"Opuntia Virus X" <- c("Opuntia_virus_X_KU854931", "Opuntia_virus_X_KY348771", "Opuntia_virus_Strain_CC10")
+"Opuntia Virus X" <- c("Opuntia virus X KU854931", "Opuntia virus X KY348771", "Opuntia virus Strain CC10")
 )
 #now visualize tree:
 treetemp <- groupOTU(treetemp, grp)
-par( mar=c(0, 0, 0, 0))
+par(mar=c(0, 0, 0, 0))
 #L <- tree1name$Nnode + length(tree1name$tip.label)
 ggtree(treetemp, ladderize=T, show.legend = FALSE)  +
   aes(color=group) +
@@ -315,6 +318,7 @@ filename = paste(namevector[i],"_bootstrap_tree.pdf",sep="")
 ggsave(filename, width = 60, height = 40, units = "cm", limitsize = FALSE)
 }
 }
+gene.phylos(names[1],locs[1])
 gene.phylos(names, locs)
 ```
 
