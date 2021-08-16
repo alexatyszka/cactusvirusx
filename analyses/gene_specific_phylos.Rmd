@@ -311,7 +311,8 @@ ggtree(treetemp, ladderize=T, show.legend = FALSE)  +
   #scale
   geom_treescale(x=0, y=60, fontsize = 3) +
   #node labels/bootstrap labels:
-  geom_text2(aes(subset = !isTip, label=label), nudge_x = 0.02)+
+  geom_text2(aes(subset = !isTip & (node == 127)|(node == 124)|(node == 152)|(node == 153)|(node == 167)|(node == 102)|(node == 106)
+                 , label=label), nudge_x = -0.03, nudge_y = 0.5)+
     xlim(0,4.2)
 #Save to pdf format
 filename = paste(namevector[i],"_bootstrap_tree.pdf",sep="")
