@@ -13,13 +13,12 @@
 \begin{document}
 %%%%%%NOTES%%%%%%
 %AT got these warnings:
-%Database file #1: cvx.bib
-%Warning--I didn't find a database entry for "le_bellec_12_2011"
-%Warning--I didn't find a database entry for "li_viral_2015"
-%Warning--I didn't find a database entry for "brandes_untersuchungen_1963-1"
-%Warning--I didn't find a database entry for "bos_symptoms_nodate"
-%Warning--I didn't find a database entry for "yu_span_2017"
-%(There were 5 warnings)
+%Database file #1: cvx-refs.bib
+%Warning--empty journal in bos_symptoms_1977
+%Warning--empty journal in li_viral_2015
+%%%%%%TODO%%%%%%
+%Figures, summary statistics
+
 
 % TITLE =======================================================================
 
@@ -71,7 +70,7 @@ All cactus-infecting potexviruses consist of roughly 6,600 bp of positive-sense 
 They are closely related to other Potexviruses such as Alternantha Mosaic Virus and Papaya Mosaic Virus (\cite{martelli_family_2007, park_detection_2018, liou_complete_2004}). 
 These viruses produce a wide range of symptomatic and damaging infections in cacti. 
 Reports of symptomatic plants range from 5.5 percent of wild Ferocactus cylindraceus (\cite{attathom_occurrence_1978}) up to 44 percent of crop plants on Hainan Island, China (\cite{peng_molecular_2016}). 
-However, many infected plants do not show external signs of viral infection (\cite{liou_complete_2004, bos_symptoms_nodate}). 
+However, many infected plants do not show external signs of viral infection (\cite{liou_complete_2004, bos_symptoms_1977}). 
 The most commonly recognized symptoms of disease are mosaic, mottling, stunted growth and distortion (\cite{maliarenko_cactus_2013, peng_molecular_2016, attathom_occurrence_1978}). 
 It is unclear what the method of transmission from infected plant to new host is. 
 Some reports specify that cactus-infecting Potexviruses can only be transmitted through grafting (\cite{duarte_potexvirus_2008, martelli_family_2007}) but most agree that transmission can occur through other mechanical contact such as sap inoculation (\cite{liou_complete_2004, maliarenko_cactus_2013, park_detection_2018}) and external tissue contact. 
@@ -142,7 +141,7 @@ Sequence alignments were performed through MAFFT v7.429 (\cite{katoh_mafft_2002}
 The aligned sequences were divided by ORF using the annotations to produce five partial sequence alignments corresponding to each ORF to accompany the full-sequence alignment. 
 The individual proteins were exported to .FASTA files, then gaps at the start of the sequence and stop codons were removed manually. 
 Phylogenetic relationships and bootstrap values were inferred using IQtree v1.6.12 (\cite{nguyen_iq-tree_2015}), ModelFinder (\cite{kalyaanamoorthy_modelfinder_2017}), and UFBoot (\cite{hoang_ufboot2_2018}) for both the individual gene/protein alignments and the full sequence alignment. 
-Trees were visualized in R version 4.0.3 using ggtree v2.4.2 (\cite{yu_span_2017}). 
+Trees were visualized in R version 4.0.3 using ggtree v2.4.2 (\cite{yu_ggtree_2017}). 
 Host information was obtained through reported metadata and mapped onto the phylogeny. 
 Species groupings were determined using the existing species boundaries when compared to the phylogenetic branch lengths within the Potexvirus genus. 
 This was generally consistent with most recent branch lengths over 0.1 subs/site and this value was therefore used as a cutoff. 
