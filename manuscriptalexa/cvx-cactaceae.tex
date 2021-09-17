@@ -12,13 +12,20 @@
 \date{}
 \begin{document}
 %%%%%%NOTES%%%%%%
-%AT got these warnings:
-%Database file #1: cvx-refs.bib
-%Warning--empty journal in bos_symptoms_1977
-%Warning--empty journal in li_viral_2015
+
 %%%%%%TODO%%%%%%
 %Figures, summary statistics
 
+% No worries about warnings--we'll fix those later
+% It _is_ important for the document to compile reliably (without errors)
+
+%FIXMEs: 
+% make sure to start with a template file for manuscript!
+% when ripping Karolis' paper (or other lab papers), use our tex files, not PDF (they don't copy and paste well, and miss formatted characters, like degree symbol). It's also just way, way, easier and saves time!
+% no colons in any paper subsection titles?
+% also, maybe better to use \subsection{} for subsection titles!
+% separate sentences--each sentence on a new line
+% it's best to keep notes to self out of manuscript (ms). In my experience, it's harder for collaborators to read and contribute, when the ms has non-final content in main body. And it's easier to commit to a not-great idea. Hard to back out.
 
 % TITLE =======================================================================
 
@@ -29,8 +36,8 @@
 % ABSTRACT ====================================================================
 
 \begin{abstract}
-  %Boris notes:
-%I would only comment that it does not follow the structure of a standard abstract, which generally contains something about what we did in direct language. Basically, the idea is to set the stage for why anyone would care about what we did--first few sentences--and then say what we did. That's what I try to do here (see below). I think that the next thing should be a complete Methods section and near-final Figures or their draft versions, numbered in order of presentation of a key argument(s). For example, the molecular selection analysis should likely follow the figures about sequencing analyses and/or structure of the genome, and expression data. Phylogeny or phylogenies could be in the middle.
+
+%B: I would only comment that it does not follow the structure of a standard abstract, which generally contains something about what we did in direct language. Basically, the idea is to set the stage for why anyone would care about what we did--first few sentences--and then say what we did. That's what I try to do here (see below). I think that the next thing should be a complete Methods section and near-final Figures or their draft versions, numbered in order of presentation of a key argument(s). For example, the molecular selection analysis should likely follow the figures about sequencing analyses and/or structure of the genome, and expression data. Phylogeny or phylogenies could be in the middle.
 
 Potexviruses (Alphaflexiviridae) are positive-sense single-stranded RNA viruses known to infect multiple species across plants, including species of Cactaceae. 
 Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X, and Opuntia Virus X are five of the 48 currently described Potexvirus species, which all infect valuable ornamental and crop plants, often causing production losses. 
@@ -109,18 +116,34 @@ We attempt to use this expanded phylogeny to answer relevant questions about Pot
 \section*{Materials and Methods}
 %------------------------------------------------------------------------------
 
-\textbf{Plant Material Collection:}
-Pistils, pollen, and styles from Schlumbergera truncata individuals were collected from B. Igic's personal collection, which contained specimens displaying symptoms typical to Potexvirus infection(\cite{chessin_distribution_1972}): frail, reddened cladodes, and poor growth. 
+\subsection{Study System}
+
+Plant material was collected from pistils, pollen, and styles of \textit{Schlumbergera truncata}.
+Some plants displayed symptoms typical to Potexvirus infection(\cite{chessin_distribution_1972}): frail, reddened cladodes, and poor growth.  
 The plants were initially obtained from various sources, then kept in a shared growing condition. 
 
-\textbf{RNA Extraction and Sequencing:}
-Tissues were collected and immediately submerged in 1.5 ml of  RNAlater(tm) solution (Invitrogen). 
-Submerged samples were held at room temperature for thirty minutes and then stored at -80° C. 
-%AT note for KR: Could you tell me if this procedure is correct for the samples in this paper? Copypasted from your rsi paper, but I don't want to steal the exact words. 
+\subsection{RNA Extraction and Sequencing} 
+%B: from rsi-ms.tex
 
-%Approximately 100 mg of tissue was ground to a fine powder in 1.5 ml tubes cooled by a liquid nitrogen mortar. Total RNA was isolated using Total RNA Mini Kit (Plant kit; IBI Scientific, Cat. No. IB47341) fol- 455 lowing manufacturer’s instructions. We assessed RNA concentration and  purity with a NanoDropTM Lite Spectrophotometer (Thermo Scientific). The  twenty-three samples used in this study were sequenced as part of a 458 larger sequencing effort which consisted of four separate sequencing runs 459 and included additional samples from other plant species. Sequencing 460 libraries were prepared using the KAPA Stranded mRNA-Seq (Roche), and 461 these libraries were sequenced on a single lane of Illumina HiSeq 4000 462 or Illumina NovaSeq 6000 platform (paired-end 150 bp reads) at the Duke 463 University Center for Genomic and Computational Biology. The number of 464 resulting read pairs (for the twenty-three samples presented here) ranged 465 from 4,148,932 to 9,618,084 with a median of 6,363,556 and average of 466 6,293,553 (Table S1).
+Tissues were collected and immediately submerged in 1.5 ml of RNA\textit{later}\texttrademark~solution (Invitrogen).
+Submerged samples were generally held at room temperature for thirty minutes and then stored at -80$^{\circ}$C.
+Approximately 100 mg of tissue was ground with a cooled mortar in 1.5 ml tubes.
+Total RNA was isolated using Total RNA Mini Kit (Plant kit; IBI Scientific, Cat. No. IB47341) following manufacturer's instructions.
+We assessed RNA concentration and purity with a NanoDrop\texttrademark~Lite Spectrophotometer (Thermo Scientific).
+The twenty-three samples used in this study were sequenced as part of a larger sequencing effort which consisted of four separate sequencing runs and included additional samples from other plant species.
+Sequencing libraries were prepared using the KAPA Stranded mRNA-Seq (Roche), and these libraries were sequenced on a single lane of Illumina \mbox{HiSeq}~4000 or Illumina \mbox{NovaSeq}~6000 platform (paired-end 150 bp reads) at the Duke University Center for Genomic and Computational Biology.
+The number of resulting read pairs (for the twenty-three samples presented here) ranged from 4,148,932 to 9,618,084 with a median of 6,363,556 and average of 6,293,553 (Table~S1).
 
-%Raw paired-end Illumina reads were first pro- 468 cessed using Rcorrector v1.0.4 (51) to correct for random sequencing er- 469 rors. Then, reads were trimmed with Trimmomatic v0.39 (52) to remove any 470 read containing bases with Phred scores lower than 20, low quality reads 471 less than 50 bp long, and any adapter or other Illumina-specific sequences 472 that were still present. The remaining reads were filtered with Kraken 2 473 (53) to remove Small and Large Subunit ribosomal RNA (SILVA database) 474 (54) and contaminating reads (minikraken2_v2 database). Additionally, we 475 used custom-built databases, derived from RefSeq libraries: UniVec_Core, 476 viral, mitochondrion, plastid, plasmid, archaea, bacteria, protozoa, human, 477 and fungi to minimize the number of contaminating and non-nuclear reads. 478 Only paired reads were used for transcriptome assemblies. Schlumbergera 479 truncata filtered reads were combined across all samples into a single 480 RNA-seq data set. We conducted a de novo transcriptome assembly using 481 Trinity v2.8.5 (55) to generate a single reference transcriptome assembly 482 for Schlumbergera truncata. The same assembly protocol was followed for 483 the single pistil sample of Matucana madisoniorum.
+\subsection*{RNAseq Assemblies}
+
+Raw paired-end Illumina reads were first processed using \mbox{Rcorrector}~v1.0.4 \cite{song2015} to correct for random sequencing errors.
+Then, reads were trimmed with \mbox{Trimmomatic}~v0.39 \cite{bolger2014} to remove any read containing bases with Phred scores lower than 20, low quality reads less than 50 bp long, and any adapter or other Illumina-specific sequences that were still present.
+The remaining reads were filtered with \mbox{Kraken}~2 \cite{wood2019} to remove Small and Large Subunit ribosomal RNA (SILVA database) \cite{quast2013} and contaminating reads (minikraken2\_v2 database).
+Additionally, we used custom-built databases, derived from RefSeq libraries: UniVec\_Core, viral, mitochondrion, plastid, plasmid, archaea, bacteria, protozoa, human, and fungi to minimize the number of contaminating and non-nuclear reads.
+Only paired reads were used for transcriptome assemblies.
+\textit{Schlumbergera truncata} filtered reads were combined across all samples into a single RNA-seq data set.
+We conducted a \textit{de novo} transcriptome assembly using \mbox{Trinity}~v2.8.5 \cite{grabherr2011} to generate a single reference transcriptome assembly for \textit{Schlumbergera truncata}.
+The same assembly protocol was followed for the single pistil sample of \textit{Matucana madisoniorum}.
 
 \textbf{NCBI Data Collection and Compilation:}
 We collected publicly available genomes, complete proteins, gene annotations, and available metadata from Potexviruses (NCBI:txid12176) (NCBI: www.ncbi.nlm.nih.gov/, accession numbers provided in Supplemental Data). 
@@ -135,7 +158,7 @@ These sequences were annotated using the Geneious 11.1.5 "Find ORFs" function.
 
 The complete dataset comprises: 37 existing Potexvirus genomes and proteins, 4 new viral sequences located within original Schlumbergera truncata RNA-seq data, and 52 viral sequences found within NCBI Caryophyllales RNA-seq data.
 
-\textbf{Alignment and Phylogenetic Analyses}
+\subsection*{Sequence Alignment and Phylogenetic Analyses}
 Sequence alignments were performed through MAFFT v7.429 (\cite{katoh_mafft_2002}) using the full dataset.
 %AT note for KR: what were the MAFFT settings?
 The aligned sequences were divided by ORF using the annotations to produce five partial sequence alignments corresponding to each ORF to accompany the full-sequence alignment. 
