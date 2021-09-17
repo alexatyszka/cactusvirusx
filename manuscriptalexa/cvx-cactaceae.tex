@@ -1,16 +1,4 @@
-\documentclass{article}
-%\usepackage{microtype}
-\usepackage[utf8]{inputenc}
-\usepackage{natbib}
-\usepackage{graphicx}
-\usepackage[breaklinks]{hyperref}
-\usepackage{geometry}
-\geometry{legalpaper, portrait, margin=1in}
-
-\title{First Draft of CVX Paper}
-\author{alexa tyszka}
-\date{}
-\begin{document}
+% -*- program: pdflatex -*-
 %%%%%%NOTES%%%%%%
 
 %%%%%%TODO%%%%%%
@@ -27,18 +15,45 @@
 % separate sentences--each sentence on a new line
 % it's best to keep notes to self out of manuscript (ms). In my experience, it's harder for collaborators to read and contribute, when the ms has non-final content in main body. And it's easier to commit to a not-great idea. Hard to back out.
 
-% TITLE =======================================================================
+\documentclass[11pt,letterpaper,titlepage]{article}
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes}
+\usepackage{etoolbox}
+\hypersetup{
+    pdftitle={Placeholder title for CVX-cactaceae Project Manuscript},
+    pdfauthor={Alexa Tyszka, Karolis Ramanauskas, Boris Igi{\'c}}
+}
+\usepackage[all]{hypcap}
+\usepackage{doi}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\renewcommand{\bibsection}{\section*{References}}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+% \newcommand{\eg}{\textit{e}.\textit{g}.}
+\newcommand{\ca}{\textit{ca}.}
+\begin{document}
 
+% TITLE =======================================================================
+\title{\Large\bf{Placeholder title}}
+\author{Alexa Tyszka, Karolis Ramanauskas$^{1,2}$ and Boris Igi\'{c}$^{1,3,4}$}
+\date{
+    $^1$Department of Biological Sciences\\
+    University of Illinois at Chicago\\
+    840 West Taylor St.\ MC067\\
+    Chicago, IL 60607, U.S.A.\\
+    [\baselineskip]
+    $^2$Email: {\tt<kraman2@uic.edu>}\\
+    $^3$Email: {\tt<boris@uic.edu>}\\
+    $^4$Corresponding author.\\
+}
 \maketitle
 
-(Manuscript last compiled on \today.)
 
 % ABSTRACT ====================================================================
-
+\begin{linenumbers}
+\modulolinenumbers[1]
+\setstretch{1.0}
 \begin{abstract}
-
-%B: I would only comment that it does not follow the structure of a standard abstract, which generally contains something about what we did in direct language. Basically, the idea is to set the stage for why anyone would care about what we did--first few sentences--and then say what we did. That's what I try to do here (see below). I think that the next thing should be a complete Methods section and near-final Figures or their draft versions, numbered in order of presentation of a key argument(s). For example, the molecular selection analysis should likely follow the figures about sequencing analyses and/or structure of the genome, and expression data. Phylogeny or phylogenies could be in the middle.
-
 Potexviruses (Alphaflexiviridae) are positive-sense single-stranded RNA viruses known to infect multiple species across plants, including species of Cactaceae. 
 Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X, and Opuntia Virus X are five of the 48 currently described Potexvirus species, which all infect valuable ornamental and crop plants, often causing production losses. 
 The taxonomic naming schemes often employ outdated plant name synonyms, complicating taxonomic assignments. Also, the source of infections in cultivated plants is unclear, as is the distribution of and significance of infections in wild species of cacti. 
@@ -47,11 +62,17 @@ Here, we report results of original RNA-seq experiments and archived sequence de
 The data suggests novel modes of transmission, based on expression analyses across tissues, particularly pollen. 
 We also perform molecular evolutionary analyses to detect genomic regions under different modes of selection. 
 Finally, we examine and discuss the implications of our analyses for the taxonomy of Potexviruses across cacti.  
+
 \end{abstract}
 
+% PAPER PROPER ================================================================
+\setlength{\emergencystretch}{7.5pt}
+\setstretch{1.0}
+\setlength{\parindent}{0.25in}
+
 \section*{Introduction}
-\textbf{1. Introduce CVX, History of problem, previous work and diversity of system}
-%AT: need to discuss cvx, first virus
+
+
 The plant viriome represents a fundamentally complex and intertwined evolutionary interaction between eukaryotic host and viral vector (\cite{delwart_viral_2007}).
  This coincides with the rise of faster, cheaper, high-throughput environmental metagenomic techniques (\cite{delwart_viral_2007, lefeuvre_evolution_2019, schulz_towards_2017}): greenhouse-raised and lab-grown organisms that are commonly analyzed in experiments actually represent a small fraction of living diversity. 
  Metagenomic studies aim to remedy this by sampling hundreds of thousands of genomes, and have vastly expanded both the cellular tree of life (\cite{schulz_towards_2017, hug_new_2016}) and the viral tree of life (\cite{gregory_marine_2019, lefeuvre_evolution_2019, shi_redefining_2016}).  
@@ -68,7 +89,7 @@ The common names "pitaya" and "dragonfruit" can both refer to two separate gener
 Further, the implication that one viral species exclusively infects all plants with the common name "pitaya" is incorrect since there are reports of multiple Potexviruses infecting the same host plant (Li* 2014). 
 These problems persist throughout Potexvirus and are especially prominent with regards to cactus-infecting Potexviruses, underlining the necessity of a more informed taxonomy.
 
-\textbf{2. study system}
+\subsection*{Study system}
 
 Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X, and Opuntia Virus X are all Potexviruses (family Alphaflexiviridae) that are grouped broadly by their infections of certain cacti: Selenicereus undatus and S. polyrhizus (\cite{li_viral_2015, peng_molecular_2016}); Opuntia spp. especially tuna (\cite{koenig_molecular_2004, duarte_potexvirus_2008}) and monacantha (\cite{attathom_occurrence_1978} Sammons 1961 Duarte 2008); Schlumbergera (previously Zygocactus) truncata and S. bridgesii  (\cite{duarte_potexvirus_2008, koenig_molecular_2004}), Parodia (previously Notocactus) leninghausii (\cite{park_detection_2018}),  Echinopsis chamaecereus f. cristata, E. pectinatus f. cristata, E. jusbertii, and E. macrogona (\cite{maliarenko_cactus_2013}); Mammillaria elongata f. cristata (\cite{maliarenko_cactus_2013}); and multiple other species within many genera (\cite{evallo_brief_2021}). 
 Of these viruses, only CVX has been reported on wild Ferocactus cylindraceus (previously Ferrocactus acanthodes) (\cite{attathom_occurrence_1978}) although this report predates DNA records confirming viral identity. 
@@ -83,46 +104,19 @@ It is unclear what the method of transmission from infected plant to new host is
 Some reports specify that cactus-infecting Potexviruses can only be transmitted through grafting (\cite{duarte_potexvirus_2008, martelli_family_2007}) but most agree that transmission can occur through other mechanical contact such as sap inoculation (\cite{liou_complete_2004, maliarenko_cactus_2013, park_detection_2018}) and external tissue contact. 
 Grafting is a primary means of propagation among crop cacti (\cite{park_detection_2018}), and Selenicereus is a commonly chosen graft stock. 
 However, there are reports of other members within Alphaflexiviridae transmitting via insect and seed vectors (\cite{martelli_family_2007}), and pre-DNA studies suggest that CVX may transmit via pollen in the wild (\cite{attathom_occurrence_1978}).
-
-%%%%%%%%%%AT: TO ADD%%%%%%%%%%
-%Some sources claim that Selenicereus is the viral reservoir for cactus-infecting Potexviruses, but this is yet unproven.
-%There have been reports of Schlumbergera Virus X in water (cite),
-% These viruses result in a total of (however much money) of economic crop losses each year.... (cite countries, species)
-%    -symptoms, infection details, multiple infections \cite{brandes_untersuchungen_1963}
-    
-\textbf{3. problems in existing research and knowledge gaps}
-%%%%%%%%%%AT TO ADD%%%%%%%%%%
-%Study of cactus-infecting potexviruses are usually limited to crop plants, which means that the 
-%-what is known: viral genomes and gene sequences, protein functions, presence on crop plants, damage being done, asymptomatic infection, some knowledge about transmission, serological data
-%-what is not known: what the actual wild host range is (mysterious barrel cactus infections in Chessin papers), transmission in the wild, potentially introduced back into the wild?, serological data, what the names should be, what host range in crop plants actually is considering possibility for multiple infections, complex origins, potentially greenhouse specific infections, transmission method, insects/pollen, grafting, why would it infect cacti?
-
-%AT: naming: brandes 1959 already had questions about the naming system
-
-\textbf{4. what is gained from studying this?} 
 Knowledge about cactus-infecting potexviruses contribute to a growing yet biased study of plant viruses. 
 The pursuit of wild cactus-infecting potexviruses serves to expand our evolutionary knowledge of viral evolution, host selection, and transmission mechanics. 
-%%%%%%%%%%AT TO ADD%%%%%%%%%%
-%-more widespread viruses
-%Evolutionarily relevant, discussion of taxonomy and recommendations for ICTV, discussion of viruses and preparation for eventual new viral discovery
-%the relationships of the virus, the ability to mine the virus from existing data, patterns of selection etc.
-
-
-\textbf{5. Specific objectives and questions/summary}
+\subsection*{Specific objectives and questions/summary}
 In this study we present the largest to date phylogeny of cactus-infecting Potexviruses. 
 We attempt to use this expanded phylogeny to answer relevant questions about Potexvirus evolutionary relationships as well as revisiting the utility of decades-old taxonomy in current virus research. 
 %AT: add that it provides insights that help bridge the gap between historic knowledge and current studies
-
 %------------------------------------------------------------------------------
 \section*{Materials and Methods}
 %------------------------------------------------------------------------------
 
-\subsection{Study System}
+\subsection*{Study Organism}
 
-Plant material was collected from pistils, pollen, and styles of \textit{Schlumbergera truncata}.
-Some plants displayed symptoms typical to Potexvirus infection(\cite{chessin_distribution_1972}): frail, reddened cladodes, and poor growth.  
-The plants were initially obtained from various sources, then kept in a shared growing condition. 
-
-\subsection{RNA Extraction and Sequencing} 
+\subsection*{RNA Sequencing}
 %B: from rsi-ms.tex
 
 Tissues were collected and immediately submerged in 1.5 ml of RNA\textit{later}\texttrademark~solution (Invitrogen).
@@ -145,7 +139,7 @@ Only paired reads were used for transcriptome assemblies.
 We conducted a \textit{de novo} transcriptome assembly using \mbox{Trinity}~v2.8.5 \cite{grabherr2011} to generate a single reference transcriptome assembly for \textit{Schlumbergera truncata}.
 The same assembly protocol was followed for the single pistil sample of \textit{Matucana madisoniorum}.
 
-\textbf{NCBI Data Collection and Compilation:}
+\subsection*{NCBI Data Collection and Compilation}
 We collected publicly available genomes, complete proteins, gene annotations, and available metadata from Potexviruses (NCBI:txid12176) (NCBI: www.ncbi.nlm.nih.gov/, accession numbers provided in Supplemental Data). 
 The untranslated regions (UTRs) were trimmed from the sequences to provide consistency.
 
@@ -153,14 +147,14 @@ The untranslated regions (UTRs) were trimmed from the sequences to provide consi
 We also searched the NCBI Sequence Read Archive (SRA) database (www.ncbi.nlm.nih.gov/sra) for RNA-sequencing (RNA-seq) data within Caryophyllales (NCBI:txid3524) that had been sequenced using the Illumina library sequencing platform. 
 For each identified SRA run accession (SRR), any viral RNA that matched sample cactus-infecting Potexvirus RNA (accession numbers provided in Supplemental Data) was identified, extracted, and assembled using the kakapo 0.7.3-dev pipeline (http://flightless.one) with Kraken2 viral filters disabled. 
 The .sam files produced through kakapo were loaded through Geneious 11.1.5 along with the Schlumbergera reads.
-%(ASK KR). 
+%KR check
 These sequences were annotated using the Geneious 11.1.5 "Find ORFs" function. 
 
 The complete dataset comprises: 37 existing Potexvirus genomes and proteins, 4 new viral sequences located within original Schlumbergera truncata RNA-seq data, and 52 viral sequences found within NCBI Caryophyllales RNA-seq data.
 
 \subsection*{Sequence Alignment and Phylogenetic Analyses}
 Sequence alignments were performed through MAFFT v7.429 (\cite{katoh_mafft_2002}) using the full dataset.
-%AT note for KR: what were the MAFFT settings?
+%KR check
 The aligned sequences were divided by ORF using the annotations to produce five partial sequence alignments corresponding to each ORF to accompany the full-sequence alignment. 
 The individual proteins were exported to .FASTA files, then gaps at the start of the sequence and stop codons were removed manually. 
 Phylogenetic relationships and bootstrap values were inferred using IQtree v1.6.12 (\cite{nguyen_iq-tree_2015}), ModelFinder (\cite{kalyaanamoorthy_modelfinder_2017}), and UFBoot (\cite{hoang_ufboot2_2018}) for both the individual gene/protein alignments and the full sequence alignment. 
@@ -171,21 +165,31 @@ This was generally consistent with most recent branch lengths over 0.1 subs/site
 Pairwise distance analysis was conducted on the sequence alignments in R using the ape v5.5  dist.dna() function with a raw model. 
 For each defined clade, nonzero pairwise distances between each possible combination of tips was averaged. 
 Expanded phylogenetic trees and individual gene/protein trees are available in the Supplementary Data.
-%AT note to herself to add selection methods, further gene tree analysis
+Pistils (without ovaries), pollen, leaf, and root tissues were collected and immediately submerged in 1.5 ml of RNA\textit{later}\texttrademark~solution (Invitrogen).
+Submerged samples were held at room temperature for thirty minutes and then moved to a -80 C freezer for storage.
+Approximately 100 mg of tissue was ground to a fine powder in 1.5 ml tubes submerged in liquid nitrogen.
+Total RNA was isolated using Total RNA Mini Kit (Plant kit; IBI Scientific, Cat. No. IB47341) following manufacturer's instructions.
+We assessed RNA concentration and purity with a NanoDrop\texttrademark~Lite Spectrophotometer (Thermo Scientific).
+The XX samples used in this study were sequenced as part of a larger sequencing effort which consisted of XXX separate sequencing runs and included additional samples from other plant species.
+Sequencing libraries were prepared using the KAPA Stranded mRNA-Seq (Roche), and these libraries were sequenced on a single lane of Illumina \mbox{HiSeq}~4000 or Illumina \mbox{NovaSeq}~6000 platform (paired-end 150 bp reads) at the Duke University Center for Genomic and Computational Biology.
+The number of resulting read pairs (for the XX samples presented here) ranged from X,XXX,XXX to X,XXX,XXX with a median of X,XXX,XXX and average of X,XXX,XXX (Table~S1).
+
+\subsection*{Data Accessibility}
+
 %------------------------------------------------------------------------------
 \section*{Results}
 %------------------------------------------------------------------------------
-%at: note from BI to keep in mind: For example, the molecular selection analysis should likely follow the figures about sequencing analyses and/or structure of the genome, and expression data. Phylogeny or phylogenies could be in the middle.
-\textbf{Phylogenetic analysis}
+
+\subsection*{Phylogenetic analysis}
 The phylogenetic tree places the new viral sequences from Schlumbergera and Selenicereus near existing viral species within Potexvirus (Figure 1). 
-%AT note to herself to use latex figure tools
+
 The S. truncata samples were located within the Cactus Virus X clade and appear to represent the only known discovery of Cactus Virus X on members of Schlumbergera. 
 The publicly available data which was collected from NCBI produced 52 new viral sequences which were dispersed among viral species. 
 These samples were exclusively representative of Selenicereus undatus and Selenicereus polyrhizus hosts. 
 The Cactus Virus X species clade is expanded by a factor of 8. 
 The only putative species that was not expanded by either the Schlumbergera data or the Selenicereus data was Opuntia Virus X, which appears to be an outgroup to the other cactus-infecting Potexviruses. 
 
-\textbf{Divisions within species}
+\subsection*{Divisions within species}
 The five species within the phylogeny appear to be generally characterized by long (*) branch lengths separating clusters of closely related (short branch lengths) tips. 
 Cactus Virus X, as a putative species, appears to have two time-separated evolutionary distant sets of tips. 
 These have been marked as different colors in Figure 1. 
@@ -196,32 +200,57 @@ Pairwise distances between species were calculated for six groups, with a value 
 The average nonzero pairwise distance between all included potexvirus tips was 0.256, maximum = 0.4925. 
 When the outgroup (including Plantago asiatica MV, Alternantha MV, Papaya MV, etc.) was excluded from pairwise analysis, the average nonzero pairwise distance value was 0.177, maximum = 0.326. 
 When these cactus-infecting potexviruses were subdivided into six groups of relatively recent diversification, the average nonzero pairwise distance for full-genome sequences was always above 0.015. 
-%AT note to herself to use latex math symbols
+
 For the genes RNA-dependent RNA polymerase (RdRp) and Coat protein (CP), which the ICTV recommends be analyzed for species delimitation, the average nonzero pairwise distance was always  above 0.02 (Figure 2). 
 This correlates to roughly greater than 97.5 and 98 nucleotide identity. 
-%AT question: should I include SD for these?
 
-\textbf{Gene phylogenies}
+\subsection*{Gene phylogenies}
 The assembled phylogenies for each of the five genes are available in their fully annotated versions in the Supplemental Data. 
 The gene trees generally supported the species groupings of the full-genome tree and do not change the interpretation of the "main" tree. 
 
-\textbf{Host range }
+\subsection*{Host range }
 The host from attached metadata for each species is noted in Figure 1. 
 There are two unique samples collected from NCBI that report non-plant hosts of cactus-infecting potexviruses: "Cactus virus X SCM51431", and "Mytcor Virus 1 MG210801". 
 These have the hosts Diptera and Bivalve, respectively. 
-%can i put host mismatches here?
 
 %------------------------------------------------------------------------------
 \section*{Discussion}
 %------------------------------------------------------------------------------
 
-%pairwise analysis duarte 2008
-%1.
-%2.
-%3.
-%4.
+Discussion text.
 
-\medskip
-\bibliographystyle{plainnat}
-\bibliography{cvx-refs}
+%------------------------------------------------------------------------------
+\section*{Acknowledgments}
+%------------------------------------------------------------------------------
+
+Acknowledgments text.
+
+% BIBLIOGRAPHY ================================================================
+\pagebreak
+\raggedright{}
+\setstretch{1.0}
+\setlength{\parindent}{0.0in}
+\bibliographystyle{evolution}
+{\fontsize{10pt}{15pt}\selectfont\bibliography{cvx-refs}}
+\end{linenumbers}
+
+% FIGURES =====================================================================
+\pagebreak
+\frenchspacing
+\setstretch{1.0}
+\setlength{\parindent}{0.0in}
+
+\section*{Figures}
+
+% \begin{figure}[ht]
+% \centering
+% \includegraphics[width=0.5\linewidth]{FILE_PATH}
+% \begin{NoHyper}
+% \caption{{\fontsize{10pt}{11pt}\selectfont
+% \label{fig:FIG_LABEL}
+% \end{NoHyper}
+% \end{figure}
+
+% END =========================================================================
+
 \end{document}
