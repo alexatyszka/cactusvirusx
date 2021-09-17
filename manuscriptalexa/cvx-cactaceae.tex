@@ -1,28 +1,13 @@
 % -*- program: pdflatex -*-
-%%%%%%NOTES%%%%%%
-
-%%%%%%TODO%%%%%%
-%Figures, summary statistics
-
-% No worries about warnings--we'll fix those later
-% It _is_ important for the document to compile reliably (without errors)
-
-%FIXMEs: 
-% make sure to start with a template file for manuscript!
-% when ripping Karolis' paper (or other lab papers), use our tex files, not PDF (they don't copy and paste well, and miss formatted characters, like degree symbol). It's also just way, way, easier and saves time!
-% no colons in any paper subsection titles?
-% also, maybe better to use \subsection{} for subsection titles!
-% separate sentences--each sentence on a new line
-% it's best to keep notes to self out of manuscript (ms). In my experience, it's harder for collaborators to read and contribute, when the ms has non-final content in main body. And it's easier to commit to a not-great idea. Hard to back out.
-
 \documentclass[11pt,letterpaper,titlepage]{article}
+\usepackage{evolution}
 \usepackage[T1]{fontenc}
 \usepackage{tgtermes}
 \usepackage{etoolbox}
 \hypersetup{
-    pdftitle={Placeholder title for CVX-cactaceae Project Manuscript},
-    pdfauthor={Alexa Tyszka, Karolis Ramanauskas, Boris Igi{\'c}}
-}
+   pdftitle={Placeholder title for CVX-cactaceae Project Manuscript},
+   pdfauthor={Alexa Tyszka, Karolis Ramanauskas, Boris Igi{\'c}}
+   }
 \usepackage[all]{hypcap}
 \usepackage{doi}
 \usepackage{graphicx}
@@ -48,6 +33,17 @@
 }
 \maketitle
 
+%%%%%%NOTES%%%%%%
+
+%%%%%%TODO%%%%%%
+%Figures, summary statistics
+
+% No worries about warnings--we'll fix those later
+% It _is_ important for the document to compile reliably (without errors)
+
+%FIXMEs: 
+% Read the log notes (git log) each time!
+% Small stuff: Italicize all species binomials by convention: e.g., \texit{Schlumbergera truncata}. Not families, though! The convention helps with reading and whatnot, mainly it looks professional and it's a bit easier to read. Read sections on Scientific Nomenclature, Genes, and Viruses here: https://wwwnc.cdc.gov/eid/page/scientific-nomenclature
 
 % ABSTRACT ====================================================================
 \begin{linenumbers}
@@ -65,7 +61,7 @@ Finally, we examine and discuss the implications of our analyses for the taxonom
 
 \end{abstract}
 
-% PAPER PROPER ================================================================
+
 \setlength{\emergencystretch}{7.5pt}
 \setstretch{1.0}
 \setlength{\parindent}{0.25in}
@@ -89,8 +85,12 @@ The common names "pitaya" and "dragonfruit" can both refer to two separate gener
 Further, the implication that one viral species exclusively infects all plants with the common name "pitaya" is incorrect since there are reports of multiple Potexviruses infecting the same host plant (Li* 2014). 
 These problems persist throughout Potexvirus and are especially prominent with regards to cactus-infecting Potexviruses, underlining the necessity of a more informed taxonomy.
 
-\subsection*{Study system}
 
+%B: Hmmm, Intro is usually not allowed to have subsections. Also, Study System, Study Organism, or Study Site is commonly a subsection of Materials and Methods? Maybe, for reference, take a look at the organization of another paper? Karolis's paper is a good starting point, but any paper from a journal where you intend to send the ms is probably good, too.
+
+\subsection*{Study system}
+% This subsection text, if in the M&M section should only be about the material that we are contributing. 
+% If it is intended as background/review, those parts ought to be in the Introduction.
 Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X, and Opuntia Virus X are all Potexviruses (family Alphaflexiviridae) that are grouped broadly by their infections of certain cacti: Selenicereus undatus and S. polyrhizus (\cite{li_viral_2015, peng_molecular_2016}); Opuntia spp. especially tuna (\cite{koenig_molecular_2004, duarte_potexvirus_2008}) and monacantha (\cite{attathom_occurrence_1978} Sammons 1961 Duarte 2008); Schlumbergera (previously Zygocactus) truncata and S. bridgesii  (\cite{duarte_potexvirus_2008, koenig_molecular_2004}), Parodia (previously Notocactus) leninghausii (\cite{park_detection_2018}),  Echinopsis chamaecereus f. cristata, E. pectinatus f. cristata, E. jusbertii, and E. macrogona (\cite{maliarenko_cactus_2013}); Mammillaria elongata f. cristata (\cite{maliarenko_cactus_2013}); and multiple other species within many genera (\cite{evallo_brief_2021}). 
 Of these viruses, only CVX has been reported on wild Ferocactus cylindraceus (previously Ferrocactus acanthodes) (\cite{attathom_occurrence_1978}) although this report predates DNA records confirming viral identity. 
 Additionally, although they are originally found on cacti, the viruses are frequently manipulated with serological experiments and have been found to produce lesions (which indicate infection) on: Chenopodium murale L. (\cite{maliarenko_cactus_2013}) and C. quinoa (\cite{attathom_identification_1978,attathom_occurrence_1978, brandes_untersuchungen_1963-1}; Nicotiana alata Link el. Otto (\cite{maliarenko_cactus_2013}); Four species of Amaranthaceae (\cite{attathom_identification_1978}); Escobaria vivipara (\cite{attathom_identification_1978}); and other cactaceae (\cite{attathom_identification_1978}). 
@@ -110,6 +110,8 @@ The pursuit of wild cactus-infecting potexviruses serves to expand our evolution
 In this study we present the largest to date phylogeny of cactus-infecting Potexviruses. 
 We attempt to use this expanded phylogeny to answer relevant questions about Potexvirus evolutionary relationships as well as revisiting the utility of decades-old taxonomy in current virus research. 
 %AT: add that it provides insights that help bridge the gap between historic knowledge and current studies
+
+% METHODS ====================================================================
 %------------------------------------------------------------------------------
 \section*{Materials and Methods}
 %------------------------------------------------------------------------------
@@ -117,7 +119,6 @@ We attempt to use this expanded phylogeny to answer relevant questions about Pot
 \subsection*{Study Organism}
 
 \subsection*{RNA Sequencing}
-%B: from rsi-ms.tex
 
 Tissues were collected and immediately submerged in 1.5 ml of RNA\textit{later}\texttrademark~solution (Invitrogen).
 Submerged samples were generally held at room temperature for thirty minutes and then stored at -80$^{\circ}$C.
@@ -174,7 +175,6 @@ The XX samples used in this study were sequenced as part of a larger sequencing 
 Sequencing libraries were prepared using the KAPA Stranded mRNA-Seq (Roche), and these libraries were sequenced on a single lane of Illumina \mbox{HiSeq}~4000 or Illumina \mbox{NovaSeq}~6000 platform (paired-end 150 bp reads) at the Duke University Center for Genomic and Computational Biology.
 The number of resulting read pairs (for the XX samples presented here) ranged from X,XXX,XXX to X,XXX,XXX with a median of X,XXX,XXX and average of X,XXX,XXX (Table~S1).
 
-\subsection*{Data Accessibility}
 
 %------------------------------------------------------------------------------
 \section*{Results}
@@ -231,7 +231,9 @@ Acknowledgments text.
 \setstretch{1.0}
 \setlength{\parindent}{0.0in}
 \bibliographystyle{evolution}
-{\fontsize{10pt}{15pt}\selectfont\bibliography{cvx-refs}}
+%{\fontsize{10pt}{15pt}\selectfont
+\bibliography{cvx-refs}
+%}
 \end{linenumbers}
 
 % FIGURES =====================================================================
