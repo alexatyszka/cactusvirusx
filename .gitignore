@@ -22,6 +22,7 @@ old/
 .RData
 .Rhistory
 ~$*
+manuscriptalexa/cvx-cactaceae.pdf
 analyses/cvx.init.aln.fasta
 analyses/cvx.njtree.nwk
 analyses/cvx.seq.metadata.csv
