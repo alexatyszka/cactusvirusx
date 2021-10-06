@@ -20,7 +20,7 @@
 
 % TITLE =======================================================================
 \title{\Large\bf{Placeholder title}}
-\author{Alexa Tyszka, Karolis Ramanauskas$^{1,2}$ and Boris Igi\'{c}$^{1,3,4}$}
+\author{Alexa Tyszka$^{1}$, Karolis Ramanauskas$^{1,2}$ and Boris Igi\'{c}$^{1,3,4}$}
 \date{
     $^1$Department of Biological Sciences\\
     University of Illinois at Chicago\\
@@ -36,6 +36,7 @@
 %%%%%%NOTES%%%%%%
 
 %%%%%%TODO%%%%%%
+%delete before pushing
 %Figures, summary statistics
 
 % No worries about warnings--we'll fix those later
@@ -50,14 +51,14 @@
 \modulolinenumbers[1]
 \setstretch{1.0}
 \begin{abstract}
-Potexviruses (Alphaflexiviridae) are positive-sense single-stranded RNA viruses known to infect multiple species across plants, including species of Cactaceae. 
-Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X, and Opuntia Virus X are five of the 48 currently described Potexvirus species, which all infect valuable ornamental and crop plants, often causing production losses. 
+\textit{Potexviruses} (family Alphaflexiviridae ) are positive-sense single-stranded RNA viruses known to infect multiple species across plants, including species of \textit{Cactaceae}. 
+\textit{Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X,} and \textit{Opuntia Virus X} are five of the 48 currently described \textit{Potexvirus} species, which all infect valuable ornamental and crop plants, often causing production losses. 
 The taxonomic naming schemes often employ outdated plant name synonyms, complicating taxonomic assignments. Also, the source of infections in cultivated plants is unclear, as is the distribution of and significance of infections in wild species of cacti. 
 The lack of clarity is partly related to low sampling across the family. 
-Here, we report results of original RNA-seq experiments and archived sequence deposits, aimed at detecting Potexviruses in cacti, assembling whole genomes, estimating their phylogenetic relationships, and delimiting viral species. 
+Here, we report results of original RNA-seq experiments and archived sequence deposits, aimed at detecting \textit{Potexviruses} in cacti, assembling whole genomes, estimating their phylogenetic relationships, and delimiting viral species. 
 The data suggests novel modes of transmission, based on expression analyses across tissues, particularly pollen. 
 We also perform molecular evolutionary analyses to detect genomic regions under different modes of selection. 
-Finally, we examine and discuss the implications of our analyses for the taxonomy of Potexviruses across cacti.  
+Finally, we examine and discuss the implications of our analyses for the taxonomy of \textit{Potexviruses} across cacti.  
 
 \end{abstract}
 
@@ -68,46 +69,57 @@ Finally, we examine and discuss the implications of our analyses for the taxonom
 
 \section*{Introduction}
 
-%Discuss virus. 
-The plant viriome represents a fundamentally complex and intertwined evolutionary interaction between eukaryotic host and viral vector (\cite{delwart_viral_2007}). 
-Plant viruses were the earliest characterized viruses, beginning with Mayer's publication on his discovery of Tobacco Mosaic Virus in 1886 on tobacco plants (\cite{mayer1886mosaikkrankheit}) following Molisch's discovery of "protein bodies" in cacti in 1885 (previously Epiphylum truncatum)  (\cite{molisch1885merkwurdige}). 
-They may deserve to be called the first true purified viruses, but Molisch's "Proteinkörper" are absent from many reviews of historical virology (such as \cite{LECOQ2001929}).
+The plant viriome represents a fundamentally complex evolutionary interaction between eukaryotic host and viral vector (\cite{delwart_viral_2007}). 
+Plant viruses were the earliest characterized viruses, beginning with Mayer's publication on his discovery of \textit{Tobacco Mosaic Virus} in 1886 on tobacco plants (\cite{mayer1886mosaikkrankheit}) which followed Molisch's 1885 discovery of "protein bodies" on cacti: \textit{Schlumbergera truncata}, (previously \textit{Epiphylum truncatumin}) (\cite{molisch1885merkwurdige}). 
+They may deserve to be called the first true purified viruses, but Molisch's "Proteinkörper" are absent from many reviews of historical virology (such as \cite{LECOQ2001929, lefeuvre_evolution_2019}).
 There has been a recent rise of faster, cheaper, high-throughput environmental metagenomic techniques (\cite{delwart_viral_2007, lefeuvre_evolution_2019, schulz_towards_2017}): it has become evident that greenhouse-raised and lab-grown organisms that are commonly analyzed in experiments actually represent a small fraction of living diversity.  
 Metagenomic studies aim to sample hundreds of thousands of genomes, and have vastly expanded both the cellular tree of life (\cite{schulz_towards_2017, hug_new_2016}) and the viral tree of life (\cite{gregory_marine_2019, lefeuvre_evolution_2019, shi_redefining_2016}).  
-Viruses display impressive morphological diversity and adaptations, many of which allow them to infect plants (\cite{delwart_viral_2007, lefeuvre_evolution_2019}).
- Metagenomic analysis of plants, particularly understudied or non-crop plants have both enriched our genetic knowledge of plants and uncovered novel insights on viral evolution, adaptation, and transmission. 
- A careful study of the plant viriome provides a view into biological realities that are not presently reflected in the literature.
+Viruses display impressive morphological diversity and adaptations, many which allow them to infect plants (\cite{delwart_viral_2007, lefeuvre_evolution_2019}).
+ Metagenomic analysis of plants, particularly understudied or non-crop plants have both enriched our genetic knowledge of plants and uncovered novel insights on viral evolution, adaptation, and transmission (Citations needed*). 
+ A careful study of the plant viriome provides a view into underlying biological realities that are not presently fully understood.
 
-
-The study of plant viruses often suffers from poor nomenclature due to the erroneous practice of naming a virus based on hosts. 
-The term "plant virus", for example, implies that plant infection is monophyletic rather than homoplastic (\cite{lefeuvre_evolution_2019}). 
-There is strong evidence to suggest that viruses frequently have "jumped" from fungal or inverterbrate hosts to their associated plants (\cite{lefeuvre_evolution_2019}). 
-Many agricultural plant viruses are named for the common name of a plant, for example, Pitaya Virus X. 
-The common names "pitaya" and "dragonfruit" can both refer to two separate genera within Echinocereeae (\cite{le_bellec_12_2011}): Selenicereus (which has 31 species) (\cite{korotkova_phylogenetic_2017, guerrero_phylogenetic_2019}) and Stenocereus, which has 23 putative species (\cite{guerrero_phylogenetic_2019}).
-Further, the implication that one viral species exclusively infects all plants with the common name "pitaya" is incorrect since there are reports of multiple Potexviruses infecting the same host plant (Li* 2014). 
-These problems persist throughout Potexvirus and are especially prominent with regards to cactus-infecting Potexviruses, underlining the necessity of a more informed taxonomy.
+The International Committee on Taxonomy of Viruses (ICTV) presently advises the taxonomy and approval of viruses (\cite{simmonds2017virus, lefkowitz2018virus,international2020new}).
+The massive amounts of data resulting from metagenomic studies have caused revisions in ICTV policy (\cite{international2020new, simmonds2017virus}), but many viruses remain named by their host, location, or symptoms, all of which may cause confusion due to their overlap with other viruses.  
+The study of plant viruses particularly suffers from poor nomenclature due to the practice of naming a virus after a first discovered host which is subject to reclassification or renaming. 
+The term "plant virus" in itself is problematic since there is strong evidence to suggest that viruses frequently spill over from fungal or invertebrate hosts to plants (\cite{lefeuvre_evolution_2019}).
+Although the Baltimore classification system attempts to standardize viral classification by intrinsic morphological characteristics of a virus' replication machinery \cite{international2020new}, it 
+Many agricultural plant viruses are also named for the common name of a plant, which carries its own problems, for example: \textit{Pitaya Virus X} is named for the common name "Pitaya" which can refer to as many as 31 species within the genus \textit{Selenicereus} (\cite{korotkova_phylogenetic_2017, guerrero_phylogenetic_2019, le_bellec_12_2011}). 
+To complicate matters further, one virus may infect many hosts, and one host may contain many viruses. 
+A single-stranded RNA virus has a faster rate of evolution than a host plant, and engages in different reproductive methods, making a direct comparison of virus-to-plant hosts difficult.
+There is no guarantee that viral evolution and speciation follows linearly behind plant evolution and speciation -- especially due to viral host-switching 
+These problems persist throughout \textit{Potexvirus} and are especially prominent with regards to cactus-infecting \textit{Potexviruses}.
 
 
 %B: Hmmm, Intro is usually not allowed to have subsections. Also, Study System, Study Organism, or Study Site is commonly a subsection of Materials and Methods? Maybe, for reference, take a look at the organization of another paper? Karolis's paper is a good starting point, but any paper from a journal where you intend to send the ms is probably good, too.
 
 % This subsection text, if in the M&M section should only be about the material that we are contributing. 
 % If it is intended as background/review, those parts ought to be in the Introduction.
-Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X, and Opuntia Virus X are all Potexviruses (family Alphaflexiviridae) that are grouped broadly by their infections of certain cacti: Selenicereus undatus and S. polyrhizus (\cite{li_viral_2015, peng_molecular_2016}); Opuntia spp. especially tuna (\cite{koenig_molecular_2004, duarte_potexvirus_2008}) and monacantha (\cite{attathom_occurrence_1978} Sammons 1961 Duarte 2008); Schlumbergera (previously Zygocactus) truncata and S. bridgesii  (\cite{duarte_potexvirus_2008, koenig_molecular_2004}), Parodia (previously Notocactus) leninghausii (\cite{park_detection_2018}),  Echinopsis chamaecereus f. cristata, E. pectinatus f. cristata, E. jusbertii, and E. macrogona (\cite{maliarenko_cactus_2013}); Mammillaria elongata f. cristata (\cite{maliarenko_cactus_2013}); and multiple other species within many genera (\cite{evallo_brief_2021}). 
-Of these viruses, only CVX has been reported on wild Ferocactus cylindraceus (previously Ferrocactus acanthodes) (\cite{attathom_occurrence_1978}) although this report predates DNA records confirming viral identity. 
+\textit{Cactus Virus X}, \textit{Zygocactus Virus X}, \textit{Schlumbergera Virus X}, \textit{Pitaya Virus X}, and \textit{Opuntia Virus X} are all \textit{Potexviruses} (family Alphaflexiviridae) that are grouped broadly by their infections of certain cacti: \textit{Selenicereus undatus} and \textit{S. polyrhizus} (\cite{li_viral_2015, peng_molecular_2016}); \textit{Opuntia spp.} especially \textit{O. tuna} (\cite{koenig_molecular_2004, duarte_Potexvirus_2008}) and O. monacantha (\cite{attathom_occurrence_1978} Sammons 1961 Duarte 2008); \textit{Schlumbergera} (previously \textit{Zygocactus}) \textit{truncata} and \textit{S. bridgesii}  (\cite{duarte_Potexvirus_2008, koenig_molecular_2004}), \textit{Parodia }(previously \textit{Notocactus}) \textit{leninghausii }(\cite{park_detection_2018}),  \textit{Echinopsis chamaecereus f. cristata}, \textit{E. pectinatus f. cristata}, \textit{E. jusbertii}, and \textit{E. macrogona} (\cite{maliarenko_cactus_2013}); \textit{Mammillaria elongata f. cristata} (\cite{maliarenko_cactus_2013}); and multiple other species within many genera in the family Cactaceae (\cite{evallo_brief_2021}). 
+Of these viruses, only\textit{ Cactus Virus X} (CVX) has been reported on wild \textit{Ferocactus cylindraceus }(previously \textit{Ferrocactus acanthodes}) (\cite{attathom_occurrence_1978}) although this report predates DNA records confirming the viral identity. 
 Additionally, although they are originally found on cacti, the viruses are frequently manipulated with serological experiments and have been found to produce lesions (which indicate infection) on: Chenopodium murale L. (\cite{maliarenko_cactus_2013}) and C. quinoa (\cite{attathom_identification_1978,attathom_occurrence_1978, brandes_untersuchungen_1963-1}; Nicotiana alata Link el. Otto (\cite{maliarenko_cactus_2013}); Four species of Amaranthaceae (\cite{attathom_identification_1978}); Escobaria vivipara (\cite{attathom_identification_1978}); and other cactaceae (\cite{attathom_identification_1978}). 
-All cactus-infecting potexviruses consist of roughly 6,600 bp of positive-sense single-stranded RNA. They have similar rod-shaped filamentous virions and share the same division of five primary open reading frames (ORFs): Replicase (Rep), Triple gene block (TGB), Coat protein (CP), coded in the 5' direction as well as two smaller overlapping ORFs coded in the 3' direction: ORF6 and ORF7 (\cite{evallo_brief_2021,liou_complete_2004, martelli_family_2007}). 
-They are closely related to other Potexviruses such as Alternantha Mosaic Virus and Papaya Mosaic Virus (\cite{martelli_family_2007, park_detection_2018, liou_complete_2004}). 
+All cactus-infecting \textit{Potexviruses} consist of roughly 6,600 bp of positive-sense single-stranded RNA. They have similar rod-shaped filamentous virions and share the same division of five primary open reading frames (ORFs): Replicase (Rep), Triple gene block (TGB), Coat protein (CP), coded in the 5' direction as well as two smaller overlapping ORFs coded in the 3' direction: ORF6 and ORF7 (\cite{evallo_brief_2021,liou_complete_2004, martelli_family_2007}). 
+They are closely related to other \textit{Potexviruses} such as \textit{Alternantha Mosaic Virus} and \textit{Papaya Mosaic Virus} (\cite{martelli_family_2007, park_detection_2018, liou_complete_2004}). 
 These viruses produce a wide range of symptomatic and damaging infections in cacti. 
-Reports of symptomatic plants range from 5.5 percent of wild Ferocactus cylindraceus (\cite{attathom_occurrence_1978}) up to 44 percent of crop plants on Hainan Island, China (\cite{peng_molecular_2016}). 
+Reports of symptomatic plants range from 5.5 percent of wild \textit{Ferocactus cylindraceus} (\cite{attathom_occurrence_1978}) up to 44 percent of crop plants on Hainan Island, China (\cite{peng_molecular_2016}). 
 However, many infected plants do not show external signs of viral infection (\cite{liou_complete_2004, bos_symptoms_1977}). 
 The most commonly recognized symptoms of disease are mosaic, mottling, stunted growth and distortion (\cite{maliarenko_cactus_2013, peng_molecular_2016, attathom_occurrence_1978}). 
-It is still unclear what the method of transmission from infected plant to new host is. 
-Some reports specify that cactus-infecting Potexviruses can only be transmitted through grafting (\cite{duarte_potexvirus_2008, martelli_family_2007}) but most agree that transmission can occur through other mechanical contact such as sap inoculation (\cite{liou_complete_2004, maliarenko_cactus_2013, park_detection_2018}) and external tissue contact. 
-Grafting is a primary means of propagation among crop cacti (\cite{park_detection_2018}), and Selenicereus is a commonly chosen graft stock. 
-However, there are reports of other members within Alphaflexiviridae transmitting via insect and seed vectors (\cite{martelli_family_2007}), and pre-DNA studies suggest that CVX may transmit via pollen in the wild (\cite{attathom_occurrence_1978}).
-Knowledge about cactus-infecting potexviruses contribute to a growing yet biased study of plant viruses. 
-The pursuit of wild cactus-infecting potexviruses serves to expand our evolutionary knowledge of viral evolution, host selection, and transmission mechanics. 
+It is yet unclear what the method of transmission from infected plant to new host is. 
+Some reports specify that cactus-infecting \textit{Potexviruses} can only be transmitted through grafting (\cite{duarte_Potexvirus_2008, martelli_family_2007}) but most agree that transmission can occur through other mechanical contact such as sap inoculation (\cite{liou_complete_2004, maliarenko_cactus_2013, park_detection_2018}) and external tissue contact. 
+Grafting is a primary means of propagation among crop cacti (\cite{park_detection_2018}), and \textit{Selenicereus} is a commonly chosen graft stock. 
+However, there are reports of other members within the family \textit{Alphaflexiviridae} transmitting via insect and seed vectors (\cite{martelli_family_2007}), and pre-DNA studies tentatively suggest that \textit{CVX} may transmit via pollen in the wild (\cite{attathom_occurrence_1978}).
 
+Knowledge about cactus-infecting \textit{Potexviruses} contributes to a growing yet biased study of plant viruses. 
+The evolutionary history of these viruses is obscured due to human-assisted dispersal, grafting, and cultivation, which parallels the disproportionate sampling representation of plants raised in greenhouses or for agricultural production. 
+However, \textit{Cactus Virus X} and associated viruses seem restricted to cactaceous hosts for unknown reasons -- every sample of CVX or CVX-related viruses has come from cacti. 
+A wild origin has not been definitively identified, and the few studies that have investigated wild \textit{Potexviruses} of cacti predate DNA methods.
+What may appear to be a virus' evolutionary adaptation to infect cacti may instead be due to 
+Recent sequencing efforts have revealed multiple inconsistent virus-host pairs on cacti. 
+Although many metagenomic studies capture environmental genetic information that allows for virus identification, these may be biased due to tissue type and expression rates of viruses (\cite{lacroix2016methodological}). 
+The pursuit of wild cactus-infecting \textit{Potexviruses} serves to expand our evolutionary knowledge of viral evolution, host selection, and transmission mechanics. 
+First, any broad-scope sampling of plants of interest within \textit{Cactaceae} and \textit{Caryophyllales} must be combed through to investigate whether viruses have been accidentally sampled, and if so 
+The relationships of the virus can be investigated with a thorough phylogenetic approach, using available virus samples. 
+the ability to mine the virus from existing data, 
+patterns of selection etc
 In this study we present the largest to date phylogeny of cactus-infecting Potexviruses. 
 We attempt to use this expanded phylogeny to answer relevant questions about Potexvirus evolutionary relationships as well as revisiting the utility of decades-old taxonomy in current virus research. 
 %AT: add that it provides insights that help bridge the gap between historic knowledge and current studies
@@ -118,6 +130,7 @@ We attempt to use this expanded phylogeny to answer relevant questions about Pot
 %------------------------------------------------------------------------------
 
 \subsection*{Study Organism}
+
 
 \subsection*{RNA Sequencing}
 
@@ -178,7 +191,7 @@ The number of resulting read pairs (for the XX samples presented here) ranged fr
 
 
 %------------------------------------------------------------------------------
-\section*{Results}
+\section*{Results and Discussion}
 %------------------------------------------------------------------------------
 
 \subsection*{Phylogenetic analysis}
@@ -198,9 +211,9 @@ The other group that has outliers is Zygocactus Virus X, which appears to have a
 The relationship and its bootstrap value have both been marked with different colors in Figure 1. 
 
 Pairwise distances between species were calculated for six groups, with a value of 0 indicating identical sequences and a value of 1 indicating completely divergent sequences (Figure 2). 
-The average nonzero pairwise distance between all included potexvirus tips was 0.256, maximum = 0.4925. 
+The average nonzero pairwise distance between all included Potexvirus tips was 0.256, maximum = 0.4925. 
 When the outgroup (including Plantago asiatica MV, Alternantha MV, Papaya MV, etc.) was excluded from pairwise analysis, the average nonzero pairwise distance value was 0.177, maximum = 0.326. 
-When these cactus-infecting potexviruses were subdivided into six groups of relatively recent diversification, the average nonzero pairwise distance for full-genome sequences was always above 0.015. 
+When these cactus-infecting Potexviruses were subdivided into six groups of relatively recent diversification, the average nonzero pairwise distance for full-genome sequences was always above 0.015. 
 
 For the genes RNA-dependent RNA polymerase (RdRp) and Coat protein (CP), which the ICTV recommends be analyzed for species delimitation, the average nonzero pairwise distance was always  above 0.02 (Figure 2). 
 This correlates to roughly greater than 97.5 and 98 nucleotide identity. 
@@ -211,14 +224,9 @@ The gene trees generally supported the species groupings of the full-genome tree
 
 \subsection*{Host range }
 The host from attached metadata for each species is noted in Figure 1. 
-There are two unique samples collected from NCBI that report non-plant hosts of cactus-infecting potexviruses: "Cactus virus X SCM51431", and "Mytcor Virus 1 MG210801". 
+There are two unique samples collected from NCBI that report non-plant hosts of cactus-infecting Potexviruses: "Cactus virus X SCM51431", and "Mytcor Virus 1 MG210801". 
 These have the hosts Diptera and Bivalve, respectively. 
 
-%------------------------------------------------------------------------------
-\section*{Discussion}
-%------------------------------------------------------------------------------
-
-Discussion text.
 
 %------------------------------------------------------------------------------
 \section*{Acknowledgments}
