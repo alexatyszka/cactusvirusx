@@ -6,7 +6,7 @@ output: html_document
 ---
 
 
-> This is a one-time package installation to help get libraries likely to be missing at the start.
+## This is a one-time package installation to help get libraries likely to be missing at the start.
 
 ```{r eval=FALSE}
 knitr::opts_chunk$set(error = TRUE)
@@ -36,10 +36,9 @@ library(treeio)
 ```
 Fetch tree and metadata:
 ```{r}
-
-cvx.metadata <- read.csv('../data/data_v1/cvx_hostdata_v3.csv', stringsAsFactors = FALSE)
-tre.f  <- "../data/data_v1/iqtree-output/genbank_kr_consensus_extraction_al_trimmed.fasta.newick"
-cvx.newick.tree <- read.newick(tre.f)
+cvx.metadata <- read.csv('../data/cvx_hostdata.csv', stringsAsFactors = FALSE)
+cvx.newick.loc  <- "../data/iqtree-output/genbank_kr_consensus_extraction_al_trimmed.fasta.newick"
+cvx.newick.tree <- read.newick(cvx.newick.loc)
 
 ```
 
