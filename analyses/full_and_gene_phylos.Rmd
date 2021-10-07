@@ -40,7 +40,7 @@ Load metadata file with correct names - check which columns will be used for nam
 ```{r}
 #reloading metadata file including the names, useful for running during debugging
 reload.metadata <- function(){
-  md <<- read.csv('../data/cvx_hostdata.csv', stringsAsFactors = FALSE)
+  md <<- read.csv('../data/name_key.csv', stringsAsFactors = FALSE)
   print("Metadata file loaded")
 }
 reload.metadata()
@@ -235,12 +235,12 @@ kbl(sumstats, booktabs = T, format="html", col.names = c("Species", "Open Readin
 ##Trees:
 Load trees for each gene.
 ```{r}
-loc0 <- "../data/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
-loc1 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
-loc2 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_2_TGB1_names/2_TGB1_names.fasta.treefile"
-loc3 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_3_TGB2_names/3_TGB2_names.fasta.treefile"
-loc4 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
-loc5 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_5_CP_names/5_CP_names.fasta.treefile"
+loc0 <- "alexasandbox/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
+loc1 <- "alexasandbox/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
+loc2 <- "alexasandbox/iqtree_2_TGB1_names/2_TGB1_names.fasta.treefile"
+loc3 <- "alexasandbox/iqtree_3_TGB2_names/3_TGB2_names.fasta.treefile"
+loc4 <- "alexasandbox/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
+loc5 <- "alexasandbox/iqtree_5_CP_names/5_CP_names.fasta.treefile"
 locs <- c(loc0, loc1, loc2, loc3, loc4, loc5)
 names <- c("full", "rdrp", "tgb1", "tgb2", "tgb3", "cp")
 ```
