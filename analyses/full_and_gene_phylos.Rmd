@@ -1,5 +1,5 @@
 ---
-title: "Annotation of IQTree exports for CVX genes"
+title: "Annotation of IQTree exports for CVX genes and full genome tree"
 author: "A.T."
 date: "5/20/2021"
 output: html_document
@@ -29,80 +29,75 @@ library(DECIPHER)
 library(phangorn)
 library(phytools)
 library(ape)
-library("knitr")
+library(knitr)
 library(DECIPHER)
 library(treeio)
 library(kableExtra)
 
 ```
 
-Rename main metadata file to reflect tip groupings, and grab tips from `plot()`.
+Load metadata file with correct names - check which columns will be used for names and hosts.
 ```{r}
-setwd("/")
-reload.md <- function(){
-  md <<- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v1/cvx_hostdata_v5.csv', stringsAsFactors = FALSE)
+#reloading metadata file including the names, useful for running during debugging
+reload.metadata <- function(){
+  md <<- read.csv('../data/cvx_hostdata.csv', stringsAsFactors = FALSE)
   print("Metadata file loaded")
 }
-reload.md()
-#fetching nodes for tree and figuring out roots. outdated and not useful for subsequent file executions
-tre.loc  <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_0_full-aln_names/0_full-aln_names.fasta.nwk"
-new.tree <- read.newick(tre.loc)
-newrerooted <- reroot(new.tree, node.number = 114)
-plot.new()
-newrerooted <- ladderize(newrerooted, right=FALSE)
-plot(newrerooted,cex=0.25)
-tips.store <- identify(newrerooted, nodes = TRUE, tips = TRUE,labels = TRUE, quiet = FALSE)$tips
-#grep(pattern, location)
-#cat(paste(tips.store, collapse="\", \""))
+reload.metadata()
+#cvx.newick.loc  <- "../data/iqtree-output/genbank_kr_consensus_extraction_al_trimmed.fasta.newick"
+#cvx.newick.tree <- read.newick(cvx.newick.loc)
+#use plot() and then tips.store for identifying nodes and tip numbers if needed:
+#tips.store <- identify(newrerooted, nodes = TRUE, tips = TRUE,labels = TRUE, quiet = FALSE)$tips
 ```
 
-Store tips for each variant. Use tips.store values for clades.
+Store tips for each available tree. Use tips.store values for clades.
 ```{r eval=FALSE}
 search.column <- gsub(" ", "_", md$Organism)
 search.column <- gsub("__", "_", search.column)
-rename.tips <- function(cladename, tipnames){
+#Note that this only needed to be run once and is now outdated.
+#rename.tips <- function(cladename, tipnames){
   #tipnames <- gsub("_", " ", tipnames)
   #tipnames <- gsub(":", "", tipnames)
-  for(i in 1:length(tipnames)){
-  md$Clade[grep(tipnames[i],search.column)] <<- cladename
-  print(md$Clade[grep(tipnames[i],search.column)])
-  print(tipnames[i])
-  print(i)
-  print(grep(tipnames[i],search.column))
+#  for(i in 1:length(tipnames)){
+#  md$Clade[grep(tipnames[i],search.column)] <<- cladename
+#  print(md$Clade[grep(tipnames[i],search.column)])
+#  print(tipnames[i])
+#  print(i)
+#  print(grep(tipnames[i],search.column))
   
-}
-}
+#}
+#}
 #CVX Var A
-tips.store <- c("SRR11190795_Plant_FR-3_NC_002815", "SRR11603183_GW-peel-2_NC_002815", "SRR11603184_GW-peel-1_NC_002815", "SRR11190801_Plant_DH-2_NC_002815", "SRR11190798_Plant_DH-3_NC_002815", "SRR11190799_Plant_BSJ-3_NC_002815", "SRR11190800_Plant_BSJ-2_NC_002815", "SRR11190791_Plant_BSJ-1_NC_002815", "SRR11603182_GW-peel-3_NC_002815", "SRR11190802_Plant_DH-1_NC_002815", "SRR11190797_Plant_FR-1_NC_002815", "SRR11190796_Plant_FR-2_NC_002815", "Schlumbergera_truncata_19JSF_sty_NC_002815", "Schlumbergera_truncata_15H06_cons", "Schlumbergera_truncata_15H04_cons", "Schlumbergera_truncata_15H03_cons", "SRR11603189_RR-peel-3_NC_002815", "SRR11603190_RR-peel-2_NC_002815", "SRR11603186_RR-pulp-3_NC_002815", "SRR11603191_RR-peel-1_NC_002815", "Cactus_virus_X_LC128411.1", "SRR11603187_RR-pulp-2_NC_002815", "SRR11190792_Plant_BR-3_NC_002815", "SRR11190793_Plant_BR-2_NC_002815", "Cactus_virus_X_AF308158.2", "Cactus_virus_X_KM365479.1")
-rename.tips("Cactus Virus X Variant A", tips.store)
+#tips.store <- c("SRR11190795_Plant_FR-3_NC_002815", "SRR11603183_GW-peel-2_NC_002815", "SRR11603184_GW-peel-1_NC_002815", "SRR11190801_Plant_DH-2_NC_002815", "SRR11190798_Plant_DH-3_NC_002815", "SRR11190799_Plant_BSJ-3_NC_002815", "SRR11190800_Plant_BSJ-2_NC_002815", "SRR11190791_Plant_BSJ-1_NC_002815", "SRR11603182_GW-peel-3_NC_002815", "SRR11190802_Plant_DH-1_NC_002815", "SRR11190797_Plant_FR-1_NC_002815", "SRR11190796_Plant_FR-2_NC_002815", "Schlumbergera_truncata_19JSF_sty_NC_002815", "Schlumbergera_truncata_15H06_cons", "Schlumbergera_truncata_15H04_cons", "Schlumbergera_truncata_15H03_cons", "SRR11603189_RR-peel-3_NC_002815", "SRR11603190_RR-peel-2_NC_002815", "SRR11603186_RR-pulp-3_NC_002815", "SRR11603191_RR-peel-1_NC_002815", "Cactus_virus_X_LC128411.1", "SRR11603187_RR-pulp-2_NC_002815", "SRR11190792_Plant_BR-3_NC_002815", "SRR11190793_Plant_BR-2_NC_002815", "Cactus_virus_X_AF308158.2", "Cactus_virus_X_KM365479.1")
+#rename.tips("Cactus Virus X Variant A", tips.store)
 
 #CVX Var B
-tips.store <- c("Cactus_virus_X_JF937699.1","Cactus_virus_X_KM288846.1", "Cactus_virus_X_KM288847.1", "Cactus_virus_X_SCM51431")
-rename.tips("Cactus Virus X Variant B", tips.store)
+#tips.store <- c("Cactus_virus_X_JF937699.1","Cactus_virus_X_KM288846.1", "Cactus_virus_X_KM288847.1", "Cactus_virus_X_SCM51431")
+#rename.tips("Cactus Virus X Variant B", tips.store)
 #ZyVX Variant B1
-tips.store <- c("Zygocactus_virus_X_JF930326.1", "SRR11603191_RR-peel-1_NC_006059", "SRR11603190_RR-peel-2_NC_006059", "SRR11603187_RR-pulp-2_NC_006059", "SRR11603189_RR-peel-3_NC_006059", "SRR11603186_RR-pulp-3_NC_006059", "Zygocactus_virus_X_Strain_B1", "KM288842", "KM288843", "KM288844", "SRR11190801_Plant_DH-2_NC_006059", "SRR11190798_Plant_DH-3_NC_006059", "SRR11190797_Plant_FR-1_NC_006059", "SRR11190802_Plant_DH-1_NC_006059", "SRR11190796_Plant_FR-2_NC_006059")
-rename.tips("Zygocactus Virus X Variant B1", tips.store)
+#tips.store <- c("Zygocactus_virus_X_JF930326.1", "SRR11603191_RR-peel-1_NC_006059", "SRR11603190_RR-peel-2_NC_006059", "SRR11603187_RR-pulp-2_NC_006059", "SRR11603189_RR-peel-3_NC_006059", "SRR11603186_RR-pulp-3_NC_006059", "Zygocactus_virus_X_Strain_B1", "KM288842", "KM288843", "KM288844", "SRR11190801_Plant_DH-2_NC_006059", "SRR11190798_Plant_DH-3_NC_006059", "SRR11190797_Plant_FR-1_NC_006059", "SRR11190802_Plant_DH-1_NC_006059", "SRR11190796_Plant_FR-2_NC_006059")
+#rename.tips("Zygocactus Virus X Variant B1", tips.store)
 
 #Pitaya Virus X
-tips.store <- c("Mytcor_virus_1", "SRR11190800_Plant_BSJ-2_NC_024458", "SRR11190791_Plant_BSJ-1_NC_024458", "SRR11190793_Plant_BR-2_NC_024458", "SRR11190797_Plant_FR-1_NC_024458", "SRR11190796_Plant_FR-2_NC_024458", "Pitaya_virus_X", "SRR11190795_Plant_FR-3_NC_024458", "SRR11603187_RR-pulp-2_NC_024458", "SRR11603189_RR-peel-3_NC_024458", "SRR11603190_RR-peel-2_NC_024458", "SRR11603186_RR-pulp-3_NC_024458", "SRR11603191_RR-peel-1_NC_024458", "SRR11190801_Plant_DH-2_NC_024458", "SRR11190798_Plant_DH-3_NC_024458", "SRR11603183_GW-peel-2_NC_024458", "SRR11603182_GW-peel-3_NC_024458", "SRR11603184_GW-peel-1_NC_024458", "SRR11190802_Plant_DH-1_NC_024458")
-rename.tips("Pitaya Virus X", tips.store)
+#tips.store <- c("Mytcor_virus_1", "SRR11190800_Plant_BSJ-2_NC_024458", "SRR11190791_Plant_BSJ-1_NC_024458", "SRR11190793_Plant_BR-2_NC_024458", "SRR11190797_Plant_FR-1_NC_024458", "SRR11190796_Plant_FR-2_NC_024458", "Pitaya_virus_X", "SRR11190795_Plant_FR-3_NC_024458", "SRR11603187_RR-pulp-2_NC_024458", "SRR11603189_RR-peel-3_NC_024458", "SRR11603190_RR-peel-2_NC_024458", "SRR11603186_RR-pulp-3_NC_024458", "SRR11603191_RR-peel-1_NC_024458", "SRR11190801_Plant_DH-2_NC_024458", "SRR11190798_Plant_DH-3_NC_024458", "SRR11603183_GW-peel-2_NC_024458", "SRR11603182_GW-peel-3_NC_024458", "SRR11603184_GW-peel-1_NC_024458", "SRR11190802_Plant_DH-1_NC_024458")
+#rename.tips("Pitaya Virus X", tips.store)
 
 #Schlumbergera Virus X
-tips.store <- c("Schlumbergera_virus_X_KU854929", "Schlumbergera_virus_X_KP090203", "Schlumbergera_virus_X_Strain_K11", "SRR11190802_Plant_DH-1_NC_011659", "SRR11603183_GW-peel-2_NC_011659", "SRR11603189_RR-peel-3_NC_011659", "SRR11603187_RR-pulp-2_NC_011659", "SRR11603184_GW-peel-1_NC_011659", "SRR11190798_Plant_DH-3_NC_011659", "SRR11190801_Plant_DH-2_NC_011659")
-rename.tips("Schlumbergera Virus X", tips.store)
+#tips.store <- c("Schlumbergera_virus_X_KU854929", "Schlumbergera_virus_X_KP090203", "Schlumbergera_virus_X_Strain_K11", "SRR11190802_Plant_DH-1_NC_011659", "SRR11603183_GW-peel-2_NC_011659", "SRR11603189_RR-peel-3_NC_011659", "SRR11603187_RR-pulp-2_NC_011659", "SRR11603184_GW-peel-1_NC_011659", "SRR11190798_Plant_DH-3_NC_011659", "SRR11190801_Plant_DH-2_NC_011659")
+#rename.tips("Schlumbergera Virus X", tips.store)
 
 #Opuntia Virus X
-tips.store <- c("Opuntia_virus_X_KU854931", "Opuntia_virus_X_KY348771", "Opuntia_virus_Strain_CC10")
-rename.tips("Opuntia Virus X", tips.store)
+#tips.store <- c("Opuntia_virus_X_KU854931", "Opuntia_virus_X_KY348771", "Opuntia_virus_Strain_CC10")
+#rename.tips("Opuntia Virus X", tips.store)
 
-write.csv(md, "test1.csv")
+#write.csv(md, "test1.csv")
 ```
 
 Load csv files for relevant genes.
 ```{r}
 #grep(,rownames(rdrp))
 #Given clade name, returns indices of associated pairwise distance values within matrix.
-md <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v1/cvx_hostdata_v5.csv', stringsAsFactors = FALSE)
+reload.metadata()
 rdrp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/1_RdRp_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
 cp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/5_CP_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
 full <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/0_full-aln_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
@@ -240,12 +235,12 @@ kbl(sumstats, booktabs = T, format="html", col.names = c("Species", "Open Readin
 ##Trees:
 Load trees for each gene.
 ```{r}
-loc0 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
-loc1 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
-loc2 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_2_TGB1_names/2_TGB1_names.fasta.treefile"
-loc3 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_3_TGB2_names/3_TGB2_names.fasta.treefile"
-loc4 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
-loc5 <- "/Users/alexa/Desktop/cactusvirusx/data/data_v3/iqtree_5_CP_names/5_CP_names.fasta.treefile"
+loc0 <- "../data/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
+loc1 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
+loc2 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_2_TGB1_names/2_TGB1_names.fasta.treefile"
+loc3 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_3_TGB2_names/3_TGB2_names.fasta.treefile"
+loc4 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
+loc5 <- "/Users/alexa/Desktop/cactusvirusx/data/iqtree_5_CP_names/5_CP_names.fasta.treefile"
 locs <- c(loc0, loc1, loc2, loc3, loc4, loc5)
 names <- c("full", "rdrp", "tgb1", "tgb2", "tgb3", "cp")
 ```

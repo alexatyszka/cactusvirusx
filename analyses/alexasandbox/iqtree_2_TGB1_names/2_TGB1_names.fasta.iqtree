@@ -1,0 +1,494 @@
+IQ-TREE 1.6.12 built Aug 15 2019
+
+Input file name: 2_TGB1_names.fasta
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 344858
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Lam-Tung Nguyen, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh
+(2015) IQ-TREE: A fast and effective stochastic algorithm for estimating
+maximum likelihood phylogenies. Mol Biol Evol, 32:268-274.
+https://doi.org/10.1093/molbev/msu300
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2017) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol Biol Evol, in press.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 95 sequences with 714 nucleotide sites
+Number of constant sites: 139 (= 19.4678% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 139 (= 19.4678% of all sites)
+Number of parsimony informative sites: 518
+Number of distinct site patterns: 585
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+I+G4
+
+Rate parameter R:
+
+  A-C: 1.4685
+  A-G: 3.5932
+  A-T: 1.2219
+  C-G: 0.7801
+  C-T: 3.7794
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.2461
+  pi(C) = 0.3259
+  pi(G) = 0.2136
+  pi(T) = 0.2143
+
+Rate matrix Q:
+
+  A    -1.026    0.3255     0.522    0.1781
+  C    0.2457   -0.9099    0.1133    0.5508
+  G    0.6013    0.1729     -0.92    0.1457
+  T    0.2045    0.8377    0.1453    -1.187
+
+Model of rate heterogeneity: Invar+Gamma with 4 categories
+Proportion of invariable sites: 0.08563
+Gamma shape alpha: 0.6982
+
+ Category  Relative_rate  Proportion
+  0         0              0.08563
+  1         0.08071        0.2286
+  2         0.3966         0.2286
+  3         1.011          0.2286
+  4         2.887          0.2286
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -12818.6512 (s.e. 312.9885)
+Unconstrained log-likelihood (without tree): -4326.3939
+Number of free parameters (#branches + #model parameters): 193
+Akaike information criterion (AIC) score: 26023.3025
+Corrected Akaike information criterion (AICc) score: 26167.3102
+Bayesian information criterion (BIC) score: 26905.4829
+
+Total tree length (sum of branch lengths): 10.9974
+Sum of internal branch lengths: 5.0901 (46.2846% of tree length)
+
+WARNING: 23 near-zero internal branches (<0.0014) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Clover_yellow_mosaic_virus' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++-----------------------------------------------Clover_yellow_mosaic_virus
+|
++--------------------------------------Hydrangea_ringspot_virus
+|
+|                                                    +------Plantago_asiatica_mosaic_virus__KU697313
+|                                                 +--| (84)
+|                                                 |  |    +--Plantago_asiatica_mosaic_virus__KT717325
+|                                                 |  +----| (100)
+|                                                 |       +--Plantago_asiatica_mosaic_virus__KU159093
+|         +---------------------------------------| (100)
+|         |                                       |  +----Nandina_mosaic_virus
+|         |                                       +--| (85)
+|         |                                          +------Plantago_asiatica_mosaic_virus__LC155795
+|    +----| (82)
+|    |    |                            +**Opuntia_virus__Strain_CC10
+|    |    |        +-------------------| (100)
+|    |    |        |                   |  +--Opuntia_virus_X__KY348771
+|    |    |        |                   +--| (94)
+|    |    |        |                      +**Opuntia_virus_X__KU854931
+|    |    +--------| (100)
+|    |             |                   +--Schlumbergera_virus_X__KU854929
+|    |             |           +-------| (100)
+|    |             |           |       |           +--SRR11190802_Plant__DH-1_NC_011659
+|    |             |           |       |        +--| (82)
+|    |             |           |       |        |  +--Schlumbergera_virus_X__Strain_K11
+|    |             |           |       |     +--| (80)
+|    |             |           |       |     |  +--Schlumbergera_virus_X__KP090203
+|    |             |           |       |  +--| (85)
+|    |             |           |       |  |  |  +**SRR11190798_Plant__DH-3_NC_011659
+|    |             |           |       |  |  +--| (99)
+|    |             |           |       |  |     +**SRR11190801_Plant__DH-2_NC_011659
+|    |             |           |       +--| (96)
+|    |             |           |          |  +--SRR11603189_RR-peel-3_NC_011659
+|    |             |           |          +--| (98)
+|    |             |           |             |  +**SRR11603187_RR-pulp-2_NC_011659
+|    |             |           |             +--| (65)
+|    |             |           |                |  +**SRR11603183_GW-peel-2_NC_011659
+|    |             |           |                +**| (94)
+|    |             |           |                   +**SRR11603184_GW-peel-1_NC_011659
+|    |             |        +--| (81)
+|    |             |        |  |      +---KM288845
+|    |             |        |  +------| (100)
+|    |             |        |         |           +**SRR11190798_Plant__DH-3_NC_006059
+|    |             |        |         |        +--| (100)
+|    |             |        |         |        |  +**SRR11190801_Plant__DH-2_NC_006059
+|    |             |        |         |     +--| (86)
+|    |             |        |         |     |  |        +--Zygocactus_virus_X__Strain_B1
+|    |             |        |         |     |  |     +--| (89)
+|    |             |        |         |     |  |     |  +--Zygocactus_virus_X__JF930326.1
+|    |             |        |         |     |  |  +--| (90)
+|    |             |        |         |     |  |  |  |  +--KM288844
+|    |             |        |         |     |  |  |  +**| (90)
+|    |             |        |         |     |  |  |     |  +**KM288843
+|    |             |        |         |     |  |  |     +--| (100)
+|    |             |        |         |     |  |  |        +--KM288842
+|    |             |        |         |     |  +--| (92)
+|    |             |        |         |     |     |  +--SRR11603191_RR-peel-1_NC_006059
+|    |             |        |         |     |     +--| (94)
+|    |             |        |         |     |        |     +**SRR11603189_RR-peel-3_NC_006059
+|    |             |        |         |     |        |  +--| (100)
+|    |             |        |         |     |        |  |  +**SRR11603187_RR-pulp-2_NC_006059
+|    |             |        |         |     |        +--| (94)
+|    |             |        |         |     |           |  +**SRR11603186_RR-pulp-3_NC_006059
+|    |             |        |         |     |           +**| (81)
+|    |             |        |         |     |              +**SRR11603190_RR-peel-2_NC_006059
+|    |             |        |         |  +--| (68)
+|    |             |        |         |  |  |  +**SRR11190796_Plant__FR-2_NC_006059
+|    |             |        |         |  |  +--| (98)
+|    |             |        |         |  |     +**SRR11190797_Plant__FR-1_NC_006059
+|    |             |        |         +--| (97)
+|    |             |        |            +**SRR11190802_Plant__DH-1_NC_006059
+|    |             |     +--| (57)
+|    |             |     |  |                    +--MG210801
+|    |             |     |  |                 +**| (12)
+|    |             |     |  |                 |  |  +**SRR11190800_Plant__BSJ-2_NC_024458
+|    |             |     |  |                 |  +--| (100)
+|    |             |     |  |                 |     +**SRR11190791_Plant__BSJ-1_NC_024458
+|    |             |     |  |              +**| (35)
+|    |             |     |  |              |  |  +--SRR11190802_Plant__DH-1_NC_024458
+|    |             |     |  |              |  +**| (27)
+|    |             |     |  |              |     |  +**SRR11190795_Plant__FR-3_NC_024458
+|    |             |     |  |              |     +--| (77)
+|    |             |     |  |              |        +--Pitaya_virus_X
+|    |             |     |  |           +--| (29)
+|    |             |     |  |           |  +**SRR11190801_Plant__DH-2_NC_024458
+|    |             |     |  |        +--| (93)
+|    |             |     |  |        |  |           +**SRR11190798_Plant__DH-3_NC_024458
+|    |             |     |  |        |  |        +**| (45)
+|    |             |     |  |        |  |        |  |           +**SRR11190796_Plant__FR-2_NC_024458
+|    |             |     |  |        |  |        |  |        +--| (100)
+|    |             |     |  |        |  |        |  |        |  +**SRR11190797_Plant__FR-1_NC_024458
+|    |             |     |  |        |  |        |  |     +--| (95)
+|    |             |     |  |        |  |        |  |     |  |  +**SRR11603189_RR-peel-3_NC_024458
+|    |             |     |  |        |  |        |  |     |  +**| (87)
+|    |             |     |  |        |  |        |  |     |     +**SRR11603187_RR-pulp-2_NC_024458
+|    |             |     |  |        |  |        |  |  +**| (93)
+|    |             |     |  |        |  |        |  |  |  +**SRR11603191_RR-peel-1_NC_024458
+|    |             |     |  |        |  |        |  +**| (91)
+|    |             |     |  |        |  |        |     |  +**SRR11603186_RR-pulp-3_NC_024458
+|    |             |     |  |        |  |        |     +**| (75)
+|    |             |     |  |        |  |        |        +**SRR11603190_RR-peel-2_NC_024458
+|    |             |     |  |        |  |     +**| (13)
+|    |             |     |  |        |  |     |  +**SRR11603184_GW-peel-1_NC_024458
+|    |             |     |  |        |  |  +**| (22)
+|    |             |     |  |        |  |  |  +**SRR11603183_GW-peel-2_NC_024458
+|    |             |     |  |        |  +--| (25)
+|    |             |     |  |        |     +**SRR11603182_GW-peel-3_NC_024458
+|    |             |     |  +--------| (100)
+|    |             |     |           +**SRR11190793_Plant__BR-2_NC_024458
+|    |             +-----| (96)
+|    |                   |            +--Cactus_virus_X__JF937699.1
+|    |                   |         +--| (98)
+|    |                   |         |  +--Cactus_virus_X__KM288846.1
+|    |                   |      +--| (89)
+|    |                   |      |  +--Cactus_virus_X__KM288847.1
+|    |                   |  +---| (100)
+|    |                   |  |   +**Cactus_virus_X__SCM51431
+|    |                   +--| (90)
+|    |                      |                               +--Schlumbergera_truncata_15H03__cons
+|    |                      |                            +--| (100)
+|    |                      |                            |  |  +--Schlumbergera_truncata_19JSF_sty__NC_002815
+|    |                      |                            |  +**| (72)
+|    |                      |                            |     |  +--Schlumbergera_truncata_15H04__cons
+|    |                      |                            |     +--| (99)
+|    |                      |                            |        +--Schlumbergera_truncata_15H06__cons
+|    |                      |                         +--| (85)
+|    |                      |                         |  |     +--Cactus_virus_X__LC128411.1
+|    |                      |                         |  |  +--| (98)
+|    |                      |                         |  |  |  |     +**SRR11603186_RR-pulp-3_NC_002815
+|    |                      |                         |  |  |  |  +**| (64)
+|    |                      |                         |  |  |  |  |  +**SRR11603190_RR-peel-2_NC_002815
+|    |                      |                         |  |  |  +--| (99)
+|    |                      |                         |  |  |     |  +**SRR11603191_RR-peel-1_NC_002815
+|    |                      |                         |  |  |     +**| (93)
+|    |                      |                         |  |  |        |  +**SRR11603187_RR-pulp-2_NC_002815
+|    |                      |                         |  |  |        +--| (99)
+|    |                      |                         |  |  |           +**SRR11603189_RR-peel-3_NC_002815
+|    |                      |                         |  +**| (55)
+|    |                      |                         |     +--SRR11190793_Plant__BR-2_NC_002815
+|    |                      |                      +--| (80)
+|    |                      |                      |  +--Cactus_virus_X__KM365479.1
+|    |                      |                   +--| (57)
+|    |                      |                   |  |           +**SRR11603183_GW-peel-2_NC_002815
+|    |                      |                   |  |        +**| (36)
+|    |                      |                   |  |        |  |  +--SRR11603182_GW-peel-3_NC_002815
+|    |                      |                   |  |        |  +--| (98)
+|    |                      |                   |  |        |     |  +**SRR11190799_Plant__BSJ-3_NC_002815
+|    |                      |                   |  |        |     +--| (99)
+|    |                      |                   |  |        |        +**SRR11190791_Plant__BSJ-1_NC_002815
+|    |                      |                   |  |     +**| (34)
+|    |                      |                   |  |     |  +**SRR11190801_Plant__DH-2_NC_002815
+|    |                      |                   |  |  +**| (18)
+|    |                      |                   |  |  |  +**SRR11190798_Plant__DH-3_NC_002815
+|    |                      |                   |  +--| (72)
+|    |                      |                   |     +**SRR11603184_GW-peel-1_NC_002815
+|    |                      |                +**| (30)
+|    |                      |                |  +**SRR11190802_Plant__DH-1_NC_002815
+|    |                      |             +**| (21)
+|    |                      |             |  |  +--SRR11190796_Plant__FR-2_NC_002815
+|    |                      |             |  +**| (36)
+|    |                      |             |     +**SRR11190797_Plant__FR-1_NC_002815
+|    |                      |          +--| (82)
+|    |                      |          |  +**SRR11190792_Plant__BR-3_NC_002815
+|    |                      |       +--| (83)
+|    |                      |       |  +--Cactus_virus_X__AF308158.2
+|    |                      +-------| (100)
+|    |                              +**SRR11190795_Plant__FR-3_NC_002815
++----| (73)
+     |                 +-------------------------------Senna_mosaic_virus
+     |              +--| (72)
+     |              |  +-----------------------Papaya_mosaic_virus
+     +--------------| (99)
+                    |  +------------------------Babaco_mosaic_virus
+                    +--| (88)
+                       |           +------Alternanthera_mosaic_virus__LC107515
+                       +-----------| (100)
+                                   |          +--Alternanthera_mosaic_virus__MH423501
+                                   |       +--| (85)
+                                   |       |  +--Alternanthera_mosaic_virus__FJ822136
+                                   |    +--| (84)
+                                   |    |  |  +--Alternanthera_mosaic_virus__GQ179646
+                                   |    |  +--| (100)
+                                   |    |     +--Alternanthera_mosaic_virus__GQ179647
+                                   +----| (99)
+                                        +--Alternanthera_mosaic_virus__AY863024
+
+Tree in newick format:
+
+(Clover_yellow_mosaic_virus:1.2748664842,Hydrangea_ringspot_virus:1.0610800262,((((Plantago_asiatica_mosaic_virus__KU697313:0.1917583965,(Plantago_asiatica_mosaic_virus__KT717325:0.0065555558,Plantago_asiatica_mosaic_virus__KU159093:0.0054992469)100:0.1429939445)84:0.0400134663,(Nandina_mosaic_virus:0.1508209607,Plantago_asiatica_mosaic_virus__LC155795:0.2072635249)85:0.0288922670)100:1.0677272360,((Opuntia_virus__Strain_CC10:0.0000023856,(Opuntia_virus_X__KY348771:0.0059279461,Opuntia_virus_X__KU854931:0.0000020315)94:0.0258211109)100:0.5566542248,((((Schlumbergera_virus_X__KU854929:0.1020777365,((((SRR11190802_Plant__DH-1_NC_011659:0.0411196523,Schlumbergera_virus_X__Strain_K11:0.0158219820)82:0.0059223828,Schlumbergera_virus_X__KP090203:0.0191561992)80:0.0110247933,(SRR11190798_Plant__DH-3_NC_011659:0.0000020841,SRR11190801_Plant__DH-2_NC_011659:0.0000023716)99:0.0042428479)85:0.0037878193,(SRR11603189_RR-peel-3_NC_011659:0.0020468725,(SRR11603187_RR-pulp-2_NC_011659:0.0000023716,(SRR11603183_GW-peel-2_NC_011659:0.0000022544,SRR11603184_GW-peel-1_NC_011659:0.0000023716)94:0.0000026275)65:0.0033322046)98:0.0119992948)96:0.0425306486)100:0.2127054730,(KM288845:0.1318805034,((((SRR11190798_Plant__DH-3_NC_006059:0.0000029037,SRR11190801_Plant__DH-2_NC_006059:0.0000029038)100:0.0076526695,(((Zygocactus_virus_X__Strain_B1:0.0379235889,Zygocactus_virus_X__JF930326.1:0.0077983039)89:0.0042803366,(KM288844:0.0170038677,(KM288843:0.0000023716,KM288842:0.0082195808)100:0.0086396806)90:0.0013397379)90:0.0028403607,(SRR11603191_RR-peel-1_NC_006059:0.0030571239,((SRR11603189_RR-peel-3_NC_006059:0.0000023716,SRR11603187_RR-pulp-2_NC_006059:0.0000023716)100:0.0029735316,(SRR11603186_RR-pulp-3_NC_006059:0.0000023716,SRR11603190_RR-peel-2_NC_006059:0.0000023716)81:0.0000022266)94:0.0014220028)94:0.0153472173)92:0.0135682231)86:0.0051904623,(SRR11190796_Plant__FR-2_NC_006059:0.0000026894,SRR11190797_Plant__FR-1_NC_006059:0.0000024257)98:0.0028691700)68:0.0085124206,SRR11190802_Plant__DH-1_NC_006059:0.0003845954)97:0.0940447229)100:0.1961917914)81:0.0505036947,(((((MG210801:0.0074479526,(SRR11190800_Plant__BSJ-2_NC_024458:0.0000024337,SRR11190791_Plant__BSJ-1_NC_024458:0.0000024350)100:0.0059683050)12:0.0000023859,(SRR11190802_Plant__DH-1_NC_024458:0.0015118877,(SRR11190795_Plant__FR-3_NC_024458:0.0000024079,Pitaya_virus_X:0.0014784182)77:0.0042474659)27:0.0002060494)35:0.0000020889,SRR11190801_Plant__DH-2_NC_024458:0.0000023716)29:0.0014781806,((((SRR11190798_Plant__DH-3_NC_024458:0.0000023716,((((SRR11190796_Plant__FR-2_NC_024458:0.0000024803,SRR11190797_Plant__FR-1_NC_024458:0.0000026467)100:0.0014864071,(SRR11603189_RR-peel-3_NC_024458:0.0000023716,SRR11603187_RR-pulp-2_NC_024458:0.0000023716)87:0.0000028283)95:0.0014759825,SRR11603191_RR-peel-1_NC_024458:0.0000023716)93:0.0000041481,(SRR11603186_RR-pulp-3_NC_024458:0.0000023716,SRR11603190_RR-peel-2_NC_024458:0.0000021876)75:0.0000015661)91:0.0000023717)45:0.0000024480,SRR11603184_GW-peel-1_NC_024458:0.0000023716)13:0.0000029615,SRR11603183_GW-peel-2_NC_024458:0.0000023716)22:0.0000024823,SRR11603182_GW-peel-3_NC_024458:0.0000023716)25:0.0014704817)93:0.0059837313,SRR11190793_Plant__BR-2_NC_024458:0.0000022777)100:0.2555195159)57:0.0269776207,((((Cactus_virus_X__JF937699.1:0.0152124381,Cactus_virus_X__KM288846.1:0.0060212233)98:0.0068066618,Cactus_virus_X__KM288847.1:0.0069250157)89:0.0022131434,Cactus_virus_X__SCM51431:0.0000021280)100:0.1285258970,(((((((((Schlumbergera_truncata_15H03__cons:0.0076454498,(Schlumbergera_truncata_19JSF_sty__NC_002815:0.0015249076,(Schlumbergera_truncata_15H04__cons:0.0014879257,Schlumbergera_truncata_15H06__cons:0.0029592421)99:0.0028229458)72:0.0000026444)100:0.0183398273,((Cactus_virus_X__LC128411.1:0.0075196259,((SRR11603186_RR-pulp-3_NC_002815:0.0000023716,SRR11603190_RR-peel-2_NC_002815:0.0000020443)64:0.0000025664,(SRR11603191_RR-peel-1_NC_002815:0.0000023716,(SRR11603187_RR-pulp-2_NC_002815:0.0000023716,SRR11603189_RR-peel-3_NC_002815:0.0000022238)99:0.0014752833)93:0.0000028668)99:0.0060136451)98:0.0059702985,SRR11190793_Plant__BR-2_NC_002815:0.0134814303)55:0.0000024404)85:0.0030280870,Cactus_virus_X__KM365479.1:0.0090349713)80:0.0014419278,((((SRR11603183_GW-peel-2_NC_002815:0.0000023716,(SRR11603182_GW-peel-3_NC_002815:0.0060273044,(SRR11190799_Plant__BSJ-3_NC_002815:0.0000023716,SRR11190791_Plant__BSJ-1_NC_002815:0.0000024433)99:0.0039837365)98:0.0019432522)36:0.0000022948,SRR11190801_Plant__DH-2_NC_002815:0.0000023716)34:0.0000023717,SRR11190798_Plant__DH-3_NC_002815:0.0000023716)18:0.0000023717,SRR11603184_GW-peel-1_NC_002815:0.0000023716)72:0.0044659829)57:0.0032259579,SRR11190802_Plant__DH-1_NC_002815:0.0000023716)30:0.0000023563,(SRR11190796_Plant__FR-2_NC_002815:0.0030038830,SRR11190797_Plant__FR-1_NC_002815:0.0000023716)36:0.0000020517)21:0.0000023577,SRR11190792_Plant__BR-3_NC_002815:0.0000021016)82:0.0016049515,Cactus_virus_X__AF308158.2:0.0101310696)83:0.0090271352,SRR11190795_Plant__FR-3_NC_002815:0.0000028826)100:0.2187820891)90:0.0715525994)96:0.1701750803)100:0.2421519594)82:0.1410757432,((Senna_mosaic_virus:0.8679883440,Papaya_mosaic_virus:0.6475156127)72:0.0286492314,(Babaco_mosaic_virus:0.6883012815,(Alternanthera_mosaic_virus__LC107515:0.2104793359,(((Alternanthera_mosaic_virus__MH423501:0.0253569985,Alternanthera_mosaic_virus__FJ822136:0.0207694202)85:0.0172004489,(Alternanthera_mosaic_virus__GQ179646:0.0088495110,Alternanthera_mosaic_virus__GQ179647:0.0015947039)100:0.0248780383)84:0.0143450938,Alternanthera_mosaic_virus__AY863024:0.0106818141)99:0.1333154400)100:0.3351891399)88:0.0865051463)99:0.4131991397)73:0.1483174838);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000bootstrap trees
+Log-likelihood of consensus tree: -12818.675812
+Robinson-Foulds distance between ML tree and consensus tree: 14
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++----------------------------------------------Clover_yellow_mosaic_virus
+|
++--------------------------------------Hydrangea_ringspot_virus
+|
+|                                                    +------Plantago_asiatica_mosaic_virus__KU697313
+|                                                 +--| (84)
+|                                                 |  |    +--Plantago_asiatica_mosaic_virus__KT717325
+|                                                 |  +----| (100)
+|                                                 |       +--Plantago_asiatica_mosaic_virus__KU159093
+|         +---------------------------------------| (100)
+|         |                                       |  +----Nandina_mosaic_virus
+|         |                                       +--| (85)
+|         |                                          +------Plantago_asiatica_mosaic_virus__LC155795
+|    +----| (82)
+|    |    |                            +--Opuntia_virus__Strain_CC10
+|    |    |        +-------------------| (100)
+|    |    |        |                   |  +--Opuntia_virus_X__KY348771
+|    |    |        |                   +--| (94)
+|    |    |        |                      +--Opuntia_virus_X__KU854931
+|    |    +--------| (100)
+|    |             |                   +--Schlumbergera_virus_X__KU854929
+|    |             |           +-------| (100)
+|    |             |           |       |           +--SRR11190802_Plant__DH-1_NC_011659
+|    |             |           |       |        +--| (82)
+|    |             |           |       |        |  +--Schlumbergera_virus_X__Strain_K11
+|    |             |           |       |     +--| (80)
+|    |             |           |       |     |  +--Schlumbergera_virus_X__KP090203
+|    |             |           |       |  +--| (85)
+|    |             |           |       |  |  |  +--SRR11190798_Plant__DH-3_NC_011659
+|    |             |           |       |  |  +--| (99)
+|    |             |           |       |  |     +--SRR11190801_Plant__DH-2_NC_011659
+|    |             |           |       +--| (96)
+|    |             |           |          |  +--SRR11603189_RR-peel-3_NC_011659
+|    |             |           |          +--| (98)
+|    |             |           |             |  +--SRR11603187_RR-pulp-2_NC_011659
+|    |             |           |             +--| (65)
+|    |             |           |                |  +--SRR11603183_GW-peel-2_NC_011659
+|    |             |           |                +--| (94)
+|    |             |           |                   +--SRR11603184_GW-peel-1_NC_011659
+|    |             |        +--| (81)
+|    |             |        |  |      +---KM288845
+|    |             |        |  +------| (100)
+|    |             |        |         |           +--SRR11190798_Plant__DH-3_NC_006059
+|    |             |        |         |        +--| (100)
+|    |             |        |         |        |  +--SRR11190801_Plant__DH-2_NC_006059
+|    |             |        |         |     +--| (86)
+|    |             |        |         |     |  |        +--Zygocactus_virus_X__Strain_B1
+|    |             |        |         |     |  |     +--| (89)
+|    |             |        |         |     |  |     |  +--Zygocactus_virus_X__JF930326.1
+|    |             |        |         |     |  |  +--| (90)
+|    |             |        |         |     |  |  |  |  +--KM288844
+|    |             |        |         |     |  |  |  +--| (90)
+|    |             |        |         |     |  |  |     |  +--KM288843
+|    |             |        |         |     |  |  |     +--| (100)
+|    |             |        |         |     |  |  |        +--KM288842
+|    |             |        |         |     |  +--| (92)
+|    |             |        |         |     |     |  +--SRR11603191_RR-peel-1_NC_006059
+|    |             |        |         |     |     +--| (94)
+|    |             |        |         |     |        |     +--SRR11603189_RR-peel-3_NC_006059
+|    |             |        |         |     |        |  +--| (100)
+|    |             |        |         |     |        |  |  +--SRR11603187_RR-pulp-2_NC_006059
+|    |             |        |         |     |        +--| (94)
+|    |             |        |         |     |           |  +--SRR11603186_RR-pulp-3_NC_006059
+|    |             |        |         |     |           +--| (81)
+|    |             |        |         |     |              +--SRR11603190_RR-peel-2_NC_006059
+|    |             |        |         |  +--| (68)
+|    |             |        |         |  |  |  +--SRR11190796_Plant__FR-2_NC_006059
+|    |             |        |         |  |  +--| (98)
+|    |             |        |         |  |     +--SRR11190797_Plant__FR-1_NC_006059
+|    |             |        |         +--| (97)
+|    |             |        |            +--SRR11190802_Plant__DH-1_NC_006059
+|    |             |     +--| (57)
+|    |             |     |  |                       +--MG210801
+|    |             |     |  |                    +--| (31)
+|    |             |     |  |                    |  |  +--SRR11190795_Plant__FR-3_NC_024458
+|    |             |     |  |                    |  +--| (77)
+|    |             |     |  |                    |     +--Pitaya_virus_X
+|    |             |     |  |                 +--| (34)
+|    |             |     |  |                 |  |     +**SRR11190800_Plant__BSJ-2_NC_024458
+|    |             |     |  |                 |  |  +--|
+|    |             |     |  |                 |  |  |  +**SRR11190799_Plant__BSJ-3_NC_024458
+|    |             |     |  |                 |  +--| (100)
+|    |             |     |  |                 |     +--SRR11190791_Plant__BSJ-1_NC_024458
+|    |             |     |  |              +--| (35)
+|    |             |     |  |              |  +--SRR11190802_Plant__DH-1_NC_024458
+|    |             |     |  |           +--| (29)
+|    |             |     |  |           |  +--SRR11190801_Plant__DH-2_NC_024458
+|    |             |     |  |        +--| (93)
+|    |             |     |  |        |  |           +--SRR11190798_Plant__DH-3_NC_024458
+|    |             |     |  |        |  |        +--| (45)
+|    |             |     |  |        |  |        |  |           +--SRR11190796_Plant__FR-2_NC_024458
+|    |             |     |  |        |  |        |  |        +--| (100)
+|    |             |     |  |        |  |        |  |        |  +--SRR11190797_Plant__FR-1_NC_024458
+|    |             |     |  |        |  |        |  |     +--| (95)
+|    |             |     |  |        |  |        |  |     |  |  +--SRR11603189_RR-peel-3_NC_024458
+|    |             |     |  |        |  |        |  |     |  +--| (87)
+|    |             |     |  |        |  |        |  |     |     +--SRR11603187_RR-pulp-2_NC_024458
+|    |             |     |  |        |  |        |  |  +--| (93)
+|    |             |     |  |        |  |        |  |  |  +--SRR11603191_RR-peel-1_NC_024458
+|    |             |     |  |        |  |        |  +--| (91)
+|    |             |     |  |        |  |        |     |  +--SRR11603186_RR-pulp-3_NC_024458
+|    |             |     |  |        |  |        |     +--| (75)
+|    |             |     |  |        |  |        |        +--SRR11603190_RR-peel-2_NC_024458
+|    |             |     |  |        |  |     +--| (13)
+|    |             |     |  |        |  |     |  +--SRR11603184_GW-peel-1_NC_024458
+|    |             |     |  |        |  |  +--| (22)
+|    |             |     |  |        |  |  |  +--SRR11603183_GW-peel-2_NC_024458
+|    |             |     |  |        |  +--| (25)
+|    |             |     |  |        |     +--SRR11603182_GW-peel-3_NC_024458
+|    |             |     |  +--------| (100)
+|    |             |     |           +--SRR11190793_Plant__BR-2_NC_024458
+|    |             +-----| (96)
+|    |                   |            +--Cactus_virus_X__JF937699.1
+|    |                   |         +--| (98)
+|    |                   |         |  +--Cactus_virus_X__KM288846.1
+|    |                   |      +--| (89)
+|    |                   |      |  +--Cactus_virus_X__KM288847.1
+|    |                   |  +---| (100)
+|    |                   |  |   +--Cactus_virus_X__SCM51431
+|    |                   +--| (90)
+|    |                      |                               +--Schlumbergera_truncata_15H03__cons
+|    |                      |                            +--| (100)
+|    |                      |                            |  |  +--Schlumbergera_truncata_19JSF_sty__NC_002815
+|    |                      |                            |  +--| (72)
+|    |                      |                            |     |  +--Schlumbergera_truncata_15H04__cons
+|    |                      |                            |     +--| (99)
+|    |                      |                            |        +--Schlumbergera_truncata_15H06__cons
+|    |                      |                         +--| (85)
+|    |                      |                         |  |     +--Cactus_virus_X__LC128411.1
+|    |                      |                         |  |  +--| (98)
+|    |                      |                         |  |  |  |     +--SRR11603186_RR-pulp-3_NC_002815
+|    |                      |                         |  |  |  |  +--| (64)
+|    |                      |                         |  |  |  |  |  +--SRR11603190_RR-peel-2_NC_002815
+|    |                      |                         |  |  |  +--| (99)
+|    |                      |                         |  |  |     |  +--SRR11603191_RR-peel-1_NC_002815
+|    |                      |                         |  |  |     +--| (93)
+|    |                      |                         |  |  |        |  +--SRR11603187_RR-pulp-2_NC_002815
+|    |                      |                         |  |  |        +--| (99)
+|    |                      |                         |  |  |           +--SRR11603189_RR-peel-3_NC_002815
+|    |                      |                         |  +--| (55)
+|    |                      |                         |     +--SRR11190793_Plant__BR-2_NC_002815
+|    |                      |                      +--| (80)
+|    |                      |                      |  +--Cactus_virus_X__KM365479.1
+|    |                      |                   +--| (57)
+|    |                      |                   |  |  +--SRR11603183_GW-peel-2_NC_002815
+|    |                      |                   |  +--| (72)
+|    |                      |                   |     |  +--SRR11603184_GW-peel-1_NC_002815
+|    |                      |                   |     +--| (54)
+|    |                      |                   |        |        +--SRR11603182_GW-peel-3_NC_002815
+|    |                      |                   |        |     +--| (98)
+|    |                      |                   |        |     |  |     +**SRR11190799_Plant__BSJ-3_NC_002815
+|    |                      |                   |        |     |  |  +--|
+|    |                      |                   |        |     |  |  |  +**SRR11190800_Plant__BSJ-2_NC_002815
+|    |                      |                   |        |     |  +--| (99)
+|    |                      |                   |        |     |     +--SRR11190791_Plant__BSJ-1_NC_002815
+|    |                      |                   |        |  +--| (49)
+|    |                      |                   |        |  |  +--SRR11190801_Plant__DH-2_NC_002815
+|    |                      |                   |        +--| (40)
+|    |                      |                   |           +--SRR11190798_Plant__DH-3_NC_002815
+|    |                      |                +--| (34)
+|    |                      |                |  +--SRR11190792_Plant__BR-3_NC_002815
+|    |                      |             +--| (49)
+|    |                      |             |  +--SRR11190802_Plant__DH-1_NC_002815
+|    |                      |          +--| (82)
+|    |                      |          |  |  +--SRR11190796_Plant__FR-2_NC_002815
+|    |                      |          |  +--| (36)
+|    |                      |          |     +--SRR11190797_Plant__FR-1_NC_002815
+|    |                      |       +--| (83)
+|    |                      |       |  +--Cactus_virus_X__AF308158.2
+|    |                      +-------| (100)
+|    |                              +--SRR11190795_Plant__FR-3_NC_002815
++----| (73)
+     |                 +-------------------------------Senna_mosaic_virus
+     |              +--| (72)
+     |              |  +-----------------------Papaya_mosaic_virus
+     +--------------| (99)
+                    |  +------------------------Babaco_mosaic_virus
+                    +--| (88)
+                       |           +------Alternanthera_mosaic_virus__LC107515
+                       +-----------| (100)
+                                   |          +--Alternanthera_mosaic_virus__MH423501
+                                   |       +--| (85)
+                                   |       |  +--Alternanthera_mosaic_virus__FJ822136
+                                   |    +--| (84)
+                                   |    |  |  +--Alternanthera_mosaic_virus__GQ179646
+                                   |    |  +--| (100)
+                                   |    |     +--Alternanthera_mosaic_virus__GQ179647
+                                   +----| (99)
+                                        +--Alternanthera_mosaic_virus__AY863024
+
+
+Consensus tree in newick format: 
+
+(Clover_yellow_mosaic_virus:1.2719422325,Hydrangea_ringspot_virus:1.0586960560,((((Plantago_asiatica_mosaic_virus__KU697313:0.1914908983,(Plantago_asiatica_mosaic_virus__KT717325:0.0065526376,Plantago_asiatica_mosaic_virus__KU159093:0.0054913273)100:0.1427668548)84:0.0399081428,(Nandina_mosaic_virus:0.1506507231,Plantago_asiatica_mosaic_virus__LC155795:0.2069131553)85:0.0289543895)100:1.0652792917,((Opuntia_virus__Strain_CC10:0.0000023005,(Opuntia_virus_X__KY348771:0.0059200371,Opuntia_virus_X__KU854931:0.0000020284)94:0.0257860312)100:0.5554161116,((((Schlumbergera_virus_X__KU854929:0.1020170677,((((SRR11190802_Plant__DH-1_NC_011659:0.0410791477,Schlumbergera_virus_X__Strain_K11:0.0158070300)82:0.0059155802,Schlumbergera_virus_X__KP090203:0.0191413642)80:0.0110024062,(SRR11190798_Plant__DH-3_NC_011659:0.0000023680,SRR11190801_Plant__DH-2_NC_011659:0.0000023680)99:0.0042393837)85:0.0038097834,(SRR11603189_RR-peel-3_NC_011659:0.0020452121,(SRR11603187_RR-pulp-2_NC_011659:0.0000023680,(SRR11603183_GW-peel-2_NC_011659:0.0000025772,SRR11603184_GW-peel-1_NC_011659:0.0000023680)94:0.0015608813)65:0.0017580287)98:0.0119847899)96:0.0424649779)100:0.2124555721,(KM288845:0.1318165585,((((SRR11190798_Plant__DH-3_NC_006059:0.0000023680,SRR11190801_Plant__DH-2_NC_006059:0.0000023680)100:0.0076460811,(((Zygocactus_virus_X__Strain_B1:0.0378900891,Zygocactus_virus_X__JF930326.1:0.0077913426)89:0.0042779504,(KM288844:0.0169888890,(KM288843:0.0000023680,KM288842:0.0082124464)100:0.0086337817)90:0.0013392383)90:0.0028370882,(SRR11603191_RR-peel-1_NC_006059:0.0030547749,((SRR11603189_RR-peel-3_NC_006059:0.0000023680,SRR11603187_RR-pulp-2_NC_006059:0.0000023680)100:0.0029710444,(SRR11603186_RR-pulp-3_NC_006059:0.0000023680,SRR11603190_RR-peel-2_NC_006059:0.0000023680)81:0.0000023680)94:0.0014208367)94:0.0153342873)92:0.0135564683)86:0.0051863980,(SRR11190796_Plant__FR-2_NC_006059:0.0000028734,SRR11190797_Plant__FR-1_NC_006059:0.0000021652)98:0.0028661706)68:0.0084995770,SRR11190802_Plant__DH-1_NC_006059:0.0003916562)97:0.0939121653)100:0.1959521277)81:0.0504921576,((((((MG210801:0.0074418858,(SRR11190795_Plant__FR-3_NC_024458:0.0000023680,Pitaya_virus_X:0.0014772365)77:0.0044496327)31:0.0000023680,((SRR11190800_Plant__BSJ-2_NC_024458:0.0000000000,SRR11190799_Plant__BSJ-3_NC_024458:0.0000000000):0.0000023680,SRR11190791_Plant__BSJ-1_NC_024458:0.0000023680)100:0.0059635991)34:0.0013092612,SRR11190802_Plant__DH-1_NC_024458:0.0015119832)35:0.0000249525,SRR11190801_Plant__DH-2_NC_024458:0.0000023680)29:0.0001425467,((((SRR11190798_Plant__DH-3_NC_024458:0.0000023680,((((SRR11190796_Plant__FR-2_NC_024458:0.0000023680,SRR11190797_Plant__FR-1_NC_024458:0.0000023680)100:0.0014852135,(SRR11603189_RR-peel-3_NC_024458:0.0000023680,SRR11603187_RR-pulp-2_NC_024458:0.0000023680)87:0.0000023680)95:0.0014012133,SRR11603191_RR-peel-1_NC_024458:0.0000023680)93:0.0000776174,(SRR11603186_RR-pulp-3_NC_024458:0.0000023680,SRR11603190_RR-peel-2_NC_024458:0.0000023680)75:0.0000023680)91:0.0013946944)45:0.0000023680,SRR11603184_GW-peel-1_NC_024458:0.0000023680)13:0.0000023680,SRR11603183_GW-peel-2_NC_024458:0.0000023680)22:0.0000023680,SRR11603182_GW-peel-3_NC_024458:0.0000023680)25:0.0000750562)93:0.0059813806,SRR11190793_Plant__BR-2_NC_024458:0.0000023680)100:0.2552002060)57:0.0269866630,((((Cactus_virus_X__JF937699.1:0.0151911603,Cactus_virus_X__KM288846.1:0.0060125560)98:0.0067974744,Cactus_virus_X__KM288847.1:0.0069152698)89:0.0022105735,Cactus_virus_X__SCM51431:0.0000020284)100:0.1283185998,(((((((((Schlumbergera_truncata_15H03__cons:0.0076340198,(Schlumbergera_truncata_19JSF_sty__NC_002815:0.0015216571,(Schlumbergera_truncata_15H04__cons:0.0014847912,Schlumbergera_truncata_15H06__cons:0.0029548501)99:0.0028190530)72:0.0000023680)100:0.0183119407,((Cactus_virus_X__LC128411.1:0.0075082821,((SRR11603186_RR-pulp-3_NC_002815:0.0000023680,SRR11603190_RR-peel-2_NC_002815:0.0000023680)64:0.0000023680,(SRR11603191_RR-peel-1_NC_002815:0.0000023680,(SRR11603187_RR-pulp-2_NC_002815:0.0000023680,SRR11603189_RR-peel-3_NC_002815:0.0000023680)99:0.0001467475)93:0.0013272765)99:0.0060047089)98:0.0059613109,SRR11190793_Plant__BR-2_NC_002815:0.0134611283)55:0.0000023698)85:0.0030237394,Cactus_virus_X__KM365479.1:0.0090214213)80:0.0014528517,(SRR11603183_GW-peel-2_NC_002815:0.0000023680,(SRR11603184_GW-peel-1_NC_002815:0.0000023680,(((SRR11603182_GW-peel-3_NC_002815:0.0060183220,((SRR11190799_Plant__BSJ-3_NC_002815:0.0000000000,SRR11190800_Plant__BSJ-2_NC_002815:0.0000000000):0.0000023680,SRR11190791_Plant__BSJ-1_NC_002815:0.0000023680)99:0.0039773938)98:0.0019423503,SRR11190801_Plant__DH-2_NC_002815:0.0000023680)49:0.0000023680,SRR11190798_Plant__DH-3_NC_002815:0.0000023680)40:0.0000023680)54:0.0034672995)72:0.0009728095)57:0.0003128779,SRR11190792_Plant__BR-3_NC_002815:0.0000023680)34:0.0000023698,SRR11190802_Plant__DH-1_NC_002815:0.0000023680)49:0.0028816332,(SRR11190796_Plant__FR-2_NC_002815:0.0027506982,SRR11190797_Plant__FR-1_NC_002815:0.0000023680)36:0.0002477138)82:0.0016075249,Cactus_virus_X__AF308158.2:0.0101183731)83:0.0090146810,SRR11190795_Plant__FR-3_NC_002815:0.0000021280)100:0.2184454308)90:0.0713928638)96:0.1698918410)100:0.2416342556)82:0.1407644696,((Senna_mosaic_virus:0.8662195267,Papaya_mosaic_virus:0.6462570192)72:0.0287467940,(Babaco_mosaic_virus:0.6871207769,(Alternanthera_mosaic_virus__LC107515:0.2104596533,(((Alternanthera_mosaic_virus__MH423501:0.0253312122,Alternanthera_mosaic_virus__FJ822136:0.0207473554)85:0.0171862589,(Alternanthera_mosaic_virus__GQ179646:0.0088409333,Alternanthera_mosaic_virus__GQ179647:0.0015927489)100:0.0248515697)84:0.0143276881,Alternanthera_mosaic_virus__AY863024:0.0106791502)99:0.1329750100)100:0.3346128835)88:0.0864171947)99:0.4123024040)73:0.1484135819);
+
+TIME STAMP
+----------
+
+Date and time: Fri May 28 10:30:04 2021
+Total CPU time used: 336.718314 seconds (0h:5m:36s)
+Total wall-clock time used: 179.5198939 seconds (0h:2m:59s)
+
