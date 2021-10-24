@@ -89,26 +89,31 @@ treetemp <- full_join(treetemp, hostinfo, by="label")
 #)
 #now visualize tree:
 #treetemp <- groupOTU(treetemp, grp)
-par(mar=c(0, 0, 0, 2))
+#par(mar=c(0, 0, 200,0))
 #L <- tree1name$Nnode + length(tree1name$tip.label)
-ggtree(treetemp, ladderize=T, show.legend = FALSE)  +
+ggtree(treetemp, ladderize=T, show.legend = FALSE, aes(color=host))  +
   #aes(color=group) +
   #%<+% hostinfo+
-  #scale_color_manual(values=c("black", "#BE81EF", "#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", "#E67E67", "#EC6DC4"))+
+  scale_color_manual(values=c("#BE81EF", "#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", "#E67E67", "#EC6DC4", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3",
+"#1f78b4",
+"#b2df8a",
+"#33a02c"))+
   #theme(legend.position="bottom")+
-  #name tip labels:
-  geom_tiplab(aes(), hjust=0, offset=0, align=T, linetype = "dotted")+
   #host tip labels:
-  geom_tiplab(aes(label=host, subset = !is.na(host)), align = T, linetype = 'dotted', na.rm=F, offset=0.4) +
+  geom_tiplab(aes(label=host, subset = !is.na(host)), family='mono',fontface= "bold", linetype="dotted", align=T, fontsize=3, na.rm=F, offset=1.5) +
+    #name tip labels:
+  geom_tiplab(aes(), geom="label",fontsize=3, fill="white", offset.text=0, fontface= "bold",family='mono', align=F, label.size = 0)+
   #scale
-  geom_treescale(x=0, y=60, fontsize = 10) #+
+  geom_treescale(x=0, y=60, fontsize = 8, family = "mono") +
+  ggplot2::xlim(0, 5.5)+ 
+  theme(text=element_text(family="mono"), plot.margin = unit(c(8,8,8,8), "mm")) 
   #node labels/bootstrap labels:
   #geom_text2(aes(subset = !isTip #& (node == 127)|(node == 124)|(node == 152)|(node == 153)|(node == 167)|(node == 102)|(node == 106)
     #             , label=label), nudge_x = -0.03, nudge_y = 0.5)+
-    #xlim(0,1)
+    #xlim(NA,3)
 #Save to pdf format
 filename = paste(namevector[i],"_bootstrap_tree.pdf",sep="")
-ggsave(filename, width = 30, height = 30, units = "cm")
+ggsave(filename, width = 30, height = 50, units = "cm")
 }
 }
 #gene.phylos(names[1],locs[1])
