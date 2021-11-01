@@ -61,10 +61,12 @@ clean:
 	*.bbl *.blg *.log *.aux *.toc *.fff *.ent *.ttt *.out *.fls \
 	*.fdb_latexmk *.efsuppfigure *.efsupptable \
 	*.dvi *.ps *.brf *.lof *.lot \
-	*converted-to.pdf *.tex~ README.html
+	*converted-to.pdf *.tex~ README.html \
+	*-diff.tex
 
 # For a satisfying, deep clean use scrub!
 scrub: clean
 	rm -f ${MS}.pdf ${SI}.pdf ${CL}.pdf \
 	*.synctex.gz \
-	.DS_Store .Rapp.history .Rhistory
+	.DS_Store .Rapp.history .Rhistory \
+	*-diff.pdf *-kr-*.pdf
