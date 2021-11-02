@@ -4,20 +4,21 @@
 \usepackage[T1]{fontenc}
 \usepackage{tgtermes}
 \usepackage{etoolbox}
+\usepackage{graphicx}
 \hypersetup{
    pdftitle={Placeholder title for CVX-cactaceae Project Manuscript},
    pdfauthor={Alexa Tyszka, Karolis Ramanauskas, Boris Igi{\'c}}
    }
 \usepackage[all]{hypcap}
-\usepackage{doi}
-\usepackage{graphicx}
+%\usepackage{doi} % remove url!
 %\graphicspath{{figures/}}
 \renewcommand{\bibsection}{\section*{References}}
+
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 \newcommand{\ca}{\textit{ca}.}
 \begin{document}
 % TITLE =======================================================================
-\title{\Large\bf{Placeholder title}}
+\title{\Large\bf{The saddest title is no title at all}}
 \author{Alexa Tyszka$^{1}$, Karolis Ramanauskas$^{1,2}$ and Boris Igi\'{c}$^{1,3,4}$}
 \date{
     $^1$Department of Biological Sciences\\
@@ -34,22 +35,26 @@
 %FIXMEs: 
 % Read the log notes (git log) each time!
 % Small stuff: Italicize all species binomials by convention: e.g., \texit{Schlumbergera truncata}. Not families, though! The convention helps with reading and whatnot, mainly it looks professional and it's a bit easier to read. Read sections on Scientific Nomenclature, Genes, and Viruses here: https://wwwnc.cdc.gov/eid/page/scientific-nomenclature
-%Italicization done - let me know if I missed any.
+%Italicization done - let me know if I missed any. 
+%B: not a one time thing! Our last manuscript had around 260 versioned changes.
 
-% ABSTRACT ====================================================================
 \begin{linenumbers}
 \modulolinenumbers[1]
 \setstretch{1.0}
+
+% ABSTRACT ====================================================================
 \begin{abstract}
-\textit{Potexviruses} (family Alphaflexiviridae ) are positive-sense single-stranded RNA viruses known to infect multiple species across plants, including species of \textit{Cactaceae}. 
-\textit{Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X,} and \textit{Opuntia Virus X} are five of the 48 currently described \textit{Potexvirus} species, which all infect valuable ornamental and crop plants, often causing production losses. 
-The taxonomic naming schemes often employ outdated plant name synonyms, complicating taxonomic assignments. Also, the source of infections in cultivated plants is unclear, as is the distribution of and significance of infections in wild species of cacti. 
-The lack of clarity is partly related to low sampling across the family. 
+
+\textit{Potexviruses} are positive-sense single-stranded RNA viruses known to infect many species of flowering plants, including \textit{Cactaceae}. 
+%\textit{Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X,} and \textit{Opuntia Virus X} are five of the 48 currently described \textit{Potexvirus} species, which all infect valuable ornamental and crop plants, often causing production losses.
+%B: No reason to name a few of them and vaguely restate the first sentence.
+The taxonomic naming schemes often employ outdated plant name synonyms, complicating taxonomic assignments.  %B: this informally reads like, "taxonomy complicates taxonomy", but it should read "taxonomy is hard with little or no data, but easier with more data"
+Also, the source of infections in cultivated plants is unclear, as is the distribution of and significance of infections in wild species of cacti. %B: This will be true after your study, as well, so maybe it's best left out of the abstract of the study?
+The lack of clarity is partly related to low sampling across the family. %B: one more instance of not crux of this study?
 Here, we report results of original RNA-seq experiments and archived sequence deposits, aimed at detecting \textit{Potexviruses} in cacti, assembling whole genomes, estimating their phylogenetic relationships, and delimiting viral species. 
 The data suggests novel modes of transmission, based on expression analyses across tissues, particularly pollen. 
 We also perform molecular evolutionary analyses to detect genomic regions under different modes of selection. 
 Finally, we examine and discuss the implications of our analyses for the taxonomy of \textit{Potexviruses} across cacti.  
-
 \end{abstract}
 
 

@@ -362,12 +362,12 @@ FUNCTION {bibinfo.warn}
     }
   if$
 }
-FUNCTION {format.url}
-{ url empty$
-    { "" }
+ FUNCTION {format.url}
+ { url empty$
+     { "" }
     { "\urlprefix\url{" url * "}" * }
-  if$
-}
+   if$
+ }
 
 STRINGS  { bibinfo}
 INTEGERS { nameptr namesleft numnames }
@@ -1523,10 +1523,10 @@ FUNCTION {begin.bib}
   write$ newline$
   "\providecommand{\natexlab}[1]{#1}"
   write$ newline$
-  "\providecommand{\url}[1]{\texttt{#1}}"
-  write$ newline$
-  "\providecommand{\urlprefix}{URL }"
-  write$ newline$
+ "\providecommand{\url}[1]{\texttt{#1}}" 	
+ write$ newline$				 		
+ "\providecommand{\urlprefix}{URL }"	
+ write$ newline$					
 }
 EXECUTE {begin.bib}
 EXECUTE {init.state.consts}
