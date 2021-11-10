@@ -15,7 +15,7 @@
 14,LC128411,LC128411,LC128411.1,,"Cactus virus X genomic RNA, complete genome",NA,Cactus virus X LC128411.1,,Selenicereus undatus,Selenicereus,Cactus Virus X Variant A,
 15,'D29630.1',D29630.1,,,"Clover yellow mosaic virus genomic RNA, complete sequence",NA,Clover yellow mosaic virus,,Pisum sp.?,Pisum,,
 16,LC107517,LC107517,LC107517.1,,"Hydrangea ringspot virus genomic RNA, complete genome, isolate Gu2",NA,Hydrangea ringspot virus,,Hydrangea macrophylla,Hydrangea,,
-17,MG210801.1',MG210801,,,"Mytcor virus 1 replicative protein gene, partial cds; and protein 2 and protein 3 genes, complete cds",NA,Mytcor virus 1,,Crassostrea gigas (Bivalve),Crassostrea,Pitaya Virus X,
+17,MG210801.1',MG210801,,,"Mytcor virus 1 replicative protein gene, partial cds; and protein 2 and protein 3 genes, complete cds",NA,MG210801,,Crassostrea gigas (Bivalve),Crassostrea,Pitaya Virus X,
 18,AY800279,AY800279,AY800279.1,,"Nandina mosaic virus isolate PLH 1, complete genome",NA,Nandina mosaic virus,,Nandina domestica,Nandina,,
 19,KU854931,KU854931,KU854931.1,,"Opuntia virus X isolate nopal verdura-1, complete genome",NA,Opuntia virus X KU854931,,Opuntia ficus-indica,Opuntia,Opuntia Virus X,
 20,KY348771,KY348771,KY348771.1,,"Opuntia virus X isolate Noptuna-Mex, complete genome",NA,Opuntia virus X KY348771,,Opuntia albicarpa cv. nopal tunero,Opuntia,Opuntia Virus X,
@@ -100,12 +100,12 @@
 99,Hylocereus_undatus_176265_SRR11603191_potexvirus_-_NC_006059_consensus_sequence,SRR11603191B,,,"156,888 reads assembled to NC_006059",3527.400513,SRR11603191 RR-peel-1 NC_006059,NC_006059,Selenicereus undatus,Selenicereus,Zygocactus Virus X Variant B1,*
 100,Hylocereus_undatus_176265_SRR11603191_potexvirus_-_NC_024458_consensus_sequence,SRR11603191C,,,"223,108 reads assembled to NC_024458",4967.706006,SRR11603191 RR-peel-1 NC_024458,NC_024458,Selenicereus undatus,Selenicereus,Pitaya Virus X,*
 101,JF930326,JF930326,JF930326.1,,"Zygocactus virus X isolate P39, complete genome",NA,Zygocactus virus X JF930326.1,,Selenicereus sp.,Selenicereus,Zygocactus Virus X Variant B1,
-102,KM288843.1,KM288843,,,"Zygocactus virus X isolate TW-456Y-4 triple gene block protein 1 (TGB1) gene, partial cds; and triple gene block protein 2 (TGB2), triple gene block protein 3 (TGB3), and coat protein (CP) genes, complete cds",NA,Zygocactus virus X KM288843.1,,Selenicereus polyrhizus,Selenicereus,,
-103,KM288845.1_1',KM288845,,,"Zygocactus virus X isolate TW-5149-17 replication-associated protein (RdRP) gene, partial cds; and triple gene block protein 1 (TGB1), triple gene block protein 2 (TGB2), triple gene block protein 3 (TGB3), and coat protein (CP) genes, complete cds",NA,Zygocactus virus X KM288845.1,,Selenicereus polyrhizus,Selenicereus,,
+102,KM288843.1,KM288843,,,"Zygocactus virus X isolate TW-456Y-4 triple gene block protein 1 (TGB1) gene, partial cds; and triple gene block protein 2 (TGB2), triple gene block protein 3 (TGB3), and coat protein (CP) genes, complete cds",NA,KM288843,,Selenicereus polyrhizus,Selenicereus,,
+103,KM288845.1_1',KM288845,,,"Zygocactus virus X isolate TW-5149-17 replication-associated protein (RdRP) gene, partial cds; and triple gene block protein 1 (TGB1), triple gene block protein 2 (TGB2), triple gene block protein 3 (TGB3), and coat protein (CP) genes, complete cds",NA,KM288845,,Selenicereus polyrhizus,Selenicereus,,
 104,AY366208,AY366208,AY366208.1,,"Zygocactus virus X strain B1 replication-associated protein, triple gene block protein 1, triple gene block protein 2, triple gene block protein 3, and coat protein genes, complete cds",NA,Zygocactus virus X Strain B1,,Schlumbergera sp.,Schlumbergera,Zygocactus Virus X Variant B1,
 123,,15H03_cons,,,,NA,Schlumbergera_truncata_15H03_cons,,Schlumbergera truncata,Schlumbergera,Cactus Virus X Variant A,*
 124,,19JSF_sty,,,,NA,Schlumbergera_truncata_19JSF_sty_NC_002815,,Schlumbergera truncata,Schlumbergera,Cactus Virus X Variant A,*
 125,,15H04_cons,,,,NA,Schlumbergera_truncata_15H04_cons,,Schlumbergera truncata,Schlumbergera,Cactus Virus X Variant A,*
 126,,15H06_cons,,,,NA,Schlumbergera_truncata_15H06_cons,,Schlumbergera truncata,Schlumbergera,Cactus Virus X Variant A,*
-127,,KM288842,,,,NA,Zygocactus virus X KM288842,,Selenicereus sp.,Selenicereus,Zygocactus Virus X Variant B1,
-128,,KM288844,,,,NA,Zygocactus virus X KM288844,,Selenicereus sp.,Selenicereus,Zygocactus Virus X Variant B1,
+127,,KM288842,,,,NA,KM288842,,Selenicereus sp.,Selenicereus,Zygocactus Virus X Variant B1,
+128,,KM288844,,,,NA,KM288844,,Selenicereus sp.,Selenicereus,Zygocactus Virus X Variant B1,
