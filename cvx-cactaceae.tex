@@ -49,7 +49,7 @@ Because their host-specificity is broad, the source of infections, the natural d
 The lack of clarity is partly related to low sampling across the Potexviruses that infect cacti. 
 And yet, the availability of sampled plant transcriptomes, all of which are practically metatranscriptomes, has recently exploded, along with the decreasing expense and difficulty of conducting RNAseq experiments.
 Here, we harness these new tools and perform phylogenetic analyses aimed at clarifying taxonomic diversity, quantifying patterns of tissue expression, diversity, and examining selective pressures across viral genomes. 
-The results suggests a novel mode of transmission by sex (pollination) for this viral group, based on significant expression in pollen.
+The results suggest a novel mode of transmission by sex (pollination) for this viral group, based on significant expression in pollen.
 We examine and discuss the implications of our key results for the taxonomy of \textit{Cactaceae}-specific \textit{Potexviruses}, noting their vastly understudied ecological significance.
 %B: Maybe note the number of genera or specific taxonomic proposals (if changes are proposed)
 %B: the problem here is that these names should basically be retired: %\textit{Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X,} and \textit{Opuntia Virus X} are five of the 48 currently described \textit{Potexvirus} species, which all infect valuable ornamental and crop plants, often causing production losses. 
@@ -64,8 +64,8 @@ We examine and discuss the implications of our key results for the taxonomy of \
 
 The plant viriome represents a complex evolutionary interaction between the eukaryotic host and viral vector \citep{delwart_viral_2007}. 
 Plant viruses were the earliest characterized viruses, beginning with Mayer's publication on his discovery of \textit{Tobacco Mosaic Virus} in 1886 on tobacco plants \citep{mayer1886mosaikkrankheit} which followed Molisch's 1885 discovery of ``protein bodies'' on cacti: \textit{Schlumbergera truncata} (previously \textit{Epiphylum truncatumin}) \citep{molisch1885merkwurdige}.
-They may deserve to be called the first true purified viruses, but Molisch's ``Proteinkörper'' are absent from many reviews of historical virology (such as \cite{LECOQ2001929} and \cite{lefeuvre_evolution_2019}).
-Perhaps the most recent advancement in virology has been the advent of faster, cheaper, higher-throughput environmental metagenomic techniques.
+Molisch's ``Proteinkörper'' may have been the first true purified viruses.
+Perhaps the most recent advancement in virology of the current century has been the advent of faster, cheaper, higher-throughput environmental metagenomic techniques.
 The unprecedented data collection has advanced many facets of evolutionary biology \citep{delwart_viral_2007,lefeuvre_evolution_2019,schulz_towards_2017}.
 It has become evident through these discoveries that the greenhouse-raised and lab-grown organisms commonly analyzed in experiments represent a small fraction of living diversity. % KR: "living diversity" does not sound right to me.
 Metagenomic studies aim to sample hundreds of thousands of genomes and have vastly expanded both the cellular tree of life \citep{schulz_towards_2017,hug_new_2016} and the viral tree of life \citep{gregory_marine_2019,lefeuvre_evolution_2019,shi_redefining_2016}. %check viral tree of life
@@ -128,20 +128,17 @@ We attempt to use this expanded phylogeny to answer relevant questions about Pot
 \section*{Materials and Methods}
 %------------------------------------------------------------------------------
 
-\subsection*{Study Organism}
-
-
 \subsection*{RNA Sequencing}
 
-Tissues were collected and immediately submerged in 1.5 ml of RNA\textit{later}\texttrademark~solution (Invitrogen).
-Submerged samples were generally held at room temperature for thirty minutes and then stored at -80$^{\circ}$C.
-Approximately 100 mg of tissue was ground with a cooled mortar in 1.5 ml tubes.
+Pistils (without ovaries), pollen, leaf, and root tissues were collected and immediately submerged in 1.5 ml of RNA\textit{later}\texttrademark~solution (Invitrogen).
+Submerged samples were held at room temperature for thirty minutes and then moved to a -80 C freezer for storage.
+Approximately 100 mg of tissue was ground to a fine powder in 1.5 ml tubes submerged in liquid nitrogen.
 Total RNA was isolated using Total RNA Mini Kit (Plant kit; IBI Scientific, Cat. No. IB47341) following manufacturer's instructions.
 We assessed RNA concentration and purity with a NanoDrop\texttrademark~Lite Spectrophotometer (Thermo Scientific).
-The twenty-three samples used in this study were sequenced as part of a larger sequencing effort which consisted of four separate sequencing runs and included additional samples from other plant species.
+The XX samples used in this study were sequenced as part of a larger sequencing effort which consisted of XXX separate sequencing runs and included additional samples from other plant species.
 Sequencing libraries were prepared using the KAPA Stranded mRNA-Seq (Roche)
-Libraries were sequenced on a single lane of Illumina \mbox{HiSeq}~4000 or Illumina \mbox{NovaSeq}~6000 platform (paired-end 150 bp reads) at the Duke University Center for Genomic and Computational Biology.
-The number of resulting read pairs (for the twenty-three samples presented here) ranged from 4,148,932 to 9,618,084 with a median of 6,363,556 and an average of 6,293,553 (Table~S1).
+These libraries were sequenced on a single lane of Illumina \mbox{HiSeq}~4000 or Illumina \mbox{NovaSeq}~6000 platform (paired-end 150 bp reads) at the Duke University Center for Genomic and Computational Biology.
+The number of resulting read pairs (for the XX samples presented here) ranged from X,XXX,XXX to X,XXX,XXX with a median of X,XXX,XXX and average of X,XXX,XXX (Table~S1).
 
 \subsection*{RNAseq Assemblies}
 
@@ -177,27 +174,20 @@ These sequences were annotated using the Geneious 11.1.5 "Find ORFs" function.
 The complete dataset comprises 37 existing Potexvirus genomes and proteins, four new viral sequences located within original Schlumbergera truncata RNA-seq data, and 52 viral sequences found within NCBI Caryophyllales RNA-seq data.
 
 \subsection*{Sequence Alignment and Phylogenetic Analyses}
-Sequence alignments were performed through MAFFT v7.429 (\cite{katoh_mafft_2002}) using the full dataset.
+Sequence alignments were performed through MAFFT v7.429 (\citep{katoh_mafft_2002}) using the full dataset.
 %at: KR, can you check this? which MAFFT settings?
 The aligned sequences were divided by ORF using the annotations to produce five partial sequence alignments corresponding to each ORF to accompany the full-sequence alignment. 
 The individual proteins were exported to FASTA files, then gaps at the start of the sequence and stop codons were removed manually. 
-Phylogenetic relationships and bootstrap values were inferred using IQtree v1.6.12 (\cite{nguyen_iq-tree_2015}), ModelFinder (\cite{kalyaanamoorthy_modelfinder_2017}), and UFBoot (\cite{hoang_ufboot2_2018}) for both the individual gene/protein alignments and the full sequence alignment. 
-Trees were visualized in R version 4.0.3 using ggtree v2.4.2 (\cite{yu_ggtree_2017}). 
+Phylogenetic relationships and bootstrap values were calculated using IQtree v1.6.12 (\citep{nguyen_iq-tree_2015}), ModelFinder (\citep{kalyaanamoorthy_modelfinder_2017}), and UFBoot (\citep{hoang_ufboot2_2018}) for both the individual gene/protein alignments and the full sequence alignment. 
+Trees were visualized in R version 4.0.3 using ggtree v2.4.2 (\citep{yu_ggtree_2017}). 
 Host information was obtained through reported metadata and mapped onto the phylogeny. 
 Species groupings were determined using the existing species boundaries compared to the phylogenetic branch lengths within the Potexvirus genus. 
 These groupings were generally consistent with most recent branch lengths over 0.1 subs/site and this value was therefore used as a cutoff. 
 Pairwise distance analysis was conducted on the sequence alignments in R using the ape v5.5  dist.dna() function with a raw model. 
 For each defined clade, nonzero pairwise distances between each possible combination of tips was averaged. 
 Expanded phylogenetic trees and individual gene/protein trees are available in the Supplementary Data.
-Pistils (without ovaries), pollen, leaf, and root tissues were collected and immediately submerged in 1.5 ml of RNA\textit{later}\texttrademark~solution (Invitrogen).
-Submerged samples were held at room temperature for thirty minutes and then moved to a -80 C freezer for storage.
-Approximately 100 mg of tissue was ground to a fine powder in 1.5 ml tubes submerged in liquid nitrogen.
-Total RNA was isolated using Total RNA Mini Kit (Plant kit; IBI Scientific, Cat. No. IB47341) following manufacturer's instructions.
-We assessed RNA concentration and purity with a NanoDrop\texttrademark~Lite Spectrophotometer (Thermo Scientific).
-The XX samples used in this study were sequenced as part of a larger sequencing effort which consisted of XXX separate sequencing runs and included additional samples from other plant species.
-Sequencing libraries were prepared using the KAPA Stranded mRNA-Seq (Roche)
-These libraries were sequenced on a single lane of Illumina \mbox{HiSeq}~4000 or Illumina \mbox{NovaSeq}~6000 platform (paired-end 150 bp reads) at the Duke University Center for Genomic and Computational Biology.
-The number of resulting read pairs (for the XX samples presented here) ranged from X,XXX,XXX to X,XXX,XXX with a median of X,XXX,XXX and average of X,XXX,XXX (Table~S1).
+
+
 
 
 %------------------------------------------------------------------------------
@@ -226,7 +216,7 @@ For the genes RNA-dependent RNA polymerase (RdRp) and Coat protein (CP), which t
 This correlates to roughly greater than 97.5 and 98 nucleotide identity. 
 
 
-The ICTV guidelines for \textit{Potexviruses} indicate that less than 72 percent nucleotide sequence identity (or 80 percent amino acid identity) between the CP or Rep genes demarcates separate viral species. %clarify
+The ICTV guidelines for \textit{Potexviruses} indicate that less than 72 percent nucleotide sequence identity (or 80 percent amino acid identity) between the CP or Rep genes demarcates separate viral species. %clarify 
 Because we compare closely related \textit{Potexviruses}, it might be expected that members of the same putative species would have higher than 72 percent nucleotide identity and members of different putative species would have lower than 72 percent sequence identity.
 However, the low pairwise distances between \textit{Potexviruses} cause very few cactus-infecting \textit{Potexviruses} to be demarcated as separate species, even when only considering previously described species compared to each other.
 Examples here.
@@ -262,15 +252,17 @@ Mixed infections and the lack of a one-to-one correlation between virus and host
 \subsection*{Recombination and selection analysis}
 Recombination events, how they were detected.
 Selection analysis goes here.
+
 \subsection*{Grouping}
-The new species fall into already existing species groups.
+The new samples fall into already existing species groups.
 Pairwise distances between species were calculated for six groups, with a value of 0 indicating identical sequences and a value of 1 indicating entirely dissimilar sequences.
 
 \subsection*{Concluding Remarks}
 X new viruses were included as part of this study, which represents a multifaceted approach to viral discovery using metagenomic techniques for already available public data as well as newly collected data.
 Mixed infections, co-infection dynamics.
 Viral abundance, viral loads, tissue type, and diversity.
-Taxonomic recommendations.
+Transmission: Sexual
+Taxonomic recommendations - the current species names should not be used in the future.
 %------------------------------------------------------------------------------
 \section*{Acknowledgments}
 %------------------------------------------------------------------------------
@@ -295,12 +287,17 @@ Acknowledgments text.
 
 \section*{Figures}
 Figure inventory list.
-1. Phylogeny with species names included, new species bolded.
+1. The updated cactus-infecting \textit{potexvirus} phylogeny reflects distinct viral groupings which opportunistically infect multiple host plants. Asterisks (*) represent samples recovered by this study. 
+
 2. Genome organization of viruses in phylogeny, ORFs color-coded and arrows indicating which direction each gene is read.
 3. Selection graph as displayed in B's r code
-4. Table of pairwise distances in nucleotide and aa, possibly color-coded? 
+4. Table of pairwise distances in nucleotides
+5. Graph of pairwise distances
+6. Proposed update to potexvirus taxonomy.
+
 Supplemental figures:
-5. full gene phylogenies for each gene in genome
+1. full gene phylogenies for each gene in genome
+2. Tissue expression rates?
 
 
 
