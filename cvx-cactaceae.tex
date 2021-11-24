@@ -1,6 +1,6 @@
 % -*- program: pdflatex -*-
-\documentclass[11pt,letterpaper,titlepage]{article}
-\usepackage{evolution}
+\documentclass[fleqn,10pt,lineno]{wlpeerj}
+\usepackage[hidelinks]{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage{tgtermes}
 \usepackage{etoolbox}
@@ -10,36 +10,32 @@
    pdfauthor={Alexa Tyszka, Karolis Ramanauskas, Boris Igi{\'c}}
    }
 \usepackage[all]{hypcap}
-%\usepackage{doi} % remove url!
-%\graphicspath{{figures/}}
+\usepackage{doi} % remove url!
+\graphicspath{{figures/}}
 \renewcommand{\bibsection}{\section*{References}}
-
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 \newcommand{\ca}{\textit{ca}.}
-\begin{document}
-% TITLE =======================================================================
-\title{\Large\bf{Genome evolution, taxonomy, and transmission of potexviruses in cacti (\textit{Alphaflexiviridae})}}
-\author{Alexa Tyszka$^{1}$, Karolis Ramanauskas$^{1,2}$ and Boris Igi\'{c}$^{1,3,4}$}
-\date{
-    $^1$Department of Biological Sciences\\
-    University of Illinois at Chicago\\
-    840 West Taylor St.\ MC067\\
-    Chicago, IL 60607, U.S.A.\\
-    [\baselineskip]
-    $^2$Email: {\tt<kraman2@uic.edu>}\\
-    $^3$Email: {\tt<boris@uic.edu>}\\
-    $^4$Corresponding author.\\
-}
-\maketitle
 
-%FIXMEs: 
-% Read the log notes (git log) each time!
+%--------------------------------------------------
+% TITLE PAGE
+%--------------------------------------------------
+\title{Genome evolution, taxonomy, and transmission of potexviruses in cacti (\textit{Alphaflexiviridae})}
 
-\begin{linenumbers}
-\modulolinenumbers[1]
-\setstretch{1.0}
+\author[1,$\dagger$]{Alexa Tyszka}
+\author[1]{Karolis Ramanauskas}
+\author[1]{Boris Igi\'c}
+\affil[1]{Department of Biological Sciences, University of Illinois at Chicago, 840 West Taylor St.\ MC067, Chicago, IL 60607, United States of America}
+ \affil[$\dagger$]{Author for correspondence.}
 
-% ABSTRACT ====================================================================
+
+%\begin{linenumbers}
+%\modulolinenumbers[1]
+%\setstretch{1.0}
+
+%--------------------------------------------------
+% ABSTRACT 
+%--------------------------------------------------
+
 \begin{abstract}
 
 \textit{Potexvirus} species members are positive-sense single-stranded RNA viruses known to infect many flowering plants, including cacti (Cactaceae).
@@ -50,17 +46,24 @@ The lack of clarity is partly related to low sampling across the Potexviruses th
 And yet, the availability of sampled plant transcriptomes, all of which are practically metatranscriptomes, has recently exploded, along with the decreasing expense and difficulty of conducting RNAseq experiments.
 Here, we harness these new tools and perform phylogenetic analyses aimed at clarifying taxonomic diversity, quantifying patterns of tissue expression, diversity, and examining selective pressures across viral genomes. 
 The results suggest a novel mode of transmission by sex (pollination) for this viral group, based on significant expression in pollen.
-We examine and discuss the implications of our key results for the taxonomy of \textit{Cactaceae}-specific \textit{Potexviruses}, noting their vastly understudied ecological significance.
-%B: Maybe note the number of genera or specific taxonomic proposals (if changes are proposed)
-%B: the problem here is that these names should basically be retired: %\textit{Cactus Virus X, Zygocactus Virus X, Schlumbergera Virus X, Pitaya Virus X,} and \textit{Opuntia Virus X} are five of the 48 currently described \textit{Potexvirus} species, which all infect valuable ornamental and crop plants, often causing production losses. 
+We examine and discuss the implications of our key results for the taxonomy of \textit{Potexviruses} that infect Cactaceae, noting their vastly understudied ecological significance.
 \end{abstract}
 
+%B: NOTE: Cactaceae never italicized --> plant family names not italicized by convention
+%--------------------------------------------------
+\begin{document}
+%--------------------------------------------------
+%
+\flushbottom
+\maketitle
+\thispagestyle{empty}
+%\setlength{\emergencystretch}{7.5pt}
+%\setstretch{1.0}
+%\setlength{\parindent}{0.25in}
 
-\setlength{\emergencystretch}{7.5pt}
-\setstretch{1.0}
-\setlength{\parindent}{0.25in}
-
+%--------------------------------------------------
 \section*{Introduction}
+%--------------------------------------------------
 
 The plant viriome represents a complex evolutionary interaction between the eukaryotic host and viral vector \citep{delwart_viral_2007}. 
 Plant viruses were the earliest characterized viruses, beginning with Mayer's publication on his discovery of \textit{Tobacco Mosaic Virus} in 1886 on tobacco plants \citep{mayer1886mosaikkrankheit} which followed Molisch's 1885 discovery of ``protein bodies'' on cacti: \textit{Schlumbergera truncata} (previously \textit{Epiphylum truncatumin}) \citep{molisch1885merkwurdige}.
@@ -269,20 +272,30 @@ Taxonomic recommendations - the current species names should not be used in the 
 
 Acknowledgments text.
 
-% BIBLIOGRAPHY ================================================================
-\pagebreak
-\raggedright{}
-\setstretch{1.0}
-\setlength{\parindent}{0.0in}
-\bibliographystyle{evolution}
+%--------------------------------------------------
+% References
+%--------------------------------------------------
+\clearpage
+%\raggedright{}
+%\setstretch{1.0}
+%\setlength{\parindent}{0.0in}
+%\bibliographystyle{evolution}
 %{\fontsize{10pt}{15pt}\selectfont}
 \bibliography{cvx-refs}
 %}
-\end{linenumbers}
-% FIGURES =====================================================================
+%\end{linenumbers}
+
+%--------------------------------------------------
+% Tables
+%--------------------------------------------------
+
+%--------------------------------------------------
+% Figures
+%--------------------------------------------------
+
 \pagebreak
 \frenchspacing
-\setstretch{1.0}
+%\setstretch{1.0}
 \setlength{\parindent}{0.0in}
 
 \section*{Figures}
