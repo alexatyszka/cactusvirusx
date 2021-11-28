@@ -65,54 +65,57 @@ We examine and discuss the implications of our key results for the taxonomy of \
 \section*{Introduction}
 %--------------------------------------------------
 
-The plant viriome represents a complex evolutionary interaction between the eukaryotic host and viral vector \citep{delwart_viral_2007}. 
-Plant viruses were the earliest characterized viruses, beginning with Mayer's publication on his discovery of \textit{Tobacco Mosaic Virus} in 1886 on tobacco plants \citep{mayer1886mosaikkrankheit} which followed Molisch's 1885 discovery of ``protein bodies'' on cacti: \textit{Schlumbergera truncata} (previously \textit{Epiphylum truncatumin}) \citep{molisch1885merkwurdige}.
-Molisch's ``Proteinkörper'' may have been the first true purified viruses.
-Perhaps the most recent advancement in virology of the current century has been the advent of faster, cheaper, higher-throughput environmental metagenomic techniques.
-The unprecedented data collection has advanced many facets of evolutionary biology \citep{delwart_viral_2007,lefeuvre_evolution_2019,schulz_towards_2017}.
-It has become evident through these discoveries that the greenhouse-raised and lab-grown organisms commonly analyzed in experiments represent a small fraction of living diversity. % KR: "living diversity" does not sound right to me.
-Metagenomic studies aim to sample hundreds of thousands of genomes and have vastly expanded both the cellular tree of life \citep{schulz_towards_2017,hug_new_2016} and the viral tree of life \citep{gregory_marine_2019,lefeuvre_evolution_2019,shi_redefining_2016}. %check viral tree of life
-Viruses display impressive morphological diversity and adaptations, many of which allow them to infect plants \citep{delwart_viral_2007,lefeuvre_evolution_2019}.
-Metagenomic analysis of non-model plants has both enriched our genetic knowledge of plants and uncovered novel insights on viral evolution, adaptation, and transmission (citations needed).
-A careful study of new methods to investigate the plant viriome provides a view into underlying biological realities that are not currently understood.
+%The plant viriome represents a complex evolutionary interaction between the eukaryotic host and viral vector \citep{delwart_viral_2007}. 
+%Plant viruses were the earliest characterized viruses, beginning with Mayer's publication on his discovery of \textit{Tobacco Mosaic Virus} in 1886 on tobacco plants \citep{mayer1886mosaikkrankheit} which followed 
+Molisch's (1885) \nocite{molisch1885} discovery of ``protein bodies'' on several species of cacti was one of the first documented descriptions of plant viruses.
+For over a century, subsequent studies were limited to observational data \citep{}, often augmented with clever experimental approaches \citep{}. %citations are 1) microscopy and 2) inoculations.
+A transformative advancement in virology---and all of biology---has been the advent of massively parallel DNA and RNA sequencing. 
+It is readily accessible, inexpensive, with a massively higher throughput, and able to rapidly crudely identify organisms from seemingly any sampled surface of the Earth.
+One common thread is that virtually every macro-organism genome study uncovers a micro-organismal metagenome, composed of both targeted host sequences and those from myriad co-existing organisms. %cite the WashU thesis or paper(s) arising
+%maybe one of these, if appropriate: \citep{delwart_viral_2007,lefeuvre_evolution_2019,schulz_towards_2017}
+%Metagenomic studies aim to sample hundreds of thousands of genomes and have vastly expanded both the cellular tree of life \citep{schulz_towards_2017,hug_new_2016} and the viral tree of life \citep{gregory_marine_2019,lefeuvre_evolution_2019,shi_redefining_2016}. %check viral tree of life
+Metagenomic samples have yielded an enormous number of genomes and have vastly expanded both the tree of life \citep{schulz_towards_2017,hug_new_2016,gregory_marine_2019,lefeuvre_evolution_2019,shi_redefining_2016}. 
+%this is an unusually large in-line citation set. I would pick one or two transformative studies, not the whole gamut.
+%
+%B: I removed "hundreds of thousands," because that order of magnitude number is not mentioned in any of the studies! And, depending on what you think a "genome" is, even a vaguely guesstimated number is certainly much, much higher. Many orders of magnitude higher.
+%Metagenomic analysis of various plant species has yielded novel insights on viral evolution, adaptation, and transmission. %(citations needed). %B: you'll have a terribly difficult time finding citations for insights into viral adaptation on plant species because there are not likely to be many. More importantly, this sentence seems to state that metagenomes contribute "insights", which is not insightful. We should discuss this more broadly in the context of writing. 
 
-The International Committee on Taxonomy of Viruses (ICTV) presently advises the taxonomy and approval of virus nomenclature \citep{simmonds2017virus,lefkowitz2018virus,international2020new}.
-The unprecedented amounts of data resulting from metagenomic studies have caused significant revisions in ICTV policy \citep{international2020new,simmonds2017virus}, but many viruses remain named by their host, location, or symptoms.
+
+%rm: this statement is self-evident from the name: The International Committee on Taxonomy of Viruses (ICTV) presently advises the taxonomy and approval of virus nomenclature \citep{simmonds2017virus,lefkowitz2018,ictv2020}.
+The unprecedented amounts of data resulting from metagenomic studies have caused significant policy changes and revisions by the International Committee on Taxonomy of Viruses (ICTV) policy \citep{ictv2020,simmonds2017virus}, but nearly all viruses remain named by their original description of host, location, and/or symptoms.
+The historic naming conventions are ill-suited for host plants whose own taxonomic placement is uncertain, which has been particularly true for rapidly diversified groups such as Cactaceae (cacti).
+
+Molisch's ``protein bodies'' are now widely understood to be comprised of plant-infecting potexviruses (\textit{Tymovirales}, family \textit{Alphaflexiviridae}).
+Their positive-sense, single-stranded RNA genomes consist of roughly 6,600 bp of positive-sense single-stranded RNA. %cite
+Generally presenting as elongated, rod-shaped filamentous viruses, they express five primary open reading frames (ORFs): Replicase (Rep), Triple gene block (TGB), Coat protein (CP), coded in the 5' direction as well as two smaller overlapping ORFs coded in the 3' direction: ORF6 and ORF7 \citep{evallo_brief_2021,liou_complete_2004, martelli_family_2007}. %if one of these citations mentions the structure, it is sufficient.
+%They are closely related to other \textit{Potexviruses} such as \textit{Alternantha Mosaic Virus} and \textit{Papaya Mosaic Virus} \citep{martelli_family_2007,park_detection_2018,liou_complete_2004}.
+Members of this group produce variably symptomatic infections in cacti, and many infected plants show no external signs of viral infection \citep{bos_symptoms_1977, liou_complete_2004}. 
+Neither the significance of their infections in nature, nor relative modes of transmission are clear. 
+Reports of symptomatic plants range from 0\%-5.5\% in wild species in the southwestern United States \citep{attathom_occurrence_1978} to 44\% in agricultural fields on Hainan Island, China \citep{peng_molecular_2016}.
+The most commonly recognized symptoms of the disease are mosaic, mottling, stunted growth, and distortion \citep{attathom_occurrence_1978, maliarenko_cactus_2013, peng_molecular_2016}.
+Infection through grafting and mechanical contact, particularly following stem injury and human-mediated or hemipteran insect-mediated sap inoculation, is well-documented \citep{liou_complete_2004,maliarenko_cactus_2013,park_detection_2018}.
+Grafting is a primary means of propagation among crop cacti \citep{park_detection_2018}, and \textit{Selenicereus} is a commonly chosen graft stock.
+However, there are reports of other members within the family \textit{Alphaflexiviridae} transmitting via insect and seed vectors \citep{martelli_family_2007}, and pre-DNA studies tentatively suggest that in the wild, pollen may transmit \textit{CVX} \citep{attathom_occurrence_1978}.
+
+%This paragraph needs a topic sentence: "viral taxonomy is complicated by many aspects of biology and taxonomic practices" or something.
+\textit{Schlumbergera truncata} (Haworth) Moran has undergone a number of name changes, including \textit{Epiphyllum truncatum} Haworth in 1819, \textit{Cactus truncatus} (Haworth) Link in 1822, and \textit{Zygocactus truncatus} (Haworth) K. Schumann in 1890, dramatically confusing subsequent viral taxonomy.
 This naming scheme may cause confusion as it results in many distinct viruses having the same name.
+Currently accepted names in the \textit{Potexvirus} group thus include \textit{Cactus Virus X} (CVX), \textit{Zygocactus Virus X} (ZyVX), and \textit{Schlumbergera Virus X} (SchVX), each of which was likely characterized on the same host genus (and possibly species). %cite
 The Baltimore classification system standardizes viral classification by intrinsic morphological characteristics of a virus' replication machinery. 
-It has been integrated into the ICTV guidelines to better reflect viral evolutionary relationships \citep{international2020new}.
-The study of plant viruses particularly suffers from poor nomenclature due to naming a virus after a first discovered host which is subject to reclassification or renaming. %rephrase
-The term ``plant virus'' in itself is problematic since there is strong evidence to suggest that viruses frequently spillover from fungal or invertebrate hosts \citep{lefeuvre_evolution_2019}.
-Additionally, many plant viruses that infect agriculturally important species are named using the common name of a plant, which carries its own problems, for example: \textit{Pitaya Virus X} is named for the common name ``Pitaya'' which can refer to as many as thirty-one species within the genus \textit{Selenicereus} \citep{korotkova_phylogenetic_2017,guerrero_phylogenetic_2019,le_bellec_12_2011}. %rephrase, less passive voice
-The matter is further complicated because one virus may infect many hosts, and one host may contain many viruses. 
-A single-stranded RNA virus has a faster rate of evolution than a host plant.
+It has been integrated into the ICTV guidelines to better reflect viral evolutionary relationships \citep{ictv2020}.
+The term ``plant virus'' in itself is problematic since there is strong evidence to suggest that viruses frequently spill over from fungal or invertebrate hosts \citep{lefeuvre_evolution_2019}. %this is possibly important and I have not read the paper. The interpretation of possibility of spillover is critical. Make sure that there are documented cases where a species jumps host across this chasm!
+Additionally, many plant viruses that infect agriculturally important species are named using the common name of a plant, which carries its own problems, for example: \textit{Pitaya Virus X} is named for the common name ``Pitaya'' which can refer to as many as thirty-one species within the genus \textit{Selenicereus} \citep{korotkova_phylogenetic_2017,guerrero_phylogenetic_2019,le_bellec_12_2011}. 
+The matter is further complicated by basic viral ecology, because one virus may infect many hosts, and one host may be co-infected by many viruses. 
+A single-stranded RNA virus has a faster rate of evolution than a host plant. %B: just one virus is considered in this whole section?
 It engages in a different mode of reproduction, making a direct assignment of viruses and their hosts difficult (citation needed).%rephrase
 There is no guarantee that viral evolution and speciation follow linearly behind plant evolution and speciation---especially due to viral host-switching.
 These problems persist throughout the genus \textit{Potexvirus} and are especially prominent in cactus-infecting \textit{Potexvirus} species.
 We suggest a phylogeny-based approach to remedy some prominent taxonomic issues within this specific clade that cause naming inconsistencies.
 
-%B: Hmmm, Intro is usually not allowed to have subsections. Also, Study System, Study Organism, or Study Site is commonly a subsection of Materials and Methods? Maybe, for reference, take a look at the organization of another paper? Karolis's paper is a good starting point, but any paper from a journal where you intend to send the ms is probably good, too.
-%at: subsections removed.
-
-% This subsection text, if in the M&M section should only be about the material that we are contributing. 
-% If it is intended as background/review, those parts ought to be in the Introduction.
-%at: I will trim this down soon and make it introduction-worthy.
-
-The species \textit{Cactus Virus X}, \textit{Zygocactus Virus X}, \textit{Schlumbergera Virus X}, \textit{Pitaya Virus X}, and \textit{Opuntia Virus X} are all \textit{Potexviruses} (family Alphaflexiviridae) that are grouped broadly by their infections of certain cacti: \textit{Selenicereus undatus} and \textit{S. polyrhizus} \citep{li_viral_2015,peng_molecular_2016}; \textit{Opuntia spp.} especially \textit{O. tuna} \citep{koenig_molecular_2004, duarte_Potexvirus_2008} and \textit{O. monacantha} \citep{attathom_occurrence_1978} Sammons 1961 Duarte 2008; \textit{Schlumbergera} (previously \textit{Zygocactus}) \textit{truncata} and \textit{S. bridgesii} \citep{duarte_Potexvirus_2008, koenig_molecular_2004}, \textit{Parodia }(previously \textit{Notocactus}) \textit{leninghausii} \citep{park_detection_2018}, \textit{Echinopsis chamaecereus f. cristata}, \textit{E. pectinatus f. cristata}, \textit{E. jusbertii}, and \textit{E. macrogona} \citep{maliarenko_cactus_2013}; \textit{Mammillaria elongata f. cristata} \citep{maliarenko_cactus_2013}; and multiple other species within many genera in the family Cactaceae \citep{evallo_brief_2021}. Of these viruses, only \textit{Cactus Virus X} (CVX) has been reported on wild \textit{Ferocactus cylindraceus} (previously \textit{Ferrocactus acanthodes}) \citep{attathom_occurrence_1978}. 
-However, this report predates DNA records confirming the viral identity.
-Additionally, the viruses are frequently manipulated with serological experiments and have been found to produce lesions (which indicate infection) on: \textit{Chenopodium murale L.} \citep{maliarenko_cactus_2013} and C. quinoa \citep{attathom_identification_1978,attathom_occurrence_1978, brandes_untersuchungen_1963-1}; Nicotiana alata Link el. Otto \citep{maliarenko_cactus_2013}; Four species of Amaranthaceae \citep{attathom_identification_1978}; Escobaria vivipara \citep{attathom_identification_1978}; and other Cactaceae \citep{attathom_identification_1978}.
-
-All cactus-infecting \textit{Potexviruses} consist of roughly 6,600 bp of positive-sense single-stranded RNA. They have similar rod-shaped filamentous virions and share the same division of five primary open reading frames (ORFs): Replicase (Rep), Triple gene block (TGB), Coat protein (CP), coded in the 5' direction as well as two smaller overlapping ORFs coded in the 3' direction: ORF6 and ORF7 \citep{evallo_brief_2021,liou_complete_2004, martelli_family_2007}.
-They are closely related to other \textit{Potexviruses} such as \textit{Alternantha Mosaic Virus} and \textit{Papaya Mosaic Virus} \citep{martelli_family_2007,park_detection_2018,liou_complete_2004}.
-These viruses produce a wide range of symptomatic and damaging infections in cacti. 
-Reports of symptomatic plants range from 5.5 percent of wild \textit{Ferocactus cylindraceus} \citep{attathom_occurrence_1978} and up to 44 percent of crop plants on Hainan Island, China \citep{peng_molecular_2016}.
-However, many infected plants do not show external signs of viral infection \citep{liou_complete_2004, bos_symptoms_1977}.
-The most commonly recognized symptoms of the disease are mosaic, mottling, stunted growth and distortion \citep{maliarenko_cactus_2013, peng_molecular_2016, attathom_occurrence_1978}.
-
-It is unclear what the method of transmission from infected plant to new host is. 
-Some reports specify that cactus-infecting \textit{Potexviruses} can only be transmitted through grafting \citep{duarte_Potexvirus_2008, martelli_family_2007} but most agree that transmission can occur through mechanical contact such as sap inoculation \citep{liou_complete_2004,maliarenko_cactus_2013,park_detection_2018} and external tissue contact.
-Grafting is a primary means of propagation among crop cacti \citep{park_detection_2018}, and \textit{Selenicereus} is a commonly chosen graft stock.
-However, there are reports of other members within the family \textit{Alphaflexiviridae} transmitting via insect and seed vectors \citep{martelli_family_2007}, and pre-DNA studies tentatively suggest that in the wild, pollen may transmit \textit{CVX} \citep{attathom_occurrence_1978}.
+%at: I will trim this down soon and make it introduction-worthy. 
+%The species \textit{Cactus Virus X}, \textit{Zygocactus Virus X}, \textit{Schlumbergera Virus X}, \textit{Pitaya Virus X}, and \textit{Opuntia Virus X} are all \textit{Potexviruses} (family Alphaflexiviridae) that are grouped broadly by their infections of certain cacti: \textit{Selenicereus undatus} and \textit{S. polyrhizus} \citep{li_viral_2015,peng_molecular_2016}; \textit{Opuntia spp.} especially \textit{O. tuna} \citep{koenig_molecular_2004, duarte_Potexvirus_2008} and \textit{O. monacantha} \citep{attathom_occurrence_1978} Sammons 1961 Duarte 2008; \textit{Schlumbergera} (previously \textit{Zygocactus}) \textit{truncata} and \textit{S. bridgesii} \citep{duarte_Potexvirus_2008, koenig_molecular_2004}, \textit{Parodia }(previously \textit{Notocactus}) \textit{leninghausii} \citep{park_detection_2018}, \textit{Echinopsis chamaecereus f. cristata}, \textit{E. pectinatus f. cristata}, \textit{E. jusbertii}, and \textit{E. macrogona} \citep{maliarenko_cactus_2013}; \textit{Mammillaria elongata f. cristata} \citep{maliarenko_cactus_2013}; and multiple other species within many genera in the family Cactaceae \citep{evallo_brief_2021}. Of these viruses, only \textit{Cactus Virus X} (CVX) has been reported on wild \textit{Ferocactus cylindraceus} (previously \textit{Ferrocactus acanthodes}) \citep{attathom_occurrence_1978}. 
+%However, this report predates DNA records confirming the viral identity.
+%Additionally, the viruses are frequently manipulated with serological experiments and have been found to produce lesions (which indicate infection) on: \textit{Chenopodium murale L.} \citep{maliarenko_cactus_2013} and C. quinoa \citep{attathom_identification_1978,attathom_occurrence_1978, brandes_untersuchungen_1963-1}; Nicotiana alata Link el. Otto \citep{maliarenko_cactus_2013}; Four species of Amaranthaceae \citep{attathom_identification_1978}; Escobaria vivipara \citep{attathom_identification_1978}; and other Cactaceae \citep{attathom_identification_1978}.
 
 Knowledge about cactus-infecting \textit{Potexviruses} contributes to a growing yet biased study of plant viruses. 
 Human-assisted dispersal, grafting, and cultivation obscures the evolutionary history of these viruses, which parallels the disproportionate sampling representation of plants raised in greenhouses or for agricultural production. 
@@ -131,10 +134,22 @@ We attempt to use this expanded phylogeny to answer relevant questions about Pot
 \section*{Materials and Methods}
 %------------------------------------------------------------------------------
 
+\subsection*{Host Material Collection Species and Tissues}
+%\subsection*{Host Species and Tissues} %alternative
+
+We recovered viral sequences on \textit{Schlumbergera truncata} (Haworth) Moran, commonly known as `crab cactus' or `false Christmas cactus,' one of the most widely cultivated species of cacti. 
+Our samples were sourced from a haphazardly collected personal plant collection (B.I.), purchased or found abandoned around the city of Chicago, IL (USA). 
+Although there are dozens of named varieties of this species, nearly all commercially grown plants are of uncertain provenance. 
+They almost certainly trace to a handful of plants collected in their native Atlantic forests of Brazil and brought to England in the early 1800s \citep{boyle2003}. 
+Plants are easily grown from cuttings and the species has been extensively hybridized across Western Europe and exported across the world, prized for their showy winter (short-day) displays.
+Most of the plants were seemingly asymptomatic at the time of tissue collection, which was aimed at the study of self-incompatibility in angiosperms \citep{ramanauskas2021}, and we fortuitously discovered viral infections in the course of that study.
+
+%FIXME: Describe here briefly how the previously published viral sequence data was collected
+
 \subsection*{RNA Sequencing}
 
-Pistils (without ovaries), pollen, leaf, and root tissues were collected and immediately submerged in 1.5 ml of RNA\textit{later}\texttrademark~solution (Invitrogen).
-Submerged samples were held at room temperature for thirty minutes and then moved to a -80 C freezer for storage.
+Pistils (without ovaries), pollen, leaf, and root tissues were removed and submerged in 1.5 ml of RNA\textit{later}\texttrademark~solution (Invitrogen).
+Samples were held at room temperature for 30-60 minutes and then moved to a -80 C freezer for storage.
 Approximately 100 mg of tissue was ground to a fine powder in 1.5 ml tubes submerged in liquid nitrogen.
 Total RNA was isolated using Total RNA Mini Kit (Plant kit; IBI Scientific, Cat. No. IB47341) following manufacturer's instructions.
 We assessed RNA concentration and purity with a NanoDrop\texttrademark~Lite Spectrophotometer (Thermo Scientific).
@@ -145,22 +160,13 @@ The number of resulting read pairs (for the XX samples presented here) ranged fr
 
 \subsection*{RNAseq Assemblies}
 
-Raw paired-end Illumina reads were first processed using \mbox{Rcorrector}~v1.0.4 
-%\cite{song2015}
- to correct for random sequencing errors.
-Then, reads were trimmed with \mbox{Trimmomatic}~v0.39 
-%\cite{bolger2014}
- to remove any read containing bases with Phred scores lower than 20, low quality reads less than 50 bp long, and any adapter or other Illumina-specific sequences that were still present.
-The remaining reads were filtered with \mbox{Kraken}~2 
-%\cite{wood2019}
- to remove Small and Large Subunit ribosomal RNA (SILVA database) 
- %\cite{quast2013} 
- and contaminating reads (minikraken2\_v2 database).
-We used custom-built databases, derived from RefSeq libraries: UniVec\_Core, viral, mitochondrion, plastid, plasmid, archaea, bacteria, protozoa, human, and fungi to minimize the number of contaminating and non-nuclear reads.
+Raw paired-end Illumina reads were first processed using \mbox{Rcorrector}~v1.0.4 \citep{song2015} to infer and correct sequencing errors.
+Reads were next trimmed with \mbox{Trimmomatic}~v0.39 \citep{bolger2014} to remove any read containing bases with Phred scores lower than 20, low quality reads less than 50 bp long, and any adapter or other Illumina-specific sequences that were still present.
+The remaining reads were filtered with \mbox{Kraken}~2 \citep{wood2019} to remove small and large subunit ribosomal RNA (using the SILVA database; \citealt{quast2013}) and contaminating reads (minikraken2\_v2 database).
+We used custom-built databases, derived from RefSeq libraries: UniVec\_Core, viral, mitochondrion, plastid, plasmid, archaea, bacteria, protozoa, human, and fungi to minimize the number of contaminating and non-nuclear reads \citep{ramanauskas2021}.
 Only paired reads were used for transcriptome assemblies.
 \textit{Schlumbergera truncata} filtered reads were combined across all samples into a single RNA-seq data set.
-We conducted a \textit{de novo} transcriptome assembly using \mbox{Trinity}~v2.8.5 
-%\cite{grabherr2011} 
+We conducted a \textit{de novo} transcriptome assembly using \mbox{Trinity}~v2.8.5 \citep{grabherr2011} 
 to generate a single reference transcriptome assembly for \textit{Schlumbergera truncata}.
 
 \subsection*{NCBI Data Collection and Compilation}
@@ -181,8 +187,8 @@ Sequence alignments were performed through MAFFT v7.429 (\citep{katoh_mafft_2002
 %at: KR, can you check this? which MAFFT settings?
 The aligned sequences were divided by ORF using the annotations to produce five partial sequence alignments corresponding to each ORF to accompany the full-sequence alignment. 
 The individual proteins were exported to FASTA files, then gaps at the start of the sequence and stop codons were removed manually. 
-Phylogenetic relationships and bootstrap values were calculated using IQtree v1.6.12 (\citep{nguyen_iq-tree_2015}), ModelFinder (\citep{kalyaanamoorthy_modelfinder_2017}), and UFBoot (\citep{hoang_ufboot2_2018}) for both the individual gene/protein alignments and the full sequence alignment. 
-Trees were visualized in R version 4.0.3 using ggtree v2.4.2 (\citep{yu_ggtree_2017}). 
+Phylogenetic relationships and bootstrap values were calculated using IQtree v1.6.12 (\citep{nguyen2015}), ModelFinder (\citep{kalyaanamoorthy_modelfinder_2017}), and UFBoot (\citep{hoang_ufboot2_2018}) for both the individual gene/protein alignments and the full sequence alignment. 
+Trees were visualized in R version 4.0.3 using ggtree v2.4.2 (\citep{r,yu_ggtree_2017}). 
 Host information was obtained through reported metadata and mapped onto the phylogeny. 
 Species groupings were determined using the existing species boundaries compared to the phylogenetic branch lengths within the Potexvirus genus. 
 These groupings were generally consistent with most recent branch lengths over 0.1 subs/site and this value was therefore used as a cutoff. 
