@@ -87,8 +87,10 @@ The unprecedented amount of data resulting from metagenomic studies has also cau
 
 The historic naming conventions are ill-suited for host plants whose own taxonomic placement is uncertain, which has been particularly true for rapidly diversified groups such as Cactaceae (cacti).
 Molisch's ``protein bodies'' are now widely understood to be comprised of plant-infecting potexviruses (\textit{Tymovirales}, family \textit{Alphaflexiviridae}).
-Their positive-sense, single-stranded RNA genomes consist of roughly 6,600 bp of positive-sense single-stranded RNA. %cite
-Generally presenting as elongated, rod-shaped filamentous viruses, they express five primary open reading frames (ORFs): Replicase (Rep), Triple gene block (TGB), Coat protein (CP), coded in the 5' direction as well as two smaller overlapping ORFs coded in the 3' direction: ORF6 and ORF7 \citep{evallo_brief_2021,liou_complete_2004, martelli_family_2007}. %if one of these citations mentions the structure, it is sufficient.
+Their positive-sense, single-stranded RNA genomes consist of 5.9-7.0 kb of positive-sense single-stranded RNA \citep{martelli_family_2007}.
+Generally presenting as elongated, rod-shaped filamentous viruses, they express five primary open reading frames (ORFs): Replicase (Rep), Triple gene block (TGB), Coat protein (CP), coded in the 5' direction as well as two smaller overlapping ORFs coded in the 3' direction: ORF6 and ORF7 \citep{martelli_family_2007}. 
+%if one of these citations mentions the structure, it is sufficient.
+%at: deleted all but the most relevant citation
 %They are closely related to other \textit{Potexviruses} such as \textit{Alternantha Mosaic Virus} and \textit{Papaya Mosaic Virus} \citep{martelli_family_2007,park_detection_2018,liou_complete_2004}.
 Members of this group produce variably symptomatic infections in cacti, and many infected plants show no external signs of viral infection \citep{bos_symptoms_1977, liou_complete_2004}. 
 Neither the significance of their infections in nature, nor relative modes of transmission are clear. 
@@ -104,10 +106,10 @@ However, there are reports of other members within the family \textit{Alphaflexi
 Thus, currently accepted names in the \textit{Potexvirus} group include \textit{Cactus Virus X} (CVX), \textit{Zygocactus Virus X} (ZyVX), and \textit{Schlumbergera Virus X} (SchVX), each of which was likely characterized on the same host genus (and possibly species). %cite
 The Baltimore classification system standardizes viral classification by intrinsic morphological characteristics of a virus' replication machinery. 
 It has been integrated into the ICTV guidelines to better reflect viral evolutionary relationships \citep{ictv2020}.
-The term ``plant virus'' in itself is problematic since there is strong evidence to suggest that viruses frequently spill over from fungal or invertebrate hosts \citep{lefeuvre_evolution_2019}. %this is possibly important and I have not read the paper. The interpretation of possibility of spillover is critical. Make sure that there are documented cases where a species jumps host across this chasm!
+The term ``plant virus'' in itself is problematic since there is strong evidence to suggest that many viruses have transitioned from fungal or invertebrate hosts to plant hosts \citep{lefeuvre_evolution_2019}. %this is possibly important and I have not read the paper. The interpretation of possibility of spillover is critical. Make sure that there are documented cases where a species jumps host across this chasm!
 Additionally, many plant viruses that infect agriculturally important species are named using the common name of a plant, which carries its own problems, for example: \textit{Pitaya Virus X} is named for the common name ``Pitaya'' which can refer to as many as thirty-one species within the genus \textit{Selenicereus} \citep{korotkova_phylogenetic_2017,guerrero_phylogenetic_2019,le_bellec_12_2011}. 
 The matter is further complicated by basic viral ecology, because one virus may infect many hosts, and one host may be co-infected by many viruses. 
-A single-stranded RNA virus has a faster rate of evolution than a host plant. %B: just one virus is considered in this whole section?
+Single-stranded RNA viruses have faster rates of evolution than their host plants. %B: just one virus is considered in this whole section?
 It engages in a different mode of reproduction, making a direct assignment of viruses and their hosts difficult (citation needed).%rephrase
 There is no guarantee that viral evolution and speciation follow linearly behind plant evolution and speciation---especially due to viral host-switching.
 These problems persist throughout the genus \textit{Potexvirus} and are especially prominent in cactus-infecting \textit{Potexvirus} species.
@@ -145,7 +147,13 @@ They almost certainly trace to a handful of plants collected in their native Atl
 Plants are easily grown from cuttings and the species has been extensively hybridized across Western Europe and exported across the world, prized for their showy winter (short-day) displays.
 Most of the plants were seemingly asymptomatic at the time of tissue collection, which was aimed at the study of self-incompatibility in angiosperms \citep{ramanauskas2021}, and we fortuitously discovered viral infections in the course of that study.
 
+Additional publicly available genomes, complete proteins, gene annotations, and available metadata from Potexviruses (NCBI:txid12176) were downloaded from NCBI (NCBI: www.ncbi.nlm.nih.gov/, accession numbers provided in Supplemental Data).
+We also searched the NCBI Sequence Read Archive (SRA) database (www.ncbi.nlm.nih.gov/sra) for RNA-sequencing (RNA-seq) data within the flowering plant order Caryophyllales (NCBI:txid3524) that had been sequenced using the Illumina library sequencing platform. 
+For each identified SRA run accession (SRR), viral RNA that matched sample cactus-infecting Potexvirus RNA (accession numbers provided in Supplemental Data) was identified, extracted, and assembled using the kakapo 0.7.3-dev pipeline (http://flightless.one) with Kraken2 viral filters disabled. 
+The search returned 59 sequences aligned to members of Potexvirus within PRJNA608981 (https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA608981).
+
 %FIXME: Describe here briefly how the previously published viral sequence data was collected
+%at: added description 12/13/21
 
 \subsection*{RNA Sequencing}
 
@@ -170,33 +178,25 @@ Only paired reads were used for transcriptome assemblies.
 We conducted a \textit{de novo} transcriptome assembly using \mbox{Trinity}~v2.8.5 \citep{grabherr2011} 
 to generate a single reference transcriptome assembly for \textit{Schlumbergera truncata}.
 
-\subsection*{NCBI Data Collection and Compilation}
-We collected publicly available genomes, complete proteins, gene annotations, and available metadata from Potexviruses (NCBI:txid12176) (NCBI: www.ncbi.nlm.nih.gov/, accession numbers provided in Supplemental Data). 
-The untranslated regions (UTRs) were trimmed from the sequences to provide consistency.
-
-
-We also searched the NCBI Sequence Read Archive (SRA) database (www.ncbi.nlm.nih.gov/sra) for RNA-sequencing (RNA-seq) data within the flowering plant order Caryophyllales (NCBI:txid3524) that had been sequenced using the Illumina library sequencing platform. 
-For each identified SRA run accession (SRR), viral RNA that matched sample cactus-infecting Potexvirus RNA (accession numbers provided in Supplemental Data) was identified, extracted, and assembled using the kakapo 0.7.3-dev pipeline (http://flightless.one) with Kraken2 viral filters disabled. 
-The SAM files produced through kakapo were loaded through Geneious 11.1.5 along with the Schlumbergera reads.
-%KR check
-These sequences were annotated using the Geneious 11.1.5 "Find ORFs" function. 
-
-The complete dataset comprises 37 existing Potexvirus genomes and proteins, four new viral sequences located within original Schlumbergera truncata RNA-seq data, and 52 viral sequences found within NCBI Caryophyllales RNA-seq data.
-
 \subsection*{Sequence Alignment and Phylogenetic Analyses}
-Sequence alignments were performed through MAFFT v7.429 (\citep{katoh_mafft_2002}) using the full dataset.
+The untranslated regions (UTRs) were trimmed from the sequences for consistency.
+Sequence alignments were performed through MAFFT v7.429 \citep{katoh_mafft_2002} using the full dataset.
 %at: KR, can you check this? which MAFFT settings?
-The aligned sequences were divided by ORF using the annotations to produce five partial sequence alignments corresponding to each ORF to accompany the full-sequence alignment. 
+The aligned sequences were divided by ORF using annotations to produce five partial sequence alignments corresponding to each ORF to accompany the full-sequence alignment. 
 The individual proteins were exported to FASTA files, then gaps at the start of the sequence and stop codons were removed manually. 
-Phylogenetic relationships and bootstrap values were calculated using IQtree v1.6.12 (\citep{nguyen2015}), ModelFinder (\citep{kalyaanamoorthy_modelfinder_2017}), and UFBoot (\citep{hoang_ufboot2_2018}) for both the individual gene/protein alignments and the full sequence alignment. 
-Trees were visualized in R version 4.0.3 using ggtree v2.4.2 (\citep{r,yu_ggtree_2017}). 
-Host information was obtained through reported metadata and mapped onto the phylogeny. 
-Species groupings were determined using the existing species boundaries compared to the phylogenetic branch lengths within the Potexvirus genus. 
-These groupings were generally consistent with most recent branch lengths over 0.1 subs/site and this value was therefore used as a cutoff. 
-Pairwise distance analysis was conducted on the sequence alignments in R using the ape v5.5  dist.dna() function with a raw model. 
-For each defined clade, nonzero pairwise distances between each possible combination of tips was averaged. 
-Expanded phylogenetic trees and individual gene/protein trees are available in the Supplementary Data.
+Phylogenetic relationships and bootstrap values were calculated using IQtree v1.6.12 \citep{nguyen2015}, ModelFinder \citep{kalyaanamoorthy_modelfinder_2017}, and UFBoot \citep{hoang_ufboot2_2018} for both the individual gene/protein alignments and the full sequence alignment. 
 
+Host information was obtained through NCBI reported metadata.
+Species groupings were determined using the existing species boundaries compared to the phylogenetic branch lengths within the Potexvirus genus. 
+These existing groupings were generally consistent with most recent branch lengths over 0.1 subs/site and this value was therefore used as a cutoff. 
+Raw pairwise distance analysis was conducted on the sequence alignments in R using ape v5.5 (cite*)
+For each defined clade, nonzero pairwise distances between each possible combination of tips was averaged. 
+
+\subsection{Data Accessibility}
+
+This article contains a Supplementary Information Appendix.
+Expanded phylogenetic trees and individual gene/protein trees are available in the Supplementary Data.
+All sequence data is deposited in GenBank under project accession number PRJNXXXXX (https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNXXXXX).
 
 
 
@@ -267,7 +267,7 @@ Selection analysis goes here.
 The new samples fall into already existing species groups.
 Pairwise distances between species were calculated for six groups, with a value of 0 indicating identical sequences and a value of 1 indicating entirely dissimilar sequences.
 
-\subsection*{Concluding Remarks}
+\section*{Conclusion}
 X new viruses were included as part of this study, which represents a multifaceted approach to viral discovery using metagenomic techniques for already available public data as well as newly collected data.
 Mixed infections, co-infection dynamics.
 Viral abundance, viral loads, tissue type, and diversity.
@@ -307,7 +307,7 @@ Acknowledgments text.
 
 \section*{Figures}
 Figure inventory list.
-1. The updated cactus-infecting \textit{potexvirus} phylogeny reflects distinct viral groupings which opportunistically infect multiple host plants. Asterisks (*) represent samples recovered by this study. 
+1. The updated cactus-infecting \textit{potexvirus} phylogeny reflects distinct viral groupings which opportunistically infect multiple host plants. Asterisks (*) represent samples recovered by this study. 94 virus sequences were aligned with MAFFT and a phylogeny was generated with IQtree. All major (clade-delimiting) nodes have greater than 95 percent bootstrap support.
 
 2. Genome organization of viruses in phylogeny, ORFs color-coded and arrows indicating which direction each gene is read.
 3. Selection graph as displayed in B's r code

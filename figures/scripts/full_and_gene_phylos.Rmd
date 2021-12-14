@@ -5,20 +5,6 @@ date: "10/13/2021"
 output: html_document
 ---
 #Notes:  treetemp, used later in the file, is an S4 object and its slots can be accessed by "treetemp@example". 
-> Packages
-
-```{r eval=FALSE}
-knitr::opts_chunk$set(error = TRUE)
-#install needed packages
-install.packages('BiocManager')# This option gave B errors; repos=c('https://cran.rstudio.com'), ask=F)
-BiocManager::install('DECIPHER')
-BiocManager::install("ggtree")
-BiocManager::install("phytools")
-tinytex::install_tinytex()
-install.packages('BiocManager', repos=c('https://cran.rstudio.com'), ask=FALSE)
-BiocManager::install('DECIPHER')
-install.packages("kableExtra")
-```
 ## Loading Libraries
 ```{r load-libraries, message=FALSE}
 library(ggtree) # tree plotting
@@ -34,7 +20,7 @@ library(dplyr)
 ##Load metadata.
 ```{r}
 reload.metadata <- function(){
-  md <<- read.csv('../data/name_key.csv', stringsAsFactors = FALSE)
+  md <<- read.csv('../../data/name_key.csv', stringsAsFactors = FALSE)
   print("Metadata file loaded")
 }
 reload.metadata()
@@ -44,11 +30,11 @@ reload.metadata()
 Load trees for each gene.
 ```{r}
 loc0 <- "../../data/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
-loc1 <- "../data/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
-loc2 <- "../data/iqtree_2_TGB1_names/2_TGB1_names.fasta.treefile"
-loc3 <- "../data/iqtree_3_TGB2_names/3_TGB2_names.fasta.treefile"
-loc4 <- "../data/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
-loc5 <- "../data/iqtree_5_CP_names/5_CP_names.fasta.treefile"
+loc1 <- "../../data/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
+loc2 <- "../../data/iqtree_2_TGB1_names/2_TGB1_names.fasta.treefile"
+loc3 <- "../../data/iqtree_3_TGB2_names/3_TGB2_names.fasta.treefile"
+loc4 <- "../../data/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
+loc5 <- "../../data/iqtree_5_CP_names/5_CP_names.fasta.treefile"
 locs <- c(loc0, loc1, loc2, loc3, loc4, loc5)
 names <- c("full", "rdrp", "tgb1", "tgb2", "tgb3", "cp")
 ```
@@ -65,40 +51,17 @@ gene.phylos <- function(namevector, locvector) {
   print(namevector[i])
 #join tree and metadata
 treetemp <- as.treedata(left_join(as_tibble(treetemp), md, by=c("label" = "Name_updated")))
-#   for(j in 1:length(treetempphylo$tip.label)){
-#      hostinfo$host[j] <- md$host[grep(treetempphylo$tip.label[j],md$Name_updated)]
-#      hostinfo$hostgenus[j] <- md$hostgenus[grep(treetempphylo$tip.label[j],md$Name_updated)]
-      
-      #uncomment these for troubleshooting:
-      #print(j)
-      #print(treetempphylo$tip.label[j])
-      
-      #print("Host:")
-      #print(hostinfo$host[j])
-      #print("Grep result")
-      #print(md$host[grep(treetempphylo$tip.label[j],search)])
-  # }
-#reroot tree and join host info, had trouble with the full_join function
-treetemp@phylo <- root(treetemp@phylo, outgroup=c("D29630.1"))
+is.rooted(treetemp)
 
-#prepare group for colors:
-#grp <- list(
-#Opuntia Virus X
-#"Opuntia Virus X" <- c("Opuntia virus X KU854931", "Opuntia virus X KY348771", #"Opuntia virus Strain CC10")
-#)
-#now visualize tree:
-#treetemp <- groupOTU(treetemp, grp)
-#par(mar=c(0, 0, 200,0))
-#L <- tree1name$Nnode + length(tree1name$tip.label)
-ggtree(treetemp, ladderize=T, show.legend = FALSE, aes(color=hostgenus))  +
+tree.phy.temp <- root(treetemp@phylo, outgroup=c("D29630.1"))
+
+ggtree(treetemp, ladderize=T, show.legend = FALSE, aes(color=treetemp@data$group))  +
   #aes(color=group) +
   #%<+% hostinfo+
-  scale_color_manual(name="Host plant genus",values=c("#BE81EF", "#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", "#E67E67", "#EC6DC4", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3",
-"#1f78b4",
-"#b2df8a",
-"#33a02c"))+
+  #scale_color_manual(name="Group",
+ #                    values=c("#BE81EF", "#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", #"#E67E67", "#EC6DC4", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3","#1f78b4","#b2df8a","#33a02c"))+
   #host tip labels:
-  geom_tiplab(aes(label=host, subset = !is.na(host)), family='Helvetica',fontface= "bold", linetype="dotted", align=T, fontsize=3, na.rm=F, offset=1.5) +
+#  geom_tiplab(aes(label=host, subset = !is.na(host)), family='Helvetica',fontface= "bold", linetype="dotted", align=T, fontsize=3, na.rm=F, offset=1.5) +
     #newness tip labels:
   geom_tiplab(aes(label=new),size=10, color="black", family='Helvetica', align=T, na.rm=F, offset=1.4,vjust=0.8, linetype="blank", fontface=1) +
     #virus name tip labels:
@@ -107,8 +70,8 @@ ggtree(treetemp, ladderize=T, show.legend = FALSE, aes(color=hostgenus))  +
   geom_treescale(x=0.25, y=60, width=0.25, fontsize=4, linesize=1, offset=1,
                  color='black', family=font.default, label='Substitutions per site',
                  offset.label=-1)+
-  ggplot2::xlim(0, 5.5)+ 
-  theme(text=element_text(family="Helvetica"), plot.margin = unit(c(8,8,8,8), "mm")) 
+  ggplot2::xlim(0, 5.5)
+  #theme(text=element_text(family="Helvetica"), plot.margin = unit(c(8,8,8,8), "mm")) 
   #node labels/bootstrap labels:
   #geom_text2(aes(subset = !isTip #& (node == 127)|(node == 124)|(node == 152)|(node == 153)|(node == 167)|(node == 102)|(node == 106)
     #             , label=label), nudge_x = -0.03, nudge_y = 0.5)+

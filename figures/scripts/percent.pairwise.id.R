@@ -7,6 +7,7 @@ setwd("../..")
 metadatafile <-"data/name_key.csv"
 metadatadf <- read.csv(metadatafile, stringsAsFactors = FALSE)
 percentprop.loc <- "data/SDT/percentageseqproportion_plt.txt"
+percentprop.cp.loc <- "data/SDT/percentageseqproportion_plt.txt"
 percentprop <- read.csv(percentprop.loc, header =TRUE)
 colnames(percentprop) <- c("Percentage", "Number", "Proportion")
 #ggplot
