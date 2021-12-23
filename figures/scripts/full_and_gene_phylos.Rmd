@@ -5,17 +5,28 @@ date: "10/13/2021"
 output: html_document
 ---
 #Notes:  treetemp, used later in the file, is an S4 object and its slots can be accessed by "treetemp@example". 
+> Packages
+
+```{r eval=FALSE}
+knitr::opts_chunk$set(error = TRUE)
+#install needed packages
+install.packages('BiocManager')# This option gave B errors; repos=c('https://cran.rstudio.com'), ask=F)
+BiocManager::install('DECIPHER')
+BiocManager::install("ggtree")
+BiocManager::install("phytools")
+BiocManager::install("ape")
+BiocManager::install("phangorn")
+```
 ## Loading Libraries
 ```{r load-libraries, message=FALSE}
 library(ggtree) # tree plotting
+
 library(DECIPHER)
-library(phangorn)
 library(phytools)
 library(ape)
-library(knitr)
 library(treeio)
-library(kableExtra)
 library(dplyr)
+library(tidytree)
 ```
 ##Load metadata.
 ```{r}
@@ -24,6 +35,7 @@ reload.metadata <- function(){
   print("Metadata file loaded")
 }
 reload.metadata()
+getwd()
 ```
 
 ##Trees:
@@ -37,6 +49,7 @@ loc4 <- "../../data/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
 loc5 <- "../../data/iqtree_5_CP_names/5_CP_names.fasta.treefile"
 locs <- c(loc0, loc1, loc2, loc3, loc4, loc5)
 names <- c("full", "rdrp", "tgb1", "tgb2", "tgb3", "cp")
+treetemp <- read.iqtree(locs[1])
 ```
 
 Create phylogenies for each gene.
@@ -50,37 +63,31 @@ gene.phylos <- function(namevector, locvector) {
 
   print(namevector[i])
 #join tree and metadata
-treetemp <- as.treedata(left_join(as_tibble(treetemp), md, by=c("label" = "Name_updated")))
-is.rooted(treetemp)
 
-tree.phy.temp <- root(treetemp@phylo, outgroup=c("D29630.1"))
-
-ggtree(treetemp, ladderize=T, show.legend = FALSE, aes(color=treetemp@data$group))  +
-  #aes(color=group) +
-  #%<+% hostinfo+
-  #scale_color_manual(name="Group",
- #                    values=c("#BE81EF", "#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", #"#E67E67", "#EC6DC4", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3","#1f78b4","#b2df8a","#33a02c"))+
-  #host tip labels:
-#  geom_tiplab(aes(label=host, subset = !is.na(host)), family='Helvetica',fontface= "bold", linetype="dotted", align=T, fontsize=3, na.rm=F, offset=1.5) +
-    #newness tip labels:
-  geom_tiplab(aes(label=new),size=10, color="black", family='Helvetica', align=T, na.rm=F, offset=1.4,vjust=0.8, linetype="blank", fontface=1) +
+treetemp@phylo <- ape::root(treetemp@phylo, outgroup=c("D29630.1"), resolve.root=TRUE)
+treetemp
+treetempjoined <- as.treedata(dplyr::left_join(as_tibble(treetemp), as_tibble(md), by=c("label"= "Name_updated")))
+treetempjoined@phylo <- treetemp@phylo
+par(mar = c(0, 0, 0, 0))
+ggtree(treetempjoined, ladderize=T, show.legend = FALSE, aes(color=group))+
+    #host tip labels:
+   geom_tiplab(aes(label=host, subset = !is.na(host)), linetype="dotted", align=T, fontsize=3, na.rm=F, offset=0.8, fontface= "bold")+
     #virus name tip labels:
-  geom_tiplab(aes(), geom="label",fontsize=3, fill="white", offset.text=0, fontface= "bold",family='Helvetica', align=F, label.size = 0)+
+    geom_tiplab(aes(), geom="label",fontsize=3, fill="white", offset=0.1, fontface= "bold",family='Helvetica', align=F, label.size = 0)+
+    #newness
+   geom_tiplab(aes(label=new),size=10, color="black", align=T, na.rm=F, offset=0.75,vjust=0.8, linetype="blank", fontface=1) +
+    #group labels
+    scale_color_manual(name="Group", values=c("#BE81EF", "#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", "#E67E67", "#EC6DC4", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3","#1f78b4","#b2df8a","#33a02c"))+
   #scale
-  geom_treescale(x=0.25, y=60, width=0.25, fontsize=4, linesize=1, offset=1,
-                 color='black', family=font.default, label='Substitutions per site',
-                 offset.label=-1)+
-  ggplot2::xlim(0, 5.5)
-  #theme(text=element_text(family="Helvetica"), plot.margin = unit(c(8,8,8,8), "mm")) 
-  #node labels/bootstrap labels:
-  #geom_text2(aes(subset = !isTip #& (node == 127)|(node == 124)|(node == 152)|(node == 153)|(node == 167)|(node == 102)|(node == 106)
-    #             , label=label), nudge_x = -0.03, nudge_y = 0.5)+
-    #xlim(NA,3)
+    geom_treescale(x=0.25, y=60, width=0.25, fontsize=5, linesize=1, offset=1, color='black', label='Substitutions per site', offset.label=-1)+
+   #node labels/bootstrap labels:
+    geom_text2(aes(subset = !isTip , label=label), nudge_x = 0.02, size=3)+
+    xlim(0,4.5)+
+  theme(legend.position = "none")
 #Save to pdf format
 filename = paste(namevector[i],"_tr.pdf",sep="")
-ggsave(filename, width = 30, height = 50, units = "cm")
+ggsave(filename, width = 70, height = 40, units = "cm")
 }
 }
-#gene.phylos(names[1],locs[1])
-gene.phylos(names, locs)
+gene.phylos(names,locs)
 ```

@@ -6,7 +6,7 @@ output: html_document
 ---
 This document is intended to create and save the files to be used for later.
 This document reflects the methods used to initially process the data.
-Reproducible and more friendly code is found in the full_and_gene_phylos.Rmd file.
+Reproducible and more friendly code is found in the figures/scripts directory
 
 
 ## This is a one-time package installation to help get libraries likely to be missing at the start.
