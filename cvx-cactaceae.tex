@@ -85,7 +85,7 @@ For nearly a century, subsequent comparative study of viruses remained limited t
 A transformative advancement in virology---and all of biology---has been the advent of massively parallel DNA and RNA sequencing. 
 The rapidly improving sequencing tools enable rapid identification of organisms from seemingly any sampled surface of the Earth.
 One common thread is that virtually every macro-organism genome study uncovers a micro-organismal metagenome, composed of both targeted host sequences and those from myriad co-existing organisms. 
-Metagenomic studies have yielded an enormous number of genomes and have vastly expanded the tree of life \citep{schulz_towards_2017,hug_new_2016,gregory_marine_2019,lefeuvre_evolution_2019,shi_redefining_2016}. 
+Metagenomic studies have yielded an enormous number of genomes and have vastly expanded the global viriome \citep{gregory_marine_2019,lefeuvre_evolution_2019,shi_redefining_2016}. 
 %B: this is an unusually large in-line citation set. I would pick one or two transformative studies, not the whole gamut.
 The unprecedented amount of data resulting from metagenomic studies has also caused significant policy changes and revisions by the International Committee on Taxonomy of Viruses (ICTV) policy \citep{ictv2020,simmonds2017virus}, but nearly all viruses remain named by their original description of host, location, and/or symptoms.
 
@@ -197,54 +197,56 @@ These existing groupings were generally consistent with most recent branch lengt
 Raw pairwise distance analysis was conducted on the sequence alignments in R using ape v5.5 (cite*)
 For each defined clade, nonzero pairwise distances between each possible combination of tips was averaged. 
 
-\subsection{Data Accessibility}
+\subsection*{Data Accessibility}
 
 This article contains a Supplementary Information Appendix.
 Expanded phylogenetic trees and individual gene/protein trees are available in the Supplementary Data.
 All sequence data is deposited in GenBank under project accession number PRJNXXXXX (https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNXXXXX).
 
 
+%------------------------------------------------------------------------------
+\section*{Results}
+%------------------------------------------------------------------------------
+\subsection*{Viral Identification}
+In an attempt to characterize the infection patterns of cactus-infecting potexviruses, we assembled 69 viral sequences from the XX total cactus samples analyzed (Table 1).
+The genome sizes of 6.6-6.7 kb were consistent with ICTV reported 5.9-7.0 kb genome lengths within \textit{Potexvirus} \citep{noauthor_genus_2020}.
+In some cases, one cactus sample contained multiple different virus species (Table 1).
+
+We annotated the open reading frames of the viruses and recovered all Potexvirus proteins.
+
+\subsection*{Phylogenetic Relationships}
+A well-supported phylogenetic tree was recovered using available sequences (Figure 1).
+The 69 viral sequences were in some cases concatenated for ease of viewing on the tree.
+The phylogenetic tree places the newly aligned sequences from this study within previously defined species groups (Figure 1).
+These sequences greatly expand the cactus-infecting clade of \textit{Potexvirus} by a roughly XX percent increase. 
+Phylogenetic analysis recovered defined monophyletic groups corresponding to five or six major groups of cactus-infecting \textit{Potexviruses}, with \textit{Cactus Virus X} displaying two branching subgroups.
+\textit{Opuntia Virus X} was the sister clade to the rest of the cactus-infecting \textit{Potexviruses}.
+We recovered viruses within the Potexvirus clades: \textit{Cactus Virus X, Pitaya Virus X, Schlumbergera Virus X}, and \textit{Zygocactus Virus X} (Table 1).
+Bootstrap values 
+
+\subsection*{Species Delineation and Distribution of Genetic Distances}
+Graphical representation of nonzero raw sequence distances is provided in Figure 1b. 
+
+\subsection*{Infection Prevalence and Symptoms}
+The \textit{Schlumbergera}-infecting viruses were found in high amounts on pollen and style tissue (Table 2).
+In some pollen tissues there existed more viral reads than \textit{Schlumbergera} reads.
+
+The \textit{S. truncata }samples located within the \textit{Cactus Virus X} clade appear to represent the first known discovery of \textit{Cactus Virus X} on \textit{Schlumbergera}.
+Host information, collected from available metadata, shows several different host genera for any one virus (Figure 1).
+PRJNXXX did not report plants as symptomatic or asymptomatic, and did not report 
+ 
+\subsection*{Recombination Analysis and Selection Analysis}
+The gene trees recovered for the five major \textit{Potexvirus} proteins (\textit{CP, RdRp, TGB1, TGB2, \textit{and}TGB3}) retained the species groupings shown by the full genome tree, which indicates low levels of gene conflict (Figure 1S).
+
 
 %------------------------------------------------------------------------------
-\section*{Results and Discussion}
+\section*{Discussion}
 %------------------------------------------------------------------------------
-\subsection*{Characterization}
-The collection of \textit{Schlumbergera} samples and thorough investigation of previously published data on Cactaceae resulted in XX new virus lineages. (Figure 1)
-The genome sizes of X,XXX - X,XXX bp were consistent with published genomic \textit{Potexvirus} data, ranging from X.Xk - X.Xk bp.
-The XXX sample reads recovered XX percent of the \textit{CVX} genome for the newly discovered viruses with \textit{Selenicereus} hosts. 
-All of the publicly available new viral lineages were found on \textit{Selenicereus} hosts from SRA XXXXX.
-We annotated the open reading frames of the viruses to recover all seven Potexvirus proteins.
-
-The \textit{Schlumbergera}-infecting viruses were found in high amounts on pollen and style tissue.
-The viral loads of each \textit{Selenicereus} sample that was found to have viruses ranged from XX-XX percent of all reads.
-This was a relatively high recovery rate and in some pollen tissues there existed more viral reads (XX,XXX reads) than \textit{Schlumbergera} reads (XX,XXX reads).
-
-\subsection*{Distribution of Genetic Distances}
-The highly similar and well-clustered newly discovered viruses displayed low diversity within the clusters.
-Therefore, these additions to the \textit{Potexvirus} family tree do not drastically alter the tree structure.
-Since each sampled cactus in SRA XXXXX was located close to other sampled cacti, this low diversity potentially represents the first example of background mutation among viruses incurred due to host infection.
-The average nonzero pairwise distance between the included subset of related \textit{Potexviruses} was 0.256 (maximum = 0.492). 
-When the outgroup (including \textit{Plantago asiatica MV, Alternantha MV, Papaya MV,} etc.) was excluded from pairwise analysis, the average nonzero pairwise distance value was 0.177 (maximum = 0.326). 
-When these cactus-infecting \textit{Potexviruses} were subdivided into six groups of relatively recent diversification, the average nonzero pairwise distance for full-genome sequences among groups was always above 0.015. 
-The newly discovered \textit{Schlumbergera}-infecting viruses displayed XX percent similarity, and the \textit{Selenicereus}-infecting viruses from existing cactus samples showed XX percent similarity.
-For the genes RNA-dependent RNA polymerase (RdRp) and Coat protein (CP), which the ICTV recommends be analyzed for species delimitation, the average nonzero pairwise distance was always above 0.02 (Figure 2). 
-This correlates to roughly greater than 97.5 and 98 nucleotide identity. 
-
-
-The ICTV guidelines for \textit{Potexviruses} indicate that less than 72 percent nucleotide sequence identity (or 80 percent amino acid identity) between the CP or Rep genes demarcates separate viral species. %clarify 
-Because we compare closely related \textit{Potexviruses}, it might be expected that members of the same putative species would have higher than 72 percent nucleotide identity and members of different putative species would have lower than 72 percent sequence identity.
-However, the low pairwise distances between \textit{Potexviruses} cause very few cactus-infecting \textit{Potexviruses} to be demarcated as separate species, even when only considering previously described species compared to each other.
-Examples here.
-
 
 \subsection*{Phylogenetic Relationships}
 A well-supported phylogenetic tree was recovered including closely related non-cactus-infecting \textit{Potexviruses}.
 The phylogenetic tree (Figure 1) places the new viral sequences from \textit{Schlumbergera} and \textit{Selenicereus} near existing viral species within \textit{Potexvirus} (Figure 1). 
-Phylogenetic analysis recovered defined monophyletic groups corresponding to five or six major groups of cactus-infecting \textit{Potexviruses}, with \textit{Cactus Virus X} displaying two branching subgroups.
-\textit{Opuntia Virus X} was the sister clade to the rest of the cactus-infecting \textit{Potexviruses}.
-The \textit{S. truncata }samples located within the \textit{Cactus Virus X }clade appear to represent the first known discovery of \textit{Cactus Virus X} on \textit{Schlumbergera}.
-
-Reported host genera are presented for each viral sample. 
+ 
 The reported taxonomy of each existing sample aligns well with the tree structure, but this monophyly is not recovered for hosts.
 Putative viral species appear to infect as few as one genus, in the case of \textit{Opuntia Virus X}, or as many as three in the case of \textit{Schlumbergera Virus X}.
 Further, the three genera are evolutionarily distinct and polyphyletic in phylogenetic analyses of \textit{Cactaceae}. 
@@ -264,15 +266,24 @@ This is exacerbated by the presence of a separate viral species, \textit{Schlumb
 The ICTV strongly opposes unnecessary name changes, but it is unclear what should be done with outdated and confusing names that describe an extant clade of viruses.
 Mixed infections and the lack of a one-to-one correlation between virus and host complicate naming endeavors further, and more sampling will uncover novel hosts and mixed infections.
 
-\subsection*{Recombination and selection analysis}
-Recombination events, how they were detected.
-Selection analysis goes here.
+\subsection*{Distribution of Genetic Distances and Grouping}
+The highly similar and well-clustered newly discovered viruses displayed low diversity within the clusters (Figure 1b).
+Therefore, these additions to the \textit{Potexvirus} family tree do not drastically alter the tree structure.
+Since each sampled cactus in SRA XXXXX was located close to other sampled cacti, this low diversity potentially represents the first example of background mutation among viruses incurred due to host infection.
+The average nonzero pairwise distance between the included subset of related \textit{Potexviruses} was 0.256 (maximum = 0.492). 
+When the outgroup (including \textit{Plantago asiatica MV, Alternantha MV, Papaya MV,} etc.) was excluded from pairwise analysis, the average nonzero pairwise distance value was 0.177 (maximum = 0.326). 
+When these cactus-infecting \textit{Potexviruses} were subdivided into six groups of relatively recent diversification, the average nonzero pairwise distance for full-genome sequences among groups was always above 0.015. 
+The newly discovered \textit{Schlumbergera}-infecting viruses displayed XX percent similarity, and the \textit{Selenicereus}-infecting viruses from existing cactus samples showed XX percent similarity.
+For the genes RNA-dependent RNA polymerase (RdRp) and Coat protein (CP), which the ICTV recommends be analyzed for species delimitation, the average nonzero pairwise distance was always above 0.02 (Figure 2). 
+This correlates to roughly greater than 97.5 and 98 nucleotide identity. 
 
-\subsection*{Grouping}
-The new samples fall into already existing species groups.
-Pairwise distances between species were calculated for six groups, with a value of 0 indicating identical sequences and a value of 1 indicating entirely dissimilar sequences.
 
-\section*{Conclusion}
+The ICTV guidelines for \textit{Potexviruses} indicate that less than 72 percent nucleotide sequence identity (or 80 percent amino acid identity) between the CP or Rep genes demarcates separate viral species. %clarify 
+Because we compare closely related \textit{Potexviruses}, it might be expected that members of the same putative species would have higher than 72 percent nucleotide identity and members of different putative species would have lower than 72 percent sequence identity.
+However, the low pairwise distances between \textit{Potexviruses} cause very few cactus-infecting \textit{Potexviruses} to be demarcated as separate species, even when only considering previously described species compared to each other.
+Examples here.
+
+\section*{Conclusions}
 X new viruses were included as part of this study, which represents a multifaceted approach to viral discovery using metagenomic techniques for already available public data as well as newly collected data.
 Mixed infections, co-infection dynamics.
 Viral abundance, viral loads, tissue type, and diversity.

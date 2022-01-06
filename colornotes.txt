@@ -1,11 +1,16 @@
 ##alexa’s notes on clade coloration for cvx, created 12-2-21
-#BE81EF
-CVX variant "B": #00A9E7
-Opuntia virus X: #00B9A5
-Pitaya Virus X: #3FB13A
-Schlumbergera Virus X: #B39B00
-Zygocactus Virus X: #E67E67
+Non-cactus virus clades: #BE81EF
+CVX variant "A": #00A9E7
+CVX variant "B":#00B9A5
+CVX "combined": #0072B2
+Opuntia virus X: #3FB13A
+Pitaya Virus X: #B39B00
+Schlumbergera Virus X: #E67E67
+Zygocactus Virus X: #EC6DC4
 
 
 Other colors, in order of use:
-"#EC6DC4", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3","#1f78b4","#b2df8a","#33a02c")
+"#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3","#1f78b4","#b2df8a","#33a02c"
+Code for ggtree plots:
+  scale_color_manual(name="Group", values=c("#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", "#E67E67", "#EC6DC4", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3","#1f78b4","#b2df8a","#33a02c"))+
+
