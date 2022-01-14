@@ -69,24 +69,30 @@ treetemp
 treetempjoined <- as.treedata(dplyr::left_join(as_tibble(treetemp), as_tibble(md), by=c("label"= "Name_updated")))
 treetempjoined@phylo <- treetemp@phylo
 par(mar = c(0, 0, 0, 0))
-ggtree(treetempjoined, ladderize=T, show.legend = FALSE, aes(color=group))+
+ggtree(treetempjoined, ladderize=T, aes(color=formal_tax))+
     #host tip labels:
-   geom_tiplab(aes(label=host, subset = !is.na(host)), linetype="dotted", align=T, fontsize=3, na.rm=F, offset=0.8, fontface= "bold")+
+   geom_tiplab(aes(label=host, subset = !is.na(host)), linetype="dotted", align=T, fontsize=3, na.rm=F, offset=0.8)+
     #virus name tip labels:
-    geom_tiplab(aes(), geom="label",fontsize=3, fill="white", offset=0.1, fontface= "bold",family='Helvetica', align=F, label.size = 0)+
-    #newness
-   geom_tiplab(aes(label=new),size=10, color="black", align=T, na.rm=F, offset=0.75,vjust=0.8, linetype="blank", fontface=1) +
-    #group labels
-    scale_color_manual(name="Group", values=c("#BE81EF", "#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", "#E67E67", "#EC6DC4", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3","#1f78b4","#b2df8a","#33a02c"))+
+    geom_tiplab(aes(), geom="label",fontsize=3, fill="white", offset=0.1,family='Helvetica', align=F, label.size = 0)+
+
   #scale
     geom_treescale(x=0.25, y=60, width=0.25, fontsize=5, linesize=1, offset=1, color='black', label='Substitutions per site', offset.label=-1)+
    #node labels/bootstrap labels:
     geom_text2(aes(subset = !isTip , label=label), nudge_x = 0.02, size=3)+
     xlim(0,4.5)+
-  theme(legend.position = "none")
+  theme(legend.position = "left")+
+      #group labels
+    scale_color_manual(name="Group", values=c("black", 
+                                              "#0072B2",
+                                              "#3FB13A", 
+                                              "#BE81EF",
+                                              "#B39B00", 
+                                              "#E67E67", 
+                                              "#EC6DC4", 
+                                              "grey"))
 #Save to pdf format
-filename = paste(namevector[i],"_tr.pdf",sep="")
-ggsave(filename, width = 70, height = 40, units = "cm")
+filename = paste(namevector[i],"_tr_formal_tax.pdf",sep="")
+ggsave(filename, width = 70, height = 50, units = "cm")
 }
 }
 gene.phylos(names,locs)

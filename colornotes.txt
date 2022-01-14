@@ -14,3 +14,11 @@ Other colors, in order of use:
 Code for ggtree plots:
   scale_color_manual(name="Group", values=c("#00A9E7", "#00B9A5", "#3FB13A", "#B39B00", "#E67E67", "#EC6DC4", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#a6cee3","#1f78b4","#b2df8a","#33a02c"))+
 
+For displaying formal taxonomy:
+Unassigned: "black"
+CVX "combined": #0072B2
+Opuntia virus X: #3FB13A
+Pitaya Virus X: #B39B00
+Schlumbergera Virus X: #E67E67
+Zygocactus Virus X: #EC6DC4
+Non-cactus virus clades: #BE81EF

@@ -1,495 +1,827 @@
-"","Group","Dist"
-"1",NA,NA
-"2","Cactus Virus X Variant A","0.00480769230769231"
-"3","Cactus Virus X Variant A","0.00961538461538462"
-"4","Cactus Virus X Variant A","0.00961538461538462"
-"5","Cactus Virus X Variant A","0.0120192307692308"
-"6","Cactus Virus X Variant A","0.00961538461538462"
-"7","Cactus Virus X Variant A","0.00961538461538462"
-"8","Cactus Virus X Variant A","0.00961538461538462"
-"9","Cactus Virus X Variant A","0.00961538461538462"
-"10","Cactus Virus X Variant A","0.00961538461538462"
-"11","Cactus Virus X Variant A","0.00721153846153846"
-"12","Cactus Virus X Variant A","0.00961538461538462"
-"13","Cactus Virus X Variant A","0.00721153846153846"
-"14","Cactus Virus X Variant A","0.00721153846153846"
-"15","Cactus Virus X Variant A","0.00721153846153846"
-"16","Cactus Virus X Variant A","0.0288461538461538"
-"17","Cactus Virus X Variant A","0.00721153846153846"
-"18","Cactus Virus X Variant A","0.00721153846153846"
-"19","Cactus Virus X Variant A","0.00721153846153846"
-"20","Cactus Virus X Variant A","0.00721153846153846"
-"21","Cactus Virus X Variant A","0.00721153846153846"
-"22","Cactus Virus X Variant A","0.00721153846153846"
-"23","Cactus Virus X Variant A","0.00721153846153846"
-"24","Cactus Virus X Variant A","0.00721153846153846"
-"25","Cactus Virus X Variant A","0.00721153846153846"
-"26","Cactus Virus X Variant A","0.00721153846153846"
-"27","Cactus Virus X Variant A","0.00480769230769231"
-"28","Cactus Virus X Variant A","0.00480769230769231"
-"29","Cactus Virus X Variant A","0.00721153846153846"
-"30","Cactus Virus X Variant A","0.00480769230769231"
-"31","Cactus Virus X Variant A","0.00480769230769231"
-"32","Cactus Virus X Variant A","0.00480769230769231"
-"33","Cactus Virus X Variant A","0.00480769230769231"
-"34","Cactus Virus X Variant A","0.00480769230769231"
-"35","Cactus Virus X Variant A","0.00240384615384615"
-"36","Cactus Virus X Variant A","0.00480769230769231"
-"37","Cactus Virus X Variant A","0.00240384615384615"
-"38","Cactus Virus X Variant A","0.00240384615384615"
-"39","Cactus Virus X Variant A","0.00240384615384615"
-"40","Cactus Virus X Variant A","0.0240384615384615"
-"41","Cactus Virus X Variant A","0.00240384615384615"
-"42","Cactus Virus X Variant A","0.00240384615384615"
-"43","Cactus Virus X Variant A","0.00240384615384615"
-"44","Cactus Virus X Variant A","0.00240384615384615"
-"45","Cactus Virus X Variant A","0.00240384615384615"
-"46","Cactus Virus X Variant A","0.00240384615384615"
-"47","Cactus Virus X Variant A","0.00240384615384615"
-"48","Cactus Virus X Variant A","0.00240384615384615"
-"49","Cactus Virus X Variant A","0.00240384615384615"
-"50","Cactus Virus X Variant A","0.00240384615384615"
-"51","Cactus Virus X Variant A","0.0120192307692308"
-"52","Cactus Virus X Variant A","0.00961538461538462"
-"53","Cactus Virus X Variant A","0.00961538461538462"
-"54","Cactus Virus X Variant A","0.00961538461538462"
-"55","Cactus Virus X Variant A","0.00961538461538462"
-"56","Cactus Virus X Variant A","0.00961538461538462"
-"57","Cactus Virus X Variant A","0.00721153846153846"
-"58","Cactus Virus X Variant A","0.00961538461538462"
-"59","Cactus Virus X Variant A","0.00721153846153846"
-"60","Cactus Virus X Variant A","0.00721153846153846"
-"61","Cactus Virus X Variant A","0.00721153846153846"
-"62","Cactus Virus X Variant A","0.0288461538461538"
-"63","Cactus Virus X Variant A","0.00721153846153846"
-"64","Cactus Virus X Variant A","0.00721153846153846"
-"65","Cactus Virus X Variant A","0.00721153846153846"
-"66","Cactus Virus X Variant A","0.00721153846153846"
-"67","Cactus Virus X Variant A","0.00721153846153846"
-"68","Cactus Virus X Variant A","0.00721153846153846"
-"69","Cactus Virus X Variant A","0.00721153846153846"
-"70","Cactus Virus X Variant A","0.00721153846153846"
-"71","Cactus Virus X Variant A","0.00721153846153846"
-"72","Cactus Virus X Variant A","0.00721153846153846"
-"73","Cactus Virus X Variant A","0.0120192307692308"
-"74","Cactus Virus X Variant A","0.00961538461538462"
-"75","Cactus Virus X Variant A","0.00961538461538462"
-"76","Cactus Virus X Variant A","0.00961538461538462"
-"77","Cactus Virus X Variant A","0.00961538461538462"
-"78","Cactus Virus X Variant A","0.00961538461538462"
-"79","Cactus Virus X Variant A","0.00721153846153846"
-"80","Cactus Virus X Variant A","0.00961538461538462"
-"81","Cactus Virus X Variant A","0.00721153846153846"
-"82","Cactus Virus X Variant A","0.00721153846153846"
-"83","Cactus Virus X Variant A","0.00721153846153846"
-"84","Cactus Virus X Variant A","0.0288461538461538"
-"85","Cactus Virus X Variant A","0.00721153846153846"
-"86","Cactus Virus X Variant A","0.00721153846153846"
-"87","Cactus Virus X Variant A","0.00721153846153846"
-"88","Cactus Virus X Variant A","0.00721153846153846"
-"89","Cactus Virus X Variant A","0.00721153846153846"
-"90","Cactus Virus X Variant A","0.00721153846153846"
-"91","Cactus Virus X Variant A","0.00721153846153846"
-"92","Cactus Virus X Variant A","0.00721153846153846"
-"93","Cactus Virus X Variant A","0.00721153846153846"
-"94","Cactus Virus X Variant A","0.00721153846153846"
-"95","Cactus Virus X Variant A","0.00240384615384615"
-"96","Cactus Virus X Variant A","0.00240384615384615"
-"97","Cactus Virus X Variant A","0.00240384615384615"
-"98","Cactus Virus X Variant A","0.00240384615384615"
-"99","Cactus Virus X Variant A","0.00240384615384615"
-"100","Cactus Virus X Variant A","0.00480769230769231"
-"101","Cactus Virus X Variant A","0.00721153846153846"
-"102","Cactus Virus X Variant A","0.00480769230769231"
-"103","Cactus Virus X Variant A","0.00480769230769231"
-"104","Cactus Virus X Variant A","0.00480769230769231"
-"105","Cactus Virus X Variant A","0.0264423076923077"
-"106","Cactus Virus X Variant A","0.00480769230769231"
-"107","Cactus Virus X Variant A","0.00480769230769231"
-"108","Cactus Virus X Variant A","0.00480769230769231"
-"109","Cactus Virus X Variant A","0.00480769230769231"
-"110","Cactus Virus X Variant A","0.00480769230769231"
-"111","Cactus Virus X Variant A","0.00480769230769231"
-"112","Cactus Virus X Variant A","0.00480769230769231"
-"113","Cactus Virus X Variant A","0.00480769230769231"
-"114","Cactus Virus X Variant A","0.00480769230769231"
-"115","Cactus Virus X Variant A","0.00480769230769231"
-"116","Cactus Virus X Variant A","0.00240384615384615"
-"117","Cactus Virus X Variant A","0.00480769230769231"
-"118","Cactus Virus X Variant A","0.00240384615384615"
-"119","Cactus Virus X Variant A","0.00240384615384615"
-"120","Cactus Virus X Variant A","0.00240384615384615"
-"121","Cactus Virus X Variant A","0.0240384615384615"
-"122","Cactus Virus X Variant A","0.00240384615384615"
-"123","Cactus Virus X Variant A","0.00240384615384615"
-"124","Cactus Virus X Variant A","0.00240384615384615"
-"125","Cactus Virus X Variant A","0.00240384615384615"
-"126","Cactus Virus X Variant A","0.00240384615384615"
-"127","Cactus Virus X Variant A","0.00240384615384615"
-"128","Cactus Virus X Variant A","0.00240384615384615"
-"129","Cactus Virus X Variant A","0.00240384615384615"
-"130","Cactus Virus X Variant A","0.00240384615384615"
-"131","Cactus Virus X Variant A","0.00240384615384615"
-"132","Cactus Virus X Variant A","0.00240384615384615"
-"133","Cactus Virus X Variant A","0.00480769230769231"
-"134","Cactus Virus X Variant A","0.00240384615384615"
-"135","Cactus Virus X Variant A","0.00240384615384615"
-"136","Cactus Virus X Variant A","0.00240384615384615"
-"137","Cactus Virus X Variant A","0.0240384615384615"
-"138","Cactus Virus X Variant A","0.00240384615384615"
-"139","Cactus Virus X Variant A","0.00240384615384615"
-"140","Cactus Virus X Variant A","0.00240384615384615"
-"141","Cactus Virus X Variant A","0.00240384615384615"
-"142","Cactus Virus X Variant A","0.00240384615384615"
-"143","Cactus Virus X Variant A","0.00240384615384615"
-"144","Cactus Virus X Variant A","0.00240384615384615"
-"145","Cactus Virus X Variant A","0.00240384615384615"
-"146","Cactus Virus X Variant A","0.00240384615384615"
-"147","Cactus Virus X Variant A","0.00240384615384615"
-"148","Cactus Virus X Variant A","0.00240384615384615"
-"149","Cactus Virus X Variant A","0.00480769230769231"
-"150","Cactus Virus X Variant A","0.00240384615384615"
-"151","Cactus Virus X Variant A","0.00240384615384615"
-"152","Cactus Virus X Variant A","0.00240384615384615"
-"153","Cactus Virus X Variant A","0.0240384615384615"
-"154","Cactus Virus X Variant A","0.00240384615384615"
-"155","Cactus Virus X Variant A","0.00240384615384615"
-"156","Cactus Virus X Variant A","0.00240384615384615"
-"157","Cactus Virus X Variant A","0.00240384615384615"
-"158","Cactus Virus X Variant A","0.00240384615384615"
-"159","Cactus Virus X Variant A","0.00240384615384615"
-"160","Cactus Virus X Variant A","0.00240384615384615"
-"161","Cactus Virus X Variant A","0.00240384615384615"
-"162","Cactus Virus X Variant A","0.00240384615384615"
-"163","Cactus Virus X Variant A","0.00240384615384615"
-"164","Cactus Virus X Variant A","0.00240384615384615"
-"165","Cactus Virus X Variant A","0.00480769230769231"
-"166","Cactus Virus X Variant A","0.00240384615384615"
-"167","Cactus Virus X Variant A","0.00240384615384615"
-"168","Cactus Virus X Variant A","0.00240384615384615"
-"169","Cactus Virus X Variant A","0.0240384615384615"
-"170","Cactus Virus X Variant A","0.00240384615384615"
-"171","Cactus Virus X Variant A","0.00240384615384615"
-"172","Cactus Virus X Variant A","0.00240384615384615"
-"173","Cactus Virus X Variant A","0.00240384615384615"
-"174","Cactus Virus X Variant A","0.00240384615384615"
-"175","Cactus Virus X Variant A","0.00240384615384615"
-"176","Cactus Virus X Variant A","0.00240384615384615"
-"177","Cactus Virus X Variant A","0.00240384615384615"
-"178","Cactus Virus X Variant A","0.00240384615384615"
-"179","Cactus Virus X Variant A","0.00240384615384615"
-"180","Cactus Virus X Variant A","0.00240384615384615"
-"181","Cactus Virus X Variant A","0.00480769230769231"
-"182","Cactus Virus X Variant A","0.00240384615384615"
-"183","Cactus Virus X Variant A","0.00240384615384615"
-"184","Cactus Virus X Variant A","0.00240384615384615"
-"185","Cactus Virus X Variant A","0.0240384615384615"
-"186","Cactus Virus X Variant A","0.00240384615384615"
-"187","Cactus Virus X Variant A","0.00240384615384615"
-"188","Cactus Virus X Variant A","0.00240384615384615"
-"189","Cactus Virus X Variant A","0.00240384615384615"
-"190","Cactus Virus X Variant A","0.00240384615384615"
-"191","Cactus Virus X Variant A","0.00240384615384615"
-"192","Cactus Virus X Variant A","0.00240384615384615"
-"193","Cactus Virus X Variant A","0.00240384615384615"
-"194","Cactus Virus X Variant A","0.00240384615384615"
-"195","Cactus Virus X Variant A","0.00240384615384615"
-"196","Cactus Virus X Variant A","0.00240384615384615"
-"197","Cactus Virus X Variant A","0.0216346153846154"
-"198","Cactus Virus X Variant A","0.00240384615384615"
-"199","Cactus Virus X Variant A","0.00240384615384615"
-"200","Cactus Virus X Variant A","0.00240384615384615"
-"201","Cactus Virus X Variant A","0.0240384615384615"
-"202","Cactus Virus X Variant A","0.00240384615384615"
-"203","Cactus Virus X Variant A","0.00240384615384615"
-"204","Cactus Virus X Variant A","0.00240384615384615"
-"205","Cactus Virus X Variant A","0.00240384615384615"
-"206","Cactus Virus X Variant A","0.00240384615384615"
-"207","Cactus Virus X Variant A","0.00240384615384615"
-"208","Cactus Virus X Variant A","0.00240384615384615"
-"209","Cactus Virus X Variant A","0.00240384615384615"
-"210","Cactus Virus X Variant A","0.00240384615384615"
-"211","Cactus Virus X Variant A","0.00240384615384615"
-"212","Cactus Virus X Variant A","0.0216346153846154"
-"213","Cactus Virus X Variant A","0.0216346153846154"
-"214","Cactus Virus X Variant A","0.0216346153846154"
-"215","Cactus Virus X Variant A","0.0216346153846154"
-"216","Cactus Virus X Variant A","0.0216346153846154"
-"217","Cactus Virus X Variant A","0.0216346153846154"
-"218","Cactus Virus X Variant A","0.0216346153846154"
-"219","Cactus Virus X Variant A","0.0216346153846154"
-"220","Cactus Virus X Variant A","0.0216346153846154"
-"221","Cactus Virus X Variant A","0.0216346153846154"
-"222","Cactus Virus X Variant A","0.0216346153846154"
-"223","Cactus Virus X Variant A","0.0216346153846154"
-"224","Cactus Virus X Variant A","0.0216346153846154"
-"225","Cactus Virus X Variant B","0.0120192307692308"
-"226","Cactus Virus X Variant B","0.00721153846153846"
-"227","Cactus Virus X Variant B","0.00721153846153846"
-"228","Cactus Virus X Variant B","0.0144230769230769"
-"229","Cactus Virus X Variant B","0.0144230769230769"
-"230","Cactus Virus X Variant B","0.00480769230769231"
-"231","Pitaya Virus X","0.00961538461538462"
-"232","Pitaya Virus X","0.00961538461538462"
-"233","Pitaya Virus X","0.00961538461538462"
-"234","Pitaya Virus X","0.00961538461538462"
-"235","Pitaya Virus X","0.00961538461538462"
-"236","Pitaya Virus X","0.00961538461538462"
-"237","Pitaya Virus X","0.0120192307692308"
-"238","Pitaya Virus X","0.00961538461538462"
-"239","Pitaya Virus X","0.00961538461538462"
-"240","Pitaya Virus X","0.00961538461538462"
-"241","Pitaya Virus X","0.0168269230769231"
-"242","Pitaya Virus X","0.0144230769230769"
-"243","Pitaya Virus X","0.0144230769230769"
-"244","Pitaya Virus X","0.0144230769230769"
-"245","Pitaya Virus X","0.0144230769230769"
-"246","Pitaya Virus X","0.0144230769230769"
-"247","Pitaya Virus X","0.0144230769230769"
-"248","Pitaya Virus X","0.0144230769230769"
-"249","Pitaya Virus X","0.00240384615384615"
-"250","Pitaya Virus X","0.00721153846153846"
-"251","Pitaya Virus X","0.00480769230769231"
-"252","Pitaya Virus X","0.00480769230769231"
-"253","Pitaya Virus X","0.00480769230769231"
-"254","Pitaya Virus X","0.00480769230769231"
-"255","Pitaya Virus X","0.00480769230769231"
-"256","Pitaya Virus X","0.00480769230769231"
-"257","Pitaya Virus X","0.00480769230769231"
-"258","Pitaya Virus X","0.00240384615384615"
-"259","Pitaya Virus X","0.00721153846153846"
-"260","Pitaya Virus X","0.00480769230769231"
-"261","Pitaya Virus X","0.00480769230769231"
-"262","Pitaya Virus X","0.00480769230769231"
-"263","Pitaya Virus X","0.00480769230769231"
-"264","Pitaya Virus X","0.00480769230769231"
-"265","Pitaya Virus X","0.00480769230769231"
-"266","Pitaya Virus X","0.00480769230769231"
-"267","Pitaya Virus X","0.00240384615384615"
-"268","Pitaya Virus X","0.00721153846153846"
-"269","Pitaya Virus X","0.00480769230769231"
-"270","Pitaya Virus X","0.00480769230769231"
-"271","Pitaya Virus X","0.00480769230769231"
-"272","Pitaya Virus X","0.00480769230769231"
-"273","Pitaya Virus X","0.00480769230769231"
-"274","Pitaya Virus X","0.00480769230769231"
-"275","Pitaya Virus X","0.00480769230769231"
-"276","Pitaya Virus X","0.00240384615384615"
-"277","Pitaya Virus X","0.00721153846153846"
-"278","Pitaya Virus X","0.00480769230769231"
-"279","Pitaya Virus X","0.00480769230769231"
-"280","Pitaya Virus X","0.00480769230769231"
-"281","Pitaya Virus X","0.00480769230769231"
-"282","Pitaya Virus X","0.00480769230769231"
-"283","Pitaya Virus X","0.00480769230769231"
-"284","Pitaya Virus X","0.00480769230769231"
-"285","Pitaya Virus X","0.00240384615384615"
-"286","Pitaya Virus X","0.00721153846153846"
-"287","Pitaya Virus X","0.00480769230769231"
-"288","Pitaya Virus X","0.00480769230769231"
-"289","Pitaya Virus X","0.00480769230769231"
-"290","Pitaya Virus X","0.00480769230769231"
-"291","Pitaya Virus X","0.00480769230769231"
-"292","Pitaya Virus X","0.00480769230769231"
-"293","Pitaya Virus X","0.00480769230769231"
-"294","Pitaya Virus X","0.00240384615384615"
-"295","Pitaya Virus X","0.00721153846153846"
-"296","Pitaya Virus X","0.00480769230769231"
-"297","Pitaya Virus X","0.00480769230769231"
-"298","Pitaya Virus X","0.00480769230769231"
-"299","Pitaya Virus X","0.00480769230769231"
-"300","Pitaya Virus X","0.00480769230769231"
-"301","Pitaya Virus X","0.00480769230769231"
-"302","Pitaya Virus X","0.00480769230769231"
-"303","Pitaya Virus X","0.00240384615384615"
-"304","Pitaya Virus X","0.00240384615384615"
-"305","Pitaya Virus X","0.00240384615384615"
-"306","Pitaya Virus X","0.00961538461538462"
-"307","Pitaya Virus X","0.00721153846153846"
-"308","Pitaya Virus X","0.00721153846153846"
-"309","Pitaya Virus X","0.00721153846153846"
-"310","Pitaya Virus X","0.00721153846153846"
-"311","Pitaya Virus X","0.00721153846153846"
-"312","Pitaya Virus X","0.00721153846153846"
-"313","Pitaya Virus X","0.00721153846153846"
-"314","Pitaya Virus X","0.00721153846153846"
-"315","Pitaya Virus X","0.00480769230769231"
-"316","Pitaya Virus X","0.00480769230769231"
-"317","Pitaya Virus X","0.00480769230769231"
-"318","Pitaya Virus X","0.00480769230769231"
-"319","Pitaya Virus X","0.00480769230769231"
-"320","Pitaya Virus X","0.00480769230769231"
-"321","Pitaya Virus X","0.00480769230769231"
-"322","Pitaya Virus X","0.00721153846153846"
-"323","Pitaya Virus X","0.00480769230769231"
-"324","Pitaya Virus X","0.00480769230769231"
-"325","Pitaya Virus X","0.00480769230769231"
-"326","Pitaya Virus X","0.00480769230769231"
-"327","Pitaya Virus X","0.00480769230769231"
-"328","Pitaya Virus X","0.00480769230769231"
-"329","Pitaya Virus X","0.00480769230769231"
-"330","Pitaya Virus X","0.00721153846153846"
-"331","Pitaya Virus X","0.00480769230769231"
-"332","Pitaya Virus X","0.00480769230769231"
-"333","Pitaya Virus X","0.00480769230769231"
-"334","Pitaya Virus X","0.00480769230769231"
-"335","Pitaya Virus X","0.00480769230769231"
-"336","Pitaya Virus X","0.00480769230769231"
-"337","Pitaya Virus X","0.00480769230769231"
-"338","Pitaya Virus X","0.0120192307692308"
-"339","Pitaya Virus X","0.0120192307692308"
-"340","Pitaya Virus X","0.0120192307692308"
-"341","Pitaya Virus X","0.0120192307692308"
-"342","Pitaya Virus X","0.0120192307692308"
-"343","Pitaya Virus X","0.0120192307692308"
-"344","Pitaya Virus X","0.0120192307692308"
-"345","Pitaya Virus X","0.00961538461538462"
-"346","Pitaya Virus X","0.00961538461538462"
-"347","Pitaya Virus X","0.00961538461538462"
-"348","Pitaya Virus X","0.00961538461538462"
-"349","Pitaya Virus X","0.00961538461538462"
-"350","Pitaya Virus X","0.00961538461538462"
-"351","Pitaya Virus X","0.00961538461538462"
-"352","Pitaya Virus X","0.00961538461538462"
-"353","Pitaya Virus X","0.00961538461538462"
-"354","Pitaya Virus X","0.00961538461538462"
-"355","Opuntia Virus X","0.0240384615384615"
-"356","Opuntia Virus X","0.0240384615384615"
-"357","Schlumbergera Virus X","0.0480769230769231"
-"358","Schlumbergera Virus X","0.0456730769230769"
-"359","Schlumbergera Virus X","0.0528846153846154"
-"360","Schlumbergera Virus X","0.0480769230769231"
-"361","Schlumbergera Virus X","0.0480769230769231"
-"362","Schlumbergera Virus X","0.0480769230769231"
-"363","Schlumbergera Virus X","0.0480769230769231"
-"364","Schlumbergera Virus X","0.0480769230769231"
-"365","Schlumbergera Virus X","0.0480769230769231"
-"366","Schlumbergera Virus X","0.0144230769230769"
-"367","Schlumbergera Virus X","0.0216346153846154"
-"368","Schlumbergera Virus X","0.0120192307692308"
-"369","Schlumbergera Virus X","0.0120192307692308"
-"370","Schlumbergera Virus X","0.0120192307692308"
-"371","Schlumbergera Virus X","0.0120192307692308"
-"372","Schlumbergera Virus X","0.0120192307692308"
-"373","Schlumbergera Virus X","0.0120192307692308"
-"374","Schlumbergera Virus X","0.00721153846153846"
-"375","Schlumbergera Virus X","0.00240384615384615"
-"376","Schlumbergera Virus X","0.00240384615384615"
-"377","Schlumbergera Virus X","0.00240384615384615"
-"378","Schlumbergera Virus X","0.00240384615384615"
-"379","Schlumbergera Virus X","0.00240384615384615"
-"380","Schlumbergera Virus X","0.00240384615384615"
-"381","Schlumbergera Virus X","0.00961538461538462"
-"382","Schlumbergera Virus X","0.00961538461538462"
-"383","Schlumbergera Virus X","0.00961538461538462"
-"384","Schlumbergera Virus X","0.00961538461538462"
-"385","Schlumbergera Virus X","0.00961538461538462"
-"386","Schlumbergera Virus X","0.00961538461538462"
-"387","Zygocactus Virus X Variant B1","0.0721153846153846"
-"388","Zygocactus Virus X Variant B1","0.0721153846153846"
-"389","Zygocactus Virus X Variant B1","0.0697115384615385"
-"390","Zygocactus Virus X Variant B1","0.0697115384615385"
-"391","Zygocactus Virus X Variant B1","0.0697115384615385"
-"392","Zygocactus Virus X Variant B1","0.0673076923076923"
-"393","Zygocactus Virus X Variant B1","0.0745192307692308"
-"394","Zygocactus Virus X Variant B1","0.0721153846153846"
-"395","Zygocactus Virus X Variant B1","0.0649038461538462"
-"396","Zygocactus Virus X Variant B1","0.0697115384615385"
-"397","Zygocactus Virus X Variant B1","0.0721153846153846"
-"398","Zygocactus Virus X Variant B1","0.0721153846153846"
-"399","Zygocactus Virus X Variant B1","0.0721153846153846"
-"400","Zygocactus Virus X Variant B1","0.0721153846153846"
-"401","Zygocactus Virus X Variant B1","0.0721153846153846"
-"402","Zygocactus Virus X Variant B1","0.00961538461538462"
-"403","Zygocactus Virus X Variant B1","0.00961538461538462"
-"404","Zygocactus Virus X Variant B1","0.00961538461538462"
-"405","Zygocactus Virus X Variant B1","0.0192307692307692"
-"406","Zygocactus Virus X Variant B1","0.0192307692307692"
-"407","Zygocactus Virus X Variant B1","0.0120192307692308"
-"408","Zygocactus Virus X Variant B1","0.0144230769230769"
-"409","Zygocactus Virus X Variant B1","0.0192307692307692"
-"410","Zygocactus Virus X Variant B1","0.0144230769230769"
-"411","Zygocactus Virus X Variant B1","0.0144230769230769"
-"412","Zygocactus Virus X Variant B1","0.0144230769230769"
-"413","Zygocactus Virus X Variant B1","0.0144230769230769"
-"414","Zygocactus Virus X Variant B1","0.0144230769230769"
-"415","Zygocactus Virus X Variant B1","0.00961538461538462"
-"416","Zygocactus Virus X Variant B1","0.00961538461538462"
-"417","Zygocactus Virus X Variant B1","0.00961538461538462"
-"418","Zygocactus Virus X Variant B1","0.0192307692307692"
-"419","Zygocactus Virus X Variant B1","0.0192307692307692"
-"420","Zygocactus Virus X Variant B1","0.0120192307692308"
-"421","Zygocactus Virus X Variant B1","0.0144230769230769"
-"422","Zygocactus Virus X Variant B1","0.0192307692307692"
-"423","Zygocactus Virus X Variant B1","0.0144230769230769"
-"424","Zygocactus Virus X Variant B1","0.0144230769230769"
-"425","Zygocactus Virus X Variant B1","0.0144230769230769"
-"426","Zygocactus Virus X Variant B1","0.0144230769230769"
-"427","Zygocactus Virus X Variant B1","0.0144230769230769"
-"428","Zygocactus Virus X Variant B1","0.00961538461538462"
-"429","Zygocactus Virus X Variant B1","0.00961538461538462"
-"430","Zygocactus Virus X Variant B1","0.0192307692307692"
-"431","Zygocactus Virus X Variant B1","0.0192307692307692"
-"432","Zygocactus Virus X Variant B1","0.0120192307692308"
-"433","Zygocactus Virus X Variant B1","0.0144230769230769"
-"434","Zygocactus Virus X Variant B1","0.0192307692307692"
-"435","Zygocactus Virus X Variant B1","0.0144230769230769"
-"436","Zygocactus Virus X Variant B1","0.0144230769230769"
-"437","Zygocactus Virus X Variant B1","0.0144230769230769"
-"438","Zygocactus Virus X Variant B1","0.0144230769230769"
-"439","Zygocactus Virus X Variant B1","0.0144230769230769"
-"440","Zygocactus Virus X Variant B1","0.00961538461538462"
-"441","Zygocactus Virus X Variant B1","0.00961538461538462"
-"442","Zygocactus Virus X Variant B1","0.00240384615384615"
-"443","Zygocactus Virus X Variant B1","0.00480769230769231"
-"444","Zygocactus Virus X Variant B1","0.00961538461538462"
-"445","Zygocactus Virus X Variant B1","0.00961538461538462"
-"446","Zygocactus Virus X Variant B1","0.00961538461538462"
-"447","Zygocactus Virus X Variant B1","0.00961538461538462"
-"448","Zygocactus Virus X Variant B1","0.00961538461538462"
-"449","Zygocactus Virus X Variant B1","0.00961538461538462"
-"450","Zygocactus Virus X Variant B1","0.00961538461538462"
-"451","Zygocactus Virus X Variant B1","0.00961538461538462"
-"452","Zygocactus Virus X Variant B1","0.00240384615384615"
-"453","Zygocactus Virus X Variant B1","0.00480769230769231"
-"454","Zygocactus Virus X Variant B1","0.00961538461538462"
-"455","Zygocactus Virus X Variant B1","0.00961538461538462"
-"456","Zygocactus Virus X Variant B1","0.00961538461538462"
-"457","Zygocactus Virus X Variant B1","0.00961538461538462"
-"458","Zygocactus Virus X Variant B1","0.00961538461538462"
-"459","Zygocactus Virus X Variant B1","0.00961538461538462"
-"460","Zygocactus Virus X Variant B1","0.0192307692307692"
-"461","Zygocactus Virus X Variant B1","0.0120192307692308"
-"462","Zygocactus Virus X Variant B1","0.00961538461538462"
-"463","Zygocactus Virus X Variant B1","0.0144230769230769"
-"464","Zygocactus Virus X Variant B1","0.0144230769230769"
-"465","Zygocactus Virus X Variant B1","0.0144230769230769"
-"466","Zygocactus Virus X Variant B1","0.0144230769230769"
-"467","Zygocactus Virus X Variant B1","0.0144230769230769"
-"468","Zygocactus Virus X Variant B1","0.0144230769230769"
-"469","Zygocactus Virus X Variant B1","0.0120192307692308"
-"470","Zygocactus Virus X Variant B1","0.0144230769230769"
-"471","Zygocactus Virus X Variant B1","0.0192307692307692"
-"472","Zygocactus Virus X Variant B1","0.0192307692307692"
-"473","Zygocactus Virus X Variant B1","0.0192307692307692"
-"474","Zygocactus Virus X Variant B1","0.0192307692307692"
-"475","Zygocactus Virus X Variant B1","0.0192307692307692"
-"476","Zygocactus Virus X Variant B1","0.0192307692307692"
-"477","Zygocactus Virus X Variant B1","0.00721153846153846"
-"478","Zygocactus Virus X Variant B1","0.0120192307692308"
-"479","Zygocactus Virus X Variant B1","0.0120192307692308"
-"480","Zygocactus Virus X Variant B1","0.0120192307692308"
-"481","Zygocactus Virus X Variant B1","0.0120192307692308"
-"482","Zygocactus Virus X Variant B1","0.0120192307692308"
-"483","Zygocactus Virus X Variant B1","0.0120192307692308"
-"484","Zygocactus Virus X Variant B1","0.00480769230769231"
-"485","Zygocactus Virus X Variant B1","0.00961538461538462"
-"486","Zygocactus Virus X Variant B1","0.00961538461538462"
-"487","Zygocactus Virus X Variant B1","0.00961538461538462"
-"488","Zygocactus Virus X Variant B1","0.00961538461538462"
-"489","Zygocactus Virus X Variant B1","0.00961538461538462"
-"490","Zygocactus Virus X Variant B1","0.0144230769230769"
-"491","Zygocactus Virus X Variant B1","0.0144230769230769"
-"492","Zygocactus Virus X Variant B1","0.0144230769230769"
-"493","Zygocactus Virus X Variant B1","0.0144230769230769"
-"494","Zygocactus Virus X Variant B1","0.0144230769230769"
+,Group,Dist
+2,Cactus Virus X Variant A,0.004807692
+3,Cactus Virus X Variant A,0.009615385
+4,Cactus Virus X Variant A,0.009615385
+5,Cactus Virus X Variant A,0.012019231
+6,Cactus Virus X Variant A,0.009615385
+7,Cactus Virus X Variant A,0.009615385
+8,Cactus Virus X Variant A,0.009615385
+9,Cactus Virus X Variant A,0.009615385
+10,Cactus Virus X Variant A,0.009615385
+11,Cactus Virus X Variant A,0.007211538
+12,Cactus Virus X Variant A,0.009615385
+13,Cactus Virus X Variant A,0.007211538
+14,Cactus Virus X Variant A,0.007211538
+15,Cactus Virus X Variant A,0.007211538
+16,Cactus Virus X Variant A,0.028846154
+17,Cactus Virus X Variant A,0.007211538
+18,Cactus Virus X Variant A,0.007211538
+19,Cactus Virus X Variant A,0.007211538
+20,Cactus Virus X Variant A,0.007211538
+21,Cactus Virus X Variant A,0.007211538
+22,Cactus Virus X Variant A,0.007211538
+23,Cactus Virus X Variant A,0.007211538
+24,Cactus Virus X Variant A,0.007211538
+25,Cactus Virus X Variant A,0.007211538
+26,Cactus Virus X Variant A,0.007211538
+27,Cactus Virus X Variant A,0.004807692
+28,Cactus Virus X Variant A,0.004807692
+29,Cactus Virus X Variant A,0.007211538
+30,Cactus Virus X Variant A,0.004807692
+31,Cactus Virus X Variant A,0.004807692
+32,Cactus Virus X Variant A,0.004807692
+33,Cactus Virus X Variant A,0.004807692
+34,Cactus Virus X Variant A,0.004807692
+35,Cactus Virus X Variant A,0.002403846
+36,Cactus Virus X Variant A,0.004807692
+37,Cactus Virus X Variant A,0.002403846
+38,Cactus Virus X Variant A,0.002403846
+39,Cactus Virus X Variant A,0.002403846
+40,Cactus Virus X Variant A,0.024038462
+41,Cactus Virus X Variant A,0.002403846
+42,Cactus Virus X Variant A,0.002403846
+43,Cactus Virus X Variant A,0.002403846
+44,Cactus Virus X Variant A,0.002403846
+45,Cactus Virus X Variant A,0.002403846
+46,Cactus Virus X Variant A,0.002403846
+47,Cactus Virus X Variant A,0.002403846
+48,Cactus Virus X Variant A,0.002403846
+49,Cactus Virus X Variant A,0.002403846
+50,Cactus Virus X Variant A,0.002403846
+51,Cactus Virus X Variant A,0.012019231
+52,Cactus Virus X Variant A,0.009615385
+53,Cactus Virus X Variant A,0.009615385
+54,Cactus Virus X Variant A,0.009615385
+55,Cactus Virus X Variant A,0.009615385
+56,Cactus Virus X Variant A,0.009615385
+57,Cactus Virus X Variant A,0.007211538
+58,Cactus Virus X Variant A,0.009615385
+59,Cactus Virus X Variant A,0.007211538
+60,Cactus Virus X Variant A,0.007211538
+61,Cactus Virus X Variant A,0.007211538
+62,Cactus Virus X Variant A,0.028846154
+63,Cactus Virus X Variant A,0.007211538
+64,Cactus Virus X Variant A,0.007211538
+65,Cactus Virus X Variant A,0.007211538
+66,Cactus Virus X Variant A,0.007211538
+67,Cactus Virus X Variant A,0.007211538
+68,Cactus Virus X Variant A,0.007211538
+69,Cactus Virus X Variant A,0.007211538
+70,Cactus Virus X Variant A,0.007211538
+71,Cactus Virus X Variant A,0.007211538
+72,Cactus Virus X Variant A,0.007211538
+73,Cactus Virus X Variant A,0.012019231
+74,Cactus Virus X Variant A,0.009615385
+75,Cactus Virus X Variant A,0.009615385
+76,Cactus Virus X Variant A,0.009615385
+77,Cactus Virus X Variant A,0.009615385
+78,Cactus Virus X Variant A,0.009615385
+79,Cactus Virus X Variant A,0.007211538
+80,Cactus Virus X Variant A,0.009615385
+81,Cactus Virus X Variant A,0.007211538
+82,Cactus Virus X Variant A,0.007211538
+83,Cactus Virus X Variant A,0.007211538
+84,Cactus Virus X Variant A,0.028846154
+85,Cactus Virus X Variant A,0.007211538
+86,Cactus Virus X Variant A,0.007211538
+87,Cactus Virus X Variant A,0.007211538
+88,Cactus Virus X Variant A,0.007211538
+89,Cactus Virus X Variant A,0.007211538
+90,Cactus Virus X Variant A,0.007211538
+91,Cactus Virus X Variant A,0.007211538
+92,Cactus Virus X Variant A,0.007211538
+93,Cactus Virus X Variant A,0.007211538
+94,Cactus Virus X Variant A,0.007211538
+95,Cactus Virus X Variant A,0.002403846
+96,Cactus Virus X Variant A,0.002403846
+97,Cactus Virus X Variant A,0.002403846
+98,Cactus Virus X Variant A,0.002403846
+99,Cactus Virus X Variant A,0.002403846
+100,Cactus Virus X Variant A,0.004807692
+101,Cactus Virus X Variant A,0.007211538
+102,Cactus Virus X Variant A,0.004807692
+103,Cactus Virus X Variant A,0.004807692
+104,Cactus Virus X Variant A,0.004807692
+105,Cactus Virus X Variant A,0.026442308
+106,Cactus Virus X Variant A,0.004807692
+107,Cactus Virus X Variant A,0.004807692
+108,Cactus Virus X Variant A,0.004807692
+109,Cactus Virus X Variant A,0.004807692
+110,Cactus Virus X Variant A,0.004807692
+111,Cactus Virus X Variant A,0.004807692
+112,Cactus Virus X Variant A,0.004807692
+113,Cactus Virus X Variant A,0.004807692
+114,Cactus Virus X Variant A,0.004807692
+115,Cactus Virus X Variant A,0.004807692
+116,Cactus Virus X Variant A,0.002403846
+117,Cactus Virus X Variant A,0.004807692
+118,Cactus Virus X Variant A,0.002403846
+119,Cactus Virus X Variant A,0.002403846
+120,Cactus Virus X Variant A,0.002403846
+121,Cactus Virus X Variant A,0.024038462
+122,Cactus Virus X Variant A,0.002403846
+123,Cactus Virus X Variant A,0.002403846
+124,Cactus Virus X Variant A,0.002403846
+125,Cactus Virus X Variant A,0.002403846
+126,Cactus Virus X Variant A,0.002403846
+127,Cactus Virus X Variant A,0.002403846
+128,Cactus Virus X Variant A,0.002403846
+129,Cactus Virus X Variant A,0.002403846
+130,Cactus Virus X Variant A,0.002403846
+131,Cactus Virus X Variant A,0.002403846
+132,Cactus Virus X Variant A,0.002403846
+133,Cactus Virus X Variant A,0.004807692
+134,Cactus Virus X Variant A,0.002403846
+135,Cactus Virus X Variant A,0.002403846
+136,Cactus Virus X Variant A,0.002403846
+137,Cactus Virus X Variant A,0.024038462
+138,Cactus Virus X Variant A,0.002403846
+139,Cactus Virus X Variant A,0.002403846
+140,Cactus Virus X Variant A,0.002403846
+141,Cactus Virus X Variant A,0.002403846
+142,Cactus Virus X Variant A,0.002403846
+143,Cactus Virus X Variant A,0.002403846
+144,Cactus Virus X Variant A,0.002403846
+145,Cactus Virus X Variant A,0.002403846
+146,Cactus Virus X Variant A,0.002403846
+147,Cactus Virus X Variant A,0.002403846
+148,Cactus Virus X Variant A,0.002403846
+149,Cactus Virus X Variant A,0.004807692
+150,Cactus Virus X Variant A,0.002403846
+151,Cactus Virus X Variant A,0.002403846
+152,Cactus Virus X Variant A,0.002403846
+153,Cactus Virus X Variant A,0.024038462
+154,Cactus Virus X Variant A,0.002403846
+155,Cactus Virus X Variant A,0.002403846
+156,Cactus Virus X Variant A,0.002403846
+157,Cactus Virus X Variant A,0.002403846
+158,Cactus Virus X Variant A,0.002403846
+159,Cactus Virus X Variant A,0.002403846
+160,Cactus Virus X Variant A,0.002403846
+161,Cactus Virus X Variant A,0.002403846
+162,Cactus Virus X Variant A,0.002403846
+163,Cactus Virus X Variant A,0.002403846
+164,Cactus Virus X Variant A,0.002403846
+165,Cactus Virus X Variant A,0.004807692
+166,Cactus Virus X Variant A,0.002403846
+167,Cactus Virus X Variant A,0.002403846
+168,Cactus Virus X Variant A,0.002403846
+169,Cactus Virus X Variant A,0.024038462
+170,Cactus Virus X Variant A,0.002403846
+171,Cactus Virus X Variant A,0.002403846
+172,Cactus Virus X Variant A,0.002403846
+173,Cactus Virus X Variant A,0.002403846
+174,Cactus Virus X Variant A,0.002403846
+175,Cactus Virus X Variant A,0.002403846
+176,Cactus Virus X Variant A,0.002403846
+177,Cactus Virus X Variant A,0.002403846
+178,Cactus Virus X Variant A,0.002403846
+179,Cactus Virus X Variant A,0.002403846
+180,Cactus Virus X Variant A,0.002403846
+181,Cactus Virus X Variant A,0.004807692
+182,Cactus Virus X Variant A,0.002403846
+183,Cactus Virus X Variant A,0.002403846
+184,Cactus Virus X Variant A,0.002403846
+185,Cactus Virus X Variant A,0.024038462
+186,Cactus Virus X Variant A,0.002403846
+187,Cactus Virus X Variant A,0.002403846
+188,Cactus Virus X Variant A,0.002403846
+189,Cactus Virus X Variant A,0.002403846
+190,Cactus Virus X Variant A,0.002403846
+191,Cactus Virus X Variant A,0.002403846
+192,Cactus Virus X Variant A,0.002403846
+193,Cactus Virus X Variant A,0.002403846
+194,Cactus Virus X Variant A,0.002403846
+195,Cactus Virus X Variant A,0.002403846
+196,Cactus Virus X Variant A,0.002403846
+197,Cactus Virus X Variant A,0.021634615
+198,Cactus Virus X Variant A,0.002403846
+199,Cactus Virus X Variant A,0.002403846
+200,Cactus Virus X Variant A,0.002403846
+201,Cactus Virus X Variant A,0.024038462
+202,Cactus Virus X Variant A,0.002403846
+203,Cactus Virus X Variant A,0.002403846
+204,Cactus Virus X Variant A,0.002403846
+205,Cactus Virus X Variant A,0.002403846
+206,Cactus Virus X Variant A,0.002403846
+207,Cactus Virus X Variant A,0.002403846
+208,Cactus Virus X Variant A,0.002403846
+209,Cactus Virus X Variant A,0.002403846
+210,Cactus Virus X Variant A,0.002403846
+211,Cactus Virus X Variant A,0.002403846
+212,Cactus Virus X Variant A,0.021634615
+213,Cactus Virus X Variant A,0.021634615
+214,Cactus Virus X Variant A,0.021634615
+215,Cactus Virus X Variant A,0.021634615
+216,Cactus Virus X Variant A,0.021634615
+217,Cactus Virus X Variant A,0.021634615
+218,Cactus Virus X Variant A,0.021634615
+219,Cactus Virus X Variant A,0.021634615
+220,Cactus Virus X Variant A,0.021634615
+221,Cactus Virus X Variant A,0.021634615
+222,Cactus Virus X Variant A,0.021634615
+223,Cactus Virus X Variant A,0.021634615
+224,Cactus Virus X Variant A,0.021634615
+225,Cactus Virus X Variant B,0.012019231
+226,Cactus Virus X Variant B,0.007211538
+227,Cactus Virus X Variant B,0.007211538
+228,Cactus Virus X Variant B,0.014423077
+229,Cactus Virus X Variant B,0.014423077
+230,Cactus Virus X Variant B,0.004807692
+231,Pitaya Virus X,0.009615385
+232,Pitaya Virus X,0.009615385
+233,Pitaya Virus X,0.009615385
+234,Pitaya Virus X,0.009615385
+235,Pitaya Virus X,0.009615385
+236,Pitaya Virus X,0.009615385
+237,Pitaya Virus X,0.012019231
+238,Pitaya Virus X,0.009615385
+239,Pitaya Virus X,0.009615385
+240,Pitaya Virus X,0.009615385
+241,Pitaya Virus X,0.016826923
+242,Pitaya Virus X,0.014423077
+243,Pitaya Virus X,0.014423077
+244,Pitaya Virus X,0.014423077
+245,Pitaya Virus X,0.014423077
+246,Pitaya Virus X,0.014423077
+247,Pitaya Virus X,0.014423077
+248,Pitaya Virus X,0.014423077
+249,Pitaya Virus X,0.002403846
+250,Pitaya Virus X,0.007211538
+251,Pitaya Virus X,0.004807692
+252,Pitaya Virus X,0.004807692
+253,Pitaya Virus X,0.004807692
+254,Pitaya Virus X,0.004807692
+255,Pitaya Virus X,0.004807692
+256,Pitaya Virus X,0.004807692
+257,Pitaya Virus X,0.004807692
+258,Pitaya Virus X,0.002403846
+259,Pitaya Virus X,0.007211538
+260,Pitaya Virus X,0.004807692
+261,Pitaya Virus X,0.004807692
+262,Pitaya Virus X,0.004807692
+263,Pitaya Virus X,0.004807692
+264,Pitaya Virus X,0.004807692
+265,Pitaya Virus X,0.004807692
+266,Pitaya Virus X,0.004807692
+267,Pitaya Virus X,0.002403846
+268,Pitaya Virus X,0.007211538
+269,Pitaya Virus X,0.004807692
+270,Pitaya Virus X,0.004807692
+271,Pitaya Virus X,0.004807692
+272,Pitaya Virus X,0.004807692
+273,Pitaya Virus X,0.004807692
+274,Pitaya Virus X,0.004807692
+275,Pitaya Virus X,0.004807692
+276,Pitaya Virus X,0.002403846
+277,Pitaya Virus X,0.007211538
+278,Pitaya Virus X,0.004807692
+279,Pitaya Virus X,0.004807692
+280,Pitaya Virus X,0.004807692
+281,Pitaya Virus X,0.004807692
+282,Pitaya Virus X,0.004807692
+283,Pitaya Virus X,0.004807692
+284,Pitaya Virus X,0.004807692
+285,Pitaya Virus X,0.002403846
+286,Pitaya Virus X,0.007211538
+287,Pitaya Virus X,0.004807692
+288,Pitaya Virus X,0.004807692
+289,Pitaya Virus X,0.004807692
+290,Pitaya Virus X,0.004807692
+291,Pitaya Virus X,0.004807692
+292,Pitaya Virus X,0.004807692
+293,Pitaya Virus X,0.004807692
+294,Pitaya Virus X,0.002403846
+295,Pitaya Virus X,0.007211538
+296,Pitaya Virus X,0.004807692
+297,Pitaya Virus X,0.004807692
+298,Pitaya Virus X,0.004807692
+299,Pitaya Virus X,0.004807692
+300,Pitaya Virus X,0.004807692
+301,Pitaya Virus X,0.004807692
+302,Pitaya Virus X,0.004807692
+303,Pitaya Virus X,0.002403846
+304,Pitaya Virus X,0.002403846
+305,Pitaya Virus X,0.002403846
+306,Pitaya Virus X,0.009615385
+307,Pitaya Virus X,0.007211538
+308,Pitaya Virus X,0.007211538
+309,Pitaya Virus X,0.007211538
+310,Pitaya Virus X,0.007211538
+311,Pitaya Virus X,0.007211538
+312,Pitaya Virus X,0.007211538
+313,Pitaya Virus X,0.007211538
+314,Pitaya Virus X,0.007211538
+315,Pitaya Virus X,0.004807692
+316,Pitaya Virus X,0.004807692
+317,Pitaya Virus X,0.004807692
+318,Pitaya Virus X,0.004807692
+319,Pitaya Virus X,0.004807692
+320,Pitaya Virus X,0.004807692
+321,Pitaya Virus X,0.004807692
+322,Pitaya Virus X,0.007211538
+323,Pitaya Virus X,0.004807692
+324,Pitaya Virus X,0.004807692
+325,Pitaya Virus X,0.004807692
+326,Pitaya Virus X,0.004807692
+327,Pitaya Virus X,0.004807692
+328,Pitaya Virus X,0.004807692
+329,Pitaya Virus X,0.004807692
+330,Pitaya Virus X,0.007211538
+331,Pitaya Virus X,0.004807692
+332,Pitaya Virus X,0.004807692
+333,Pitaya Virus X,0.004807692
+334,Pitaya Virus X,0.004807692
+335,Pitaya Virus X,0.004807692
+336,Pitaya Virus X,0.004807692
+337,Pitaya Virus X,0.004807692
+338,Pitaya Virus X,0.012019231
+339,Pitaya Virus X,0.012019231
+340,Pitaya Virus X,0.012019231
+341,Pitaya Virus X,0.012019231
+342,Pitaya Virus X,0.012019231
+343,Pitaya Virus X,0.012019231
+344,Pitaya Virus X,0.012019231
+345,Pitaya Virus X,0.009615385
+346,Pitaya Virus X,0.009615385
+347,Pitaya Virus X,0.009615385
+348,Pitaya Virus X,0.009615385
+349,Pitaya Virus X,0.009615385
+350,Pitaya Virus X,0.009615385
+351,Pitaya Virus X,0.009615385
+352,Pitaya Virus X,0.009615385
+353,Pitaya Virus X,0.009615385
+354,Pitaya Virus X,0.009615385
+355,Opuntia Virus X,0.024038462
+356,Opuntia Virus X,0.024038462
+357,Schlumbergera Virus X,0.048076923
+358,Schlumbergera Virus X,0.045673077
+359,Schlumbergera Virus X,0.052884615
+360,Schlumbergera Virus X,0.048076923
+361,Schlumbergera Virus X,0.048076923
+362,Schlumbergera Virus X,0.048076923
+363,Schlumbergera Virus X,0.048076923
+364,Schlumbergera Virus X,0.048076923
+365,Schlumbergera Virus X,0.048076923
+366,Schlumbergera Virus X,0.014423077
+367,Schlumbergera Virus X,0.021634615
+368,Schlumbergera Virus X,0.012019231
+369,Schlumbergera Virus X,0.012019231
+370,Schlumbergera Virus X,0.012019231
+371,Schlumbergera Virus X,0.012019231
+372,Schlumbergera Virus X,0.012019231
+373,Schlumbergera Virus X,0.012019231
+374,Schlumbergera Virus X,0.007211538
+375,Schlumbergera Virus X,0.002403846
+376,Schlumbergera Virus X,0.002403846
+377,Schlumbergera Virus X,0.002403846
+378,Schlumbergera Virus X,0.002403846
+379,Schlumbergera Virus X,0.002403846
+380,Schlumbergera Virus X,0.002403846
+381,Schlumbergera Virus X,0.009615385
+382,Schlumbergera Virus X,0.009615385
+383,Schlumbergera Virus X,0.009615385
+384,Schlumbergera Virus X,0.009615385
+385,Schlumbergera Virus X,0.009615385
+386,Schlumbergera Virus X,0.009615385
+387,Zygocactus Virus X Variant B1,0.072115385
+388,Zygocactus Virus X Variant B1,0.072115385
+389,Zygocactus Virus X Variant B1,0.069711538
+390,Zygocactus Virus X Variant B1,0.069711538
+391,Zygocactus Virus X Variant B1,0.069711538
+392,Zygocactus Virus X Variant B1,0.067307692
+393,Zygocactus Virus X Variant B1,0.074519231
+394,Zygocactus Virus X Variant B1,0.072115385
+395,Zygocactus Virus X Variant B1,0.064903846
+396,Zygocactus Virus X Variant B1,0.069711538
+397,Zygocactus Virus X Variant B1,0.072115385
+398,Zygocactus Virus X Variant B1,0.072115385
+399,Zygocactus Virus X Variant B1,0.072115385
+400,Zygocactus Virus X Variant B1,0.072115385
+401,Zygocactus Virus X Variant B1,0.072115385
+402,Zygocactus Virus X Variant B1,0.009615385
+403,Zygocactus Virus X Variant B1,0.009615385
+404,Zygocactus Virus X Variant B1,0.009615385
+405,Zygocactus Virus X Variant B1,0.019230769
+406,Zygocactus Virus X Variant B1,0.019230769
+407,Zygocactus Virus X Variant B1,0.012019231
+408,Zygocactus Virus X Variant B1,0.014423077
+409,Zygocactus Virus X Variant B1,0.019230769
+410,Zygocactus Virus X Variant B1,0.014423077
+411,Zygocactus Virus X Variant B1,0.014423077
+412,Zygocactus Virus X Variant B1,0.014423077
+413,Zygocactus Virus X Variant B1,0.014423077
+414,Zygocactus Virus X Variant B1,0.014423077
+415,Zygocactus Virus X Variant B1,0.009615385
+416,Zygocactus Virus X Variant B1,0.009615385
+417,Zygocactus Virus X Variant B1,0.009615385
+418,Zygocactus Virus X Variant B1,0.019230769
+419,Zygocactus Virus X Variant B1,0.019230769
+420,Zygocactus Virus X Variant B1,0.012019231
+421,Zygocactus Virus X Variant B1,0.014423077
+422,Zygocactus Virus X Variant B1,0.019230769
+423,Zygocactus Virus X Variant B1,0.014423077
+424,Zygocactus Virus X Variant B1,0.014423077
+425,Zygocactus Virus X Variant B1,0.014423077
+426,Zygocactus Virus X Variant B1,0.014423077
+427,Zygocactus Virus X Variant B1,0.014423077
+428,Zygocactus Virus X Variant B1,0.009615385
+429,Zygocactus Virus X Variant B1,0.009615385
+430,Zygocactus Virus X Variant B1,0.019230769
+431,Zygocactus Virus X Variant B1,0.019230769
+432,Zygocactus Virus X Variant B1,0.012019231
+433,Zygocactus Virus X Variant B1,0.014423077
+434,Zygocactus Virus X Variant B1,0.019230769
+435,Zygocactus Virus X Variant B1,0.014423077
+436,Zygocactus Virus X Variant B1,0.014423077
+437,Zygocactus Virus X Variant B1,0.014423077
+438,Zygocactus Virus X Variant B1,0.014423077
+439,Zygocactus Virus X Variant B1,0.014423077
+440,Zygocactus Virus X Variant B1,0.009615385
+441,Zygocactus Virus X Variant B1,0.009615385
+442,Zygocactus Virus X Variant B1,0.002403846
+443,Zygocactus Virus X Variant B1,0.004807692
+444,Zygocactus Virus X Variant B1,0.009615385
+445,Zygocactus Virus X Variant B1,0.009615385
+446,Zygocactus Virus X Variant B1,0.009615385
+447,Zygocactus Virus X Variant B1,0.009615385
+448,Zygocactus Virus X Variant B1,0.009615385
+449,Zygocactus Virus X Variant B1,0.009615385
+450,Zygocactus Virus X Variant B1,0.009615385
+451,Zygocactus Virus X Variant B1,0.009615385
+452,Zygocactus Virus X Variant B1,0.002403846
+453,Zygocactus Virus X Variant B1,0.004807692
+454,Zygocactus Virus X Variant B1,0.009615385
+455,Zygocactus Virus X Variant B1,0.009615385
+456,Zygocactus Virus X Variant B1,0.009615385
+457,Zygocactus Virus X Variant B1,0.009615385
+458,Zygocactus Virus X Variant B1,0.009615385
+459,Zygocactus Virus X Variant B1,0.009615385
+460,Zygocactus Virus X Variant B1,0.019230769
+461,Zygocactus Virus X Variant B1,0.012019231
+462,Zygocactus Virus X Variant B1,0.009615385
+463,Zygocactus Virus X Variant B1,0.014423077
+464,Zygocactus Virus X Variant B1,0.014423077
+465,Zygocactus Virus X Variant B1,0.014423077
+466,Zygocactus Virus X Variant B1,0.014423077
+467,Zygocactus Virus X Variant B1,0.014423077
+468,Zygocactus Virus X Variant B1,0.014423077
+469,Zygocactus Virus X Variant B1,0.012019231
+470,Zygocactus Virus X Variant B1,0.014423077
+471,Zygocactus Virus X Variant B1,0.019230769
+472,Zygocactus Virus X Variant B1,0.019230769
+473,Zygocactus Virus X Variant B1,0.019230769
+474,Zygocactus Virus X Variant B1,0.019230769
+475,Zygocactus Virus X Variant B1,0.019230769
+476,Zygocactus Virus X Variant B1,0.019230769
+477,Zygocactus Virus X Variant B1,0.007211538
+478,Zygocactus Virus X Variant B1,0.012019231
+479,Zygocactus Virus X Variant B1,0.012019231
+480,Zygocactus Virus X Variant B1,0.012019231
+481,Zygocactus Virus X Variant B1,0.012019231
+482,Zygocactus Virus X Variant B1,0.012019231
+483,Zygocactus Virus X Variant B1,0.012019231
+484,Zygocactus Virus X Variant B1,0.004807692
+485,Zygocactus Virus X Variant B1,0.009615385
+486,Zygocactus Virus X Variant B1,0.009615385
+487,Zygocactus Virus X Variant B1,0.009615385
+488,Zygocactus Virus X Variant B1,0.009615385
+489,Zygocactus Virus X Variant B1,0.009615385
+490,Zygocactus Virus X Variant B1,0.014423077
+491,Zygocactus Virus X Variant B1,0.014423077
+492,Zygocactus Virus X Variant B1,0.014423077
+493,Zygocactus Virus X Variant B1,0.014423077
+494,Zygocactus Virus X Variant B1,0.014423077
+2,Cactus Virus X,0.012019231
+3,Cactus Virus X,0.007211538
+4,Cactus Virus X,0.007211538
+5,Cactus Virus X,0.127403846
+6,Cactus Virus X,0.125
+7,Cactus Virus X,0.125
+8,Cactus Virus X,0.125
+9,Cactus Virus X,0.122596154
+10,Cactus Virus X,0.120192308
+11,Cactus Virus X,0.120192308
+12,Cactus Virus X,0.120192308
+13,Cactus Virus X,0.120192308
+14,Cactus Virus X,0.120192308
+15,Cactus Virus X,0.122596154
+16,Cactus Virus X,0.125
+17,Cactus Virus X,0.122596154
+18,Cactus Virus X,0.122596154
+19,Cactus Virus X,0.122596154
+20,Cactus Virus X,0.139423077
+21,Cactus Virus X,0.122596154
+22,Cactus Virus X,0.122596154
+23,Cactus Virus X,0.122596154
+24,Cactus Virus X,0.122596154
+25,Cactus Virus X,0.122596154
+26,Cactus Virus X,0.122596154
+27,Cactus Virus X,0.122596154
+28,Cactus Virus X,0.122596154
+29,Cactus Virus X,0.122596154
+30,Cactus Virus X,0.122596154
+31,Cactus Virus X,0.014423077
+32,Cactus Virus X,0.129100354
+33,Cactus Virus X,0.130445331
+34,Cactus Virus X,0.131790308
+35,Cactus Virus X,0.133135286
+36,Cactus Virus X,0.134480263
+37,Cactus Virus X,0.13582524
+38,Cactus Virus X,0.137170218
+39,Cactus Virus X,0.138515195
+40,Cactus Virus X,0.139860172
+41,Cactus Virus X,0.14120515
+42,Cactus Virus X,0.125
+43,Cactus Virus X,0.127403846
+44,Cactus Virus X,0.129807692
+45,Cactus Virus X,0.127403846
+46,Cactus Virus X,0.127403846
+47,Cactus Virus X,0.127403846
+48,Cactus Virus X,0.144230769
+49,Cactus Virus X,0.127403846
+50,Cactus Virus X,0.127403846
+51,Cactus Virus X,0.127403846
+52,Cactus Virus X,0.127403846
+53,Cactus Virus X,0.127403846
+54,Cactus Virus X,0.127403846
+55,Cactus Virus X,0.127403846
+56,Cactus Virus X,0.127403846
+57,Cactus Virus X,0.127403846
+58,Cactus Virus X,0.127403846
+59,Cactus Virus X,0.004807692
+60,Cactus Virus X,0.134615385
+61,Cactus Virus X,0.132211538
+62,Cactus Virus X,0.132211538
+63,Cactus Virus X,0.132211538
+64,Cactus Virus X,0.129807692
+65,Cactus Virus X,0.127403846
+66,Cactus Virus X,0.127403846
+67,Cactus Virus X,0.127403846
+68,Cactus Virus X,0.127403846
+69,Cactus Virus X,0.127403846
+70,Cactus Virus X,0.129807692
+71,Cactus Virus X,0.132211538
+72,Cactus Virus X,0.129807692
+73,Cactus Virus X,0.129807692
+74,Cactus Virus X,0.129807692
+75,Cactus Virus X,0.146634615
+76,Cactus Virus X,0.129807692
+77,Cactus Virus X,0.129807692
+78,Cactus Virus X,0.129807692
+79,Cactus Virus X,0.129807692
+80,Cactus Virus X,0.129807692
+81,Cactus Virus X,0.129807692
+82,Cactus Virus X,0.129807692
+83,Cactus Virus X,0.129807692
+84,Cactus Virus X,0.129807692
+85,Cactus Virus X,0.129807692
+86,Cactus Virus X,0.134615385
+87,Cactus Virus X,0.132211538
+88,Cactus Virus X,0.132211538
+89,Cactus Virus X,0.132211538
+90,Cactus Virus X,0.129807692
+91,Cactus Virus X,0.127403846
+92,Cactus Virus X,0.127403846
+93,Cactus Virus X,0.127403846
+94,Cactus Virus X,0.127403846
+95,Cactus Virus X,0.127403846
+96,Cactus Virus X,0.129807692
+97,Cactus Virus X,0.132211538
+98,Cactus Virus X,0.129807692
+99,Cactus Virus X,0.129807692
+100,Cactus Virus X,0.129807692
+101,Cactus Virus X,0.146634615
+102,Cactus Virus X,0.129807692
+103,Cactus Virus X,0.129807692
+104,Cactus Virus X,0.129807692
+105,Cactus Virus X,0.129807692
+106,Cactus Virus X,0.129807692
+107,Cactus Virus X,0.129807692
+108,Cactus Virus X,0.129807692
+109,Cactus Virus X,0.129807692
+110,Cactus Virus X,0.129807692
+111,Cactus Virus X,0.129807692
+112,Cactus Virus X,0.004807692
+113,Cactus Virus X,0.009615385
+114,Cactus Virus X,0.009615385
+115,Cactus Virus X,0.012019231
+116,Cactus Virus X,0.009615385
+117,Cactus Virus X,0.009615385
+118,Cactus Virus X,0.009615385
+119,Cactus Virus X,0.009615385
+120,Cactus Virus X,0.009615385
+121,Cactus Virus X,0.007211538
+122,Cactus Virus X,0.009615385
+123,Cactus Virus X,0.007211538
+124,Cactus Virus X,0.007211538
+125,Cactus Virus X,0.007211538
+126,Cactus Virus X,0.028846154
+127,Cactus Virus X,0.007211538
+128,Cactus Virus X,0.007211538
+129,Cactus Virus X,0.007211538
+130,Cactus Virus X,0.007211538
+131,Cactus Virus X,0.007211538
+132,Cactus Virus X,0.007211538
+133,Cactus Virus X,0.007211538
+134,Cactus Virus X,0.007211538
+135,Cactus Virus X,0.007211538
+136,Cactus Virus X,0.007211538
+137,Cactus Virus X,0.004807692
+138,Cactus Virus X,0.004807692
+139,Cactus Virus X,0.007211538
+140,Cactus Virus X,0.004807692
+141,Cactus Virus X,0.004807692
+142,Cactus Virus X,0.004807692
+143,Cactus Virus X,0.004807692
+144,Cactus Virus X,0.004807692
+145,Cactus Virus X,0.002403846
+146,Cactus Virus X,0.004807692
+147,Cactus Virus X,0.002403846
+148,Cactus Virus X,0.002403846
+149,Cactus Virus X,0.002403846
+150,Cactus Virus X,0.024038462
+151,Cactus Virus X,0.002403846
+152,Cactus Virus X,0.002403846
+153,Cactus Virus X,0.002403846
+154,Cactus Virus X,0.002403846
+155,Cactus Virus X,0.002403846
+156,Cactus Virus X,0.002403846
+157,Cactus Virus X,0.002403846
+158,Cactus Virus X,0.002403846
+159,Cactus Virus X,0.002403846
+160,Cactus Virus X,0.002403846
+161,Cactus Virus X,0.012019231
+162,Cactus Virus X,0.009615385
+163,Cactus Virus X,0.009615385
+164,Cactus Virus X,0.009615385
+165,Cactus Virus X,0.009615385
+166,Cactus Virus X,0.009615385
+167,Cactus Virus X,0.007211538
+168,Cactus Virus X,0.009615385
+169,Cactus Virus X,0.007211538
+170,Cactus Virus X,0.007211538
+171,Cactus Virus X,0.007211538
+172,Cactus Virus X,0.028846154
+173,Cactus Virus X,0.007211538
+174,Cactus Virus X,0.007211538
+175,Cactus Virus X,0.007211538
+176,Cactus Virus X,0.007211538
+177,Cactus Virus X,0.007211538
+178,Cactus Virus X,0.007211538
+179,Cactus Virus X,0.007211538
+180,Cactus Virus X,0.007211538
+181,Cactus Virus X,0.007211538
+182,Cactus Virus X,0.007211538
+183,Cactus Virus X,0.012019231
+184,Cactus Virus X,0.009615385
+185,Cactus Virus X,0.009615385
+186,Cactus Virus X,0.009615385
+187,Cactus Virus X,0.009615385
+188,Cactus Virus X,0.009615385
+189,Cactus Virus X,0.007211538
+190,Cactus Virus X,0.009615385
+191,Cactus Virus X,0.007211538
+192,Cactus Virus X,0.007211538
+193,Cactus Virus X,0.007211538
+194,Cactus Virus X,0.028846154
+195,Cactus Virus X,0.007211538
+196,Cactus Virus X,0.007211538
+197,Cactus Virus X,0.007211538
+198,Cactus Virus X,0.007211538
+199,Cactus Virus X,0.007211538
+200,Cactus Virus X,0.007211538
+201,Cactus Virus X,0.007211538
+202,Cactus Virus X,0.007211538
+203,Cactus Virus X,0.007211538
+204,Cactus Virus X,0.007211538
+205,Cactus Virus X,0.002403846
+206,Cactus Virus X,0.002403846
+207,Cactus Virus X,0.002403846
+208,Cactus Virus X,0.002403846
+209,Cactus Virus X,0.002403846
+210,Cactus Virus X,0.004807692
+211,Cactus Virus X,0.007211538
+212,Cactus Virus X,0.004807692
+213,Cactus Virus X,0.004807692
+214,Cactus Virus X,0.004807692
+215,Cactus Virus X,0.026442308
+216,Cactus Virus X,0.004807692
+217,Cactus Virus X,0.004807692
+218,Cactus Virus X,0.004807692
+219,Cactus Virus X,0.004807692
+220,Cactus Virus X,0.004807692
+221,Cactus Virus X,0.004807692
+222,Cactus Virus X,0.004807692
+223,Cactus Virus X,0.004807692
+224,Cactus Virus X,0.004807692
+225,Cactus Virus X,0.004807692
+226,Cactus Virus X,0.002403846
+227,Cactus Virus X,0.004807692
+228,Cactus Virus X,0.002403846
+229,Cactus Virus X,0.002403846
+230,Cactus Virus X,0.002403846
+231,Cactus Virus X,0.024038462
+232,Cactus Virus X,0.002403846
+233,Cactus Virus X,0.002403846
+234,Cactus Virus X,0.002403846
+235,Cactus Virus X,0.002403846
+236,Cactus Virus X,0.002403846
+237,Cactus Virus X,0.002403846
+238,Cactus Virus X,0.002403846
+239,Cactus Virus X,0.002403846
+240,Cactus Virus X,0.002403846
+241,Cactus Virus X,0.002403846
+242,Cactus Virus X,0.002403846
+243,Cactus Virus X,0.004807692
+244,Cactus Virus X,0.002403846
+245,Cactus Virus X,0.002403846
+246,Cactus Virus X,0.002403846
+247,Cactus Virus X,0.024038462
+248,Cactus Virus X,0.002403846
+249,Cactus Virus X,0.002403846
+250,Cactus Virus X,0.002403846
+251,Cactus Virus X,0.002403846
+252,Cactus Virus X,0.002403846
+253,Cactus Virus X,0.002403846
+254,Cactus Virus X,0.002403846
+255,Cactus Virus X,0.002403846
+256,Cactus Virus X,0.002403846
+257,Cactus Virus X,0.002403846
+258,Cactus Virus X,0.002403846
+259,Cactus Virus X,0.004807692
+260,Cactus Virus X,0.002403846
+261,Cactus Virus X,0.002403846
+262,Cactus Virus X,0.002403846
+263,Cactus Virus X,0.024038462
+264,Cactus Virus X,0.002403846
+265,Cactus Virus X,0.002403846
+266,Cactus Virus X,0.002403846
+267,Cactus Virus X,0.002403846
+268,Cactus Virus X,0.002403846
+269,Cactus Virus X,0.002403846
+270,Cactus Virus X,0.002403846
+271,Cactus Virus X,0.002403846
+272,Cactus Virus X,0.002403846
+273,Cactus Virus X,0.002403846
+274,Cactus Virus X,0.002403846
+275,Cactus Virus X,0.004807692
+276,Cactus Virus X,0.002403846
+277,Cactus Virus X,0.002403846
+278,Cactus Virus X,0.002403846
+279,Cactus Virus X,0.024038462
+280,Cactus Virus X,0.002403846
+281,Cactus Virus X,0.002403846
+282,Cactus Virus X,0.002403846
+283,Cactus Virus X,0.002403846
+284,Cactus Virus X,0.002403846
+285,Cactus Virus X,0.002403846
+286,Cactus Virus X,0.002403846
+287,Cactus Virus X,0.002403846
+288,Cactus Virus X,0.002403846
+289,Cactus Virus X,0.002403846
+290,Cactus Virus X,0.002403846
+291,Cactus Virus X,0.004807692
+292,Cactus Virus X,0.002403846
+293,Cactus Virus X,0.002403846
+294,Cactus Virus X,0.002403846
+295,Cactus Virus X,0.024038462
+296,Cactus Virus X,0.002403846
+297,Cactus Virus X,0.002403846
+298,Cactus Virus X,0.002403846
+299,Cactus Virus X,0.002403846
+300,Cactus Virus X,0.002403846
+301,Cactus Virus X,0.002403846
+302,Cactus Virus X,0.002403846
+303,Cactus Virus X,0.002403846
+304,Cactus Virus X,0.002403846
+305,Cactus Virus X,0.002403846
+306,Cactus Virus X,0.002403846
+307,Cactus Virus X,0.021634615
+308,Cactus Virus X,0.002403846
+309,Cactus Virus X,0.002403846
+310,Cactus Virus X,0.002403846
+311,Cactus Virus X,0.024038462
+312,Cactus Virus X,0.002403846
+313,Cactus Virus X,0.002403846
+314,Cactus Virus X,0.002403846
+315,Cactus Virus X,0.002403846
+316,Cactus Virus X,0.002403846
+317,Cactus Virus X,0.002403846
+318,Cactus Virus X,0.002403846
+319,Cactus Virus X,0.002403846
+320,Cactus Virus X,0.002403846
+321,Cactus Virus X,0.002403846
+322,Cactus Virus X,0.021634615
+323,Cactus Virus X,0.021634615
+324,Cactus Virus X,0.021634615
+325,Cactus Virus X,0.021634615
+326,Cactus Virus X,0.021634615
+327,Cactus Virus X,0.021634615
+328,Cactus Virus X,0.021634615
+329,Cactus Virus X,0.021634615
+330,Cactus Virus X,0.021634615
+331,Cactus Virus X,0.021634615
+332,Cactus Virus X,0.021634615
+333,Cactus Virus X,0.021634615
+334,Cactus Virus X,0.021634615
