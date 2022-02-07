@@ -57,6 +57,7 @@ Create phylogenies for each gene.
 gene.phylos <- function(namevector, locvector) {
   reload.metadata()
   for (i in 1:length(namevector)){
+    treetemp <- read.iqtree(locs[1])
   treetemp <- read.iqtree(locvector[i])
   treename <- namevector[i]
 #  treetempphylo <- as.phylo(treetemp)
@@ -69,30 +70,42 @@ treetemp
 treetempjoined <- as.treedata(dplyr::left_join(as_tibble(treetemp), as_tibble(md), by=c("label"= "Name_updated")))
 treetempjoined@phylo <- treetemp@phylo
 par(mar = c(0, 0, 0, 0))
-ggtree(treetempjoined, ladderize=T, aes(color=formal_tax))+
+ggtree(treetempjoined, ladderize=T, aes(color=formal_tax, family="Helvetica"), show.legend=FALSE)+
     #host tip labels:
-   geom_tiplab(aes(label=host, subset = !is.na(host)), linetype="dotted", align=T, fontsize=3, na.rm=F, offset=0.8)+
+   geom_tiplab(aes(label=host, subset = !is.na(host)), linetype="dotted", align=T, fontsize=3, na.rm=F, 
+               #use for all trees:
+               #offset=0.8, 
+               #use for just the full tree:
+               offset=0.3,
+               fontface=3)+
+
     #virus name tip labels:
     geom_tiplab(aes(), geom="label",fontsize=3, fill="white", offset=0.1,family='Helvetica', align=F, label.size = 0)+
 
   #scale
-    geom_treescale(x=0.25, y=60, width=0.25, fontsize=5, linesize=1, offset=1, color='black', label='Substitutions per site', offset.label=-1)+
+    geom_treescale(x=0.25, y=60, width=0.25, fontsize=8, linesize=1, offset=1, color='black', label='substitutions per site', offset.label=-1)+
    #node labels/bootstrap labels:
-    geom_text2(aes(subset = !isTip , label=label), nudge_x = 0.02, size=3)+
+    geom_text2(aes(subset = !isTip , label=label), nudge_x = 0.025, size=3)+
     xlim(0,4.5)+
-  theme(legend.position = "left")+
+
+  #newness tip labels:
+  geom_tiplab(aes(label=new),size=10, color="black", family='Helvetica', align=T, na.rm=F, offset=0.26,vjust=0.8, linetype="blank", fontface=1)+
       #group labels
-    scale_color_manual(name="Group", values=c("black", 
+    scale_color_manual( name="Group", values=c("gray50", 
                                               "#0072B2",
                                               "#3FB13A", 
-                                              "#BE81EF",
+                                              #"#BE81EF",
                                               "#B39B00", 
                                               "#E67E67", 
                                               "#EC6DC4", 
-                                              "grey"))
+                                              "grey") )+
+  theme(legend.position = c(0.1,0.9),
+        legend.key.size = unit(2, 'cm'),
+        legend.text = element_text(size = 20))
+
 #Save to pdf format
 filename = paste(namevector[i],"_tr_formal_tax.pdf",sep="")
-ggsave(filename, width = 70, height = 50, units = "cm")
+ggsave(filename,width = 70, height = 50, units = "cm")
 }
 }
 gene.phylos(names,locs)
