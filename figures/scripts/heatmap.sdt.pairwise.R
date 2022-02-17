@@ -1,52 +1,69 @@
 #at, 11-21-21, for cvx
 library("ggplot2")
 library("pheatmap")
-#read matrix from comma separated txt to matrix, then plot with ggplot
-
+library("dplyr")
+BiocManager::install("ComplexHeatmap")
 setwd("/Users/alexa/Documents/GitHub/cactusvirusx/")
 getwd()
 metadatafile <-"data/name_key.csv"
 metadatadf <- read.csv(metadatafile, stringsAsFactors = FALSE)
-dat <- read.csv("data/SDTmatrix_mat.txt", header = FALSE, fill = TRUE, col.names = c(1:95))
+dat <- read.csv("data/SDT/perc_rdrp_matrix.csv", header = TRUE)
+md <- read.csv('data/name_key.csv', stringsAsFactors = FALSE)
+#turn on for ordering
+#joined <- left_join(dat, md, by = c("X" = "Name_updated"))
+#joined <- arrange(joined, group, Name)
+dat$X <- gsub(pattern = "X15", "15", dat$X)
+dat$X <- gsub(pattern = "X19J", "19J", dat$X)
+colnames(dat) <- gsub(pattern = "X15", "15", colnames(dat))
+colnames(dat) <- gsub(pattern = "X19J", "19J", colnames(dat))
+#dat$X
+row.names(dat) <- dat$X
+dat <- subset(dat, select=-X)
+#dat <- dat[joined$X, ]
+#dat <- dat[ ,rownames(dat)]
+dat <- subset(dat, select=-NA.)
+dat <- subset(dat, select=-NA..1)
 
-class(dat)
-dat$X1 <- gsub(pattern = ">", "", dat$X1)
-dat$X1
-row.names(dat) <- dat$X1
-dat <- subset(dat, select=-X1)
-colnames(dat) <-row.names(dat)
 
-annotationcols <- subset(metadatadf, select=c(group))
-rownames(annotationcols) <- metadatadf$Name_updated
+#copy lower triangle to upper triangle:
+#dat[upper.tri(dat)] <- t(dat)[upper.tri(t(dat))]
+#delete upper triangle:
+#dat[upper.tri(dat)] <- NA
+#write.csv(dat, "perc_cp_matrix.csv")
+annotationcols <- subset(md, select=c(formal_tax))
+rownames(annotationcols) <- md$Name_updated
 #flip dat
-dat=dat[,order(ncol(dat):1)]
-
-#replace NA with zero
-#dat[is.na(dat)] <- 0
-
-gapsrow <- c(15, 16, 20,46,56,75,78)
-
-gapscol <- 94-gapsrow
-#plot
-pheatmap(dat, cluster_rows=F, cluster_cols=F,
-         #annotation_row = annotationcols,
+#dat=dat[,order(ncol(dat):1)]
+#order by groupings
+dat <- data.matrix(dat)
+par(mar=c(0,0,0,2))
+pheatmap::pheatmap(dat, 
+         cluster_rows=F, cluster_cols = F, 
+         annotation_row = annotationcols,
          annotation_col = annotationcols,
-         annotation_names_col = F,
-         annotation_names_row = F,
+         #annotation_names_col = T,
+         #annotation_names_row = F,
+         border_color = "white",
          #angle_col = 45,
+         color = c("#f7fcb9", "#addd8e", "#31a354"),
+         breaks = c(0, 67, 72, 100),
          na_col = "white",
-         filename = "heatmap.sdt.numbers.pdf",
-         cellheight = 10, cellwidth = 10,
-         gaps_row = gapsrow,
-         gaps_col = gapscol,
+        cellheight = 12, cellwidth = 12,
+         #gaps_row = gapsrow,
+         #gaps_col = gapscol,
          display_numbers = T,
-         fontsize_number = 2,
-         #gaps_row=9,
+         fontsize_number = 3,
+        filename="heatmap.num.rdrp.pdf", 
+        #gaps_row=9,
         # color=colors,
          #breaks=seq(range.min, range.max * 1, 0.5),
          #legend_breaks=seq(range.min, range.max, 2),
+         legend_breaks = seq(0,100,10),
          #legend_labels=seq(range.min, range.max, 2),
-         border_color=rgb(0, 0, 0,0),
+         legend_labels = seq(0,100,10),
         # lwd=1, fontfamily=font.family, fontsize=fontsize,
          #cellwidth=cell.size, cellheight=cell.size
          )
+
+
+
