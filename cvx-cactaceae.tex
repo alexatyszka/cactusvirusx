@@ -192,9 +192,13 @@ The search returned 59 sequences aligned to members of Potexvirus within PRJNA60
 
 Additional publicly available partial or complete viral genomes, gene annotations, and available metadata from Potexviruses (NCBI:txid12176) were downloaded from NCBI (NCBI: www.ncbi.nlm.nih.gov/, accession numbers provided in Supplemental Data).
 We obtained host information through NCBI reported metadata.
+
+\subsection*{Sequence Percent Distance}
 Species groupings were determined using the existing species boundaries compared to the phylogenetic branch lengths within the Potexvirus genus. 
-These existing groupings were generally consistent with most recent branch lengths over 0.1 subs/site and this value was therefore used as a cutoff. 
 Raw pairwise distance analysis was conducted on the sequence alignments in R using ape v5.5 (cite*)
+
+Percentage sequence distance was calculated for Coat Protein and RdRp nucleotides and amino acids using SDT version X.X.
+Sequences with incomplete CP or RdRp sequences were removed post analysis.
 For each defined clade, nonzero pairwise distances between each possible combination of tips was averaged. 
 
 \subsection*{Data Accessibility}
