@@ -180,20 +180,19 @@ to generate a single reference transcriptome assembly for \textit{Schlumbergera 
 \subsection*{Sequence Alignment and Phylogenetic Analyses}
 The untranslated regions (UTRs) were trimmed from the sequences for consistency.
 Sequence alignments were performed through MAFFT v7.429 \citep{katoh_mafft_2002} using the full dataset.
-%FIXME: MAFFT settings/options missing. DNA or protein? These paragraphs should be detailed.
+%FIXME: MAFFT settings/options missing. DNA or protein? (These Methods paragraphs should be detailed.)
 The aligned sequences were divided by ORF using annotations to produce sequence alignments for each of the five genes, along with the whole-genome alignment. 
 The individual proteins were exported to FASTA files, then gaps at the start of the sequence and stop codons were removed manually. 
 
 %FIXME: this previously read "v1.6.12" \citep{nguyen2015}., which seems incorrect, according to genbank_kr_consensus_extraction_al_trimmed.fasta.iqtree. 
-%B: I went through some files and found several iq-tree files. I assume that the latest one, genbank_kr_consensus_extraction_al_trimmed.fasta.iqtree is the correct one. If the others are not being used, they should be deleted from the shared git archive.
-Phylogenetic relationships, including those used for assessing bootstrap support, were inferred using IQ-Tree IQ-TREE 2.0.3. 
-Maximum likelihood inference for the whole genome sequences---as well as for each gene region, separately---relied on a model of sequence evolution (GTR+F+I+$\Gamma$4) favored by both AIC- and BIC-based selection procedure implemented in IQ-Tree's {\em ModelFinder} \citep{kalyaanamoorthy2017}. Akaike and Bayesian weights exceeded 0.99. 
-%Results: We also implemented an identical analysis for each of five genes, separately, but the results are virtually identical.
-Branch support was assessed with ultrafast bootstrap ({\em UFBoot}) \citep{hoang2018}.
+%also, %B: I went through some files and found several iq-tree files. I assume that the latest one, genbank_kr_consensus_extraction_al_trimmed.fasta.iqtree is the correct one. If the others are not being used, they should be deleted from the shared git archive.
+Phylogenetic relationships, including those used for assessing bootstrap support, were inferred using \texttt{IQ-Tree} v2.0.3. 
+Maximum likelihood inference for the whole genome sequences---as well as for each gene region, separately---relied on a model of sequence evolution (GTR+F+I+$\Gamma$4) favored by both AIC- and BIC-based selection procedure implemented in IQ-Tree's model selection module {\em ModelFinder} \citep{kalyaanamoorthy2017}. Akaike and Bayesian weights exceeded 0.99. 
+%put in Results--if true: We also implemented an identical analysis for each of five genes, separately, but the results are virtually identical.
+Branch support was assessed with IQ-Tree's {\em UFBoot}, an ultrafast bootstrap implementation \citep{hoang2018}.
 
-
-% FIXME: this is how we got the sequence for the analyses, which are above. The data acquisition should be placed before the analyses. Move up and in order.
-
+% FIXME: this below is how we got the sequence for the analyses, which are above. The data acquisition should be placed before the analyses. (Move up and in order.)
+%
 \subsubsection*{RNAseq from deposited sequence read archives}
 
 We searched the NCBI Sequence Read Archive (SRA) database (www.ncbi.nlm.nih.gov/sra) for RNA-sequencing (RNA-seq) data within the flowering plant order Caryophyllales (NCBI:txid3524) that had been sequenced using an Illumina library sequencing platform. 
@@ -208,7 +207,7 @@ We obtained host information through NCBI reported metadata.
 Species groupings were determined using the existing species boundaries compared to the phylogenetic branch lengths within the Potexvirus genus. 
 Raw pairwise distance analysis was conducted on the sequence alignments in R using \texttt{ape} v5.5.
 
-Percentage sequence distance was calculated for Coat Protein and RdRp nucleotides and amino acids using SDT version X.X. %FIXME
+Percentage sequence distance was calculated for Coat Protein and RdRp nucleotides and amino acids using SDT XXX. %FIXME version missing
 Sequences with incomplete CP or RdRp sequences were removed post analysis. %post-analysis? If it is after the analyses? If so, it seems to be not used in analyses, which is odd. I think you mean after some of the analyses before others, maybe. Detailed description missing.
 For each defined clade, nonzero pairwise distances between each possible combination of tips was averaged. 
 
@@ -225,7 +224,7 @@ All sequence data is deposited in GenBank under project accession number PRJNXXX
 \section*{Results}
 %------------------------------------------------------------------------------
 \subsection*{Viral Identification}
-In an attempt to characterize the infection patterns of cactus-infecting potexviruses, we assembled 69 viral sequences from the XX total cactus samples analyzed (Table 1).
+In an attempt to characterize the infection patterns of cactus-infecting potexviruses, we assembled 69 viral sequences from the XXX total cactus samples analyzed (Table 1).
 %FIXME: noauthor?
 The genome sizes of 6.6-6.7 kb were consistent with ICTV reported 5.9-7.0 kb genome lengths within \textit{Potexvirus} \citep{noauthor_genus_2020}.
 In some cases, one cactus sample contained multiple different virus species (Table 1).
@@ -237,7 +236,7 @@ We annotated the open reading frames of the viruses and recovered all Potexvirus
 A well-supported phylogenetic tree was recovered using available sequences (Figure 1).
 The 69 viral sequences were in some cases concatenated for ease of viewing on the tree.
 The phylogenetic tree places the newly aligned sequences from this study within previously defined species groups (Figure 1).
-These sequences greatly expand the cactus-infecting clade of \textit{Potexvirus} by a roughly XX percent increase. 
+These sequences greatly expand the cactus-infecting clade of \textit{Potexvirus} by a roughly XXX percent increase. 
 Phylogenetic analysis recovered defined monophyletic groups corresponding to five or six major groups of cactus-infecting \textit{Potexviruses}, with \textit{Cactus Virus X} displaying two branching subgroups.
 \textit{Opuntia Virus X} was the sister clade to the rest of the cactus-infecting \textit{Potexviruses}.
 We recovered viruses within the Potexvirus clades: \textit{Cactus Virus X, Pitaya Virus X, Schlumbergera Virus X}, and \textit{Zygocactus Virus X} (Table 1).
@@ -275,35 +274,9 @@ Some closely clustered examples likely represent one primary infection spreading
 For this analysis we refer to the two branches of\textit{ Cactus Virus X }as \textit{Cactus Virus X A} and \textit{Cactus Virus X B} because the formal taxonomic group \textit{CVX} was the only group distinguished by high p-distance values (Full sequence mean 0.0399; RdRp mean 0.0343; CP mean 0.0453) as well as a notable bifurcation within the group (Figure 1).
 
 
-The 
-origins of 0.72 difference
-clade delineation
-summary of infections and hosts
-multiple infections
-relation to other studies
-success of testing
+The origins of 0.72 difference --- clade delineation --- summary of infections and hosts --- multiple infections --- relation to other studies --- success of testing --- naming complications --- names using in paper --- history of naming conflicts --- recommendations for future --- identification/infections --- often symptomless confused for other diseases --- extent yet unknown --- further obscured by species delimitations --- distinguish between infection and transmission because in this case infection may not always lead to transmission. 
 
-
-naming complications
-names using in paper
-history of naming conflicts
-recommendations for future
-
-identification/infections
-often symptomless confused for other diseases
-extent yet unknown
-further obscured by species delimittions
-
-it it important in this case to distinguish between infection and transmission because in this case infection may not always lead to transmission. 
-Most experimental transmission of cactus viruses is done in a manner that would rarely be reproduced in the field under natural conditions.
-The grafting that is frequent in greenhouses and 
-inocculation and transmission
-transmission methods
-review of other papers
-thesis, saguaro nectar
-relation to sexual transmission
-
-
+Most experimental transmission of cactus viruses is done in a manner that would rarely be reproduced in the field under natural conditions --- grafting  is frequent in greenhouses, inoculation and transmission --- transmission methods --- review of other papers? --- thesis, saguaro nectar --- relation to sexual transmission
  
 The reported taxonomy of each existing sample aligns well with the tree structure, but this monophyly is not recovered for hosts.
 Putative viral species appear to infect as few as one genus, in the case of \textit{Opuntia Virus X}, or as many as three in the case of \textit{Schlumbergera Virus X}.
@@ -345,7 +318,7 @@ Taxonomic recommendations - the current species names should not be used in the 
 \section*{Acknowledgments}
 %------------------------------------------------------------------------------
 
-Acknowledgments text.
+This work was supported by the Award for Graduate Research from the Graduate College, University of Illinois at Chicago (to K.R.) and the National Science Foundation grant NSF-DEB-1655692 (to B.I.).
 
 %--------------------------------------------------
 % References
@@ -375,7 +348,6 @@ Acknowledgments text.
 
 \section*{Figures}
 Figure inventory list.
-
 
 Supplemental figures:
 1. full gene phylogenies for each gene in genome
