@@ -19,16 +19,15 @@ row.names(rdrp) <- rdrp$X
 rdrp <- subset(rdrp, select=-X)
 rdrp <- rdrp[rownames(cp),]
 rdrp <- rdrp[,colnames(cp)]
-overlay <- ((rdrp>70)&(rdrp < 74))&((cp>70)&(cp < 74))
-overlayrdrp <- ((rdrp>70)&(rdrp < 74))
-overlaycp <- ((cp>70)&(cp < 74))
-overlayrdrp <- 1*overlayrdrp
-overlaycp <- 2*overlaycp
+overlay.and <- ((rdrp>70)&(rdrp < 74))&((cp>70)&(cp < 74))
+overlay.or <- ((rdrp>70)&(rdrp < 74))|((cp>70)&(cp < 74))
+overlay.controv <- (((72-rdrp)>0)&((72-cp)<0))|(((72-rdrp)<0)&((72-cp)>0))
+overlay.controv.dif <- (rdrp-cp)*data.frame(overlay.controv)
+overlay.and <- overlay.and*1
+overlay.or <- overlay.or*1
+unlisted <- unlist(overlay.controv.dif)
+unlisted <- unlisted[unlisted !=0]
 
-overlay.all <- overlayrdrp + overlaycp
-#uncertain rdrp = 1
-#uncertain cp = 2
-#uncertain rdrp and cp = 3
 #copy lower triangle to upper triangle:
 #dat[upper.tri(dat)] <- t(dat)[upper.tri(t(dat))]
 #annotations:
@@ -38,7 +37,7 @@ overlay.all <- overlayrdrp + overlaycp
 #dat=dat[,order(ncol(dat):1)]
 ##from https://stackoverflow.com/questions/30943167/replace-logical-values-true-false-with-numeric-1-0
 par(mar=c(0,0,0,2))
-pheatmap::pheatmap(overlay.all, 
+pheatmap::pheatmap(overlay.and, 
                    cluster_rows=F, cluster_cols = F, 
                    #annotation_row = annotationcols,
                    #annotation_col = annotationcols,
@@ -46,22 +45,82 @@ pheatmap::pheatmap(overlay.all,
                    #annotation_names_row = F,
                    border_color = "transparent",
                    #angle_col = 45,
-                   na_col = "white",
-                   main = "Heatmap intended as overlay to display uncertainty, red means rdrp is between 70 and 74% similar, orange means the same range for cp, and purple means both are between 70-74%",
+                   na_col = "grey80",
+                   main = "Heatmap displaying which sequences have 70<rdrp<74 AND 70<cp<74",
                    cellheight = 12, cellwidth = 12,
                    #gaps_row = gapsrow,
                    #gaps_col = gapscol,
                    display_numbers = F,
                    fontsize_number = 3,
-                   filename="heatmap.overlay.pdf", 
+                   filename="overlay.and.pdf", 
                    #gaps_row=9,
                    color = c(
                      "white",
-                     "red",
-                     "orange",
-                     "purple"
+                     "red"
                    ),
-                   breaks = c(-1.5, 0.5, 1.5, 2.5, 3.5)
+                   breaks = c(-1.5, 0.5, 1.5)
+                   #breaks=seq(range.min, range.max * 1, 0.5),
+                   #legend_breaks=seq(range.min, range.max, 2),
+                   #legend_breaks = seq(0,100,10),
+                   #legend_labels=seq(range.min, range.max, 2),
+                   #legend_labels = seq(0,100,10),
+                   # lwd=1, fontfamily=font.family, fontsize=fontsize,
+                   #cellwidth=cell.size, cellheight=cell.size
+)
+par(mar=c(0,0,0,2))
+pheatmap::pheatmap(overlay.or, 
+                   cluster_rows=F, cluster_cols = F, 
+                   #annotation_row = annotationcols,
+                   #annotation_col = annotationcols,
+                   #annotation_names_col = T,
+                   #annotation_names_row = F,
+                   border_color = "transparent",
+                   #angle_col = 45,
+                   na_col = "grey80",
+                   main = "Heatmap displaying which sequences have 70<rdrp<74 OR 70<cp<74",
+                   cellheight = 12, cellwidth = 12,
+                   #gaps_row = gapsrow,
+                   #gaps_col = gapscol,
+                   display_numbers = F,
+                   fontsize_number = 3,
+                   filename="overlay.or.pdf", 
+                   #gaps_row=9,
+                   color = c(
+                     "white",
+                     "orange"
+                   ),
+                   breaks = c(-1.5, 0.5, 1.5)
+                   #breaks=seq(range.min, range.max * 1, 0.5),
+                   #legend_breaks=seq(range.min, range.max, 2),
+                   #legend_breaks = seq(0,100,10),
+                   #legend_labels=seq(range.min, range.max, 2),
+                   #legend_labels = seq(0,100,10),
+                   # lwd=1, fontfamily=font.family, fontsize=fontsize,
+                   #cellwidth=cell.size, cellheight=cell.size
+)
+pheatmap::pheatmap(overlay.controv.dif, 
+                   cluster_rows=F, cluster_cols = F, 
+                   #annotation_row = annotationcols,
+                   #annotation_col = annotationcols,
+                   #annotation_names_col = T,
+                   #annotation_names_row = F,
+                   border_color = "transparent",
+                   #angle_col = 45,
+                   na_col = "grey80",
+                   main = "Heatmap displaying which sequences display sequence percentages that are controversial, or conflicted above or below the 72% cutoff for a combination of both genes. The absolute value of the percentage difference is displayed.",
+                   cellheight = 12, cellwidth = 12,
+                   #gaps_row = gapsrow,
+                   #gaps_col = gapscol,
+                   display_numbers = T,
+                   fontsize_number = 3,
+                   filename="overlay.controv.pdf", 
+                   #gaps_row=9,
+                   color = c(
+                     "white",
+                     "#8c96c6",
+                     "#8c6bb1"
+                   ),
+                   breaks = c(0, 1, 2)
                    #breaks=seq(range.min, range.max * 1, 0.5),
                    #legend_breaks=seq(range.min, range.max, 2),
                    #legend_breaks = seq(0,100,10),
@@ -71,5 +130,7 @@ pheatmap::pheatmap(overlay.all,
                    #cellwidth=cell.size, cellheight=cell.size
 )
 
-
-
+plot.new()
+histogram(unlist(overlay.controv.dif))
+controv.rows <- apply(overlay.controv, 1, any)
+write.csv(controv.rows, file = "controv.csv")

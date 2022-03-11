@@ -22,6 +22,8 @@ loc4 <- "data/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
 loc5 <- "data/iqtree_5_CP_names/5_CP_names.fasta.treefile"
 locs <- c(loc0, loc1, loc2, loc3, loc4, loc5)
 names <- c("full", "rdrp", "tgb1", "tgb2", "tgb3", "cp")
+controversial <- read.csv(file = "data/controv.csv")
+host.info.details <- left_join(host.info.details, controversial, by = c("Name_updated" = "X"))
 #load trees
 cvx.tree.phylo.treedata <- read.iqtree(locs[1])
 #root tree, outgroup can be changed:
@@ -32,5 +34,7 @@ cvx.tree.phylo.treedata.joined <- as.treedata(dplyr::left_join(as_tibble(cvx.tre
 #now replace the phylo S4 object of the joined tree with that of the original. 
 #for some reason, things break massively without this.
 cvx.tree.phylo.treedata.joined@phylo <- cvx.tree.phylo.treedata@phylo
+cvx.tree.phylo.treedata.joined@data$new[is.na(cvx.tree.phylo.treedata.joined@data$new)] <- "FALSE"
 save(host.info.details, host.info.loc, locs, names, cvx.tree.phylo.treedata.joined, file = "objects.for.phylo.RData")
 save.image()
+

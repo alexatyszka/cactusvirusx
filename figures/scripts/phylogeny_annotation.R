@@ -5,9 +5,9 @@ ls()
 #tree visualization:
 par(mar = c(0, 0, 0, 0))
 ggtree(cvx.tree.phylo.treedata.joined, ladderize=T, 
-           aes(color=formal_tax, family="Helvetica"), show.legend=FALSE)+
+           aes( family="Helvetica"), show.legend=FALSE)+
 #host tip labels:
-geom_tiplab(aes(label=host, subset = !is.na(host)), linetype="dotted", 
+geom_tiplab(aes(color= new, label=host, subset = !is.na(host)), linetype="dotted", 
             align=T, fontsize=3, na.rm=F, 
             #use for all trees:
             #offset=0.8, 
@@ -15,7 +15,7 @@ geom_tiplab(aes(label=host, subset = !is.na(host)), linetype="dotted",
             offset=0.3,
             fontface=3)+
 #virus name tip labels:
-geom_tiplab(aes(), geom="label",fontsize=3, fill="white", offset=0.1,
+geom_tiplab(aes(color=new), geom="label",fontsize=3, fill="white", offset=0.1,
               family='Helvetica', align=F, label.size = 0)+
 #scale:
 geom_treescale(x=0.25, y=60, width=0.25, fontsize=8, linesize=1, offset=1, 
@@ -24,21 +24,19 @@ geom_treescale(x=0.25, y=60, width=0.25, fontsize=8, linesize=1, offset=1,
 geom_text2(aes(subset = !isTip , label=label), nudge_x = 0.025, size=3)+
             xlim(0,4.5)+
 #newness asterisk labels:
-geom_tiplab(aes(label=new),size=10, color="black", family='Helvetica', align=T, 
-            na.rm=F, offset=0.26,vjust=0.8, linetype="blank", fontface=1)+
+#geom_tiplab(aes(label=new),size=10, color="black", family='Helvetica', align=T, 
+#            na.rm=F, offset=0.26,vjust=0.8, linetype="blank", fontface=1)+
 #group labels:
-scale_color_manual( name="Group", values=c("gray50", 
-           "#0072B2",
-           "#3FB13A", 
-           #"#BE81EF",
-           "#B39B00", 
-           "#E67E67", 
-           "#EC6DC4", 
-           "grey") )+
+ scale_color_manual( name="new", values=c("black", "red"))+
+#            "#0072B2",
+#            "#3FB13A", 
+#            #"#BE81EF",
+#            "#B39B00", 
+#            "#E67E67", 
+#            "#EC6DC4", 
+#            "grey") )+
 #theme specifics:
-theme(legend.position = c(0.1,0.9),
-          legend.key.size = unit(2, 'cm'),
-          legend.text = element_text(size = 20))
+theme()
 
 #Save to pdf format if desired
 filename <- "full_seq_phylo_formal_tax.pdf"
