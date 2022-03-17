@@ -1,17 +1,22 @@
 README for PTP (mPTP/bPTP) and GMYC analyses
 
-More information and papers:
-https://cme.h-its.org/exelixis/web/software/PTP/index.html
+Input: full genome alignment from iqtree in file input/0_full-aln_names.fasta.nwk
+
+Output: bPTP/mPTP (use bPTP)
+
+Boris ran GMYC, but it requires ultrametric trees, and PTP works with substitution accumulation, so ignore GMYC. For a justification read papers/kavli2017.pdf
 
 Analyses performed on listed webservers on March 15th, 2022, by Boris.
 
 mPTP: https://mptp.h-its.org/
-
 bPTP: https://species.h-its.org/
-
 GMYC: https://species.h-its.org/gmyc/
 
-Using this tree (full genome alignment from iqtree): 0_full-aln_names.fasta.nwk
+
+More information and papers:
+https://cme.h-its.org/exelixis/web/software/PTP/index.html
+
+DETAILS (see bPTP output for command run)
 
 Outgroups (removed for PTP): 
 
