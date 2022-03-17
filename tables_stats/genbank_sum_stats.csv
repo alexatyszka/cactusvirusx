@@ -1,0 +1,38 @@
+Name,Accession,Assembly-Data: Assembly Method,Assembly-Data: Sequencing Technology,Common Name,Organism,Sequence Length,host,isolate
+AY863024,AY863024.1,,,AltMV,Alternanthera mosaic virus,6387,Phlox stolonifera cv. Sherwood Purple,
+FJ822136,FJ822136.1,,,AltMV,Alternanthera mosaic virus,6388,Portulaca grandiflora,
+LC107515,LC107515.1,,,AltMV,Alternanthera mosaic virus,6386,Achyranthes bidentata,Ac
+MH423501,MH423501.1,CLC Genomics v. 10,Sanger dideoxy sequencing; Illumina,AltMV,Alternanthera mosaic virus,6388,Epiphyllum sp. cv. Dragon Heart,DH
+GQ179646,GQ179646.1,,,AltMV,Alternanthera mosaic virus,6387,Phlox stolonifera cv. Sherwood Purple,SP 3-1
+GQ179647,GQ179647.1,,,AltMV,Alternanthera mosaic virus,6387,Phlox stolonifera cv. Sherwood Purple,SP 4-7
+MF978248,MF978248.1,,,,Babaco mosaic virus,6444,Vasconcellea x heilbornii,Tandapi
+AF308158,AF308158.2,,,,Cactus virus X,6430,Hylocereus undatus,
+LC128411,LC128411.1,,,,Cactus virus X,6430,Hylocereus undatus,
+JF937699,JF937699.1,,,,Cactus virus X,6439,Hylocereus sp.,NTU
+KM288846,KM288846.1,,Sanger dideoxy sequencing,,Cactus virus X,2284,Hylocereus sp. (pitaya),TW-5XB-1
+KM288847,KM288847.1,,Sanger dideoxy sequencing,,Cactus virus X,1550,Hylocereus sp. (pitaya),TW-456Y-1
+KM365479,KM365479.1,,Sanger dideoxy sequencing,,Cactus virus X,2275,Hylocereus sp. (pitaya),TW-5149-20
+KX883791,KX883791.1,Trinityrnaseq v. 2.0.6,Illumina,,Cactus virus X,6439,Diptera,
+CYMRNA,D29630.1,,,,Clover yellow mosaic virus,6784,,
+LC107517,LC107517.1,,,,Hydrangea ringspot virus,5977,Hydrangea macrophylla,Gu2
+MG210801,MG210801.1,CLC v. 10.1.1,Illumina,,Mytcor virus 1,5582,Mytilus coruscus,
+AY800279,AY800279.1,,,,Nandina mosaic virus,5863,,PLH 1
+KU854931,KU854931.1,Geneious v. 7.1,Illumina,,Opuntia virus X,6474,Opuntia ficus-indica,nopal verdura-1
+KY348771,KY348771.1,Trinity v. 2.3,Illumina,,Opuntia virus X,6474,Opuntia albicarpa cv. nopal tunero,Noptuna-Mex
+AY366209,AY366209.1,,,,Opuntia virus X,6474,,
+JX524226,JX524226.1,,Sanger dideoxy sequencing,,Papaya mosaic virus,6437,Carica papaya,PMV-HN
+JF930327,JF930327.1,,,,Pitaya virus X,6470,Hylocereus sp.,P37
+LC155795,LC155795.1,,,,Plantago asiatica mosaic virus,5920,Nandina domestica,NJ
+KU697313,KU697313.1,DNAMAN v. 5.2.10,Sanger dideoxy sequencing,,Plantago asiatica mosaic virus,5920,Plantago asiatica,Gunwi
+KU159093,KU159093.1,,Sanger dideoxy sequencing,,Plantago asiatica mosaic virus,5899,lily,Ko-YS
+KT717325,KT717325.1,,,,Plantago asiatica mosaic virus,5899,Lilium sp.,kr
+KU854929,KU854929.1,Geneious v. 7.1,Illumina,,Schlumbergera virus X,6430,Opuntia ficus-indica,nopal verdura 1
+KP090203,KP090203.1,Geneious v. 7.1.4,Illumina,,Schlumbergera virus X,6430,Opuntia cochenillifera,Palma-PE
+AY366207,AY366207.2,,,,Schlumbergera virus X,6430,,
+KX196173,KX196173.2,VICUNA v. v1.3,Illumina,,Senna mosaic virus,6437,Senna occidentalis,Brazilian
+JF930326,JF930326.1,,,,Zygocactus virus X,6437,Hylocereus sp.,P39
+KM288842,KM288842.1,,Sanger dideoxy sequencing,,Zygocactus virus X,2279,Hylocereus sp. (pitaya),TW-4XB-2
+KM288843,KM288843.1,,Sanger dideoxy sequencing,,Zygocactus virus X,1545,Hylocereus sp. (pitaya),TW-456Y-4
+KM288844,KM288844.1,,Sanger dideoxy sequencing,,Zygocactus virus X,2279,Hylocereus sp. (pitaya),TW-5149-5
+KM288845,KM288845.1,,Sanger dideoxy sequencing,,Zygocactus virus X,2280,Hylocereus sp. (pitaya),TW-5149-17
+AY366208,AY366208.1,,,,Zygocactus virus X,6437,,
