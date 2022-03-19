@@ -12,7 +12,7 @@ library(ggplot2)
 getwd()
 directory <- "Documents/GitHub/cactusvirusx/"
 setwd(dir = directory)
-host.info.loc <-'data/name_key.csv'
+host.info.loc <-'data/phylo.details.csv'
 host.info.details <- read.csv(host.info.loc, stringsAsFactors = FALSE)
 loc0 <- "data/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
 loc1 <- "data/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
@@ -22,8 +22,9 @@ loc4 <- "data/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
 loc5 <- "data/iqtree_5_CP_names/5_CP_names.fasta.treefile"
 locs <- c(loc0, loc1, loc2, loc3, loc4, loc5)
 names <- c("full", "rdrp", "tgb1", "tgb2", "tgb3", "cp")
-controversial <- read.csv(file = "data/controv.csv")
-host.info.details <- left_join(host.info.details, controversial, by = c("Name_updated" = "X"))
+#controversial <- read.csv(file = "data/controv.csv")
+#host.info.details <- left_join(host.info.details, controversial, by = c("Name_updated" = "X"))
+#write.csv(host.info.details, file="controv.details.csv")
 #load trees
 cvx.tree.phylo.treedata <- read.iqtree(locs[1])
 #root tree, outgroup can be changed:
