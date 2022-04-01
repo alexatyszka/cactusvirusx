@@ -6,31 +6,34 @@ cols <- c(no='black', yes='red')
 
 #tree visualization:
 par(mar = c(0, 0, 0, 0))
-p <- ggtree(cvx.tree.phylo.treedata.joined, ladderize=T, layout="rectangular",
+p <- ggtree(cvx.tree.phylo.treedata.joined, ladderize=T, layout="circular",
            aes( family="Helvetica"), show.legend=FALSE)+
   #geom_tippoint(aes(color=new), size=1) + 
   scale_color_manual(values=cols) + 
   #virus name tip labels
-  geom_tiplab(aes(color=new), align=F, linetype="dotted", 
+  geom_tiplab2(aes(), align=F, linetype="dotted", 
                size=3, offset=0.1, hjust=0.2) +
   #host tip labels:
-  geom_tiplab(aes(color=new, label=host, subset = !is.na(host)), align=T, linetype=NA, 
+  geom_tiplab2(aes( label=host, subset = !is.na(host)), align=T, linetype=NA, 
                size=4, offset=0.4, hjust=0)+
   geom_treescale(x=0.3, y=50,width=0.25, fontsize=4, linesize=1, offset=2, color='black', label='substitutions per site', offset.label=2)
+  #geom_text(aes(label=node), hjust=-.3)
 p
+p2 <-p %>% ggtree::collapse(189, 'max',fill="white", color="black") 
+p2
 #Save to pdf format if desired
-filename <- "phylo_formal_tax.pdf"
-ggsave(filename,width = 50, height = 50, units = "cm")
-rn <- as.data.frame(heatmapData[3])
+#filename <- "phylo_formal_tax.pdf"
+#ggsave(filename,width = 50, height = 50, units = "cm")
 heatmapData <- as.data.frame(sapply(host.info.details, as.character))
+rn <- as.data.frame(heatmapData[3])
 rownames(heatmapData) <- rn$Name_updated
 heatmap.colours <- c("white","grey","seagreen3","darkgreen",
-                     "green","brown","tan","red","orange",
+                     "green","red","orange",
                      "pink","magenta","purple","blue","skyblue3",
                      "blue","skyblue2")
-gheatmap(p, heatmapData[c(6,7,8)], colnames_angle=90, colnames_offset_y = 1, 
-         hjust=0.3, offset=0.7, width=0.2)
-ggsave("treewbars_circ.pdf",width = 50, height = 50, units = "cm")
+gheatmap(p2, heatmapData[c(6,7, 8, 12, 10,11)], colnames_angle=90, colnames_offset_y = 1, 
+         hjust=0.3, offset=1.3, width=0.2)
+ggsave("tree_rect_black_collapsed.pdf",width = 50, height = 50, units = "cm")
 
 #############batch creation code begins below
 #Load metadata if needed, handy function to be used within larger function

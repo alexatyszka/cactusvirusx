@@ -7,8 +7,8 @@ setwd("/Users/alexa/Documents/GitHub/cactusvirusx/")
 getwd()
 md <- read.csv('data/name_key.csv', stringsAsFactors = FALSE)
 #for nucleotides:
-rdrp <- read.csv("data/SDT/perc_rdrp_matrix.csv", header = TRUE)
-cp <- read.csv("data/SDT/perc_cp_matrix.csv", header = TRUE)
+rdrp <- read.csv("analyses/SDT/perc_rdrp_matrix.csv", header = TRUE)
+cp <- read.csv("analyses/SDT/perc_cp_matrix.csv", header = TRUE)
 #dat$X <- gsub(pattern = "X15", "15", dat$X)
 #dat$X <- gsub(pattern = "X19J", "19J", dat$X)
 #colnames(dat) <- gsub(pattern = "X15", "15", colnames(dat))
@@ -27,7 +27,24 @@ overlay.and <- overlay.and*1
 overlay.or <- overlay.or*1
 unlisted <- unlist(overlay.controv.dif)
 unlisted <- unlisted[unlisted !=0]
+rdrp.species1 <- rdrp < 72
+  rdrp.species2 <- rdrp == 100.001
+  rdrp.species <- rdrp.species1 | rdrp.species2
 
+
+rdrp.rows <- apply(rdrp.species, 1, all, na.rm = TRUE)
+#NA if all values in the row are below 72 or NA
+#false if all values are false = not a species by rdrp
+write.csv(rdrp.rows, file = "rdrp.rows.csv")
+
+cp.species1 <- cp < 72
+cp.species2 <- cp == 100.001
+cp.species <- cp.species1 | cp.species2
+
+cp.rows <- apply(cp.species, 1, all, na.rm = TRUE)
+#NA if all values in the row are below 72 or NA
+#false if all values are false = not a species by rdrp
+write.csv(cp.rows, file = "cp.rows.csv")
 #copy lower triangle to upper triangle:
 #dat[upper.tri(dat)] <- t(dat)[upper.tri(t(dat))]
 #annotations:
