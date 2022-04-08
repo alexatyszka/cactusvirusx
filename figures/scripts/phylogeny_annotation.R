@@ -6,7 +6,7 @@ cols <- c(no='black', yes='red')
 
 #tree visualization:
 par(mar = c(0, 0, 0, 0))
-p <- ggtree(cvx.tree.phylo.treedata.joined, ladderize=T, layout="circular",
+p <- ggtree(cvx.tree.phylo.treedata.joined, ladderize=T, layout="rectangular",
            aes( family="Helvetica"), show.legend=FALSE)+
   #geom_tippoint(aes(color=new), size=1) + 
   scale_color_manual(values=cols) + 
@@ -19,7 +19,8 @@ p <- ggtree(cvx.tree.phylo.treedata.joined, ladderize=T, layout="circular",
   geom_treescale(x=0.3, y=50,width=0.25, fontsize=4, linesize=1, offset=2, color='black', label='substitutions per site', offset.label=2)
   #geom_text(aes(label=node), hjust=-.3)
 p
-p2 <-p %>% ggtree::collapse(189, 'max',fill="white", color="black") 
+to.drop <- c()
+p2 <-drop.tip(p, to.drop)
 p2
 #Save to pdf format if desired
 #filename <- "phylo_formal_tax.pdf"
@@ -31,7 +32,7 @@ heatmap.colours <- c("white","grey","seagreen3","darkgreen",
                      "green","red","orange",
                      "pink","magenta","purple","blue","skyblue3",
                      "blue","skyblue2")
-gheatmap(p2, heatmapData[c(6,7, 8, 12, 10,11)], colnames_angle=90, colnames_offset_y = 1, 
+gheatmap(p, heatmapData[c(6,7, 8, 12, 10,11)], colnames_angle=90, colnames_offset_y = 1, 
          hjust=0.3, offset=1.3, width=0.2)
 ggsave("tree_rect_black_collapsed.pdf",width = 50, height = 50, units = "cm")
 

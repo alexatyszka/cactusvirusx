@@ -12,7 +12,8 @@ full.loc <- "/data/SDT/dist_p_cp.csv"
   rdrp.loc <- "/data/distdna/rdrp_dist_clades.csv" 
 cp.loc <- "data/SDT/dist_p_cp.csv"
 ####CP distribution####
-cp.mat <- read.csv(file = "Documents/GitHub/cactusvirusx/data/SDT/perc_cp_matrix.csv")
+setwd(dir = "../../")
+cp.mat <- read.csv(file = "analyses/SDT/ma")
 cp.mat$X <- NULL
 cp.mat[upper.tri(cp.mat, diag=TRUE)] <-NA
 cp.list <- data.frame(unname(unlist(cp.mat)))
@@ -34,7 +35,7 @@ rdrp.mat[upper.tri(rdrp.mat, diag=TRUE)] <-NA
 rdrp.list <- data.frame(unname(unlist(rdrp.mat)))
 ggplot(rdrp.list, aes(x=unname.unlist.rdrp.mat..))+
   theme_minimal()+
-  geom_density()+
+  geom_hist()+
   labs(y="Density", x="RdRp Percentage Sequence Distance")+
   geom_vline(color="red", xintercept = 72, linetype = "longdash")+
   xlim(50, 100)+ylim(0, 0.07)
