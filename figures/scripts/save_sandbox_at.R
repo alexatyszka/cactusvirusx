@@ -10,8 +10,8 @@ library(phytools)
 library(ape)
 library(ggplot2)
 getwd()
-#directory <- "Documents/GitHub/cactusvirusx/"
-#setwd(dir = directory)
+directory <- "Documents/GitHub/cactusvirusx/"
+setwd(dir = directory)
 host.info.loc <-'analyses/phylo.details.csv'
 host.info.details <- read.csv(host.info.loc, stringsAsFactors = FALSE)
 loc0 <- "data/iqtree-output/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
