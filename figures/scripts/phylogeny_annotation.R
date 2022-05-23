@@ -11,10 +11,10 @@ p <- ggtree(cvx.tree.phylo.treedata.joined, ladderize=T, layout="rectangular",
   #geom_tippoint(aes(color=new), size=1) + 
   scale_color_manual(values=cols) + 
   #virus name tip labels
-  geom_tiplab2(aes(), align=F, linetype="dotted", 
+  geom_tiplab(aes(color=new), align=F, linetype="dotted", 
                size=3, offset=0.1, hjust=0.2) +
   #host tip labels:
-  geom_tiplab2(aes( label=host, subset = !is.na(host)), align=T, linetype=NA, 
+  geom_tiplab(aes(color=new, label=host, subset = !is.na(host)), align=T, linetype=NA, 
                size=4, offset=0.4, hjust=0)+
   geom_treescale(x=0.3, y=50,width=0.25, fontsize=4, linesize=1, offset=2, color='black', label='substitutions per site', offset.label=2)
   #geom_text(aes(label=node), hjust=-.3)
