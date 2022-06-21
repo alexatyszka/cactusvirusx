@@ -4,24 +4,56 @@ load("objects.for.phylo.RData")
 ls()
 cols <- c(no='black', yes='red')
 
-#tree visualization:
+######CIRCULAR tree visualization:####
 par(mar = c(0, 0, 0, 0))
-p <- ggtree(cvx.tree.phylo.treedata.joined, ladderize=T, layout="rectangular",
-           aes( family="Helvetica"), show.legend=FALSE)+
+p <- ggtree(cvx.tree.phylo.treedata.joined, layout="circular",
+           aes(family="Helvetica"), show.legend=FALSE)+
+  scale_color_manual(values=cols) + 
+  #virus name tip labels
+  geom_tiplab(aes(color=new), align=F, linetype="dotted", 
+               size=3, offset=0) +
+  #host tip labels:
+  geom_tiplab(aes(color=new, label=host, subset = !is.na(host)), align=T, linetype=NA, 
+               size=3, offset=0.4, hjust=0)
+
+ # geom_treescale(x=0.3, y=50,width=0.25, fontsize=4, linesize=1, offset=2, color='black', label='substitutions per site', offset.label=2)
+  #geom_text(aes(label=node), hjust=-.3)
+p
+nodes.tocol <- c(109, 114)
+MRCA(cvx.tree.phylo.treedata.joined, c("LC107517", "KU159093"))
+cp <- ggtree::collapse(p, node=109)
+cp <- ggtree::collapse(cp, node=114)
+cp
+#Save to pdf format if desired
+#filename <- "phylo_formal_tax.pdf"
+#ggsave(filename,width = 50, height = 50, units = "cm")
+heatmapData <- as.data.frame(sapply(host.info.details, as.character))
+rn <- as.data.frame(heatmapData[3])
+rownames(heatmapData) <- rn$Name_updated
+heatmap.colours <- c("white","grey","seagreen3","darkgreen",
+                     "green","red","orange",
+                     "pink","magenta","purple","blue","skyblue3",
+                     "blue","skyblue2")
+gheatmap(cp, heatmapData[c(6,7, 8, 12, 10,11)], colnames_angle=90, colnames_offset_y = -2, 
+         hjust=0.3, offset=1.3, width=0.5)
+ggsave("tree_circular_collapsed.pdf",width = 50, height = 50, units = "cm")
+
+
+########RECTANGULAR tree visualization:####
+par(mar = c(0, 0, 0, 0))
+p <- ggtree(cvx.tree.phylo.treedata.joined.dropped, ladderize=T, layout="rectangular",
+            aes( family="Helvetica"), show.legend=FALSE)+
   #geom_tippoint(aes(color=new), size=1) + 
   scale_color_manual(values=cols) + 
   #virus name tip labels
-  geom_tiplab2(aes(), align=F, linetype="dotted", 
-               size=3, offset=0.1, hjust=0.2) +
+  geom_tiplab(aes(color=new), align=F, linetype="dotted", 
+              size=3, offset=0.1, hjust=0.2) +
   #host tip labels:
-  geom_tiplab2(aes( label=host, subset = !is.na(host)), align=T, linetype=NA, 
-               size=4, offset=0.4, hjust=0)+
+  geom_tiplab(aes(color=new, label=host, subset = !is.na(host)), align=T, linetype=NA, 
+              size=4, offset=0.4, hjust=0)+
   geom_treescale(x=0.3, y=50,width=0.25, fontsize=4, linesize=1, offset=2, color='black', label='substitutions per site', offset.label=2)
-  #geom_text(aes(label=node), hjust=-.3)
+#geom_text(aes(label=node), hjust=-.3)
 p
-to.drop <- c()
-p2 <-drop.tip(p, to.drop)
-p2
 #Save to pdf format if desired
 #filename <- "phylo_formal_tax.pdf"
 #ggsave(filename,width = 50, height = 50, units = "cm")
@@ -34,9 +66,9 @@ heatmap.colours <- c("white","grey","seagreen3","darkgreen",
                      "blue","skyblue2")
 gheatmap(p, heatmapData[c(6,7, 8, 12, 10,11)], colnames_angle=90, colnames_offset_y = 1, 
          hjust=0.3, offset=1.3, width=0.2)
-ggsave("tree_rect_black_collapsed.pdf",width = 50, height = 50, units = "cm")
+ggsave("tree_rect_dropped.pdf",width = 50, height = 50, units = "cm")
 
-#############batch creation code begins below
+#############batch creation code begins below####
 #Load metadata if needed, handy function to be used within larger function
 reload.metadata <- function(){
   host.info.details <<- read.csv(host.info.loc, stringsAsFactors = FALSE)
