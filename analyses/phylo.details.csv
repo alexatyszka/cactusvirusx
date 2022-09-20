@@ -1,16 +1,7 @@
 ,Name,Name_updated,host,formal_tax,ftax_number,bPTP,mPTP,new,rdrp_species,cp_species,bk
-32,Schlumbergera_truncata_15H-03_pol_S48_potexvirus_-_NC_002815_consensus_sequence,15H-03_pol_S48,Schlumbergera truncata,,,7,7,yes,,,NA
 105,,15H03_cons,Schlumbergera truncata,,,7,7,yes,5,5,NA
 107,,15H04_cons,Schlumbergera truncata,,,7,7,yes,5,5,NA
 108,,15H06_cons,Schlumbergera truncata,,,7,7,yes,5,5,NA
-33,Schlumbergera_truncata__15H3__s_S50_potexvirus_-_NC_002815_consensus_sequence,15H3_s_S50,Schlumbergera truncata,,,7,7,yes,,,NA
-34,Schlumbergera_truncata_15H3_sty_S73_potexvirus_-_NC_002815_consensus_sequence,15H3_sty_S73,Schlumbergera truncata,,,7,7,yes,,,NA
-35,Schlumbergera_truncata__15H4P__p_S51_potexvirus_-_NC_002815_consensus_sequence,15H4P_p_S51,Schlumbergera truncata,,,7,7,yes,,,NA
-36,Schlumbergera_truncata__15H4PET__petal_S52_potexvirus_-_NC_002815_consensus_sequence,15H4PET_petal_S52,Schlumbergera truncata,,,7,7,yes,,,NA
-37,Schlumbergera_truncata__15H4S__s_S53_potexvirus_-_NC_002815_consensus_sequence,15H4S_s_S53,Schlumbergera truncata,,,7,7,yes,,,NA
-38,Schlumbergera_truncata__15H5P__p_S54_potexvirus_-_NC_002815_consensus_sequence,15H5P_p_S54,Schlumbergera truncata,,,7,7,yes,,,NA
-39,Schlumbergera_truncata__15H6P__p_S56_potexvirus_-_NC_002815_consensus_sequence,15H6P_p_S56,Schlumbergera truncata,,,7,7,yes,,,NA
-40,Schlumbergera_truncata__15H6S__s_S57_potexvirus_-_NC_002815_consensus_sequence,15H6S_s_S57,Schlumbergera truncata,,,7,7,yes,,,NA
 106,,19JSF_sty,Schlumbergera truncata,,,7,7,yes,5,5,NA
 8,AF308158,AF308158,Selenicereus undatus,Cactus virus X,7,7,7,no,5,5,NA
 30,AY366207,AY366207,Schlumbergera bridgesii,Schlumbergera virus X,2,2,2,no,2,2,NA
@@ -49,7 +40,6 @@
 7,MF978248,MF978248,Vasconcellea x heilbornii,,,,,no,,,NA
 17,MG210801.1',MG210801,Crassostrea gigas,,3,3,3,no,3,2,NA
 6,MH423501,MH423501,Epiphyllum sp. cv. Dragon Heart,,,,,no,,,NA
-41,Schlumbergera_SF19-1_sty_S45_potexvirus_-_NC_002815_consensus_sequence,SF19-1_sty_S45,Schlumbergera sp.,,,7,7,yes,,,NA
 42,Hylocereus_undatus_176265_SRR11190791_potexvirus_-_NC_002815_consensus_sequence,SRR11190791A,Selenicereus undatus,,,7,7,yes,5,5,NA
 43,Hylocereus_undatus_176265_SRR11190791_potexvirus_-_NC_024458_consensus_sequence,SRR11190791B,Selenicereus undatus,,,3,3,yes,3,2,NA
 44,Hylocereus_undatus_176265_SRR11190792_potexvirus_-_NC_002815_consensus_sequence,SRR11190792A,Selenicereus undatus,,,7,7,yes,5,5,NA

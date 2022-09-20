@@ -4,7 +4,7 @@ author: "Boris Igic"
 date: "5/27/2021"
 output: html_document
 ---
-
+Note:rerun by AT on 6/13/22
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
@@ -34,12 +34,16 @@ TGB3 & CP reading frames are overlapping, so the analyses here include a replica
 ### Import and Prepare Data
 
 ```{r data-prep}
-RdRp<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/RdRp_60961fdc238adf71a515f4a8/datamonkey-table.csv")
-TGB1<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/TGB1_6096ed5d238adf71a5160d3b/datamonkey-table.csv")
-TGB2<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/TGB2_6096f188238adf71a5160e3e/datamonkey-table.csv")
-TGB3<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/TGB3_6096f1c9238adf71a5160e9e/datamonkey-table.csv")
-CP<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/CP_6096240f238adf71a515f5a1/datamonkey-table.csv")
-
+# RdRp<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/RdRp_60961fdc238adf71a515f4a8/datamonkey-table.csv")
+# TGB1<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/TGB1_6096ed5d238adf71a5160d3b/datamonkey-table.csv")
+# TGB2<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/TGB2_6096f188238adf71a5160e3e/datamonkey-table.csv")
+# TGB3<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/TGB3_6096f1c9238adf71a5160e9e/datamonkey-table.csv")
+# CP<-read.csv("/Users/boris/Dropbox/PROJECTS/Alexa/cactusvirusx/analyses/CVX-selection/FUBAR/CP_6096240f238adf71a515f5a1/datamonkey-table.csv")
+RdRp<-read.csv("RdRp_60961fdc238adf71a515f4a8/datamonkey-table.csv")
+TGB1<-read.csv("TGB1_6096ed5d238adf71a5160d3b/datamonkey-table.csv")
+TGB2<-read.csv("TGB2_6096f188238adf71a5160e3e/datamonkey-table.csv")
+TGB3<-read.csv("TGB3_6096f1c9238adf71a5160e9e/datamonkey-table.csv")
+CP<-read.csv("CP_6096240f238adf71a515f5a1/datamonkey-table.csv")
 # The names()
 # 
 # "Site"
@@ -98,9 +102,16 @@ ggplot(allsites, aes(totSite,zoo::rollmean(beta/alpha, 10, na.pad=T))) +
   geom_segment(aes(x = sum(dim(RdRp)[1],dim(TGB1)[1],dim(TGB2)[1]), y = -0.2, xend = sum(dim(RdRp)[1],dim(TGB1)[1],dim(TGB2)[1],dim(TGB3)[1]), yend = -0.2), color = "grey") +
   # CP
   geom_segment(aes(x = sum(dim(RdRp)[1],dim(TGB1)[1],dim(TGB2)[1],dim(TGB3)[1]), y = -0.1, xend = sum(dim(RdRp)[1],dim(TGB1)[1],dim(TGB2)[1],dim(TGB3)[1],dim(CP)[1]), yend = -0.1), color = "grey") +
+  #15kd protein average start and end calculated based on geneious annotations
+  geom_segment(aes(x = 471.3, y = -0.2, xend = 605, yend = -0.2), color = "grey") +
+  #8kd protein
+    geom_segment(aes(x = 974.47, y = -0.2, xend = 1047, yend = -0.2), color = "grey") +
+   ##extra ORFS here:
+   # geom_segment(aes(x = START_SITE, y = -0.1, xend = END_SITE, yend = -0.1), color = "grey") +
+  
   theme_light() + 
   labs( x = "Site", y = "dN/dS")
-
+ggsave(filename = "selectionplot.pdf", width = 10, height = 5)
 
 # BY EACH GENE sliding window dN/dS
 

@@ -14,10 +14,10 @@ p <- ggtree(cvx.tree.phylo.treedata.joined, layout="circular",
                size=3, offset=0) +
   #host tip labels:
   geom_tiplab(aes(color=new, label=host, subset = !is.na(host)), align=T, linetype=NA, 
-               size=3, offset=0.4, hjust=0)
+               size=3, offset=0.4, hjust=0)+
 
  # geom_treescale(x=0.3, y=50,width=0.25, fontsize=4, linesize=1, offset=2, color='black', label='substitutions per site', offset.label=2)
-  #geom_text(aes(label=node), hjust=-.3)
+  geom_text2(aes(label=UFboot),size = 1, hjust=0.5)
 p
 nodes.tocol <- c(109, 114)
 MRCA(cvx.tree.phylo.treedata.joined, c("LC107517", "KU159093"))
@@ -36,7 +36,7 @@ heatmap.colours <- c("white","grey","seagreen3","darkgreen",
                      "blue","skyblue2")
 gheatmap(cp, heatmapData[c(6,7, 8, 12, 10,11)], colnames_angle=90, colnames_offset_y = -2, 
          hjust=0.3, offset=1.3, width=0.5)
-ggsave("tree_circular_collapsed.pdf",width = 50, height = 50, units = "cm")
+ggsave("tree_circular_collapsed_nodes.pdf",width = 50, height = 50, units = "cm")
 
 
 ########RECTANGULAR tree visualization:####

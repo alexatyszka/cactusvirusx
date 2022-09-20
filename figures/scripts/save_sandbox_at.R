@@ -9,7 +9,6 @@ library(DECIPHER)
 library(phytools)
 library(ape)
 library(ggplot2)
-library(ggtreeExtra)
 to.drop <- c("KU159093", "LC155795", "AY800279",
              "KU697313", "KT717325",
              "FJ822136", "GQ179646", "GQ179647",
