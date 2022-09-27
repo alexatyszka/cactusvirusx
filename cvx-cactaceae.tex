@@ -6,6 +6,7 @@
 \usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{subfloat}
+\usepackage{comment}
 \hypersetup{
    pdftitle={CVX},
    pdfauthor={Alexa Tyszka, Karolis Ramanauskas, Boris Igi{\'c}}
@@ -85,7 +86,7 @@ Key results:
 %--------------------------------------------------
 \section*{Introduction}
 %--------------------------------------------------
-
+\begin{comment}
 Molisch's (1885) \nocite{molisch1885} discovery of ``protein bodies'' on several species of cacti was one of the first documented descriptions of viruses.
 For nearly a century, subsequent comparative study of viruses remained limited to direct observational data of gross morphology, augmented with clever experimental approaches, such as filtration and inoculation \citep{mettenleiter2017}.
 A transformative advancement in virology---and all of biology---has been the advent of massively parallel DNA and RNA sequencing. 
@@ -140,39 +141,27 @@ The pursuit of wild cactus-infecting \textit{Potexviruses} expands our evolution
 The relationships of the virus can be investigated with a thorough phylogenetic approach, using available virus samples. 
 In this study we present the largest to date phylogeny of cactus-infecting \textit{Potexviruses}.
 We attempt to use this expanded phylogeny to answer relevant questions about Potexvirus evolutionary relationships and revisit the utility of decades-old taxonomy in current virus research. 
-
+\end{comment}
 
 % METHODS ====================================================================
+%FIXME: main issues:
+%FIXME: next actionable steps
 %------------------------------------------------------------------------------
 \section*{Materials and Methods}
 %------------------------------------------------------------------------------
 
-\subsection*{Host Study Species}
+\subsection*{Host Study Species and Sampling}
 
 We relied on two types of sequencing data for all analyses: original sequences obtained from tissues we collected and sequences deposited in public sequence data archives. 
 We recovered original viral sequence data from tissues of \textit{Schlumbergera truncata} (Haworth) Moran, commonly known as ``crab cactus'' or ``false Christmas cactus,'' a widely cultivated species.
 Although there are dozens of named varieties of this species, nearly all commercially grown plants are of uncertain provenance. 
 They almost certainly trace to a handful of plants collected in their native Atlantic forests of Brazil and brought to England in the early 1800s \citep{boyle2003}. 
 Plants are easily grown from cuttings and the species has been extensively hybridized across Western Europe and exported across the world, prized for their showy winter (short-day) displays.
+
 Our host plant samples were sourced from a haphazardly collected personal collection (B.I.), purchased or found abandoned around the city of Chicago. 
 Most of the plants were either apparently asymptomatic or weakly symptomatic at the time of tissue collection.
 All of our accessioned host plants are independent genets (unique genotypes) \citep{ramanauskas2021}.
 %refer to (supplementary?) table 1 with accessions and sequencing 
-
-\subsection*{RNA Sequencing}
-
-Pistils (without ovaries), pollen, leaf, and root tissues were removed and submerged in 1.5 ml of $RNA\textit{later}{\texttrademark}$ solution (Invitrogen).
-Samples were held at room temperature for 30-60 minutes and then moved to a -80 C freezer for storage.
-Approximately 100 mg of tissue was ground to a fine powder in 1.5 ml tubes submerged in liquid nitrogen.
-Total RNA was isolated using Total RNA Mini Kit (Plant kit; IBI Scientific, Cat. No. IB47341) following manufacturer's instructions.
-We assessed RNA concentration and purity with a NanoDrop\texttrademark~Lite Spectrophotometer (Thermo Scientific).
-%FIXME: time to get rid of XXX everywhere.
-The XXX samples used in this study were sequenced as part of a larger sequencing effort which consisted of XXX separate sequencing runs and included additional samples from other plant species. %FIXME: remove x
-Sequencing libraries were prepared using the KAPA Stranded mRNA-Seq (Roche)
-These libraries were sequenced on a single lane of Illumina \mbox{HiSeq}~4000 or Illumina \mbox{NovaSeq}~6000 platform (paired-end 150 bp reads) at the Duke University Center for Genomic and Computational Biology.
-The number of resulting read pairs (for the XX samples presented here) ranged from X,XXX,XXX to X,XXX,XXX with a median of X,XXX,XXX and average of X,XXX,XXX (Table~S1).%FIXME: remove x
-
-\subsubsection*{RNAseq from deposited sequence read archives}
 
 We searched the NCBI Sequence Read Archive (SRA) database (www.ncbi.nlm.nih.gov/sra) for RNA-sequencing (RNA-seq) data within the flowering plant order Caryophyllales (NCBI:txid3524) that had been sequenced using an Illumina library sequencing platform. 
 For each identified SRA run accession (SRR), viral RNA that matched sample cactus-infecting Potexvirus RNA (accession numbers provided in Supplemental Information ) was identified, extracted, and assembled using the kakapo 0.7.3-dev pipeline (http://flightless.one) with Kraken2 viral filters disabled. 
@@ -181,17 +170,37 @@ The search returned 59 sequences aligned to members of Potexvirus within PRJNA60
 Additional publicly available partial or complete viral genomes, gene annotations, and available metadata from Potexviruses (NCBI:txid12176) were downloaded from NCBI (NCBI: www.ncbi.nlm.nih.gov/, accession numbers provided in Supplemental Information).
 We obtained host information through NCBI reported metadata.
 
+\subsection*{RNA Sequencing}
+
+Pistils (without ovaries), pollen, leaf, and root tissues were removed and submerged in 1.5 ml of $RNA\textit{later}{\texttrademark}$ solution (Invitrogen).
+Samples were held at room temperature for 30-60 minutes and then moved to a -80\textdegree C freezer for storage.
+Approximately 100 mg of tissue was ground to a fine powder in 1.5 ml tubes submerged in liquid nitrogen.
+Total RNA was isolated using Total RNA Mini Kit (Plant kit; IBI Scientific, Cat. No. IB47341) following manufacturer's instructions.
+We assessed RNA concentration and purity with a NanoDrop\texttrademark~Lite Spectrophotometer (Thermo Scientific).
+The samples were sequenced
+The twenty three samples used in this study were sequenced as part of a larger sequencing effort which consisted of four total separate sequencing runs and included additional samples from other plant species. 
+
+
+Sequencing libraries were prepared using the KAPA Stranded mRNA-Seq (Roche)
+These libraries were sequenced on a single lane of Illumina \mbox{HiSeq}~4000 or Illumina \mbox{NovaSeq}~6000 platform (paired-end 150 bp reads) at the Duke University Center for Genomic and Computational Biology.
+The number of resulting read pairs (for the twenty-three samples presented here) ranged from 4,148,932 to 9,618,084 with a median of 6,363,556 and average of 6,293,553 (Table~S1).
+%%FIXME AT, note: this is all taken from rsi-ms, and the phrasing may need to be adjusted. I do not want to repeat word-for-word but there are only a few ways to describe the process...
+
 \subsection*{RNAseq Assemblies}
 
 Raw paired-end Illumina reads were first processed using \mbox{Rcorrector}~v1.0.4 \citep{song2015} to infer and correct sequencing errors.
 Reads were next trimmed with \mbox{Trimmomatic}~v0.39 \citep{bolger2014} to remove any read containing bases with Phred scores lower than 20, low quality reads less than 50 bp long, and any adapter or other Illumina-specific sequences that were still present.
 The remaining reads were filtered with \mbox{Kraken}~2 \citep{wood2019} to remove small and large subunit ribosomal RNA (using the SILVA database; \citealt{quast2013}) and contaminating reads (minikraken2\_v2 database).
 We used custom-built databases, derived from RefSeq libraries: UniVec\_Core, viral, mitochondrion, plastid, plasmid, archaea, bacteria, protozoa, human, and fungi to minimize the number of contaminating and non-nuclear reads \citep{ramanauskas2021}.
-Only paired reads were used for transcriptome assemblies.
-\textit{Schlumbergera truncata} filtered reads were combined across all samples into a single RNA-seq data set.
-We conducted a \textit{de novo} transcriptome assembly using \mbox{Trinity}~v2.8.5 \citep{grabherr2011} 
-to generate a single reference transcriptome assembly for \textit{Schlumbergera truncata}.
+\textit{Schlumbergera truncata} filtered reads were combined across all samples into a single RNA-seq data set including \textit{S. truncata} and \textit{CVX} RNA.
 
+
+We conducted a \textit{de novo} transcriptome assembly 
+%FIXME: KR, which assembly did we use for the viruses?
+to assemble \textit{S. truncata} and GenBank accessed RNA-seq data to reference genome XXXX (Table~S2).
+
+%FIXME: table s2 should describe the coverage that we obtained from the assembly
+\begin{comment}
 \subsection*{Sequence Alignment and Phylogenetic Analyses}
 The untranslated regions (UTRs) were trimmed from the sequences for consistency.
 Sequence alignments were performed through MAFFT v7.429 \citep{katoh_mafft_2002} using the full dataset.
@@ -230,10 +239,11 @@ This article contains a Supplementary Information Appendix. %What's in it?
 All new sequence data is deposited in GenBank under project accession number PRJNXXXXX (https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNXXXXX). %Not all? specifically, it's the schlumbergera data, right? Which ones?
 %at: should the data be deposited with any reference to CVX, or is just referring to the schlumbergera data SRAs okay in this case?
 
-
+\end{comment}
 %------------------------------------------------------------------------------
 \section*{Results}
 %------------------------------------------------------------------------------
+\begin{comment}
 \subsection*{Viral Identification}
 In an attempt to characterize the infection patterns of cactus-infecting potexviruses, we assembled 69 viral sequences from the XXX total cactus samples analyzed (Table 1).
 %FIXME: noauthor?
@@ -266,10 +276,11 @@ Host information, collected from available metadata, shows several different hos
 \subsection*{Recombination Analysis and Selection Analysis}
 The gene trees recovered for the five major \textit{Potexvirus} proteins (\textit{CP, RdRp, TGB1, TGB2, \textit{and}TGB3}) retained the species groupings shown by the full genome tree, which indicates low levels of gene conflict (Figure 1S).
 
-
+\end{comment}
 %------------------------------------------------------------------------------
 \section*{Discussion}
 %------------------------------------------------------------------------------
+\begin{comment}
 Cactus-infecting potexviruses present an evolutionary puzzle as well as an agricultural threat. 
 In this study we use a multiple-source transcriptomic approach to address the questions of \textit{Potexvirus} host specificity and evolution. 
 We present another use for the \textit{kakapo} program: effective, fast search and assembly of small viral genomes rather than individual genes. 
@@ -317,13 +328,16 @@ The ICTV guidelines for \textit{Potexviruses} indicate that less than 72 percent
 Because we compare closely related \textit{Potexviruses}, it might be expected that members of the same putative species would have higher than 72 percent nucleotide identity and members of different putative species would have lower than 72 percent sequence identity.
 However, the low pairwise distances between \textit{Potexviruses} cause very few cactus-infecting \textit{Potexviruses} to be demarcated as separate species, even when only considering previously described species compared to each other.
 Examples here.
+\end{comment}
 
 \section*{Conclusions}
+\begin{comment}
 X new viruses were included as part of this study, which represents a multifaceted approach to viral discovery using metagenomic techniques for already available public data as well as newly collected data.
 Mixed infections, co-infection dynamics.
 Viral abundance, viral loads, tissue type, and diversity.
 Transmission: Sexual
 Taxonomic recommendations - the current species names should not be used in the future.
+\end{comment}
 %------------------------------------------------------------------------------
 \section*{Acknowledgments}
 %------------------------------------------------------------------------------
@@ -350,22 +364,25 @@ This work was supported by the Award for Graduate Research from the Graduate Col
 %--------------------------------------------------
 % Figures
 %--------------------------------------------------
-
+\begin{comment}
 \pagebreak
 \frenchspacing
 %\setstretch{1.0}
 \setlength{\parindent}{0.0in}
 
 \section*{Figures}
+Figure inventory:
+\begin{itemize}
+\item Figure 2. Selection graph as displayed in B's r code
 
+\item Figure 3. (maybe supplemental) density of cp, rdrp, distributions density by virus ptp
+\end{itemize}
 \begin{subfigures}
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1\linewidth]{figures/tree_rect_new_collapsed.pdf}
+\includegraphics[width=1\linewidth]{figures/tree_circular_collapsed.pdf}
  \begin{NoHyper}
- \caption{\label{first}An updated cactus-infecting \textit{potexvirus} phylogeny reflects distinct viral groupings which opportunistically and often asymptomatically infect host plants. Relationships were inferred with a Maximum-Likelihood phylogenetic tree assembled from 94 virus sequences  representing all previously published full and partial cactus-infecting \textit{potexvirus} sequences in addition to sequences assembled by this study. Branch tips are labelled with International Nucleotide Sequence Database Collaboration (INSDC) accessions or sample unique identifiers and also labelled with the corresponding host plant. The 
- 
- were aligned with MAFFT and a phylogeny was generated with IQtree. All major (clade-delimiting) nodes have greater than 95 percent bootstrap support.}
+ \caption{\label{first}An updated cactus-infecting \textit{potexvirus} phylogeny reflects distinct viral groupings which opportunistically and often asymptomatically infect host plants. Relationships were inferred with a Maximum-Likelihood phylogenetic tree assembled from 94 virus sequences  representing all previously published full and partial cactus-infecting \textit{potexvirus} sequences in addition to sequences assembled by this study. Branch tips are labelled with International Nucleotide Sequence Database Collaboration (INSDC) accessions or sample unique identifiers and also labelled with the corresponding host plant.}
  \label{fig1}
  \end{NoHyper}
  \end{figure}
@@ -383,7 +400,7 @@ This work was supported by the Award for Graduate Research from the Graduate Col
  
   \begin{figure}[ht]
 \centering
-\includegraphics[width=1\linewidth]{figures/tree_rect_new_collapsed.pdf}
+\includegraphics[width=1\linewidth]{figures/tree_circular_collapsed.pdf}
  \begin{NoHyper}
  \caption{\label{third} Figure 1c refers to the side columns with labels.}
  \label{fig1c}
@@ -392,14 +409,16 @@ This work was supported by the Award for Graduate Research from the Graduate Col
 \end{subfigures}
 
 
-Figure 2. Selection graph as displayed in B's r code
 
-Figure 3. (maybe supplemental) density of cp, rdrp, distributions density by virus ptp
 
 \section*{Tables}
-Table 1. Assembly stats. our taxa, SRAs, assembly stats for positive finds, including unique ID and sample names, including length
+\begin{itemize}
+\item Table 1. Assembly stats. our taxa, SRAs, assembly stats for positive finds, including unique ID and sample names, including length
 
-Table 2. Points under positive selection, how many in each gene
+\item Table 2. Points under positive selection, how many in each gene
+\end{itemize}
+\end{comment}
+
 
 Supplementary Table 1. All searches, cleaned SraRunInfo.csv plus KR's schlumbergera searches
 

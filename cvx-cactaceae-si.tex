@@ -1,0 +1,109 @@
+% -*- program: pdflatex -*-
+
+\documentclass[11pt]{article}
+\usepackage{evolution}
+\usepackage[section]{placeins}
+
+\begin{document}
+
+\begin{center}
+	\includegraphics[width=0.4\textwidth]{newphyt/new-phytologist-si-logo.jpg}
+\end{center}
+
+\section*{New Phytologist Supporting Information: Figures S1-S5 and Tables S1-S4}
+\bigskip
+\textsc{Article title}: \textbf{\em RNase-based Self-incompatibility in Cacti}\\
+\textsc{Authors}: \textbf{\em Karolis Ramanauskas \& Boris Igi{\'c}}\\
+\textsc{Article acceptance date}:  \textbf{\em28 May 2021}.
+
+\clearpage
+
+%
+% FIGURES
+%
+%Fig S1: Gene tree of T2/S-RNases
+\begin{suppfigure}
+\centering
+\caption{Gene tree of T2/S-RNase gene family.
+The phylogenetic relationships were inferred from a representative sample of three described ``classes'' of eudicot T2/S-type RNases (see Ramanauskas \& Igi{\'c} 2017).
+Tip labels list species binomials, gene names (if given), and GenBank accession IDs.
+Circles placed in each node show percentage bootstrap support for subtending branches, out of 1000 resampling runs.
+White nodes receive bootstrap values $<50$\%, green nodes $\geq50$\%.
+The RAxML reported log-likelihood score was $-56941.297900$ (v8.2.12, model \texttt{-m GTRGAMMA}).
+S-RNase sequences from the families with RNase-based SI are colored and marked.
+The scale shown illustrates the vast divergences, in units of nucleotide substitutions per site.
+Many pairwise distances within each class exceed one substitution per site, and many distances between classes exceed two substitutions per site, limiting precision of inference.
+Nevertheless, with the exception of presumed non-functional or neofunctionalized paralogs (in black), S-RNases form a monophyletic group within Class III T2/S-type RNases.
+}
+\includegraphics[width=0.404\textwidth]{figures/tr_rns_ve}
+\label{fig:rnase-tree}
+\end{suppfigure}
+\clearpage
+
+
+%
+% TABLES
+%
+
+\begin{supptable}[ht]
+\centering
+\caption{RNA-seq and assembly summary statistics.
+The length of all reads before trimming was 150 bp.
+Column labelled \textsuperscript{*}filt. lists numbers of read pairs and average qualities after filtering step.} %FIXME: missing most of the caption.
+% To browse your data, use SRA RunSelector:
+% https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA705387
+% To see your summary list view (availability at this link subject to 24 hour delay):
+% https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA705387
+\label{tab:suppSeqAsmbStats}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{l|cc|cc|cc|cc|cc|c}
+\toprule
+\multicolumn{1}{c|}{} &
+\multicolumn{2}{c|}{Read~pairs} &
+\multicolumn{2}{c|}{Avg.~read~len.~trimmed} &
+\multicolumn{2}{c|}{Avg.~qual.} &
+\multicolumn{2}{c|}{Avg.~qual.~\textsuperscript{*}filt.} &
+\multicolumn{2}{c|}{Assembly} &
+\multicolumn{1}{c}{} \\
+\multicolumn{1}{c|}{Sample} & Raw & \textsuperscript{*}filt. & F & R & F & R & F & R & Isoforms & Genes & SRR \\
+\midrule
+\textit{Schlumbergera truncata} 15H01 pol   & 4,841,466 & 3,353,072 & 149 & 147 & 35.8 & 34.8 & 36.2 & 35.8 & 43,294 & 27,125 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805650}{SRR13805650} \\
+\textit{Schlumbergera truncata} 15H01 sty   & 6,769,308 & 4,628,401 & 148 & 139 & 38.8 & 35.9 & 39.9 & 38.8 & 73,047 & 42,717 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805653}{SRR13805653} \\
+\textit{Schlumbergera truncata} 15H02 pol   & 4,888,079 & 3,353,774 & 149 & 147 & 35.8 & 35.0 & 36.2 & 35.8 & 48,134 & 30,138 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805649}{SRR13805649} \\
+\textit{Schlumbergera truncata} 15H02 sty   & 6,173,982 & 4,263,304 & 147 & 139 & 38.8 & 36.3 & 39.8 & 38.8 & 56,416 & 32,918 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805652}{SRR13805652} \\
+\textit{Schlumbergera truncata} 15H03 pol   & 6,983,951 & 4,858,975 & 149 & 147 & 35.8 & 35.1 & 36.2 & 35.9 & 53,675 & 32,640 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805648}{SRR13805648} \\
+\textit{Schlumbergera truncata} 15H03 sty 1 & 9,183,100 & 5,450,149 & 147 & 139 & 38.4 & 35.9 & 39.6 & 38.6 & 59,668 & 34,275 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805641}{SRR13805641} \\
+\textit{Schlumbergera truncata} 15H03 sty 2 & 7,147,068 & 4,815,235 & 148 & 139 & 38.7 & 36.1 & 39.8 & 38.7 & 48,708 & 28,407 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805637}{SRR13805637} \\
+\textit{Schlumbergera truncata} 15H04 pol   & 8,392,597 & 5,497,308 & 148 & 138 & 38.8 & 35.8 & 39.8 & 38.6 & 58,662 & 35,689 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805647}{SRR13805647} \\
+\textit{Schlumbergera truncata} 15H04 sty   & 5,240,352 & 3,446,465 & 147 & 140 & 38.6 & 36.4 & 39.8 & 38.8 & 54,120 & 31,872 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805636}{SRR13805636} \\
+\textit{Schlumbergera truncata} 15H05 pol   & 6,347,070 & 4,365,031 & 148 & 139 & 38.8 & 35.9 & 39.8 & 38.8 & 46,638 & 28,580 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805646}{SRR13805646} \\
+\textit{Schlumbergera truncata} 15H05 sty 1 & 9,618,084 & 6,479,817 & 146 & 139 & 38.2 & 35.9 & 39.6 & 38.8 & 71,031 & 41,443 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805635}{SRR13805635} \\
+\textit{Schlumbergera truncata} 15H05 sty 2 & 5,043,649 & 3,051,699 & 147 & 141 & 38.7 & 36.8 & 39.9 & 39.0 & 59,857 & 36,264 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805634}{SRR13805634} \\
+\textit{Schlumbergera truncata} 15H06 pol   & 6,850,087 & 4,360,475 & 148 & 141 & 38.9 & 36.5 & 39.7 & 38.8 & 27,729 & 18,571 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805645}{SRR13805645} \\
+\textit{Schlumbergera truncata} 15H06 sty   & 6,632,382 & 4,203,598 & 148 & 139 & 38.8 & 36.1 & 39.7 & 38.6 & 24,392 & 16,949 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805633}{SRR13805633} \\
+\textit{Schlumbergera truncata} 15H07 pol   & 4,513,581 & 2,988,451 & 148 & 147 & 35.7 & 35.0 & 36.2 & 35.9 & 46,908 & 29,464 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805644}{SRR13805644} \\
+\textit{Schlumbergera truncata} 15H07 sty   & 6,411,850 & 4,200,344 & 148 & 139 & 38.9 & 35.9 & 39.9 & 38.6 & 68,107 & 39,657 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805632}{SRR13805632} \\
+\textit{Schlumbergera truncata} 15H08 pol   & 5,106,699 & 3,863,997 & 149 & 147 & 35.8 & 35.1 & 36.2 & 35.8 & 36,739 & 23,618 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805643}{SRR13805643} \\
+\textit{Schlumbergera truncata} 15H08 sty   & 4,521,102 & 2,741,695 & 148 & 146 & 35.7 & 34.8 & 36.2 & 35.8 & 47,754 & 29,812 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805631}{SRR13805631} \\
+\textit{Schlumbergera truncata} 15H09 pol   & 4,645,325 & 2,575,494 & 148 & 147 & 35.7 & 35.0 & 36.2 & 35.8 & 42,245 & 27,650 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805642}{SRR13805642} \\
+\textit{Schlumbergera truncata} 15H09 root  & 6,653,640 & 3,261,445 & 149 & 148 & 35.7 & 34.4 & 36.4 & 36.2 & 68,427 & 48,463 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805640}{SRR13805640} \\
+\textit{Schlumbergera truncata} 15H09 stem  & 8,275,870 & 5,731,805 & 149 & 149 & 35.8 & 35.2 & 36.4 & 36.2 & 79,859 & 51,788 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805639}{SRR13805639} \\
+\textit{Schlumbergera truncata} 15H09 sty   & 6,363,556 & 4,525,356 & 147 & 138 & 38.8 & 35.8 & 39.8 & 38.7 & 62,991 & 36,275 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805651}{SRR13805651} \\
+\textit{Matucana madisoniorum} HBG13 sty    & 4,148,932 & 2,396,890 & 145 & 140 & 38.1 & 36.4 & 39.5 & 38.9 & 41,968 & 33,810 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805638}{SRR13805638} \\
+\bottomrule
+\end{tabular}}
+\end{supptable}
+\clearpage
+\bigskip
+
+\clearpage
+
+\section*{References}
+
+\textbf{Ramanauskas~K}, \textbf{Igi{\'c}~B}.
+\newblock \textbf{2017}.
+\newblock {The evolutionary history of plant T2/S-type ribonucleases}.
+\newblock \emph{PeerJ} \textbf{5}: e3790.
+\end{supptable}
+
+\end{document}
