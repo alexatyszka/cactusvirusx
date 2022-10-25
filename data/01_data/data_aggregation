@@ -1,0 +1,3 @@
+"genbank.*" files include genbank accessed CVX and CVX related virus samples.
+"srr.*" files include hylocereus SRR files from https://www.ncbi.nlm.nih.gov/bioproject/PRJNA608981 as well as our sequenced Schlumbergera assemblies.
+"srr_filtered.**" includes ONLY our sequenced Schlumbergera 
