@@ -1,0 +1,97 @@
+# Most supported partition found by simple heuristic search
+Species 1 (support = 1.000)
+     CYMRNA
+
+Species 2 (support = 1.000)
+     LC107517
+
+Species 3 (support = 0.814)
+     AY366209,KU854931,KY348771
+
+Species 4 (support = 1.000)
+     KX196173
+
+Species 5 (support = 1.000)
+     MF978248
+
+Species 6 (support = 1.000)
+     JX524226
+
+Species 7 (support = 0.992)
+     JF930327,Hylocereus_polyrhizus_SRR11190801__NC_024458,Hylocereus_polyrhizus_SRR11190795__NC_024458,Hylocereus_polyrhizus_SRR11190798__NC_024458,Hylocereus_polyrhizus_SRR11190802__NC_024458,Hylocereus_undatus_SRR11603182__NC_024458,Hylocereus_undatus_SRR11603183__NC_024458,Hylocereus_undatus_SRR11603184__NC_024458,Hylocereus_polyrhizus_SRR11190796__NC_024458,Hylocereus_polyrhizus_SRR11190797__NC_024458,Hylocereus_undatus_SRR11190792__NC_024458,Hylocereus_undatus_SRR11190793__NC_024458,Hylocereus_undatus_SRR11603186__NC_024458,Hylocereus_undatus_SRR11603190__NC_024458,Hylocereus_undatus_SRR11603187__NC_024458,Hylocereus_undatus_SRR11603189__NC_024458,Hylocereus_undatus_SRR11603191__NC_024458,Hylocereus_undatus_SRR11190791__NC_024458,Hylocereus_undatus_SRR11190800__NC_024458,Hylocereus_undatus_SRR11190799__NC_024458,MG210801
+
+Species 8 (support = 1.000)
+     AY800279
+
+Species 9 (support = 1.000)
+     LC155795
+
+Species 10 (support = 0.993)
+     KT717325,KU159093
+
+Species 11 (support = 1.000)
+     KU697313
+
+Species 12 (support = 0.710)
+     AY863024,GQ179646,GQ179647,MH423501,FJ822136
+
+Species 13 (support = 1.000)
+     LC107515
+
+Species 14 (support = 0.990)
+     JF937699,KM288846,KM288847,KX883791
+
+Species 15 (support = 1.000)
+     Schlumbergera_truncata_19JSF_sty__NC_006059
+
+Species 16 (support = 0.980)
+     AY366208,JF930326,KM288842,KM288843,KM288844,Hylocereus_undatus_SRR11603186__NC_006059,Hylocereus_undatus_SRR11603190__NC_006059,Hylocereus_undatus_SRR11603187__NC_006059,Hylocereus_undatus_SRR11603189__NC_006059,Hylocereus_undatus_SRR11603191__NC_006059,Hylocereus_polyrhizus_SRR11190795__NC_006059,Hylocereus_polyrhizus_SRR11190797__NC_006059,Hylocereus_polyrhizus_SRR11190796__NC_006059,Hylocereus_polyrhizus_SRR11190802__NC_006059,Hylocereus_polyrhizus_SRR11190798__NC_006059,Hylocereus_polyrhizus_SRR11190801__NC_006059
+
+Species 17 (support = 1.000)
+     KM288845
+
+Species 18 (support = 1.000)
+     Schlumbergera_truncata_15H02_sty__NC_002815
+
+Species 19 (support = 1.000)
+     Schlumbergera_truncata_15H03_pol__NC_002815
+
+Species 20 (support = 1.000)
+     Schlumbergera_truncata_15H03_sty__NC_002815_a
+
+Species 21 (support = 1.000)
+     Schlumbergera_truncata_15H03_sty__NC_002815_b
+
+Species 22 (support = 1.000)
+     Schlumbergera_truncata_15H03_sty__NC_011659
+
+Species 23 (support = 0.993)
+     Schlumbergera_truncata_15H03_pol__NC_011659,Schlumbergera_truncata_15H04_pet__NC_002815,Schlumbergera_truncata_15H04_pol__NC_002815,Schlumbergera_truncata_15H04_sty__NC_002815,Schlumbergera_truncata_15H04_sty__NC_006059,Schlumbergera_truncata_15H04_pet__NC_006059,Schlumbergera_truncata_15H04_pol__NC_006059,Schlumbergera_truncata_15H06_sty__NC_011659,Schlumbergera_truncata_15H06_pol__NC_002815,Schlumbergera_truncata_15H06_sty__NC_002815,Schlumbergera_truncata_15H06_pol__NC_006059,Schlumbergera_truncata_15H06_sty__NC_006059,Schlumbergera_truncata_15H06_pol__NC_011659,Schlumbergera_truncata_19JSF_sty__NC_002815
+
+Species 24 (support = 0.996)
+     AF308158,Schlumbergera_truncata_15H05_pol__NC_002815,Hylocereus_undatus_SRR11190793__NC_002815,LC128411,Hylocereus_undatus_SRR11603186__NC_002815,Hylocereus_undatus_SRR11603190__NC_002815,Hylocereus_undatus_SRR11603187__NC_002815,Hylocereus_undatus_SRR11603189__NC_002815,Hylocereus_undatus_SRR11603191__NC_002815,KM365479,Hylocereus_polyrhizus_SRR11190798__NC_002815,Hylocereus_polyrhizus_SRR11190801__NC_002815,Hylocereus_undatus_SRR11190791__NC_002815,Hylocereus_undatus_SRR11190800__NC_002815,Hylocereus_undatus_SRR11190799__NC_002815,Hylocereus_undatus_SRR11603182__NC_002815,Hylocereus_undatus_SRR11603184__NC_002815,Hylocereus_polyrhizus_SRR11190795__NC_002815,Hylocereus_undatus_SRR11603183__NC_002815,Hylocereus_polyrhizus_SRR11190796__NC_002815,Hylocereus_polyrhizus_SRR11190797__NC_002815,Hylocereus_undatus_SRR11190792__NC_002815,Hylocereus_polyrhizus_SRR11190802__NC_002815
+
+Species 25 (support = 1.000)
+     KU854929
+
+Species 26 (support = 0.573)
+     AY366207,Hylocereus_polyrhizus_SRR11190798__NC_011659,Hylocereus_polyrhizus_SRR11190801__NC_011659,Hylocereus_undatus_SRR11603183__NC_011659,Hylocereus_undatus_SRR11603184__NC_011659,Hylocereus_undatus_SRR11603187__NC_011659,Hylocereus_undatus_SRR11603189__NC_011659,KP090203
+
+Species 27 (support = 0.709)
+     Hylocereus_polyrhizus_SRR11190802__NC_011659
+
+Species 28 (support = 0.465)
+     Hylocereus_polyrhizus_SRR11190795__NC_011659
+
+Species 29 (support = 0.248)
+     Hylocereus_polyrhizus_SRR11190796__NC_011659,Hylocereus_polyrhizus_SRR11190797__NC_011659
+
+Species 30 (support = 0.687)
+     Schlumbergera_truncata_15H03_sty__NC_006059_b
+
+Species 31 (support = 0.344)
+     Schlumbergera_truncata_15H03_pol__NC_006059
+
+Species 32 (support = 0.344)
+     Schlumbergera_truncata_15H03_sty__NC_006059_a
+

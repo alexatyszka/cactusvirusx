@@ -1,0 +1,308 @@
+---
+title: "Initial file annotations: pairwise distances, renaming"
+author: "A"
+date: "10/13/2021"
+output: html_document
+---
+This document is intended to create and save the files to be used for later.
+This document reflects the methods used to initially process the data.
+Reproducible and more friendly code is found in the figures/scripts directory
+
+
+## This is a one-time package installation to help get libraries likely to be missing at the start.
+
+```{r eval=FALSE}
+knitr::opts_chunk$set(error = TRUE)
+#install needed packages
+install.packages('BiocManager')# This option gave B errors; repos=c('https://cran.rstudio.com'), ask=F)
+BiocManager::install('DECIPHER')
+BiocManager::install("ggtree")
+BiocManager::install("phytools")
+tinytex::install_tinytex()
+install.packages('BiocManager', repos=c('https://cran.rstudio.com'), ask=FALSE)
+BiocManager::install('DECIPHER')
+```
+
+## Loading Libraries
+
+```{r load-libraries, message=FALSE}
+library(ggtree) # tree plotting
+library(DECIPHER)
+library(RCurl) # web page loading
+library(phangorn)
+library(phytools)
+library(ape)
+library("knitr")
+library(DECIPHER)
+library(treeio)
+
+```
+##Initial setup: run every time!
+Fetch tree and metadata:
+```{r}
+cvx.metadata <- read.csv('../data/cvx_hostdata.csv', stringsAsFactors = FALSE)
+cvx.newick.loc  <- "../data/iqtree-output/genbank_kr_consensus_extraction_al_trimmed.fasta.newick"
+cvx.newick.tree <- read.newick(cvx.newick.loc)
+
+```
+
+Load metadata file with correct names - check which columns will be used for names and hosts.
+```{r}
+#reloading metadata file including the names, useful for running during debugging
+reload.metadata <- function(){
+  md <<- read.csv('../data/name_key.csv', stringsAsFactors = FALSE)
+  print("Metadata file loaded")
+}
+reload.metadata()
+#cvx.newick.loc  <- "../data/iqtree-output/genbank_kr_consensus_extraction_al_trimmed.fasta.newick"
+#cvx.newick.tree <- read.newick(cvx.newick.loc)
+#use plot() and then tips.store for identifying nodes and tip numbers if needed:
+#tips.store <- identify(newrerooted, nodes = TRUE, tips = TRUE,labels = TRUE, quiet = FALSE)$tips
+```
+
+##Pairwise data creation
+
+Use plotted tree to select clade for pairwise analysis.
+```{r}
+plot.new()
+nj.gg <- ladderize(nj.gg, right=FALSE)
+plot(nj.gg,cex=0.25)
+tips.store <- identify(nj.gg, nodes = TRUE, tips = TRUE,labels = FALSE, quiet = FALSE)$tips
+#optional tip selection here, otherwise use tip numbers of desired clade
+tips.cross <- c()
+for (i in 1:length(tips.store)){
+  print(nj.gg$tip.label[tips.store[i]])
+  tips.cross[i] <- nj.gg$tip.label[tips.store[i]]
+}
+cross.data <- expand.grid(tip1 = tips.cross, tip2 = tips.cross)
+```
+
+
+##Tree wrangling for initial inquiries
+
+
+Store tips for each available tree. Use tips.store values for clades.
+```{r eval=FALSE}
+search.column <- gsub(" ", "_", md$Organism)
+search.column <- gsub("__", "_", search.column)
+#Note that this only needed to be run once and is now outdated.
+#rename.tips <- function(cladename, tipnames){
+  #tipnames <- gsub("_", " ", tipnames)
+  #tipnames <- gsub(":", "", tipnames)
+#  for(i in 1:length(tipnames)){
+#  md$Clade[grep(tipnames[i],search.column)] <<- cladename
+#  print(md$Clade[grep(tipnames[i],search.column)])
+#  print(tipnames[i])
+#  print(i)
+#  print(grep(tipnames[i],search.column))
+  
+#}
+#}
+#CVX Var A
+#tips.store <- c("SRR11190795_Plant_FR-3_NC_002815", "SRR11603183_GW-peel-2_NC_002815", "SRR11603184_GW-peel-1_NC_002815", "SRR11190801_Plant_DH-2_NC_002815", "SRR11190798_Plant_DH-3_NC_002815", "SRR11190799_Plant_BSJ-3_NC_002815", "SRR11190800_Plant_BSJ-2_NC_002815", "SRR11190791_Plant_BSJ-1_NC_002815", "SRR11603182_GW-peel-3_NC_002815", "SRR11190802_Plant_DH-1_NC_002815", "SRR11190797_Plant_FR-1_NC_002815", "SRR11190796_Plant_FR-2_NC_002815", "Schlumbergera_truncata_19JSF_sty_NC_002815", "Schlumbergera_truncata_15H06_cons", "Schlumbergera_truncata_15H04_cons", "Schlumbergera_truncata_15H03_cons", "SRR11603189_RR-peel-3_NC_002815", "SRR11603190_RR-peel-2_NC_002815", "SRR11603186_RR-pulp-3_NC_002815", "SRR11603191_RR-peel-1_NC_002815", "Cactus_virus_X_LC128411.1", "SRR11603187_RR-pulp-2_NC_002815", "SRR11190792_Plant_BR-3_NC_002815", "SRR11190793_Plant_BR-2_NC_002815", "Cactus_virus_X_AF308158.2", "Cactus_virus_X_KM365479.1")
+#rename.tips("Cactus Virus X Variant A", tips.store)
+
+#CVX Var B
+#tips.store <- c("Cactus_virus_X_JF937699.1","Cactus_virus_X_KM288846.1", "Cactus_virus_X_KM288847.1", "Cactus_virus_X_SCM51431")
+#rename.tips("Cactus Virus X Variant B", tips.store)
+#ZyVX Variant B1
+#tips.store <- c("Zygocactus_virus_X_JF930326.1", "SRR11603191_RR-peel-1_NC_006059", "SRR11603190_RR-peel-2_NC_006059", "SRR11603187_RR-pulp-2_NC_006059", "SRR11603189_RR-peel-3_NC_006059", "SRR11603186_RR-pulp-3_NC_006059", "Zygocactus_virus_X_Strain_B1", "KM288842", "KM288843", "KM288844", "SRR11190801_Plant_DH-2_NC_006059", "SRR11190798_Plant_DH-3_NC_006059", "SRR11190797_Plant_FR-1_NC_006059", "SRR11190802_Plant_DH-1_NC_006059", "SRR11190796_Plant_FR-2_NC_006059")
+#rename.tips("Zygocactus Virus X Variant B1", tips.store)
+
+#Pitaya Virus X
+#tips.store <- c("Mytcor_virus_1", "SRR11190800_Plant_BSJ-2_NC_024458", "SRR11190791_Plant_BSJ-1_NC_024458", "SRR11190793_Plant_BR-2_NC_024458", "SRR11190797_Plant_FR-1_NC_024458", "SRR11190796_Plant_FR-2_NC_024458", "Pitaya_virus_X", "SRR11190795_Plant_FR-3_NC_024458", "SRR11603187_RR-pulp-2_NC_024458", "SRR11603189_RR-peel-3_NC_024458", "SRR11603190_RR-peel-2_NC_024458", "SRR11603186_RR-pulp-3_NC_024458", "SRR11603191_RR-peel-1_NC_024458", "SRR11190801_Plant_DH-2_NC_024458", "SRR11190798_Plant_DH-3_NC_024458", "SRR11603183_GW-peel-2_NC_024458", "SRR11603182_GW-peel-3_NC_024458", "SRR11603184_GW-peel-1_NC_024458", "SRR11190802_Plant_DH-1_NC_024458")
+#rename.tips("Pitaya Virus X", tips.store)
+
+#Schlumbergera Virus X
+#tips.store <- c("Schlumbergera_virus_X_KU854929", "Schlumbergera_virus_X_KP090203", "Schlumbergera_virus_X_Strain_K11", "SRR11190802_Plant_DH-1_NC_011659", "SRR11603183_GW-peel-2_NC_011659", "SRR11603189_RR-peel-3_NC_011659", "SRR11603187_RR-pulp-2_NC_011659", "SRR11603184_GW-peel-1_NC_011659", "SRR11190798_Plant_DH-3_NC_011659", "SRR11190801_Plant_DH-2_NC_011659")
+#rename.tips("Schlumbergera Virus X", tips.store)
+
+#Opuntia Virus X
+#tips.store <- c("Opuntia_virus_X_KU854931", "Opuntia_virus_X_KY348771", "Opuntia_virus_Strain_CC10")
+#rename.tips("Opuntia Virus X", tips.store)
+
+#write.csv(md, "test1.csv")
+```
+##Pairwise comparisons
+Load csv files for relevant genes.
+```{r}
+#grep(,rownames(rdrp))
+#Given clade name, returns indices of associated pairwise distance values within matrix.
+reload.metadata()
+rdrp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/1_RdRp_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
+cp <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/5_CP_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
+full <- read.csv('/Users/alexa/Desktop/cactusvirusx/data/data_v3/percent_seq_id/0_full-aln_perseq.csv', stringsAsFactors = FALSE, row.names = 1)
+```
+
+Select specific information by clade designation within metadata file.
+```{r clade-search}
+cladesearch <- function (cladename){
+  metarowname <- c()
+  #fetch organism names from metadata file matching Clade column with clade name
+  metarowname <- md$Organism[grep(cladename, md$Clade)]
+  #change metadata organism names to match csv format
+  metarowname <- gsub(" ", "_", metarowname)
+  metarowname <- gsub(":", "", metarowname)
+
+  #Note: Schlumbergera samples from gene specific ORF fastas have been renamed, which has been reflected in the metadata csv file.
+  
+
+  #Fetch the associated csv row/column number for items within list of organism names
+  fullnum <<- c()
+  for(i in 1:length(metarowname)){
+       fullnum[i] <<- grep(metarowname[i], rownames(full))
+       #print(metarowname[i])
+  }
+if (anyNA(fullnum)){
+  print("Warning! One or more full.csv values is NA. Please check naming in all files.")
+}
+fullcomb <- combn(sort(unique(fullnum)), 2)
+
+cpnum <<- c()
+  for(i in 1:length(metarowname)){
+       cpnum[i] <<- grep(metarowname[i], rownames(cp))
+       #print(metarowname[i])
+       #print(cpnum[i])
+  }
+if (anyNA(cpnum)){
+  print("Warning! One or more cp values is NA. Please check naming in all files.")
+}
+cpcomb <- combn(sort(unique(cpnum)), 2)
+
+  #exceptions for missing rows/columns in rdrp file
+searchrdrp <- c("KM288843","Cactus_virus_X_KM288847.1",
+                        "KM288842","KM288844","KM288845", 
+                        "Cactus_virus_X__KM288847.1")
+if(any(metarowname %in%  searchrdrp)){
+    print("Note: removing values because sequences did not cover the rdrp gene. Sequence removed:")
+  print(metarowname[(metarowname %in%
+                      searchrdrp)])
+    metarowname <- metarowname[!(metarowname %in%
+                      searchrdrp)]
+}
+rdrpnum <<- c()
+  for(i in 1:length(metarowname)){
+       rdrpnum[i] <<- grep(metarowname[i], rownames(rdrp))
+       #print(metarowname[i])
+       #print(rdrpnum[i])
+  }
+if (anyNA(rdrpnum)){
+  print("Warning! One or more rdrp values is NA. Please check naming in all files.")
+  print(rdrpnum)
+}
+rdrpcomb <- combn(sort(unique(rdrpnum)), 2)
+
+#Next, use indices to grab maximum and average pairwise distances.
+#full
+  #populate vector...
+numtemp <- vector()
+for (i in 1:length(fullcomb[1,])){
+  numtemp[i] <- i
+}
+#use temporary vector to get values from full genome csv
+for (i in 1:length(fullcomb[1,])){
+  numtemp[i] <- full[fullcomb[1,i],fullcomb[2,i]]
+}
+#now calculate average and maximum values for these pairwise distances
+fullmax <-c(max(numtemp))
+fullavg <- c(mean(numtemp))
+#repeat for the other genes
+#rdrp
+numtemp <- vector()
+for (i in 1:length(rdrpcomb[1,])){
+  numtemp[i] <- i
+}
+for (i in 1:length(rdrpcomb[1,])){
+ numtemp[i] <- rdrp[rdrpcomb[1,i],rdrpcomb[2,i]]
+}
+rdrpmax <-c(max(numtemp))
+rdrpavg <- c(mean(numtemp))
+#cp
+numtemp <- vector()
+for (i in 1:length(cpcomb[1,])){
+  numtemp[i] <- i
+}
+for (i in 1:length(cpcomb[1,])){
+  numtemp[i] <- cp[cpcomb[1,i],cpcomb[2,i]]
+}
+cpmax <-c(max(numtemp))
+cpavg <- c(mean(numtemp))
+nums <- list("Max Values" = format(round(c(fullmax, rdrpmax, cpmax), 3), nsmall = 3), "Avg Values" = format(round(c(fullavg, rdrpavg, cpavg), 3), nsmall = 3) )
+nums
+}
+
+
+```
+
+Run cladesearch.
+```{r clade-search-cva}
+cva <- cladesearch("Cactus Virus X Variant A")
+cvb <- cladesearch("Cactus Virus X Variant B")
+zyvx <- cladesearch("Zygocactus Virus X Variant B1")
+pvx <- cladesearch("Pitaya Virus X")
+svx <- cladesearch("Schlumbergera Virus X")
+opvx <- cladesearch("Opuntia Virus X")
+#ZyVX Variant B1 #Pitaya Virus X, #Schlumbergera Virus X, #Opuntia Virus X
+
+```
+
+Fetch values for table.
+```{r}
+clades <- c("Cactus Virus X Variant A", " ", " ", "Cactus Virus X Variant B", " ", " ", "Zygocactus Virus X Variant B1", " ", " ", "Pitaya Virus X", " ", " ","Schlumbergera Virus X", " ", " ","Opuntia Virus X", " ", " ")
+lnames <- rep(c("Full sequence", "RdRp", "Coat Protein"),6)
+#matrix selection: matrix[rows, columns]
+lmax <- c(cva$`Max Values`[1:3], cvb$`Max Values`[1:3], zyvx$`Max Values`[1:3] ,pvx$`Max Values`[1:3], svx$`Max Values`[1:3], opvx$`Max Values`[1:3])
+lavg <- c(cva$`Avg Values`[1:3], cvb$`Avg Values`[1:3], zyvx$`Avg Values`[1:3], pvx$`Avg Values`[1:3], svx$`Avg Values`[1:3], opvx$`Avg Values`[1:3] ) 
+```
+
+Store values in table, then save table as .pdf file.
+
+```{r}
+
+sumstats <- cbind(clades, lnames, lmax, lavg)
+kbl(sumstats, booktabs = T, format="html", col.names = c("Species", "Open Reading Frame (ORF)", "Maximum Pairwise Distance", "Average Pairwise Distance"))  %>% kable_styling() %>% save_kable("test.pdf")
+```
+
+
+Rename tips by comparing metadata file to $tip.names.
+```{r tip-rename}
+#create vector for host information
+nj.gg <- reroot(cvx.newick.tree, node.number = 114)
+hostinfo <- c()
+hostinfo <- data.frame(nj.gg$tip.label)
+#rename tree tips and populate vector
+tip.rename.org = function(tree,dataframe){
+   for(i in 1:length(tree$tip.label)){
+      hostinfo$nj.gg.tip.label[i] <<- dataframe$host[grep(tree$tip.label[i],dataframe$Name)]
+      #uncomment these for troubleshooting:
+      #print(i)
+      #print(tree$tip.label[i])
+      #print(dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)])
+      tree$tip.label[i]<-dataframe$Organism[grep(tree$tip.label[i],dataframe$Name)]
+    
+   }
+tree
+}
+```
+Use renaming function:
+```{r tip-rename-org}
+nj.gg <- tip.rename.org(nj.gg,cvx.metadata)
+```
+
+##10-13-21 Metadata separation of genus for coloring
+```{r}
+reload.metadata()
+tfspace <- grepl(" ", md$host)
+for (i in 1:length(tfspace)){
+  if (tfspace[i]){
+    md$hostgenus[i]<- strsplit(md$host[i], " ")[[1]][1]
+  }
+    else{
+      md$hostgenus[i] <- md$host[i]
+    }
+  
+}
+
+write.csv(md, '../data/name_key.csv')
+
+```

@@ -19,18 +19,21 @@ to.drop <- c("KU159093", "LC155795", "AY800279",
 getwd()
 directory <- "Documents/GitHub/cactusvirusx/"
 setwd(dir = directory)
-host.info.loc <-'analyses/phylo.details.csv'
+host.info.loc <-'02_analyses/phylo.details.csv'
 host.info.details <- read.csv(host.info.loc, stringsAsFactors = FALSE)
-loc0 <- "data/iqtree-output/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
-loc1 <- "data/iqtree-output/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
-loc2 <- "data/iqtree-output/iqtree_2_TGB1_names/2_TGB1_names.fasta.treefile"
-loc3 <- "data/iqtree-output/iqtree_3_TGB2_names/3_TGB2_names.fasta.treefile"
-loc4 <- "data/iqtree-output/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
-loc5 <- "data/iqtree-output/iqtree_5_CP_names/5_CP_names.fasta.treefile"
+
+loc0 <- "02_analyses/iqtree-output_genes/iqtree_0_full-aln_names/0_full-aln_names.fasta.treefile"
+loc1 <- "02_analyses/iqtree-output_genes/iqtree_1_RdRp_names/1_RdRp_names.fasta.treefile"
+loc2 <- "02_analyses/iqtree-output_genes/iqtree_2_TGB1_names/2_TGB1_names.fasta.treefile"
+loc3 <- "02_analyses/iqtree-output_genes/iqtree_3_TGB2_names/3_TGB2_names.fasta.treefile"
+loc4 <- "02_analyses/iqtree-output_genes/iqtree_4_TGB3_names/4_TGB3_names.fasta.treefile"
+loc5 <- "02_analyses/iqtree-output_genes/iqtree_5_CP_names/5_CP_names.fasta.treefile"
 locs <- c(loc0, loc1, loc2, loc3, loc4, loc5)
 names <- c("full", "rdrp", "tgb1", "tgb2", "tgb3", "cp")
 #load trees
-cvx.tree.phylo.treedata <- read.iqtree(locs[1])
+#
+
+cvx.tree.phylo.treedata <- read.iqtree(file = "02_analyses/02_iqtree/complete_gb_and_srr.r.aln.fasta.treefile")
 #root tree, outgroup can be changed:
 MRCA(cvx.tree.phylo.treedata, c("LC107517", "FJ822136"))
 cvx.tree.phylo.treedata@phylo <- ape::root(cvx.tree.phylo.treedata@phylo, outgroup=to.drop, resolve.root=TRUE)

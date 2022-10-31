@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{subfloat}
 \usepackage{comment}
+\usepackage{soul}
 \hypersetup{
    pdftitle={CVX},
    pdfauthor={Alexa Tyszka, Karolis Ramanauskas, Boris Igi{\'c}}
@@ -68,8 +69,6 @@ Here, we harness these new tools and perform phylogenetic analyses aimed at clar
 The results suggest a novel mode of transmission by sex (pollination) for this viral group, based on significant expression in pollen.
 We examine and discuss the implications of our key results for the taxonomy of \textit{Potexviruses} that infect Cactaceae, noting their vastly understudied ecological significance.
 
-
-Key results:
 \end{abstract}
 
 %--------------------------------------------------
@@ -82,6 +81,17 @@ Key results:
 %\setlength{\emergencystretch}{7.5pt}
 %\setstretch{1.0}
 %\setlength{\parindent}{0.25in}
+
+
+%--------------------------------------------------
+\section*{To-do and relevant fixes to be completed before submission}
+%--------------------------------------------------
+\begin{enumerate}
+\item Figure captions need to be expanded and proofread.
+\item Some methods and results are patchy and need to be written, and they are \hl{highlighted} as a reminder. 
+\item The capitalization and italicization of \textit{Potexvirus} is not as consistent as it could be -- I apologize for this nuisance. When referring to the \textit{Potexvirus} genus or using \textit{Potexvirus} as an adjective, it should be capitalized and italicized. As a noun, such as "potexviruses", it is okay uncapitalized and unitalicized.
+\end{enumerate}
+
 
 %--------------------------------------------------
 \section*{Introduction}
@@ -161,7 +171,7 @@ Plants are easily grown from cuttings and the species has been extensively hybri
 Our host plant samples were sourced from a haphazardly collected personal collection (B.I.), purchased or found abandoned around the city of Chicago. 
 Most of the plants were either apparently asymptomatic or weakly symptomatic at the time of tissue collection.
 All of our accessioned host plants are independent genets (unique genotypes) \citep{ramanauskas2021}.
-%refer to (supplementary?) table 1 with accessions and sequencing 
+
 
 We searched the NCBI Sequence Read Archive (SRA) database (www.ncbi.nlm.nih.gov/sra) for RNA-sequencing (RNA-seq) data within the flowering plant order Caryophyllales (NCBI:txid3524) that had been sequenced using an Illumina library sequencing platform. 
 For each identified SRA run accession (SRR), viral RNA that matched sample cactus-infecting Potexvirus RNA (accession numbers provided in Supplemental Information) was identified, extracted, and assembled using the kakapo 0.7.3-dev pipeline (http://flightless.one) with Kraken2 viral filters disabled. 
@@ -193,93 +203,94 @@ Raw paired-end Illumina reads were first processed using \mbox{Rcorrector}~v1.0.
 Reads were next trimmed with \mbox{Trimmomatic}~v0.39 \citep{bolger2014} to remove any read containing bases with Phred scores lower than 20, low quality reads less than 50 bp long, and any adapter or other Illumina-specific sequences that were still present.
 The remaining reads were filtered with \mbox{Kraken}~2 \citep{wood2019} to remove small and large subunit ribosomal RNA (using the SILVA database; \citealt{quast2013}) and contaminating reads (minikraken2\_v2 database).
 We used custom-built databases, derived from RefSeq libraries: UniVec\_Core, viral, mitochondrion, plastid, plasmid, archaea, bacteria, protozoa, human, and fungi to minimize the number of contaminating and non-nuclear reads \citep{ramanauskas2021}.
-\textit{Schlumbergera truncata} filtered reads were combined across all samples into a single RNA-seq data set including \textit{S. truncata} and \textit{CVX} RNA.
+Filtered reads were combined across all samples into a single RNA-seq data set including \textit{S. truncata} and \textit{CVX} RNA.
 
-
-We conducted a \textit{de novo} transcriptome assembly 
 %FIXME: KR, which assembly did we use for the viruses?
-to assemble \textit{S. truncata} and GenBank accessed RNA-seq data to reference genomes .
+We conducted a \textit{de novo} transcriptome assembly to assemble \textit{S. truncata} and GenBank accessed RNA-seq data to reference genomes NC\_002815, NC\_006059, NC\_011659, and NC\_024458 (Table~1, Table~S3).
 
-%FIXME: table s2 should describe the coverage that we obtained from the de novo assemblies
-\begin{comment}
+
 \subsection*{Sequence Alignment and Phylogenetic Analyses}
 
 The untranslated regions (UTRs) were trimmed from the sequences for consistency.
-Sequence alignments were performed through MAFFT v7.429 \citep{katoh_mafft_2002} using the full dataset.
-%FIXME: MAFFT settings/options missing. DNA or protein? (These Methods paragraphs should be detailed.)
-
+Sequence alignments were performed through MAFFT v7.490 \citep{katoh_mafft_2002} using the full dataset of RNA sequences and automatic strategy detection. 
+Each aligned sequence was annotated using the Geneious annotationR11 11.0.5 (https://www.geneious.com).
 The aligned sequences were divided by ORF using annotations to produce sequence alignments for each of the five genes, along with the whole-genome alignment. 
 The individual proteins were exported to FASTA files, then gaps at the start of the sequence and stop codons were removed manually. 
 
 
 Phylogenetic relationships, including those used for assessing bootstrap support, were inferred using \texttt{IQ-Tree} v2.0.3. 
-Maximum likelihood inference for the whole genome sequences---as well as for each gene region, separately---relied on a model of sequence evolution (GTR+F+I+$\Gamma$4) favored by both AIC- and BIC-based selection procedure implemented in IQ-Tree's model selection module {\em ModelFinder} \citep{kalyaanamoorthy2017}. Akaike and Bayesian weights exceeded 0.99. 
-%put in Results--if true: We also implemented an identical analysis for each of five genes, separately, but the results are virtually identical.
-%at: We have AIC scores for the rest of them, but I did not run modelfinder on each. I can rerun it if needed.
+Maximum likelihood inference for the whole genome sequences---as well as for each gene region, separately---relied on a model of sequence evolution (GTR+F+I+$\Gamma$4) favored by both AIC- and BIC-based selection procedure implemented in IQ-Tree's model selection module {\em ModelFinder} \citep{kalyaanamoorthy2017}. 
+Akaike and Bayesian weights exceeded 0.99. 
 Branch support was assessed with IQ-Tree's {\em UFBoot}, an ultrafast bootstrap implementation \citep{hoang2018}.
 
 
-% FIXME: No mention why Sequence Percent is calculated. ICTV rules? What is done with  alignment gaps?
-% at: mentioned ictv.
-\subsubsection*{Sequence percent identity calculation}
-ICTV guidelines state that species within\textit{Potexvirus} are delineated by 72\% shared nucleotide identity, or 80\% shared amino acid identity within the coat protein or replication genes. 
-Percentage sequence distance was calculated for Coat Protein (CP) and RdRp nucleotides and amino acids using SDT v1.2. %FIXME version missing (at:fixed)
+\subsection*{Species Delimitation}
+ICTV guidelines state that species within \textit{Potexvirus} are delineated by 72\% shared nucleotide identity, or 80\% shared amino acid identity within the coat protein or replication genes. 
+Percentage sequence distance was calculated for Coat Protein (CP) and RdRp nucleotides and amino acids.
 In cases where the CP and RdRp nt sequence distances fell on opposite sides of the 72\% cutoff, the disagreement was noted.
-Sequences with partial CP or RdRp genes were removed from the disagreement calculations to avoid length-based false positives. %post-analysis? If it is after the analyses? If so, it seems to be not used in analyses, which is odd. I think you mean after some of the analyses before others, maybe. Detailed description missing.
-%at: fixed, potentially.
-For each defined clade, nonzero pairwise distances between each possible combination of tips was averaged. 
+Sequences with partial CP or RdRp genes were removed from the disagreement calculations to avoid length-based false positives. 
+Nonzero pairwise distances between each possible combination of tips was averaged. 
 Raw pairwise distance analysis was conducted on the sequence alignments in R using \texttt{ape} v5.5.
-\subsubsection*{Analysis of molecular selection}
+
+Automated delimitation was also preformed using mPTP (http://mptp.h-its.org/\#/tree) \citep{Kapli_2017} and bPTP servers (http://species.h-its.org/ptp/) \citep{Zhang_2013}. 
+bPTP was run using 100,000 MCMC generations and 0.1 burn-in. 
+Outgroups were removed for both delimitation analyses.
+
+%FIXME: the sequence similarity analysis should be rerun and included here
+
+\subsection*{\hl{Analysis of molecular selection}}
+
+%FIXME: B can comment more on these methods.
 
 \subsection*{Data Accessibility}
 
-This article contains a Supplementary Information Appendix. %What's in it?
- %Is it Supplementary Information Appendix or Supplementary Data?
- %at: changed references to all be Supplemental Information for consistency
-All new sequence data is deposited in GenBank under project accession number PRJNXXXXX (https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNXXXXX). %Not all? specifically, it's the schlumbergera data, right? Which ones?
-%at: should the data be deposited with any reference to CVX, or is just referring to the schlumbergera data SRAs okay in this case?
+This article contains a Supplementary Information Appendix containing Supplemental Tables S1--S3 and Supplemental Figures S1--S5. 
+All sequence data associated with \textit{S. truncata} is deposited in GenBank within project accession number PRJNA705387 (https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA705387).
 
-\end{comment}
+
 %------------------------------------------------------------------------------
 \section*{Results}
 %------------------------------------------------------------------------------
-\begin{comment}
-\subsection*{Viral Identification}
-In an attempt to characterize the infection patterns of cactus-infecting potexviruses, we assembled 69 viral sequences from the XXX total cactus samples analyzed (Table 1).
-%FIXME: noauthor?
-The genome sizes of 6.6-6.7 kb were consistent with ICTV reported 5.9-7.0 kb genome lengths within \textit{Potexvirus} \citep{noauthor_genus_2020}.
-In some cases, one cactus sample contained multiple different virus species (Table 1).
+\subsection*{Sequence Assembly and Approach}
+In an attempt to characterize the infection patterns of cactus-infecting potexviruses, we assembled 83 viral sequences from the cactus samples analyzed. 
+24 of these sequences were from \textit{S. truncata} samples, and 59 of the sequences were from \textit{Hylocereus (now Selenicereus) spp.} in PRJNA608981 (https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA608981)\citep{fan2020retracted}.
+Genome sizes of ~7 kb within newly assembled sequences were consistent with previously reported 5.5-9.0 kb genome lengths within \textit{Alphaflexiviridae} \citep{kreuze_ictv_2020,ICTV_potexviruses}(Table~1).
+Our multifaceted approach includes two categories of newly assembled viral sequences infecting plants collected by our group (Table~1) as well as plants that had been sequenced externally and uploaded to a public database (Table~S3).
+We add these to an existing database of 38 related \textit{Potexvirus} samples
 
-%FIXME: is this a method or a result? And what is the method or result being reported? What was the content of annotation?
-We annotated the open reading frames of the viruses and recovered all Potexvirus proteins.
+ 
 
-\subsection*{Phylogenetic Relationships}
-A well-supported phylogenetic tree was recovered using available sequences (Figure 1).
-The 69 viral sequences were in some cases concatenated for ease of viewing on the tree.
-The phylogenetic tree places the newly aligned sequences from this study within previously defined species groups (Figure 1).
-These sequences greatly expand the cactus-infecting clade of \textit{Potexvirus} by a roughly XXX percent increase. %FIXME: remove x
-Phylogenetic analysis recovered defined monophyletic groups corresponding to five or six major groups of cactus-infecting \textit{Potexviruses}, with \textit{Cactus Virus X} displaying two branching subgroups.
-\textit{Opuntia Virus X} was the sister clade to the rest of the cactus-infecting \textit{Potexviruses}.
-We recovered viruses within the Potexvirus clades: \textit{Cactus Virus X, Pitaya Virus X, Schlumbergera Virus X}, and \textit{Zygocactus Virus X} (Table 1).
-%FIXME: add bootstrap values 
-
-\subsection*{Species Delineation and Distribution of Genetic Distances}
+\subsection*{Identification}
+Assembly of a virus or its proteins from a host plant transcriptome represents presence of the virus within host tissues. 
+In externally sequenced samples, none of the hosts had been noted as symptomatic \citep{fan2020retracted}.
+The \textit{Schlumbergera}-infecting viruses were found in high amounts on pollen and style tissue (Figure~2).
+\hl{In some pollen tissues there existed more viral reads than \textit{Schlumbergera} reads.}
+The \textit{S. truncata} samples located within the \textit{Cactus Virus X} clade appear to represent the first known discovery of \textit{Cactus Virus X} on \textit{Schlumbergera}.
 
 
-\subsection*{Infection Prevalence and Symptoms}
-The \textit{Schlumbergera}-infecting viruses were found in high amounts on pollen and style tissue (Table 2).
-In some pollen tissues there existed more viral reads than \textit{Schlumbergera} reads.
+\subsection*{Diversity and Phylogeny}
+A well-supported phylogenetic tree was recovered using available sequences (Figure~1).
+The phylogenetic tree places the newly aligned sequences from this study within previously defined species groups (Figure~1).
+These sequences greatly expand the cactus-infecting clade of \textit{Potexvirus} and nearly triple the amount of available sequences for the clade. 
 
-The \textit{S. truncata }samples located within the \textit{Cactus Virus X} clade appear to represent the first known discovery of \textit{Cactus Virus X} on \textit{Schlumbergera}.
-Host information, collected from available metadata, shows several different host genera for any one virus (Figure 1).
- %FIXME: remove x
+\subsection*{Species Delineation}
+The collected potexvirus genomes from Genbank spanned 6 extant species of cactus-infecting potexviruses and 8 outgroup species of closely related potexviruses (Table~S2).
+mPTP and bPTP analyses recovered 11 and 16 species respectively (Figure~1, Figure~S6, Figure~S7).
+In some cases, the delimitations did not correspond to any one established species, or divided an established species into multiple parts (Figure~1).
+
 \subsection*{Recombination Analysis and Selection Analysis}
-The gene trees recovered for the five major \textit{Potexvirus} proteins (\textit{CP, RdRp, TGB1, TGB2, \textit{and}TGB3}) retained the species groupings shown by the full genome tree, which indicates low levels of gene conflict (Figure 1S).
+Open reading frame annotation recovered all Potexvirus proteins.
+The gene trees recovered for the five major \textit{Potexvirus} proteins (\textit{CP, RdRp, TGB1, TGB2, \textit{and}TGB3}) retained the species groupings shown by the full genome tree, which indicates low levels of gene conflict (Figures~1S -- 5S).
 
-\end{comment}
+%FIXME: B can comment more on the selection analysis.
+\hl{More information on the selection analysis to come.}
+
+
 %------------------------------------------------------------------------------
 \section*{Discussion}
 %------------------------------------------------------------------------------
+
+
 \begin{comment}
 Cactus-infecting potexviruses present an evolutionary puzzle as well as an agricultural threat. 
 In this study we use a multiple-source transcriptomic approach to address the questions of \textit{Potexvirus} host specificity and evolution. 
@@ -295,7 +306,7 @@ Some closely clustered examples likely represent one primary infection spreading
 For this analysis we refer to the two branches of\textit{ Cactus Virus X }as \textit{Cactus Virus X A} and \textit{Cactus Virus X B} because the formal taxonomic group \textit{CVX} was the only group distinguished by high p-distance values (Full sequence mean 0.0399; RdRp mean 0.0343; CP mean 0.0453) as well as a notable bifurcation within the group (Figure 1).
 
 
-%The origins of 0.72 difference --- clade delineation --- summary of infections and hosts --- multiple infections --- relation to other studies --- success of testing --- naming complications --- names using in paper --- history of naming conflicts --- recommendations for future --- identification/infections --- often symptomless confused for other diseases --- extent yet unknown --- further obscured by species delimitations --- distinguish between infection and transmission because in this case infection may not always lead to transmission. 
+%The origins of 0.72 difference (no universal calculation of this) --- clade delineation --- summary of infections and hosts --- multiple infections --- relation to other studies --- success of testing --- naming complications --- names using in paper --- history of naming conflicts --- recommendations for future --- identification/infections --- often symptomless confused for other diseases --- extent yet unknown --- further obscured by species delimitations --- distinguish between infection and transmission because in this case infection may not always lead to transmission. 
 
 %Most experimental transmission of cactus viruses is done in a manner that would rarely be reproduced in the field under natural conditions --- grafting  is frequent in greenhouses, inoculation and transmission --- transmission methods --- review of other papers? --- thesis, saguaro nectar --- relation to sexual transmission
  
@@ -330,8 +341,9 @@ However, the low pairwise distances between \textit{Potexviruses} cause very few
 Examples here.
 \end{comment}
 
-\section*{Conclusions}
+
 \begin{comment}
+\section*{Conclusions}
 X new viruses were included as part of this study, which represents a multifaceted approach to viral discovery using metagenomic techniques for already available public data as well as newly collected data.
 Mixed infections, co-infection dynamics.
 Viral abundance, viral loads, tissue type, and diversity.
@@ -360,29 +372,97 @@ This work was supported by the Award for Graduate Research from the Graduate Col
 %--------------------------------------------------
 % Tables
 %--------------------------------------------------
+\clearpage
+\begin{table}[ht]
+\caption{
+Assembled viral sequences and details from \textit{Schlumbergera truncata} samples. 
+}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+Name                                                 & Description & Sequence Length & Size  & Host                   & sample\_name & tissue\_type \\ \midrule
+Schlumbergera\_truncata\_15H02\_sty\_\_NC\_002815    & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 15H02        & sty          \\
+Schlumbergera\_truncata\_15H03\_pol\_\_NC\_002815    & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 15H03        & pol          \\
+Schlumbergera\_truncata\_15H03\_pol\_\_NC\_006059    & NC\_006059  & 6624            & 7 KB  & Schlumbergera truncata & 15H03        & pol          \\
+Schlumbergera\_truncata\_15H03\_pol\_\_NC\_011659    & NC\_011659  & 6633            & 7 KB  & Schlumbergera truncata & 15H03        & pol          \\
+Schlumbergera\_truncata\_15H03\_sty\_\_NC\_002815\_a & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 15H03        & sty          \\
+Schlumbergera\_truncata\_15H03\_sty\_\_NC\_002815\_b & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 15H03        & sty          \\
+Schlumbergera\_truncata\_15H03\_sty\_\_NC\_006059\_a & NC\_006059  & 6624            & 7 KB  & Schlumbergera truncata & 15H03        & sty          \\
+Schlumbergera\_truncata\_15H03\_sty\_\_NC\_006059\_b & NC\_006059  & 6624            & 7 KB  & Schlumbergera truncata & 15H03        & sty          \\
+Schlumbergera\_truncata\_15H03\_sty\_\_NC\_011659    & NC\_011659  & 6633            & 7 KB  & Schlumbergera truncata & 15H03        & sty          \\
+Schlumbergera\_truncata\_15H04\_pet\_\_NC\_002815    & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 15H04        & pet          \\
+Schlumbergera\_truncata\_15H04\_pet\_\_NC\_006059    & NC\_006059  & 6624            & 7 KB  & Schlumbergera truncata & 15H04        & pet          \\
+Schlumbergera\_truncata\_15H04\_pol\_\_NC\_002815    & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 15H04        & pol          \\
+Schlumbergera\_truncata\_15H04\_pol\_\_NC\_006059    & NC\_006059  & 6624            & 7 KB  & Schlumbergera truncata & 15H04        & pol          \\
+Schlumbergera\_truncata\_15H04\_sty\_\_NC\_002815    & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 15H04        & sty          \\
+Schlumbergera\_truncata\_15H04\_sty\_\_NC\_006059    & NC\_006059  & 6624            & 7 KB  & Schlumbergera truncata & 15H04        & sty          \\
+\hl{Schlumbergera\_truncata\_15H05\_pol\_\_NC\_002815}    & NC\_002815  & 6553            & \hl{13 KB} & Schlumbergera truncata & 15H05        & pol          \\
+Schlumbergera\_truncata\_15H06\_pol\_\_NC\_002815    & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 15H06        & pol          \\
+Schlumbergera\_truncata\_15H06\_pol\_\_NC\_006059    & NC\_006059  & 6624            & 7 KB  & Schlumbergera truncata & 15H06        & pol          \\
+Schlumbergera\_truncata\_15H06\_pol\_\_NC\_011659    & NC\_011659  & 6633            & 7 KB  & Schlumbergera truncata & 15H06        & pol          \\
+Schlumbergera\_truncata\_15H06\_sty\_\_NC\_002815    & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 15H06        & sty          \\
+Schlumbergera\_truncata\_15H06\_sty\_\_NC\_006059    & NC\_006059  & 6624            & 7 KB  & Schlumbergera truncata & 15H06        & sty          \\
+Schlumbergera\_truncata\_15H06\_sty\_\_NC\_011659    & NC\_011659  & 6633            & 7 KB  & Schlumbergera truncata & 15H06        & sty          \\
+Schlumbergera\_truncata\_19JSF\_sty\_\_NC\_002815    & NC\_002815  & 6614            & 7 KB  & Schlumbergera truncata & 19JSF        & sty          \\
+Schlumbergera\_truncata\_19JSF\_sty\_\_NC\_006059    & NC\_006059  & 6624            & 7 KB  & Schlumbergera truncata & 19JSF        & sty          \\ \bottomrule
+\end{tabular}%
+}
+\end{table}
 
 %--------------------------------------------------
 % Figures
 %--------------------------------------------------
+
+%%%%%%%%FIGURE 1
+\begin{figure}[ht]
+\centering
+\caption{
+An updated cactus-infecting \textit{potexvirus} phylogeny reflects distinct viral groupings which opportunistically and often asymptomatically infect host plants. Relationships were inferred with a Maximum-Likelihood phylogenetic tree assembled from 120 virus sequences representing all previously published full and partial cactus-infecting \textit{potexvirus} sequences in addition to sequences assembled by this study. Branch tips are labelled with International Nucleotide Sequence Database Collaboration (INSDC) accessions or sample unique identifiers and also labelled with the corresponding host plant.
+The leftmost columns represent the species recovered by the delimitation methods mPTP (http://mptp.h-its.org/\#/tree) and bPTP (http://species.h-its.org/ptp/), alongside the formal taxonomy as approved by the ICTV.  
+Different colors indicate an apparent species.
+}
+\includegraphics[width=1.0\textwidth]{figures/tree_rect_delim_info.pdf}
+\label{fig:tissuetype}
+\end{figure}
+\clearpage
+
+
+%%%%%%%%FIGURE 2
+\begin{figure}[ht]
+\centering
+\caption{
+Counts of each instance of virus recovered separated by tissue type from within \textit{S. truncata} samples which were assembled during this investigation.
+}
+\includegraphics[width=0.7\textwidth]{figures/tistype}
+\label{fig:tissuetype}
+\end{figure}
+
+%%%%%%%%FIGURE 3
+\begin{figure}[ht]
+\centering
+\caption{
+Plot of selection analysis indicating positive selection (dN/dS greater than 1) on areas of the viral genome.
+}
+\includegraphics[width=1.0\textwidth]{figures/selectionplot.pdf}
+\label{fig:tissuetype}
+\end{figure}
+\clearpage
+
+
 \begin{comment}
 \pagebreak
 \frenchspacing
 %\setstretch{1.0}
 \setlength{\parindent}{0.0in}
 
-\section*{Figures}
-Figure inventory:
-\begin{itemize}
-\item Figure 2. Selection graph as displayed in B's r code
 
-\item Figure 3. (maybe supplemental) density of cp, rdrp, distributions density by virus ptp
 \end{itemize}
 \begin{subfigures}
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\linewidth]{figures/tree_circular_collapsed.pdf}
  \begin{NoHyper}
- \caption{\label{first}An updated cactus-infecting \textit{potexvirus} phylogeny reflects distinct viral groupings which opportunistically and often asymptomatically infect host plants. Relationships were inferred with a Maximum-Likelihood phylogenetic tree assembled from 94 virus sequences  representing all previously published full and partial cactus-infecting \textit{potexvirus} sequences in addition to sequences assembled by this study. Branch tips are labelled with International Nucleotide Sequence Database Collaboration (INSDC) accessions or sample unique identifiers and also labelled with the corresponding host plant.}
+ \caption{\label{first}
  \label{fig1}
  \end{NoHyper}
  \end{figure}
@@ -408,26 +488,14 @@ Figure inventory:
  \end{figure}
 \end{subfigures}
 
-
-
-
 \section*{Tables}
 \begin{itemize}
 \item Table 1. Assembly stats. our taxa, SRAs, assembly stats for positive finds, including unique ID and sample names, including length
 
 \item Table 2. Points under positive selection, how many in each gene
 \end{itemize}
+
 \end{comment}
-
-
-Supplementary Table 1. All searches, cleaned SraRunInfo.csv plus KR's schlumbergera searches
-
-
-Supplemental figures:
-1. Full gene phylogenies for each gene in genome
-2. Tissue expression rates? TMM/TPM
-
-
 % \begin{figure}[ht]
 % \centering
 % \includegraphics[width=0.5\linewidth]{FILE_PATH}
