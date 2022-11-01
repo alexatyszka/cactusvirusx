@@ -225,12 +225,8 @@ Branch support was assessed with IQ-Tree's {\em UFBoot}, an ultrafast bootstrap 
 
 
 \subsection*{Species Delimitation}
-ICTV guidelines state that species within \textit{Potexvirus} are delineated by 72\% shared nucleotide identity, or 80\% shared amino acid identity within the coat protein or replication genes. 
-Percentage sequence distance was calculated for Coat Protein (CP) and RdRp nucleotides and amino acids.
-In cases where the CP and RdRp nt sequence distances fell on opposite sides of the 72\% cutoff, the disagreement was noted.
-Sequences with partial CP or RdRp genes were removed from the disagreement calculations to avoid length-based false positives. 
-Nonzero pairwise distances between each possible combination of tips was averaged. 
-Raw pairwise distance analysis was conducted on the sequence alignments in R using \texttt{ape} v5.5.
+ICTV guidelines state that species within \textit{Potexvirus} are delineated by 72\% shared nucleotide identity, or 80\% shared amino acid identity within the coat protein or replication genes \citep{ICTV_potexviruses}
+Raw pairwise distance calculation was conducted on the sequence alignments in R using \texttt{ape} v5.5.
 
 Automated delimitation was also preformed using mPTP (http://mptp.h-its.org/\#/tree) \citep{Kapli_2017} and bPTP servers (http://species.h-its.org/ptp/) \citep{Zhang_2013}. 
 bPTP was run using 100,000 MCMC generations and 0.1 burn-in. 
@@ -256,7 +252,7 @@ In an attempt to characterize the infection patterns of cactus-infecting potexvi
 24 of these sequences were from \textit{S. truncata} samples, and 59 of the sequences were from \textit{Hylocereus (now Selenicereus) spp.} in PRJNA608981 (https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA608981)\citep{fan2020retracted}.
 Genome sizes of ~7 kb within newly assembled sequences were consistent with previously reported 5.5-9.0 kb genome lengths within \textit{Alphaflexiviridae} \citep{kreuze_ictv_2020,ICTV_potexviruses}(Table~1).
 Our multifaceted approach includes two categories of newly assembled viral sequences infecting plants collected by our group (Table~1) as well as plants that had been sequenced externally and uploaded to a public database (Table~S3).
-We add these to an existing database of 38 related \textit{Potexvirus} samples
+We add these 83 sequences to an existing database of 38 related \textit{Potexvirus} samples and demonstrate the utility of the \textit{kakapo} pipeline within a phylogenetic and transcriptomic workflow. 
 
  
 
@@ -273,14 +269,20 @@ A well-supported phylogenetic tree was recovered using available sequences (Figu
 The phylogenetic tree places the newly aligned sequences from this study within previously defined species groups (Figure~1).
 These sequences greatly expand the cactus-infecting clade of \textit{Potexvirus} and nearly triple the amount of available sequences for the clade. 
 
-\subsection*{Species Delineation}
+\subsection*{Species Delimitation}
 The collected potexvirus genomes from Genbank spanned 6 extant species of cactus-infecting potexviruses and 8 outgroup species of closely related potexviruses (Table~S2).
 mPTP and bPTP analyses recovered 11 and 16 species respectively (Figure~1, Figure~S6, Figure~S7).
 In some cases, the delimitations did not correspond to any one established species, or divided an established species into multiple parts (Figure~1).
+Raw sequence distances were calculated and clustered using a complete hierarchical clustering algorithm (Figure~4). 
+The heatmap separates the outgroup of non-cactus infecting potexviruses reliably (Figure~1, Figure~4) and often displays sharp lines of delineation between clades with low similarity and high similarity (Figure~4). 
+
+\hl{Further analysis should be done here with the CP and RdRp genes and their distances separately -- in previous analyses they conflict with each other often and do not offer much information, however the noise involved in the data is a good argument for \textit{not} using this method going forward.}
+
 
 \subsection*{Recombination Analysis and Selection Analysis}
 Open reading frame annotation recovered all Potexvirus proteins.
 The gene trees recovered for the five major \textit{Potexvirus} proteins (\textit{CP, RdRp, TGB1, TGB2, \textit{and}TGB3}) retained the species groupings shown by the full genome tree, which indicates low levels of gene conflict (Figures~1S -- 5S).
+
 
 %FIXME: B can comment more on the selection analysis.
 \hl{More information on the selection analysis to come.}
@@ -289,67 +291,82 @@ The gene trees recovered for the five major \textit{Potexvirus} proteins (\texti
 %------------------------------------------------------------------------------
 \section*{Discussion}
 %------------------------------------------------------------------------------
-
-
-\begin{comment}
 Cactus-infecting potexviruses present an evolutionary puzzle as well as an agricultural threat. 
-In this study we use a multiple-source transcriptomic approach to address the questions of \textit{Potexvirus} host specificity and evolution. 
-We present another use for the \textit{kakapo} program: effective, fast search and assembly of small viral genomes rather than individual genes. 
-We detected viral samples that were phylogenetically related to four current species within \textit{Potexvirus}: \textit{Cactus Virus X, Schlumbergera Virus X, Pitaya Virus X}, and \textit{Zygocactus Virus X}. 
-Within \textit{Cactus Virus X}, there may be reason to delegate two subspecies or split the species altogether. 
+Here we use a multiple-source transcriptomic approach to address the questions of \textit{Potexvirus} host specificity and evolution. 
+We present another use for the \textit{kakapo} program: effective, fast search and assembly of small viral genomes rather than individual genes, which has allowed for a near tripling of the sequence information available for cactus-infecting potexviruses.
+We detected viral samples that were phylogenetically related to four current species within the genus \textit{Potexvirus}: \textit{Cactus Virus X, Schlumbergera Virus X, Pitaya Virus X} (which may be the same virus as \textit{Mytcor virus x)}, and \textit{Zygocactus virus X} (Figure~1).
+Within \textit{Cactus virus X}, \textit{Zygocactus virus x} and \textit{Schlumbergera virus X}, there may be reason to delegate two subspecies or split the apparent species altogether (Figure~1).
 We offer a further discussion regarding erroneous viral taxonomy and nomenclature within the current metagenomic era.
 
-A well-supported phylogenetic tree was recovered including closely related non-cactus-infecting \textit{Potexviruses} as an outgroup (Figure 1).
-The phylogenetic tree (Figure 1) places the new viral sequences found on hosts \textit{Schlumbergera} and \textit{Selenicereus} near existing viral species within \textit{Potexvirus} (Figure 1). 
-The newly reported infections represent new examples of \textit{Cactus Virus X, Schlumbergera Virus X, Pitaya Virus X}, and \textit{Zygocactus Virus X}.
-Some closely clustered examples likely represent one primary infection spreading to multiple plants due to the extremely low within-clade diversity (Table 1).
-For this analysis we refer to the two branches of\textit{ Cactus Virus X }as \textit{Cactus Virus X A} and \textit{Cactus Virus X B} because the formal taxonomic group \textit{CVX} was the only group distinguished by high p-distance values (Full sequence mean 0.0399; RdRp mean 0.0343; CP mean 0.0453) as well as a notable bifurcation within the group (Figure 1).
+
+A well-supported phylogenetic tree was recovered and places the new viral sequences found on hosts \textit{Schlumbergera} and \textit{Selenicereus} near existing viral species within \textit{Potexvirus} (Figure 1). 
+According to bPTP and mPTP analyses, there may be as many as 16 species within a clade that has previously been reported as only 6 species. 
+Indeed, the mPTP and bPTP analyses recovered some clades that have been previously agreed upon from serological, morphological, and sequence-similarity-based species definitions.
+The bPTP and mPTP analyses both support splitting \textit{Cactus virus X} into at least four separate species (Figure~1).
+Within these, the \textit{S. truncata} infecting virus sequences form an outgroup that may be divided further into at least two groups (Figure~1).
+The \textit{Cactus virus X} clade including members KX883791, KM288847, KM288846, and JF937699, was not recovered in this study. 
+The sample \textit{Schlumbergera\_truncata\_19JSF\_sty\_\_NC\_006059} was delimited as a separate species by bPTP and mPTP. 
+Whether this sample is a member of \textit{Cactus virus X} is unclear, although they share a common ancestor. 
+This sample was found on a \textit{S. truncata} host, although its closest relative has only infected \textit{Selenicereus} (and Diptera, although this may be due to sampling error).
+A clade including \textit{Zygocactus virus X} was reliably recovered by bPTP and mPTP, although the delimitation methods disagree with the classification of KM288845 within the group -- it appears that this should be a separate species. 
+The \textit{Pitaya virus X} clade also was recovered with high fidelity and short branch lengths within \textit{Selenicereus} samples. 
+\textit{Mytcor virus 1} is included within the \textit{Pitaya virus X} clade. 
+Within the clade that includes viruses previously designated as \textit{Schlumbergera virus X} there are multiple \textit{Selenicereus} samples.
+The sample KU854929 is delimited as a separate species, although it has also been formally classified as \textit{Schlumbergera virus X}.
+bPTP and mPTP analyses show that there are many more viral species within \textit{Potexvirus} than have been designated and delimited through traditional means.
+
+
+The ICTV has defined a viral species as a monophyletic group that can be distinguished from other such groups "by multiple criteria", but this criteria is interpreted differently depending on the family studied \citep{simmonds2017virus}.
+The 0.72\% cutoff for species groupings as defined by the ICTV for members of the \textit{Potexvirus} genus \citep{ICTV_potexviruses} has no universal calculation criteria and can be calculated in multiple ways depending on alignment or gap penalties. 
+Clade delimitation is a cumbersome process and has relied on cutoffs that are vague -- either 72\% identity difference between CP \textit{or} RdRp nt sequences.
+Alternatively, the same analysis could be applied to amino acid sequences, with an 80\% similarity cutoff. 
+It is unclear what a conflicting result between any combination of genes or sequence type indicates. 
+Further, if a species contains multiple members, there will be variation between them, sometimes crossing the cutoff, but sometimes remaining within.
+Should this percentage cutoff apply to a representative member of the species, or a consensus sequence of all members?
+The percentage cutoff species concept is becoming less applicable as more viruses are sequenced and a phylogenetic species concept for viruses becomes the norm \citep{simmonds2018virus}.
+Automatic delimitation using mPTP and bPTP allow for more sensitivity towards evolutionary history \citep{Kapli_2017,Zhang_2013} and have been used for viruses \citep{serdari2019automated}. 
+
+
+In some cases, viruses are classified by their apparent host range.
+The viruses described in this study have thus far remained in a range of very few genera of cacti:  \textit{Schlumbergera, Selenicereus,} and \textit{Opuntia}(Figure~1).
+However, all cactus-infecting potexviruses seem to readily infect hosts within these genera.
+Whether this host range is due to sampling bias towards agricultural plants is unclear, as all three genera are important crop plants which are grown clonally \citep{evallo_brief_2021}.
+It may be the case that agricultural plant samples are only part of the picture.
+Research investigating viral transmission in "wild" populations of cacti is rare \citep{chessin_distribution_1972}.
+Within captive and cultivated populations, \textit{Cactus virus X} alone has been reported in multiple hosts: \textit{Selenicereus} (this study), \textit{Schlumbergera} (this study), banana \citep{bae2022first}, the genera \textit{Echinopsis, Mammalaria, Eriocereus}, and \textit{Echinocereus}\citep{maliarenko_cactus_2013}, and \textit{Notocactus} \citep{park_detection_2018}.
+In many cases, the cactus-infecting potexviruses occur with other viruses; often those viruses are outside of \textit{Potexvirus} \citep{evallo_brief_2021, park_detection_2018}.
+
+
+A virus named for its first known host may not represent the evolutionary history of the virus or its actual or potential host range.
+Although phylogenetic analysis is likely to produce monophyletic clades of viruses that have each been named in succession for the first known member, this produces inconsistent and confusing names.
+\textit{Zygocactus virus X} is a clear example: Although the name \textit{Zygocactus} is outdated in reference to the host genera, now classified as \textit{Schlumbergera}, the viral name remains, despite \textit{Zygocactus virus X} and \textit{Schlumbergera virus X} describing two evolutionarily distinct clades.
+The ICTV strongly opposes unnecessary name changes, but it is unclear what should be done with outdated and confusing names that describe an extant clade of viruses.
+Mixed infections and the lack of a one-to-one correlation between virus and host complicate naming endeavors further, and more sampling will undoubtedly uncover novel hosts and more mixed infections.
+
+
+The dynamics of cactus-infecting potexvirus infections are difficult to ascertain due to their asymptomatic nature \citep{maliarenko_cactus_2013, evallo_brief_2021}.
+When symptoms are present, they appear in the form of mottling, reddening, and stem distortion \citep{evallo_brief_2021}.
+It is yet unknown what is the driver of new infections within cacti, although it is apparent that cactus-infecting potexviruses spread readily. 
+Mechanical sap transmission through grafting  -- including the common practice of grafting together two stocks of different genera -- may contribute to transmission, especially if a single stock is used for each plant in a greenhouse \citep{evallo_brief_2021}.
+Collection and assembly of viruses infecting \textit{Schlumbergera} pollen, style, and petal (Figure~2) in this study indicate that the virus can infect reproductive tissue.
+Pollen transmission has only been suggested to occur in \textit{Cactus virus X} \citep{milbrath_isolation_1972}, but has never been confirmed experimentally.
+Pollen transmission of viruses has not been confirmed within \textit{Potexvirus}. 
+
+
+
+83 new viral samples were included as part of this study, which represents a multifaceted approach to viral discovery using metagenomic techniques for already available public data as well as newly collected data.
+Some of these samples represent new clades within existing species or new species altogether (Figure~1).
+We present a view of viral species delimitation that draws on evolutionary history, phylogeny, and host-virus dynamics. 
+Mixed, often asymptomatic infections are increasingly reported within cacti \citep{park_detection_2018}, and as more are reported during future cacti sequencing, our approach to viral species and naming will have to adjust.
+We indicate that an ever-changing viral tree of life may need to be partitioned and changed as more viruses are sequenced, of which cactus-infecting potexviruses are an example (Figure~1).
+Our report of cactus-infecting potexviruses in pollen and style tissue (Figure~1) is of great importance to agricultural institutions and indicates that sexual transmission of a \textit{Potexvirus} is theoretically possible.
 
 
 %The origins of 0.72 difference (no universal calculation of this) --- clade delineation --- summary of infections and hosts --- multiple infections --- relation to other studies --- success of testing --- naming complications --- names using in paper --- history of naming conflicts --- recommendations for future --- identification/infections --- often symptomless confused for other diseases --- extent yet unknown --- further obscured by species delimitations --- distinguish between infection and transmission because in this case infection may not always lead to transmission. 
 
 %Most experimental transmission of cactus viruses is done in a manner that would rarely be reproduced in the field under natural conditions --- grafting  is frequent in greenhouses, inoculation and transmission --- transmission methods --- review of other papers? --- thesis, saguaro nectar --- relation to sexual transmission
- 
-The reported taxonomy of each existing sample aligns well with the tree structure, but this monophyly is not recovered for hosts.
-Putative viral species appear to infect as few as one genus, in the case of \textit{Opuntia Virus X}, or as many as three in the case of \textit{Schlumbergera Virus X}.
-Further, the three genera are evolutionarily distinct and polyphyletic in phylogenetic analyses of \textit{Cactaceae}. 
-This relationship raises questions about a \textit{Potexvirus}'s ability to switch hosts. %clarify
-All three genera that are reported hosts of \textit{Schlumbergera Virus X} are ornamental crops: \textit{Selenicereus, Schlumbergera}, and \textit{Opuntia}.
-Extended greenhouse contact between the three genera may have resulted in viral spillover of \textit{Schlumbergera Virus X}.
-However, it is also important to note that the present viral taxonomy is not infallible. 
-The putative species known as \textit{Schlumbergera Virus X} may have been initially - incidentally - found on a spillover host rather than a member of an actual viral circulating population.
-Unfortunately there is no way to know the "original host" of any virus that possesses the mechanisms to infect multiple cacti genera. 
-Further testing of known host genera is necessary, and metagenomic sequencing of closely related genera to monitor potential opportunistic spillover. 
-
-Taxonomic descriptions must also be analyzed for accuracy and reflection of actual viral activity. 
-A virus named for its first known host may not represent the evolutionary history of the virus.
-Although phylogenetic analysis is likely to produce monophyletic clades of viruses that have each been named in succession for the first known member, this produces inconsistent and confusing names.
-\textit{Zygocactus Virus X} is a clear example: Although the name \textit{Zygocactus} is outdated in reference to the host genera, now classified as \textit{Schlumbergera}, the viral name remains.
-This is exacerbated by the presence of a separate viral species, \textit{Schlumbergera Virus X}.
-The ICTV strongly opposes unnecessary name changes, but it is unclear what should be done with outdated and confusing names that describe an extant clade of viruses.
-Mixed infections and the lack of a one-to-one correlation between virus and host complicate naming endeavors further, and more sampling will uncover novel hosts and mixed infections.
-
-\subsection*{Distribution of Genetic Distances and Grouping}
-The highly similar and well-clustered newly discovered viruses displayed low diversity within the clusters.
-Therefore, these additions to the \textit{Potexvirus} family tree do not drastically alter the tree structure.
-Since each sampled cactus in SRA XXXXX was located close to other sampled cacti, this low diversity potentially represents the first example of background mutation among viruses incurred due to host infection. %FIXME: remove x
 
 
-The ICTV guidelines for \textit{Potexviruses} indicate that less than 72 percent nucleotide sequence identity (or 80 percent amino acid identity) between the CP or Rep genes demarcates separate viral species. %FIXME 
-Because we compare closely related \textit{Potexviruses}, it might be expected that members of the same putative species would have higher than 72 percent nucleotide identity and members of different putative species would have lower than 72 percent sequence identity.
-However, the low pairwise distances between \textit{Potexviruses} cause very few cactus-infecting \textit{Potexviruses} to be demarcated as separate species, even when only considering previously described species compared to each other.
-Examples here.
-\end{comment}
-
-
-\begin{comment}
-\section*{Conclusions}
-X new viruses were included as part of this study, which represents a multifaceted approach to viral discovery using metagenomic techniques for already available public data as well as newly collected data.
-Mixed infections, co-infection dynamics.
-Viral abundance, viral loads, tissue type, and diversity.
-Transmission: Sexual
-Taxonomic recommendations - the current species names should not be used in the future.
-\end{comment}
 %------------------------------------------------------------------------------
 \section*{Acknowledgments}
 %------------------------------------------------------------------------------
@@ -421,7 +438,7 @@ An updated cactus-infecting \textit{potexvirus} phylogeny reflects distinct vira
 The leftmost columns represent the species recovered by the delimitation methods mPTP (http://mptp.h-its.org/\#/tree) and bPTP (http://species.h-its.org/ptp/), alongside the formal taxonomy as approved by the ICTV.  
 Different colors indicate an apparent species.
 }
-\includegraphics[width=1.0\textwidth]{figures/tree_rect_delim_info.pdf}
+\includegraphics[width=1.0\textwidth]{figures/tree_delim_info.pdf}
 \label{fig:tissuetype}
 \end{figure}
 \clearpage
@@ -448,54 +465,18 @@ Plot of selection analysis indicating positive selection (dN/dS greater than 1) 
 \end{figure}
 \clearpage
 
-
-\begin{comment}
-\pagebreak
-\frenchspacing
-%\setstretch{1.0}
-\setlength{\parindent}{0.0in}
-
-
-\end{itemize}
-\begin{subfigures}
+%%%%%%%%FIGURE 4
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1\linewidth]{figures/tree_circular_collapsed.pdf}
- \begin{NoHyper}
- \caption{\label{first}
- \label{fig1}
- \end{NoHyper}
- \end{figure}
- 
- %FIXME:Figure 1b, genome map needs annotations for the start and end of each gene as well as small image-editor tweaks.
+\caption{
+Heatmap of raw sequence distances with pairwise deletion of sites with a missing or gap character. A complete hierarchical clustering tree is displayed above and to the side of the heatmap. Formal taxonomy, when available, is noted on the tips of the clustered tree. 
+}
+\includegraphics[width=1.0\textwidth]{figures/heatmap.rawseqdist-ed.pdf}
+\label{fig:tissuetype}
+\end{figure}
+\clearpage
 
- \begin{figure}[ht]
-\centering
-\includegraphics[width=1\linewidth]{figures/gene_map_arrow.pdf}
- \begin{NoHyper}
- \caption{\label{second}Cactus Virus X genome, NCBI Reference Sequence: NC\textunderscore002815.2, AF308158.2}
- \label{fig1b}
- \end{NoHyper}
- \end{figure}
- 
-  \begin{figure}[ht]
-\centering
-\includegraphics[width=1\linewidth]{figures/tree_circular_collapsed.pdf}
- \begin{NoHyper}
- \caption{\label{third} Figure 1c refers to the side columns with labels.}
- \label{fig1c}
- \end{NoHyper}
- \end{figure}
-\end{subfigures}
 
-\section*{Tables}
-\begin{itemize}
-\item Table 1. Assembly stats. our taxa, SRAs, assembly stats for positive finds, including unique ID and sample names, including length
-
-\item Table 2. Points under positive selection, how many in each gene
-\end{itemize}
-
-\end{comment}
 % \begin{figure}[ht]
 % \centering
 % \includegraphics[width=0.5\linewidth]{FILE_PATH}
