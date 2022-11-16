@@ -85,16 +85,6 @@ We examine and discuss the implications of our key results for the taxonomy of \
 
 
 %--------------------------------------------------
-\section*{To-do and relevant fixes to be completed before submission}
-%--------------------------------------------------
-\begin{enumerate}
-\item Figure captions need to be expanded and proofread.
-\item Some methods and results are patchy and need to be written, and they are \hl{highlighted} as a reminder. 
-\item The capitalization and italicization of \textit{Potexvirus} is not as consistent as it could be -- I apologize for this nuisance. When referring to the \textit{Potexvirus} genus or using \textit{Potexvirus} as an adjective, it should be capitalized and italicized. As a noun, such as "potexviruses", it is okay uncapitalized and unitalicized.
-\end{enumerate}
-
-
-%--------------------------------------------------
 \section*{Introduction}
 %--------------------------------------------------
 
@@ -227,18 +217,24 @@ Branch support was assessed with IQ-Tree's {\em UFBoot}, an ultrafast bootstrap 
 
 
 \subsection*{Species Delimitation}
-ICTV guidelines state that species within \textit{Potexvirus} are delineated by 72\% shared nucleotide identity, or 80\% shared amino acid identity within the coat protein or replication genes \citep{ICTV_potexviruses}
+ICTV guidelines state that species within \textit{Potexvirus} are delineated by 72\% shared nucleotide identity, or 80\% shared amino acid identity within the coat protein or replication genes \citep{ICTV_potexviruses}.
 Raw pairwise distance calculation was conducted on the sequence alignments in R using \texttt{ape} v5.5.
 
-Automated delimitation was also preformed using mPTP (http://mptp.h-its.org/\#/tree) \citep{Kapli_2017} and bPTP servers (http://species.h-its.org/ptp/) \citep{Zhang_2013}. 
+Automated delimitation was also preformed using mPTP (\citealt{Kapli_2017}; http://mptp.h-its.org/\#/tree) and bPTP servers (\citealt{Zhang_2013}; http://species.h-its.org/ptp/). 
 bPTP was run using 100,000 MCMC generations and 0.1 burn-in. 
 Outgroups were removed for both delimitation analyses.
 
 %FIXME: the sequence similarity analysis should be rerun and included here
 
-\subsection*{\hl{Analysis of molecular selection}}
+%\subsection*{Analysis of Molecular Selection}
 
-%FIXME: B can comment more on these methods.
+\subsection*{Detection and Estimation of Molecular Selection}
+
+The strength and direction of selection pressure across genomes---measured with a relative ratio of silent and protein-altering mutations per available site---may vary. 
+We estimated molecular selection with the Fast, Unconstrained Bayesian AppRoximation (FUBAR) method \citep{murrell2013}, which uses a Bayesian approach to infer nonsynoymous (dN or beta) and synonymous (dS or alpha) substitution rates on a per-site basis for a given coding alignment and corresponding phylogeny. 
+FUBAR reports evidence for positive selection using posterior probabilities (which range 0 to 1).
+Posterior probabilities greater than 0.9 are generally considered to be strongly suggestive of positive selection \citep{murrell2013}.
+The method makes an important assumption that the selection pressure for each site is constant along the entire phylogeny.
 
 \subsection*{Data Accessibility}
 
@@ -318,8 +314,8 @@ The sample KU854929 is delimited as a separate species, although it has also bee
 bPTP and mPTP analyses show that there are many more viral species within \textit{Potexvirus} than have been designated and delimited through traditional means.
 
 
-The ICTV has defined a viral species as a monophyletic group that can be distinguished from other such groups "by multiple criteria", but this criteria is interpreted differently depending on the family studied \citep{simmonds2017virus}.
-The 0.72\% cutoff for species groupings as defined by the ICTV for members of the \textit{Potexvirus} genus \citep{ICTV_potexviruses} has no universal calculation criteria and can be calculated in multiple ways depending on alignment or gap penalties. 
+The ICTV has defined a viral species as a monophyletic group that can be distinguished from other such groups ``by multiple criteria," but this criteria is interpreted differently depending on the family studied \citep{simmonds2017virus}.
+The 72\% cutoff for species groupings as defined by the ICTV for members of the \textit{Potexvirus} genus \citep{ICTV_potexviruses} has no universal calculation criteria and can be calculated in multiple ways depending on alignment or gap penalties. 
 Clade delimitation is a cumbersome process and has relied on cutoffs that are vague -- either 72\% identity difference between CP \textit{or} RdRp nt sequences.
 Alternatively, the same analysis could be applied to amino acid sequences, with an 80\% similarity cutoff. 
 It is unclear what a conflicting result between any combination of genes or sequence type indicates. 
@@ -492,3 +488,13 @@ Heatmap of raw sequence distances with pairwise deletion of sites with a missing
 % END =========================================================================
 
 \end{document}
+
+
+%--------------------------------------------------
+\section*{To-do and relevant fixes to be completed before submission}
+%--------------------------------------------------
+\begin{enumerate}
+\item Figure captions need to be expanded and proofread.
+\item Some methods and results are patchy and need to be written, and they are \hl{highlighted} as a reminder. 
+\item The capitalization and italicization of \textit{Potexvirus} is not as consistent as it could be -- I apologize for this nuisance. When referring to the \textit{Potexvirus} genus or using \textit{Potexvirus} as an adjective, it should be capitalized and italicized. As a noun, such as "potexviruses", it is okay uncapitalized and unitalicized.
+\end{enumerate}
