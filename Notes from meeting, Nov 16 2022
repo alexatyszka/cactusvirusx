@@ -1,0 +1,30 @@
+Notes from meeting, Nov 16 2022
+
+##BIG issues:
+- Title and abstract are largely disconnected
+- Discussion should be a reflection of a concise and sharpened introduction with one paragraph of "Extra stuff"
+- What are the main findings here? Of those, what is the best supported? (Versus what might be interesting but not well supported?)
+- Main message must be consistent and follow a story.
+	- Here there is the broader narrative of viral investigation tools changing over time. We are presenting a novel use for RNA-seq data that integrates past observations and lower level sequencing efforts with presently available incidental data and technology and implicitly preparing for future viral discoveries. The past delimitation methods that are based on morphology or single genes may be improved by the addition of full genome or transcriptome data.
+
+
+##Figure inventory:
+1. (copied from kakapo paper) - exemplary gene coverage
+	- message: Our recovery of CVX and other viruses was largely complete and should be reliable for our analyses.
+2. Phylogeny
+	- Message: We have expanded the CVX-like viral tree. The relationships of both previously sequenced and recently assembled viruses appear largely monophyletic in a consistent way (species and strains recapitulate previously defined groups), but our delimitation methods' results are inconsistent. 
+	- remove bootstrap values - note which nodes have high/low and put extra information in figure caption if needed
+	- remove ICTV designations. ICTV does not control what people actually name their viruses, only gives suggestions based on percentage delimitation. The bar with "names" from genbank is not needed - replace with a concise set of node labels of "what ought to be". The bars with delimitation should stay, but coloration must be edited. Ex: Two shades (or however many needed) of green for OpVX, three shades of blue for CVX. 
+	- coloration of viral/host names is repetitive, red/black coloring not needed on both
+	- renaming needed: names are a priority! Decisive calls need to be made on the labels one way or another. Bars on the side of the graph to display currently named clade are not particularly informative.
+	-figure must be at least 10 pt font for visibility
+3. Delimitation methods vs species
+	- Message: Gene-based versus genome-based delimitation methods conflict in their support of different clades as species, and it might inform our use of such methods. 
+	- The gene-based cutoff delimitation should be performed on the 80% amino acid cutoff, which will inevitably cause issues because the RdRp and CP gene identity will disagree in some cases.
+	- For a nice touch we can display a collapsed phylogeny on the right side of the figure. 
+
+##Road map for immediate to-do:
+- organize folders!
+- calculation of pairwise identity distances and identification of conflicts
+- calculation of tree certainty scores
+
