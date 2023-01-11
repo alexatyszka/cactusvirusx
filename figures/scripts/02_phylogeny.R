@@ -9,8 +9,9 @@ library(phytools)
 library(ape)
 library(ggplot2)
 library(ggnewscale)
-host.info.details <- read.csv("figures/scripts/02_phylogeny_hosts.csv", stringsAsFactors = FALSE)
-treedata <- read.iqtree(file = "02_analyses/02_iqtree/complete_gb_and_srr.r.aln.fasta.treefile")
+
+host.info.details <- read.csv("02_phylogeny_hosts.csv", stringsAsFactors = FALSE)
+treedata <- read.iqtree(file = "../../02_analyses/02_iqtree/complete_gb_and_srr.r.aln.fasta.treefile")
 treedata@phylo <- reroot(treedata@phylo, interactive = TRUE)
 to_drop <- c("CYMRNA", "LC107517", "KU697313", "KU159093", "KT717325", "LC155795", "AY800279", "AY863024", "GQ179646", "GQ179647", "MH423501", "FJ822136", "LC107515", "JX524226", "KX196173", "MF978248")
 treedata@phylo <- drop.tip(treedata@phylo, to_drop)
@@ -28,13 +29,13 @@ labels=c("no", "yes"))+
   geom_tiplab(aes(color=new), align=T,linetype="dotted",
               size=3, offset=0.05, hjust=0, bg.color="white") +
   #host tip labels:
-  geom_tiplab(aes( label=host, color=new), align=T, linetype=NA, size=4, offset=0.4, hjust=0)+
-  geom_treescale(x=0.1, y=70,width=0.10, fontsize=4, linesize=1, offset=2, color='black', label='\n substitutions per site', offset.label=2)+
+  geom_tiplab(aes( label=host, color=new), align=T, linetype=NA, size=4, offset=0.6, hjust=0)+
+  geom_treescale(x=0.1, y=70,width=0.10, fontsize=4, linesize=1, offset=2.5, color='black', label='\n substitutions per site', offset.label=2)+
   theme(legend.position="none")+
-  xlim(0,1.2)+
-  geom_text(aes(label=UFboot), hjust=-.3)
+  xlim(0,5)+
+geom_text2(aes(subset = !isTip, label=UFboot), hjust=-0.3)
 p
-ggsave("tree_rect.pdf",width = 50, height = 50, units = "cm")
+ggsave("tree_rect_nodroppedufboot.pdf",width = 50, height = 40, units = "cm")
 
 ##heatmap
 ##

@@ -24,14 +24,8 @@ old/
 .Rhistory
 ~$*
 alexasandbox
-cvx-cactaceae.pdf
-analyses/cvx.init.aln.fasta
-analyses/cvx.njtree.nwk
-analyses/cvx.seq.metadata.csv
-data/data_v1/viral_translation_table_updated_names.csv
+figures/previous_versions/
 alexascript4.6.21.txt
-
-cvx-cactaceae.pdf
 .RData
 cvx-cactaceae.pdf
 objects.for.phylo.RData
