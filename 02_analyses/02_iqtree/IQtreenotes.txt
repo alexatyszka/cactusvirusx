@@ -1,3 +1,0 @@
-IQtree command: 
-
-iqtree -s complete_gb_and_srr.r.aln.fasta -bb 1000

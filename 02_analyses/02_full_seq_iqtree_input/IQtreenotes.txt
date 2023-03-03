@@ -1,0 +1,5 @@
+IQtree command:
+ 
+/Users/alexa/iqtree-1.6.12-MacOSX/bin/iqtree
+
+iqtree -s trimmed_complete_gb_and_srr-mafft.fasta -bb 1000
