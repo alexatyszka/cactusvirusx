@@ -1,0 +1,6 @@
+orf1-mafft.fasta
+orf2-mafft.fasta
+orf3-mafft.fasta
+orf4-mafft.fasta
+orf5-mafft.fasta
+trimmed_complete_gb_and_srr-mafft.fasta
