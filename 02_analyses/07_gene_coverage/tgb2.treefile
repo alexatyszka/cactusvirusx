@@ -1,0 +1,193 @@
+#NEXUS
+[R-package treeio, Fri Dec  1 11:59:48 2023]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 90;
+	TAXLABELS
+		SRR11190795D
+		SRR11190796D
+		SRR11190797D
+		SRR11603186C
+		SRR11603190C
+		SRR11603187D
+		SRR11603189D
+		SRR11603191C
+		SRR11190793B
+		AF308158
+		SRR11190795A
+		SRR11190796A
+		KM365479
+		SRR11190793A
+		LC128411
+		Schlumbergera_truncata_15H03_sty_a
+		Schlumbergera_truncata_15H03_sty_b
+		Schlumbergera_truncata_19JSF_sty
+		Schlumbergera_truncata_15H04_pet
+		Schlumbergera_truncata_15H04_sty
+		Schlumbergera_truncata_15H04_pol
+		Schlumbergera_truncata_15H06_pol
+		SRR11190797A
+		SRR11603182A
+		SRR11190798A
+		SRR11190801A
+		SRR11190791A
+		SRR11190800A
+		SRR11190799A
+		JF937699
+		KM288846
+		KM288847
+		KX883791
+		KM288845
+		AY366208
+		SRR11190795B
+		SRR11190797B
+		SRR11190802B
+		SRR11190796B
+		KM288842
+		KM288843
+		SRR11190798B
+		SRR11190801B
+		JF930326
+		SRR11603186B
+		SRR11603190B
+		SRR11603187B
+		SRR11603191B
+		SRR11603189B
+		KM288844
+		AY366207
+		SRR11190798C
+		SRR11190802C
+		SRR11603189C
+		SRR11603187C
+		SRR11190801C
+		SRR11603183B
+		SRR11603184B
+		KP090203
+		KU854929
+		AY366209
+		KU854931
+		KY348771
+		AY800279
+		KT717325
+		KU159093
+		LC155795
+		KU697313
+		SRR11190798D
+		SRR11190801D
+		SRR11190802D
+		SRR11603183C
+		SRR11603182B
+		SRR11603184C
+		SRR11190791B
+		SRR11190800B
+		SRR11190799B
+		MG210801
+		JF930327
+		AY863024
+		GQ179646
+		GQ179647
+		MH423501
+		FJ822136
+		LC107515
+		JX524226
+		MF978248
+		KX196173
+		CYMRNA
+		LC107517
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	SRR11190795D,
+		2	SRR11190796D,
+		3	SRR11190797D,
+		4	SRR11603186C,
+		5	SRR11603190C,
+		6	SRR11603187D,
+		7	SRR11603189D,
+		8	SRR11603191C,
+		9	SRR11190793B,
+		10	AF308158,
+		11	SRR11190795A,
+		12	SRR11190796A,
+		13	KM365479,
+		14	SRR11190793A,
+		15	LC128411,
+		16	Schlumbergera_truncata_15H03_sty_a,
+		17	Schlumbergera_truncata_15H03_sty_b,
+		18	Schlumbergera_truncata_19JSF_sty,
+		19	Schlumbergera_truncata_15H04_pet,
+		20	Schlumbergera_truncata_15H04_sty,
+		21	Schlumbergera_truncata_15H04_pol,
+		22	Schlumbergera_truncata_15H06_pol,
+		23	SRR11190797A,
+		24	SRR11603182A,
+		25	SRR11190798A,
+		26	SRR11190801A,
+		27	SRR11190791A,
+		28	SRR11190800A,
+		29	SRR11190799A,
+		30	JF937699,
+		31	KM288846,
+		32	KM288847,
+		33	KX883791,
+		34	KM288845,
+		35	AY366208,
+		36	SRR11190795B,
+		37	SRR11190797B,
+		38	SRR11190802B,
+		39	SRR11190796B,
+		40	KM288842,
+		41	KM288843,
+		42	SRR11190798B,
+		43	SRR11190801B,
+		44	JF930326,
+		45	SRR11603186B,
+		46	SRR11603190B,
+		47	SRR11603187B,
+		48	SRR11603191B,
+		49	SRR11603189B,
+		50	KM288844,
+		51	AY366207,
+		52	SRR11190798C,
+		53	SRR11190802C,
+		54	SRR11603189C,
+		55	SRR11603187C,
+		56	SRR11190801C,
+		57	SRR11603183B,
+		58	SRR11603184B,
+		59	KP090203,
+		60	KU854929,
+		61	AY366209,
+		62	KU854931,
+		63	KY348771,
+		64	AY800279,
+		65	KT717325,
+		66	KU159093,
+		67	LC155795,
+		68	KU697313,
+		69	SRR11190798D,
+		70	SRR11190801D,
+		71	SRR11190802D,
+		72	SRR11603183C,
+		73	SRR11603182B,
+		74	SRR11603184C,
+		75	SRR11190791B,
+		76	SRR11190800B,
+		77	SRR11190799B,
+		78	MG210801,
+		79	JF930327,
+		80	AY863024,
+		81	GQ179646,
+		82	GQ179647,
+		83	MH423501,
+		84	FJ822136,
+		85	LC107515,
+		86	JX524226,
+		87	MF978248,
+		88	KX196173,
+		89	CYMRNA,
+		90	LC107517
+	;
+	TREE * UNTITLED = [&R] ((((9[&X=40,fasta_names=Hylocereus_undatus_SRR11190793__NC_024458,key=11190793__NC_024458,Accession=,Common.Name=,Description=14,622 reads assembled to NC_024458,Mean.Coverage=325.7418002,Organism=SRR11190793 Plant BR-2 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.5354e-06,((69[&X=26,fasta_names=Hylocereus_polyrhizus_SRR11190798__NC_024458,key=11190798__NC_024458,Accession=,Common.Name=,Description=271,450 reads assembled to NC_024458,Mean.Coverage=6005.159653,Organism=SRR11190798 Plant DH-3 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06,(70[&X=30,fasta_names=Hylocereus_polyrhizus_SRR11190801__NC_024458,key=11190801__NC_024458,Accession=,Common.Name=,Description=351,682 reads assembled to NC_024458,Mean.Coverage=7772.003744,Organism=SRR11190801 Plant DH-2 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06,(71[&X=34,fasta_names=Hylocereus_polyrhizus_SRR11190802__NC_024458,key=11190802__NC_024458,Accession=,Common.Name=,Description=358,996 reads assembled to NC_024458,Mean.Coverage=7939.711996,Organism=SRR11190802 Plant DH-1 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06,(72[&X=49,fasta_names=Hylocereus_undatus_SRR11603183__NC_024458,key=11603183__NC_024458,Accession=,Common.Name=,Description=142,802 reads assembled to NC_024458,Mean.Coverage=3174.849334,Organism=SRR11603183 GW-peel-2 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06,(((78[&X=95,fasta_names=MG210801,key=MG210801,host=Mytilus coruscus,hostgenus=Mytilus]:0.0032206334,(1[&X=14,fasta_names=Hylocereus_polyrhizus_SRR11190795__NC_024458,key=11190795__NC_024458,Accession=,Common.Name=,Description=98,604 reads assembled to NC_024458,Mean.Coverage=2192.424592,Organism=SRR11190795 Plant FR-3 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:0.0064385167,79[&X=71,fasta_names=JF930327,key=JF930327,Accession=JF930327.1,Common.Name=,Description=Pitaya virus X isolate P37, complete genome,Organism=Pitaya virus X,Ref.Seq.Name=,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Pitaya virus X,group=Pitaya Virus X]:0.0032236121):0.0064667533)93:2.7772e-06,(77[&X=42,fasta_names=Hylocereus_undatus_SRR11190799__NC_024458,key=11190799__NC_024458,Accession=,Common.Name=,Description=164,078 reads assembled to NC_024458,Mean.Coverage=3618.940692,Organism=SRR11190799 Plant BSJ-3 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.126e-06,(75[&X=36,fasta_names=Hylocereus_undatus_SRR11190791__NC_024458,key=11190791__NC_024458,Accession=,Common.Name=,Description=183,824 reads assembled to NC_024458,Mean.Coverage=4064.588588,Organism=SRR11190791 Plant BSJ-1 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:0,76[&X=44,fasta_names=Hylocereus_undatus_SRR11190800__NC_024458,key=11190800__NC_024458,Accession=,Common.Name=,Description=235,002 reads assembled to NC_024458,Mean.Coverage=5196.444361,Organism=SRR11190800 Plant BSJ-2 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:0):2.1427e-06)100:0.009738978)52:0.0063702697,(73[&X=46,fasta_names=Hylocereus_undatus_SRR11603182__NC_024458,key=11603182__NC_024458,Accession=,Common.Name=,Description=173,498 reads assembled to NC_024458,Mean.Coverage=3863.912236,Organism=SRR11603182 GW-peel-3 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:0,74[&X=52,fasta_names=Hylocereus_undatus_SRR11603184__NC_024458,key=11603184__NC_024458,Accession=,Common.Name=,Description=135,636 reads assembled to NC_024458,Mean.Coverage=3021.305826,Organism=SRR11603184 GW-peel-1 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:0):2.3355e-06)58:2.1706e-06)10:2.4509e-06)9:2.6745e-06)13:2.1138e-06)20:2.1137e-06,((2[&X=18,fasta_names=Hylocereus_polyrhizus_SRR11190796__NC_024458,key=11190796__NC_024458,Accession=,Common.Name=,Description=250,762 reads assembled to NC_024458,Mean.Coverage=5579.396286,Organism=SRR11190796 Plant FR-2 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06,3[&X=22,fasta_names=Hylocereus_polyrhizus_SRR11190797__NC_024458,key=11190797__NC_024458,Accession=,Common.Name=,Description=174,598 reads assembled to NC_024458,Mean.Coverage=3855.833159,Organism=SRR11190797 Plant FR-1 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.2487e-06)69:2.0396e-06,((4[&X=55,fasta_names=Hylocereus_undatus_SRR11603186__NC_024458,key=11603186__NC_024458,Accession=,Common.Name=,Description=330,210 reads assembled to NC_024458,Mean.Coverage=7346.561929,Organism=SRR11603186 RR-pulp-3 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06,5[&X=66,fasta_names=Hylocereus_undatus_SRR11603190__NC_024458,key=11603190__NC_024458,Accession=,Common.Name=,Description=353,822 reads assembled to NC_024458,Mean.Coverage=7867.770855,Organism=SRR11603190 RR-peel-2 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06)68:2.4294e-06,(8[&X=69,fasta_names=Hylocereus_undatus_SRR11603191__NC_024458,key=11603191__NC_024458,Accession=,Common.Name=,Description=223,108 reads assembled to NC_024458,Mean.Coverage=4967.706006,Organism=SRR11603191 RR-peel-1 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06,(6[&X=59,fasta_names=Hylocereus_undatus_SRR11603187__NC_024458,key=11603187__NC_024458,Accession=,Common.Name=,Description=164,042 reads assembled to NC_024458,Mean.Coverage=3647.956268,Organism=SRR11603187 RR-pulp-2 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06,7[&X=63,fasta_names=Hylocereus_undatus_SRR11603189__NC_024458,key=11603189__NC_024458,Accession=,Common.Name=,Description=143,848 reads assembled to NC_024458,Mean.Coverage=3201.384454,Organism=SRR11603189 RR-peel-3 NC_024458,Ref.Seq.Name=NC_024458,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Pitaya Virus X,new=TRUE]:2.3355e-06)85:2.3356e-06)68:2.3895e-06)78:0.0032104447)36:2.3961e-06)72:0.0064305231)57:0.3479474755,((((((24[&X=45,fasta_names=Hylocereus_undatus_SRR11603182__NC_002815,key=11603182__NC_002815,Accession=,Common.Name=,Description=150,860 reads assembled to NC_002815,Mean.Coverage=3392.304203,Organism=SRR11603182 GW-peel-3 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:2.1757e-06,(23[&X=19,fasta_names=Hylocereus_polyrhizus_SRR11190797__NC_002815,key=11190797__NC_002815,Accession=,Common.Name=,Description=108,752 reads assembled to NC_002815,Mean.Coverage=2426.628213,Organism=SRR11190797 Plant FR-1 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:2.3355e-06,((13[&X=80,fasta_names=KM365479,key=KM365479,Accession=KM365479.1,Common.Name=,Description=Cactus virus X isolate TW-5149-20 replication-associated protein (CVXgp1) gene, partial cds; and triple gene block protein 1 (CVXgp2), triple gene block protein 2 (CVXgp3), triple gene block protein 3 (CVXgp4), and coat protein (CVXgp5) genes, complete cds,Organism=Cactus virus X KM365479.1,Ref.Seq.Name=,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Cactus virus X,group=Cactus Virus X Variant A]:0.019369067,(12[&X=15,fasta_names=Hylocereus_polyrhizus_SRR11190796__NC_002815,key=11190796__NC_002815,Accession=,Common.Name=,Description=93,508 reads assembled to NC_002815,Mean.Coverage=2099.497279,Organism=SRR11190796 Plant FR-2 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:0.0031815572,(10[&X=1,fasta_names=AF308158,key=AF308158,Accession=AF308158.2,Common.Name=,Description=Cactus virus X, complete genome,Organism=Cactus virus X AF308158.2,Ref.Seq.Name=,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=Cactus virus X,group=Cactus Virus X Variant A]:0.0096466469,11[&X=11,fasta_names=Hylocereus_polyrhizus_SRR11190795__NC_002815,key=11190795__NC_002815,Accession=,Common.Name=,Description=280,210 reads assembled to NC_002815,Mean.Coverage=6280.297399,Organism=SRR11190795 Plant FR-3 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:0.0031445228)99:0.003258666)88:0.0031763392)17:2.2598e-06,((14[&X=39,fasta_names=Hylocereus_undatus_SRR11190793__NC_002815,key=11190793__NC_002815,Accession=,Common.Name=,Description=112,772 reads assembled to NC_002815,Mean.Coverage=2536.704868,Organism=SRR11190793 Plant BR-2 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:0.0063880149,15[&X=92,fasta_names=LC128411,key=LC128411,Accession=LC128411.1,Common.Name=,Description=Cactus virus X genomic RNA, complete genome,Organism=Cactus virus X LC128411.1,Ref.Seq.Name=,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=Cactus virus X,group=Cactus Virus X Variant A]:0.0095954849)48:2.5457e-06,((18[&X=107,fasta_names=Schlumbergera_truncata_19JSF_sty__NC_002815,key=Schlumbergera_truncata_19JSF_sty__NC_002815,host=Schlumbergera truncata,hostgenus=Schlumbergera]:2.1099e-06,(16[&X=99,fasta_names=Schlumbergera_truncata_15H03_sty__NC_002815_a,key=Schlumbergera_truncata_15H03_sty__NC_002815_a,host=Schlumbergera truncata,hostgenus=Schlumbergera]:2.3355e-06,17[&X=100,fasta_names=Schlumbergera_truncata_15H03_sty__NC_002815_b,key=Schlumbergera_truncata_15H03_sty__NC_002815_b,host=Schlumbergera truncata,hostgenus=Schlumbergera]:2.3355e-06)100:0.0063932936)87:0.0031885083,(22[&X=105,fasta_names=Schlumbergera_truncata_15H06_pol__NC_002815,key=Schlumbergera_truncata_15H06_pol__NC_002815,host=Schlumbergera truncata,hostgenus=Schlumbergera]:2.3355e-06,(21[&X=102,fasta_names=Schlumbergera_truncata_15H04_pol__NC_002815,key=Schlumbergera_truncata_15H04_pol__NC_002815,host=Schlumbergera truncata,hostgenus=Schlumbergera]:2.7305e-06,(19[&X=101,fasta_names=Schlumbergera_truncata_15H04_pet__NC_002815,key=Schlumbergera_truncata_15H04_pet__NC_002815,host=Schlumbergera truncata,hostgenus=Schlumbergera]:0,20[&X=103,fasta_names=Schlumbergera_truncata_15H04_sty__NC_002815,key=Schlumbergera_truncata_15H04_sty__NC_002815,host=Schlumbergera truncata,hostgenus=Schlumbergera]:0):2.6498e-06)100:0.0031983092)96:0.003179796)83:0.0032060555)85:0.0064148276)23:0.0048009782)50:2.3125e-06)64:0.0048170064,(25[&X=23,fasta_names=Hylocereus_polyrhizus_SRR11190798__NC_002815,key=11190798__NC_002815,Accession=,Common.Name=,Description=46,438 reads assembled to NC_002815,Mean.Coverage=1035.785455,Organism=SRR11190798 Plant DH-3 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:2.3355e-06,26[&X=27,fasta_names=Hylocereus_polyrhizus_SRR11190801__NC_002815,key=11190801__NC_002815,Accession=,Common.Name=,Description=45,396 reads assembled to NC_002815,Mean.Coverage=1011.93423,Organism=SRR11190801 Plant DH-2 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:2.3355e-06)97:0.0032090804)64:0.00322437,(29[&X=41,fasta_names=Hylocereus_undatus_SRR11190799__NC_002815,key=11190799__NC_002815,Accession=,Common.Name=,Description=353,010 reads assembled to NC_002815,Mean.Coverage=7857.462957,Organism=SRR11190799 Plant BSJ-3 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:2.3355e-06,(27[&X=35,fasta_names=Hylocereus_undatus_SRR11190791__NC_002815,key=11190791__NC_002815,Accession=,Common.Name=,Description=452,784 reads assembled to NC_002815,Mean.Coverage=10097.06199,Organism=SRR11190791 Plant BSJ-1 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:0,28[&X=43,fasta_names=Hylocereus_undatus_SRR11190800__NC_002815,key=11190800__NC_002815,Accession=,Common.Name=,Description=364,240 reads assembled to NC_002815,Mean.Coverage=8117.599335,Organism=SRR11190800 Plant BSJ-2 NC_002815,Ref.Seq.Name=NC_002815,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Cactus Virus X Variant A,new=TRUE]:0):2.3355e-06)84:2.5713e-06)100:0.1425914572,(30[&X=72,fasta_names=JF937699,key=JF937699,Accession=JF937699.1,Common.Name=,Description=Cactus virus X isolate NTU, complete genome,Organism=Cactus virus X JF937699.1,Ref.Seq.Name=,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Cactus virus X,group=Cactus Virus X Variant B]:2.5477e-06,(31[&X=78,fasta_names=KM288846,key=KM288846,Accession=KM288846.1,Common.Name=,Description=Cactus virus X isolate TW-5XB-1 replication-associated protein (RdRP) gene, partial cds; and triple gene block protein 1 (TGB1), triple gene block protein 2 (TGB2), triple gene block protein 3 (TGB3), and coat protein (CP) genes, complete cds,Organism=Cactus virus X KM288846.1,Ref.Seq.Name=,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Cactus virus X,group=Cactus Virus X Variant B]:0.0088955929,(32[&X=79,fasta_names=KM288847,key=KM288847,Accession=KM288847.1,Common.Name=,Description=Cactus virus X isolate TW-456Y-1 triple gene block protein 1 (TGB1) gene, partial cds; and triple gene block protein 2 (TGB2), triple gene block protein 3 (TGB3), and coat protein (CP) genes, complete cds,Organism=Cactus virus X KM288847.1,Ref.Seq.Name=,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Cactus virus X,group=Cactus Virus X Variant B]:0.0089419501,33[&X=88,fasta_names=KX883791,key=KX883791,Accession=KX883791.1,Common.Name=,Description=Cactus virus X strain SCM51431 ORF1, ORF2, ORF3, and ORF4 genes, complete cds,Organism=Cactus virus X SCM51431,Ref.Seq.Name=,host=Diptera,hostgenus=Diptera,formal_tax=Cactus virus X,group=Cactus Virus X Variant B]:0.0070482202)90:0.0064469824)91:0.0038471168)100:0.1491697802)100:0.2108726791,(34[&X=77,fasta_names=KM288845_extraction,key=KM288845_extraction,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Zygocactus virus X]:0.1381728125,(50[&X=76,fasta_names=KM288844,key=KM288844,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Zygocactus virus X]:0.0007025799,((35[&X=3,fasta_names=AY366208,key=AY366208,Accession=AY366208.1,Common.Name=,Description=Zygocactus virus X strain B1 replication-associated protein, triple gene block protein 1, triple gene block protein 2, triple gene block protein 3, and coat protein genes, complete cds,Organism=Zygocactus virus X Strain B1,Ref.Seq.Name=,host=Schlumbergera sp.,hostgenus=Schlumbergera,formal_tax=Zygocactus virus X,group=Zygocactus Virus X Variant B1]:0.0188773611,(38[&X=32,fasta_names=Hylocereus_polyrhizus_SRR11190802__NC_006059,key=11190802__NC_006059,Accession=,Common.Name=,Description=6,190 reads assembled to NC_006059,Mean.Coverage=138.1933877,Organism=SRR11190802 Plant DH-1 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:0.0093080961,(36[&X=12,fasta_names=Hylocereus_polyrhizus_SRR11190795__NC_006059,key=11190795__NC_006059,Accession=,Common.Name=,Description=1,686 reads assembled to NC_006059,Mean.Coverage=37.46225845,Organism=SRR11190795 Plant FR-3 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=,new=TRUE]:2.0858e-06,37[&X=20,fasta_names=Hylocereus_polyrhizus_SRR11190797__NC_006059,key=11190797__NC_006059,Accession=,Common.Name=,Description=4,164 reads assembled to NC_006059,Mean.Coverage=92.36262077,Organism=SRR11190797 Plant FR-1 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:2.3355e-06)100:0.0061693281)99:0.0063029101)93:0.0062059143,((39[&X=16,fasta_names=Hylocereus_polyrhizus_SRR11190796__NC_006059,key=11190796__NC_006059,Accession=,Common.Name=,Description=3,974 reads assembled to NC_006059,Mean.Coverage=88.73611111,Organism=SRR11190796 Plant FR-2 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:0.0031454989,(40[&X=74,fasta_names=KM288842,key=KM288842,Accession=,Common.Name=,Description=,Organism=KM288842,Ref.Seq.Name=,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Zygocactus virus X]:2.3355e-06,41[&X=75,fasta_names=KM288843,key=KM288843,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Zygocactus virus X]:0.006141137)88:0.0030784748)84:0.0030751086,((44[&X=70,fasta_names=JF930326,key=JF930326,Accession=JF930326.1,Common.Name=,Description=Zygocactus virus X isolate P39, complete genome,Organism=Zygocactus virus X JF930326.1,Ref.Seq.Name=,host=Selenicereus sp.,hostgenus=Selenicereus,formal_tax=Zygocactus virus X,group=Zygocactus Virus X Variant B1]:0.0093233011,(42[&X=24,fasta_names=Hylocereus_polyrhizus_SRR11190798__NC_006059,key=11190798__NC_006059,Accession=,Common.Name=,Description=10,292 reads assembled to NC_006059,Mean.Coverage=229.9144022,Organism=SRR11190798 Plant DH-3 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:2.3355e-06,43[&X=28,fasta_names=Hylocereus_polyrhizus_SRR11190801__NC_006059,key=11190801__NC_006059,Accession=,Common.Name=,Description=8,536 reads assembled to NC_006059,Mean.Coverage=190.022494,Organism=SRR11190801 Plant DH-2 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:2.3355e-06)98:0.0030873639)94:0.0030566774,((45[&X=54,fasta_names=Hylocereus_undatus_SRR11603186__NC_006059,key=11603186__NC_006059,Accession=,Common.Name=,Description=210,786 reads assembled to NC_006059,Mean.Coverage=4738.702899,Organism=SRR11603186 RR-pulp-3 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:2.3355e-06,46[&X=65,fasta_names=Hylocereus_undatus_SRR11603190__NC_006059,key=11603190__NC_006059,Accession=,Common.Name=,Description=176,564 reads assembled to NC_006059,Mean.Coverage=3967.374245,Organism=SRR11603190 RR-peel-2 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:2.3355e-06)74:2.3356e-06,(49[&X=61,fasta_names=Hylocereus_undatus_SRR11603189__NC_006059,key=11603189__NC_006059,Accession=,Common.Name=,Description=234,138 reads assembled to NC_006059,Mean.Coverage=5267.687953,Organism=SRR11603189 RR-peel-3 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:2.3355e-06,(47[&X=57,fasta_names=Hylocereus_undatus_SRR11603187__NC_006059,key=11603187__NC_006059,Accession=,Common.Name=,Description=144,741 reads assembled to NC_006059,Mean.Coverage=3252.259209,Organism=SRR11603187 RR-pulp-2 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:0,48[&X=68,fasta_names=Hylocereus_undatus_SRR11603191__NC_006059,key=11603191__NC_006059,Accession=,Common.Name=,Description=156,888 reads assembled to NC_006059,Mean.Coverage=3527.400513,Organism=SRR11603191 RR-peel-1 NC_006059,Ref.Seq.Name=NC_006059,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Zygocactus Virus X Variant B1,new=TRUE]:0):2.3355e-06)41:2.3356e-06)100:0.0186665666)41:2.1087e-06)93:0.0030719636)95:0.0085631933)99:0.0760509634)99:0.1333300312)94:0.0819636197,((60[&X=85,fasta_names=KU854929,key=KU854929,Accession=KU854929.1,Common.Name=,Description=Schlumbergera virus X isolate nopal verdura 1, complete genome,Organism=Schlumbergera virus X KU854929,Ref.Seq.Name=,host=Opuntia ficus-indica,hostgenus=Opuntia,formal_tax=Schlumbergera virus X,group=Schlumbergera Virus X]:0.0726874155,(51[&X=2,fasta_names=AY366207,key=AY366207,Accession=AY366207.2,Common.Name=,Description=Schlumbergera virus X strain K11, complete genome,Organism=Schlumbergera virus X Strain K11,Ref.Seq.Name=,host=Schlumbergera bridgesii,hostgenus=Schlumbergera,formal_tax=Schlumbergera virus X,group=Schlumbergera Virus X]:0.0077217066,(59[&X=81,fasta_names=KP090203,key=KP090203,Accession=KP090203.1,Common.Name=,Description=Schlumbergera virus X isolate Palma-PE, complete genome,Organism=Schlumbergera virus X KP090203,Ref.Seq.Name=,host=Opuntia cochenillifera,hostgenus=Opuntia,formal_tax=Schlumbergera virus X,group=Schlumbergera Virus X]:0.0166283528,((56[&X=29,fasta_names=Hylocereus_polyrhizus_SRR11190801__NC_011659,key=11190801__NC_011659,Accession=,Common.Name=,Description=118,540 reads assembled to NC_011659,Mean.Coverage=2645.037087,Organism=SRR11190801 Plant DH-2 NC_011659,Ref.Seq.Name=NC_011659,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Schlumbergera Virus X,new=TRUE]:2.3355e-06,(55[&X=58,fasta_names=Hylocereus_undatus_SRR11603187__NC_011659,key=11603187__NC_011659,Accession=,Common.Name=,Description=136,636 reads assembled to NC_011659,Mean.Coverage=3063.347354,Organism=SRR11603187 RR-pulp-2 NC_011659,Ref.Seq.Name=NC_011659,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Schlumbergera Virus X,new=TRUE]:2.3355e-06,(54[&X=62,fasta_names=Hylocereus_undatus_SRR11603189__NC_011659,key=11603189__NC_011659,Accession=,Common.Name=,Description=110,860 reads assembled to NC_011659,Mean.Coverage=2489.361827,Organism=SRR11603189 RR-peel-3 NC_011659,Ref.Seq.Name=NC_011659,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Schlumbergera Virus X,new=TRUE]:2.3355e-06,(52[&X=25,fasta_names=Hylocereus_polyrhizus_SRR11190798__NC_011659,key=11190798__NC_011659,Accession=,Common.Name=,Description=74,072 reads assembled to NC_011659,Mean.Coverage=1654.827831,Organism=SRR11190798 Plant DH-3 NC_011659,Ref.Seq.Name=NC_011659,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Schlumbergera Virus X,new=TRUE]:2.3355e-06,53[&X=33,fasta_names=Hylocereus_polyrhizus_SRR11190802__NC_011659,key=11190802__NC_011659,Accession=,Common.Name=,Description=137,996 reads assembled to NC_011659,Mean.Coverage=3083.758782,Organism=SRR11190802 Plant DH-1 NC_011659,Ref.Seq.Name=NC_011659,host=Selenicereus polyrhizus,hostgenus=Selenicereus,formal_tax=,group=Schlumbergera Virus X,new=TRUE]:0.0340094888)25:2.5299e-06)1:2.5618e-06)9:2.8214e-06)19:2.5628e-06,(57[&X=48,fasta_names=Hylocereus_undatus_SRR11603183__NC_011659,key=11603183__NC_011659,Accession=,Common.Name=,Description=69,716 reads assembled to NC_011659,Mean.Coverage=1563.309362,Organism=SRR11603183 GW-peel-2 NC_011659,Ref.Seq.Name=NC_011659,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Schlumbergera Virus X,new=TRUE]:2.0798e-06,58[&X=51,fasta_names=Hylocereus_undatus_SRR11603184__NC_011659,key=11603184__NC_011659,Accession=,Common.Name=,Description=49,492 reads assembled to NC_011659,Mean.Coverage=1111.767526,Organism=SRR11603184 GW-peel-1 NC_011659,Ref.Seq.Name=NC_011659,host=Selenicereus undatus,hostgenus=Selenicereus,formal_tax=,group=Schlumbergera Virus X,new=TRUE]:2.3355e-06)74:0.0032153506)51:0.010704309)67:0.0123771135)84:0.0185958734)97:0.2684551081,(61[&X=4,fasta_names=AY366209,key=AY366209,Accession=AY366209.1,Common.Name=,Description=Opuntia virus X strain CC10 replication-associated protein, triple gene block protein 1, triple gene block protein 2, triple gene block protein 3, and coat protein genes, complete cds,Organism=Opuntia virus Strain CC10,Ref.Seq.Name=,host=Opuntia sp.,hostgenus=Opuntia,formal_tax=Opuntia virus X,group=Opuntia Virus X]:0.0159664966,(62[&X=86,fasta_names=KU854931,key=KU854931,Accession=KU854931.1,Common.Name=,Description=Opuntia virus X isolate nopal verdura-1, complete genome,Organism=Opuntia virus X KU854931,Ref.Seq.Name=,host=Opuntia ficus-indica,hostgenus=Opuntia,formal_tax=Opuntia virus X,group=Opuntia Virus X]:2.465e-06,63[&X=89,fasta_names=KY348771,key=KY348771,Accession=KY348771.1,Common.Name=,Description=Opuntia virus X isolate Noptuna-Mex, complete genome,Organism=Opuntia virus X KY348771,Ref.Seq.Name=,host=Opuntia albicarpa cv. nopal tunero,hostgenus=Opuntia,formal_tax=Opuntia virus X,group=Opuntia Virus X]:2.3355e-06)75:2.3311e-06)100:0.7019588724)77:0.1292228592)85:0.0984889004)99:0.5912290181,(64[&X=5,fasta_names=AY800279,key=AY800279,Accession=AY800279.1,Common.Name=,Description=Nandina mosaic virus isolate PLH 1, complete genome,Organism=Nandina mosaic virus,Ref.Seq.Name=,host=Nandina domestica,hostgenus=Nandina,formal_tax=,group=]:0.0560761981,(68[&X=84,fasta_names=KU697313,key=KU697313,Accession=KU697313.1,Common.Name=,Description=Plantago asiatica mosaic virus isolate Gunwi, complete genome,Organism=Plantago asiatica mosaic virus KU697313,Ref.Seq.Name=,host=Plantago asiatica,hostgenus=Plantago,formal_tax=,group=]:0.1793660203,(67[&X=93,fasta_names=LC155795,key=LC155795,Accession=LC155795.1,Common.Name=,Description=Plantago asiatica mosaic virus genomic RNA, complete genome, isolate NJ,Organism=Plantago asiatica mosaic virus LC155795,Ref.Seq.Name=,host=Nandina domestica,hostgenus=Nandina,formal_tax=,group=]:0.1754922771,(65[&X=82,fasta_names=KT717325,key=KT717325,Accession=KT717325.1,Common.Name=,Description=Plantago asiatica mosaic virus isolate kr, complete genome,Organism=Plantago asiatica mosaic virus KT717325,Ref.Seq.Name=,host=Lilium sp.,hostgenus=Lilium,formal_tax=,group=]:0.0037643414,66[&X=83,fasta_names=KU159093,key=KU159093,Accession=KU159093.1,Common.Name=,Description=Plantago asiatica mosaic virus isolate Ko-YS, complete genome,Organism=Plantago asiatica mosaic virus KU159093,Ref.Seq.Name=,host=Lilium sp.,hostgenus=Lilium,formal_tax=,group=]:0.0088965397)100:0.0978128378)97:0.0393358464)94:0.0753012039)100:0.7536302819)100:0.0659982964,(((85[&X=90,fasta_names=LC107515,key=LC107515,Accession=LC107515.1,Common.Name=AltMV,Description=Alternanthera mosaic virus genomic RNA, complete genome, isolate Ac,Organism=Alternanthera mosaic virus LC107515,Ref.Seq.Name=,host=Achyranthes bidentata,hostgenus=Achyranthes,formal_tax=,group=]:0.1382598278,(84[&X=8,fasta_names=FJ822136,key=FJ822136,Accession=FJ822136.1,Common.Name=AltMV,Description=Alternanthera mosaic Portulaca grandiflora, complete genome,Organism=Alternanthera mosaic virus FJ822136,Ref.Seq.Name=,host=Portulaca grandiflora,hostgenus=Portulaca,formal_tax=,group=]:0.006716277,(83[&X=96,fasta_names=MH423501,key=MH423501,Accession=MH423501.1,Common.Name=AltMV,Description=Alternanthera mosaic virus isolate DH, complete genome,Organism=Alternanthera mosaic virus MH423501,Ref.Seq.Name=,host=Epiphyllum sp. cv. Dragon Heart,hostgenus=Epiphyllum,formal_tax=,group=]:0.0223148686,(80[&X=6,fasta_names=AY863024,key=AY863024,Accession=AY863024.1,Common.Name=AltMV,Description=Alternanthera mosaic virus, complete genome,Organism=Alternanthera mosaic virus AY863024,Ref.Seq.Name=,host=Phlox stolonifera cv. Sherwood Purple,hostgenus=Phlox,formal_tax=,group=]:0.0074444115,(81[&X=9,fasta_names=GQ179646,key=GQ179646,Accession=GQ179646.1,Common.Name=AltMV,Description=Alternanthera mosaic virus isolate SP 3-1, complete genome,Organism=Alternanthera mosaic virus GQ179646,Ref.Seq.Name=,host=Phlox stolonifera cv. Sherwood Purple,hostgenus=Phlox,formal_tax=,group=]:2.3355e-06,82[&X=10,fasta_names=GQ179647,key=GQ179647,Accession=GQ179647.1,Common.Name=AltMV,Description=Alternanthera mosaic virus isolate SP 4-7, complete genome,Organism=Alternanthera mosaic virus GQ179647,Ref.Seq.Name=,host=Phlox stolonifera cv. Sherwood Purple,hostgenus=Phlox,formal_tax=,group=]:2.3355e-06)100:0.0154698398)91:0.0094263084)82:0.0147451231)84:0.1747202518)84:0.1988955676,(86[&X=73,fasta_names=JX524226,key=JX524226,Accession=JX524226.1,Common.Name=,Description=Papaya mosaic virus isolate PMV-HN, complete genome,Organism=Papaya mosaic virus,Ref.Seq.Name=,host=Carica papaya,hostgenus=Carica,formal_tax=,group=]:0.9156041251,(87[&X=94,fasta_names=MF978248,key=MF978248,Accession=MF978248.1,Common.Name=,Description=Babaco mosaic virus isolate Tandapi, complete genome,Organism=Babaco mosaic virus,Ref.Seq.Name=,host=Vasconcellea x heilbornii,hostgenus=Vasconcellea,formal_tax=,group=]:0.8956811115,88[&X=87,fasta_names=KX196173,key=KX196173,Accession=KX196173.2,Common.Name=,Description=Senna mosaic virus isolate Brazilian, complete genome,Organism=Senna mosaic virus,Ref.Seq.Name=,host=Senna occidentalis,hostgenus=Senna,formal_tax=,group=]:0.5765402721)68:0.1684017702)88:0.0904304352)100:0.8754171121,(89[&X=7,fasta_names=CYMRNA,key=CYMRNA,host=Pisum sp.,hostgenus=Pisum]:0.3793317985,90[&X=91,fasta_names=LC107517,key=LC107517,Accession=LC107517.1,Common.Name=,Description=Hydrangea ringspot virus genomic RNA, complete genome, isolate Gu2,Organism=Hydrangea ringspot virus,Ref.Seq.Name=,host=Hydrangea macrophylla,hostgenus=Hydrangea,formal_tax=,group=]:1.059213745)85:0.1204333178)78:0)Root;
+END;
