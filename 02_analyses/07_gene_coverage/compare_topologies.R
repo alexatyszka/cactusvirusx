@@ -1,15 +1,16 @@
 #install.packages("treeio")
 library(phytools, iqtree)
 library(treeio)
+library(phangorn)
 setwd("~")
-setwd("Documents/GitHub/cactusvirusx/02_analyses/04a_cophylo/")
-zero <- as.phylo(treeio::read.iqtree("../04_iqtree-output/02_trees_shortnames_UIDs/zero.treefile"))
-one <- as.phylo(treeio::read.iqtree("../04_iqtree-output/02_trees_shortnames_UIDs/one.treefile"))
-two <- as.phylo(treeio::read.iqtree("../04_iqtree-output/02_trees_shortnames_UIDs/two.treefile"))
-three <- as.phylo(treeio::read.iqtree("../04_iqtree-output/02_trees_shortnames_UIDs/three.treefile"))
-four <- as.phylo(treeio::read.iqtree("../04_iqtree-output/02_trees_shortnames_UIDs/four.treefile"))
-five <- as.phylo(treeio::read.iqtree("../04_iqtree-output/02_trees_shortnames_UIDs/five.treefile"))
-md_for_renaming <- read.csv("../04_iqtree-output/metadata_for_renaming_manual_edits.csv")
+setwd("Documents/GitHub/cactusvirusx/02_analyses/07_gene_coverage//")
+zero <- as.phylo(treeio::read.iqtree("01_input/zero.treefile"))
+one <- as.phylo(treeio::read.iqtree("01_input/one.treefile"))
+two <- as.phylo(treeio::read.iqtree("01_input/two.treefile"))
+three <- as.phylo(treeio::read.iqtree("01_input/three.treefile"))
+four <- as.phylo(treeio::read.iqtree("01_input/four.treefile"))
+five <- as.phylo(treeio::read.iqtree("01_input/five.treefile"))
+md_for_renaming <- read.csv("01_input/metadata_for_renaming_manual_edits.csv")
 
 
 #root all trees on the same place:
@@ -46,7 +47,10 @@ rerooted.four <- phytools::reroot(four, og.four)
 rerooted.five <- phytools::reroot(five, og.five)
 
 
+
 make.cophylo.plot <- function(tree1, tree2, pdfname) {
+  tree1 <- drop.tip(tree1, outgroup)
+  tree2 <- drop.tip(tree2, outgroup)
   obj<-cophylo(tree1,tree2)
   obj
   pdf(file=pdfname,

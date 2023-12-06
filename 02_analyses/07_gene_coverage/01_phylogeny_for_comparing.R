@@ -72,7 +72,8 @@ rectangulartree <- function(tree, filenam){
   treedata <- tree
   treedata.joined <- as.treedata(dplyr::left_join(as_tibble(tree), as_tibble(md_for_renaming), by=c("label"= "UID")))
   #treedata.joined@phylo <- treedata@phylo
-  write.beast(treedata.joined, "test_full.treefile")
+  beast<- paste(filenam, ".treefile", sep="",collapse="")
+  write.beast(treedata.joined, beast)
   par(mar = c(0, 0, 0, 0))
 p <- ggtree(treedata.joined, ladderize=T, layout="rectangular",
             aes( family="Helvetica"), show.legend=T)+

@@ -3,8 +3,8 @@
 \documentclass[11pt]{article}
 \usepackage{evolution}
 \usepackage[section]{placeins}
- \usepackage{lscape}
- \usepackage{longtable}
+\usepackage{geometry}
+\usepackage{pdflscape}
  \usepackage{soul}
 
 \begin{document}
@@ -90,7 +90,7 @@ CP gene tree with bootstrap values.
 \begin{suppfigure}
 \centering
 \caption{
-mPTP tree with delimitation represented by green and red coloration. Green branches represent delimitation outside of clades and red branches represent delimitation inside of clades.
+mPTP whole genome tree with delimitation represented by green and red coloration. Green branches represent delimitation outside of clades and red branches represent delimitation inside of clades.
 }
 \includegraphics[width=0.8\textwidth]{supplementaryinfo/mptp.pdf}
 \label{fig:genetree5}
@@ -101,13 +101,35 @@ mPTP tree with delimitation represented by green and red coloration. Green branc
 \begin{suppfigure}
 \centering
 \caption{
-bPTP tree with delimitation represented by blue and red coloration. Numbers on nodes represent the posterior probability of the delimitation.
+bPTP whole genome tree with delimitation represented by blue and red coloration. Numbers on nodes represent the posterior probability of the delimitation.
 }
 \includegraphics[width=0.4\textwidth]{supplementaryinfo/bptp.pdf}
 \label{fig:genetree5}
 \end{suppfigure}
 \clearpage
 
+%Fig S8:  bPTP; mPTP compared to formal tax
+\begin{suppfigure}
+\centering
+\caption{
+Visual demonstration of the agreement and disagreement of formal taxonomy, mPTP and bPTP delimitation methods as applied to the whole genome tree.
+}
+\includegraphics[width=0.8\textwidth]{supplementaryinfo/bipartite_web-edited.pdf}
+\label{fig:genetree5}
+\end{suppfigure}
+\clearpage
+
+
+%Fig S9:  bPTP; mPTP compared to each other
+\begin{suppfigure}
+\centering
+\caption{
+Bipartite graph displaying the disagreements between mPTP and bPTP methods. The main disagreement is located in clade 5 of mPTP, which is delimited into 7 separate species when bPTP methods are applied to the same data set.
+}
+\includegraphics[width=0.8\textwidth]{supplementaryinfo/web.mPTP.bPTP-edited.pdf}
+\label{fig:genetree5}
+\end{suppfigure}
+\clearpage
 %
 % TABLES
 %S1: RNA-seq and assembly stats
@@ -163,7 +185,6 @@ Column labelled \textsuperscript{*}filt. lists numbers of read pairs and average
 
 
 
-
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 % \usepackage{graphicx}
@@ -173,8 +194,8 @@ Column labelled \textsuperscript{*}filt. lists numbers of read pairs and average
 \caption{
 Genomes and gene sequences downloaded from the NCBI GenBank genome browser, descriptions of the genome, and associated hosts. 
 }
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}llllllll@{}}
+\resizebox{2in}{!}{%
+\rotatebox{90}{\begin{tabular}{@{}llllllll@{}}
 \toprule
 Name     & Accession  & Created Date                 & Description                                                                                                                                                                                                                                                      & Organism                       & Sequence Length & Size  & host                                  \\ \midrule
 AF308158 & AF308158.2 & Mon Jul 02 00:00:00 CDT 2001 & Cactus virus X, complete genome                                                                                                                                                                                                                                  & Cactus virus X                 & 6614            & 21 KB & Selenicereus undatus                    \\
@@ -214,10 +235,13 @@ LC155795 & LC155795.1 & Fri Mar 24 00:00:00 CDT 2017 & Plantago asiatica mosaic 
 MF978248 & MF978248.1 & Tue Dec 26 00:00:00 CST 2017 & Babaco mosaic virus isolate Tandapi, complete genome                                                                                                                                                                                                             & Babaco mosaic virus            & 6692            & 20 KB & Vasconcellea x heilbornii             \\
 MG210801 & MG210801.1 & Tue Oct 30 00:00:00 CDT 2018 & Mytcor virus 1 replicative protein gene, partial cds; and protein 2 and protein 3 genes, complete cds                                                                                                                                                            & Mytcor virus 1                 & 5689            & 14 KB & Mytilus coruscus                      \\
 MH423501 & MH423501.1 & Sun Feb 17 00:00:00 CST 2019 & Alternanthera mosaic virus isolate DH, complete genome                                                                                                                                                                                                           & Alternanthera mosaic virus     & 6598            & 18 KB & Epiphyllum sp. cv. Dragon Heart       \\ \bottomrule
-\end{tabular}%
+\end{tabular}}%
 }
+
 \end{supptable}
 
+
+\restoregeometry
 
 
 

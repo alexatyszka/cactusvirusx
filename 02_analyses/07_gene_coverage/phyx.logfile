@@ -1,0 +1,5 @@
+pxbp
+pxbp filenam.treefile
+pxbp filenam.treefile
+pxbp -t filenam.treefile
+pxbp filenam.treefile

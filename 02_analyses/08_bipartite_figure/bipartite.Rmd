@@ -1,0 +1,94 @@
+---
+title: "bipartite"
+author: "Alexa Tyszka"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+setwd("~/Documents/GitHub/cactusvirusx/02_analyses/08_bipartite_figure/")
+library(sna)
+library(bipartite)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(igraph)
+```
+
+
+```{r}
+
+
+metadata <- read.csv(file = "01_input/02_phylogeny_hosts.csv",header = TRUE)
+
+metadata$df <- "df"
+mdsub <- metadata[c("Formal.taxon", "mPTP", "bPTP", "df")]
+mdfre <- subset(data.frame(table(mdsub)), Freq > 0)
+md.web <- frame2webs(
+  mdfre,varnames = 
+    c( "bPTP","mPTP", "df", "Freq"), 
+  type.out="list")
+
+md.web2 <- frame2webs(
+  mdfre,varnames = 
+    c("mPTP",  "Formal.taxon","df", "Freq"), 
+  type.out="list")
+
+md.web.mPTP.bPTP <- frame2webs(
+  mdfre,varnames = 
+    c( "bPTP","mPTP", "df", "Freq"), 
+  type.out="list")
+
+dev.off()
+pdf(file="02_output/web.mPTP.bPTP.pdf")
+plot.new()
+plotweb(md.web.mPTP.bPTP$df)
+
+dev.off()
+svg(file="02_output/web.mPTP.bPTP.svg")
+plot.new()
+plotweb(md.web.mPTP.bPTP$df)
+
+dev.off()
+
+
+svg(file="02_output/visweb.svg")
+plot.new()
+visweb(md.web.mPTP.bPTP$df)
+dev.off()
+pdf(file="02_output/visweb.pdf")
+plot.new()
+visweb(md.web.mPTP.bPTP$df)
+dev.off()
+```
+
+```{r plotmain, out.extra='angle=0', fig.align = "center", echo=FALSE}
+#https://cran.r-project.org/web/packages/bipartite/bipartite.pdf
+plotweb2( md.web$df, md.web2$df,
+            col.interaction = "lightgreen",
+            col.interaction2 = "lightgreen",
+
+)
+
+pdf(file="02_output/bipartite_web.pdf")
+plotweb2( md.web$df, md.web2$df,
+            col.interaction = "lightgreen",
+            col.interaction2 = "lightgreen",
+
+)
+dev.off()
+svg(file="02_output/bipartite_web.svg")
+par(mar=c(1,1,1,5))
+#https://cran.r-project.org/web/packages/bipartite/bipartite.pdf
+plotweb2( md.web$df, md.web2$df,
+            col.interaction = "lightgreen",
+            col.interaction2 = "lightgreen",
+
+)
+dev.off()
+
+```
+

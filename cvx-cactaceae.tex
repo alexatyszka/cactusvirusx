@@ -233,22 +233,44 @@ All sequence data associated with \textit{S. truncata} is deposited in GenBank w
 \subsection*{Sequence Assembly and Approach}
 In an attempt to characterize the infection patterns of cactus-infecting potexviruses, we assembled 83 viral sequences from the cactus samples analyzed. 
 24 of these sequences were from \textit{S. truncata} samples, and 59 of the sequences were from \textit{Hylocereus (now Selenicereus) spp.} in PRJNA608981 (https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA608981)\citep{fan2020retracted}.
-Genome sizes of ~7 kb within newly assembled sequences were consistent with previously reported 5.5-9.0 kb genome lengths within \textit{Alphaflexiviridae} \citep{kreuze_ictv_2020,ICTV_potexviruses}(Table~X).
-Our multifaceted approach includes two clades of newly assembled viral sequences infecting plants collected by our group (Table~X) as well as plants that had been sequenced externally and uploaded to a public database (Table~S3).
-We add these 83 sequences to an existing database of 38 related \textit{Potexvirus} samples and demonstrate the utility of the \textit{kakapo} pipeline within a phylogenetic and transcriptomic workflow. 
+Genome sizes of ~7 kb within newly assembled sequences were consistent with previously reported 5.5-9.0 kb genome lengths within \textit{Alphaflexiviridae} \citep{kreuze_ictv_2020,ICTV_potexviruses}(Table~S2).
+We add these 83 sequences to an existing database of 38 related \textit{Potexvirus} samples {Table~S2) and demonstrate the utility of the \textit{kakapo} pipeline within a phylogenetic and transcriptomic workflow. 
+Our assembly recovered viral sequences with high coverage, representing millions of viral reads for each sample {Table~S1}.
 
  
-\subsection*{Identification}
-Assembly of a virus or its proteins from a host plant transcriptome represents presence of the virus within host tissues. 
+\subsection*{Viral Detection}
+Assembly of a virus or its proteins from a host plant metatranscriptome represents presence of the virus within host tissues. 
 In externally sequenced samples, none of the hosts had been noted as symptomatic \citep{fan2020retracted}.
- Viruses were found in high amounts on pollen and style tissue (Figure~X).
-The \textit{S. truncata} samples located within the \textit{Cactus Virus X} clade appear to represent the first known discovery of \textit{Cactus Virus X} on \textit{Schlumbergera}.
+However, we broadly recovered diverse potexviruses from many (%FIXME how many percent)
+ of plant samples within the project.
+ Within newly-sequenced Schlumbergera samples, viruses were generally found in high amounts on pollen and style tissue.
 
 
 \subsection*{Diversity and Phylogeny}
-A well-supported phylogenetic tree was recovered using available sequences (Figure~X).
-The phylogenetic tree places the newly aligned sequences from this study within previously defined species groups (Figure~X).
-These sequences greatly expand the cactus-infecting clade of \textit{Potexvirus} and nearly triple the amount of available sequences for the clade. 
+
+We offer multiple metrics in an attempt to guide viral identification and placement within the group. 
+These metrics include phylogeny-based grouping, automated phylogenetic delimitation, sequence similarity, gene-specific comparisons, host-based delimitation, or a combination of these. 
+We will briefly review our findings from each.
+A well-supported phylogenetic tree was recovered using available sequences (Figure~1).
+Newly assembled sequences from this study nest closely with previously described viruses on well-supported distinct branches. 
+These sequences greatly expand the cactus-infecting clade of \textit{Potexvirus} and nearly triple the amount of available sequences within the clade. 
+\subsection*{Comparing Gene to Genome}
+Each phylogeny, from whole genome to each of the five genes, recovered currently delimited viruses together in monophyletic clades. 
+Gene phylogenies did not recover different topologies when comparing only monophyletic named groups ({Figure~S1 through Figure~S5}). %FIXME cite cophylo plots
+
+\subsection*{Automated Delimitation}
+Five named species currently define cactus-infecting potexviruses. 
+Two automated species delimitation methods, mPTP and bPTP (\citealt{Kapli_2017}; http://mptp.h-its.org/\#/tree; \citealt{Zhang_2013}; http://species.h-its.org/ptp/), delimited 11 and 16 species respectively when given the same 94-tip full sequence tree {Figure~1, Figure~S6, Figure~S7}. 
+The two delimitation methods agreed on species delimitations in all but one case, where one mPTP-delimited species consisting of newly assembled sequences was divided into 7 separate species by bPTP ({Figure~S8, Figure~S9}).
+The divided clade included all but one sample from Schlumbergera\_truncata\_15H03 and Schlumbergera\_truncata\_15H02.
+
+\subsection*{Sequence Similarity}
+Sequence similarity methods are an alternative method that has been used to to delimit viral species.
+(%fixme, cite)
+Due to the two-dimensional nature of sequence similarity data, we present a matrix heatmap of sequence similarity emphasizing the 72 percent delimitation cutoff often used for potexviruses. %FIXME figure, cite cutoff
+We also display heatmaps for two genes, RdRp and coat protein, as well as phylogenetic trees for each of the five genes composing the viral genome. 
+
+
 
 
 %------------------------------------------------------------------------------
@@ -285,7 +307,38 @@ This work was supported by the Award for Graduate Research from the Graduate Col
 % Figures
 %--------------------------------------------------
 
+
 %%%%%%%%FIGURE 1
+
+
+\newpage{}
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=1\linewidth]{figures/tree_rect_delim_info.pdf}
+ \begin{NoHyper}
+ \caption{
+Maximum likelihood tree for full genome sequences from selected potexviruses. UFboot scores are represented on nodes. Tips are characteristically arranged in large groups with short branches, subtended by a longer branch. This subset of cactus-infecting potexviruses displays narrow sampling across related cohort plants whic may represent local viral transmission from plant to plant.
+}
+ \label{fig:fig1}
+ \end{NoHyper}
+ \end{figure}
+
+%%%%%%%%FIGURE 2
+\newpage{}
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=1\linewidth]{figures/tree_rect_delim_info.pdf}
+ \begin{NoHyper}
+ \caption{
+Heatmap
+}
+ \label{fig:fig2}
+ \end{NoHyper}
+ \end{figure}
+
+
+
+
 
 
 

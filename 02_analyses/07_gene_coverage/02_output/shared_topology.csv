@@ -1,6 +1,6 @@
-﻿taxon,number of tips,full,rdrp,tgb1,tgb2,tgb3,cp
-Cactus virus X,,,,,,,
-Schlumbergera virus X,,,,,,,
-Zygocactus virus X,,,,,,,
-Opuntia virus X,,,,,,,
-Pitaya virus X,,,,,,,
+﻿taxon,full node branch length,rdrp,tgb1,tgb2,tgb3,cp
+Cactus virus X,0.1019,,0.0861,,,
+Schlumbergera virus X,0.2561,,0.2122,,,
+Zygocactus virus X,0.248,,0.1975,,,
+Opuntia virus X,0.4926,,0.5585,,,
+Pitaya virus X,0.2729,,0.2407,,,
