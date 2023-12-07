@@ -265,8 +265,8 @@ The two delimitation methods agreed on species delimitations in all but one case
 The divided clade included all but one sample from Schlumbergera\_truncata\_15H03 and Schlumbergera\_truncata\_15H02.
 
 \subsection*{Sequence Similarity}
-Sequence similarity methods are an alternative method that has been used to delimit viral species.
-(%fixme, cite)
+Sequence similarity is an alternative method that has been used to delimit viral species.
+%fixme, cite
 Due to the two-dimensional nature of sequence similarity data, we present a matrix heatmap of sequence similarity emphasizing the 72 percent delimitation cutoff often used for potexviruses. %FIXME figure, cite cutoff
 We also display heatmaps for two genes, RdRp and coat protein, as well as phylogenetic trees for each of the five genes composing the viral genome. 
 
@@ -288,33 +288,70 @@ Analysis of these new potexvirus sequences has elucidated the disagreements betw
  
  
 \subsection*{Reproductive and Immune Implications}
-Viral infections are known to spread to nearly all tissues within a plant (\citealt{Hipper_2013}). %cite
+Viral infections are known to spread to nearly all tissues within a plant (\citealt{Hipper_2013}). 
 However, little is known about cross-tissue infections, or the full extent of viral infection a plant may endure, which could vary by life stage or species.
 Plants possess some defense mechanisms to prevent viral spread through tissues, most notable RNAi gene silencing (Reviewed in \citealt{Hipper_2013}).
-Plant immune response s dependent on viral recognition, which may impose selective pressure differentially on viral genes depending on their function.
+Plant immune responses are dependent on viral recognition, which may impose selective pressure differentially on viral genes depending on their function.
 Most notably, the Coat Protein gene may be under selective pressure due to the fitness advantages for avoiding plant immune response. 
 We find some evidence of selective pressure across the viral genome {Figure~S10}, although we cannot discern whether the higher dN/dS values within overlapping regions is due to selection.
 
 
-Reproductive tissue is susceptible to viral infection in at least a few cases, for example, Tulip breaking virus.
-The presence of virus in reproductive tissue implies that sexual transmission of a virus is possible (\citealt{Kim_2015}).
-We recover viruses from pollen and style for \textit{Schlumbergera truncata} {Table~S1, Table~S4}, which is the first reported instance of viral reads on reproductive tissue of this species.
+Plant reproductive tissue is susceptible to viral infection in at least some cases, the most famous perhaps being tulips (\textit{Tulipa}) displaying different floral coloration due to Tulip breaking virus.
+The presence of virus in reproductive tissue implies that sexual transmission of a virus may be possible (\citealt{Kim_2015}).
+We recover viruses from pollen and style within samples of \textit{Schlumbergera truncata} {Table~S1, Table~S4}, which is the first reported instance of viral reads on reproductive tissue of this species.
 The viruses recovered from \textit{Schlumbergera truncata} phylogenetically are similar to the taxa Cactus Virus X, which may represent an avenue for Cactus Virus X to be transmitted sexually from plant to plant.
 Further, we can confirm that the \textit{Schlumbergera truncata} plant samples sequenced as a part of this study were all housed in the same location and were frequently the subjects of pollination experiments (\citealt{ramanauskas2021}), making it likely that infected pollen was transmitted from plant to plant.
-\subsection*{Species Delimitation}
-\subsection*{Disagreements}
+The manuscript describing the plants sampled from SRR samples did not mention symptoms of viral infection, although viral infections are often asymptomatic.
+A viral infection has the potential to cause stress to a plant, and infections can spread quickly through contact with equipment, which could bias gene expression levels or other measurements collected during the course of study.
+Although viral contaminants can be filtered out of RNA-seq data, we caution that undetected viral infections could potentially bias data in unexpected ways.
 
-In a case where we cannot use the biological species conflict, we find a dilemma. 
-The kakapo pipeline allowed us to mine both newly-sequenced data and publicly available SRA data for viral discovery. 
--
--
--Mytcor virus x
-\subsection*{Conclusion}
-Write a strong concluding paragraph that ends on a general theme
+\subsection*{Host-based Delimitation}
+We approached the problem of species delimitation with a variety of methods. 
+One common rudimentary approach to viral classification has been description firstly based on identified host species. 
+However, this concept quickly loses usefulness in the face of reports of multiple infections within a single host plant (\citealt{li_viral_2015}), or reports that a certain virus is not constrained to infecting a singular plant species.
+As more hosts are discovered for cactus-infecting potexviruses, the question shifts from \textit{which} hosts a virus may infect to \textit{why} precisely the virus may infect those hosts and not others, if exposed equally to many potential hosts.
+Further, potexviruses are perfectly able to infect certain phylogenetically distant hosts \textit{ex situ}, such as \textit{Chenopodium} (\citealt{plese_vergleichende_1966}, \citealt{attathom_occurrence_1978}) and \textit{Nicotiana} (\citealt{casper_new_1969}).
+The discovery of novel hosts and novel viruses will surely continue, although more conclusive measures are needed to investigate viral host specificity.
+The problem is exacerbated when plant viruses do not recapitulate the evolutionary patterns of their host in a logical manner, such as the cactus-infecting potexvirus clade ({Figure~4}), where the formal name of a species often disagrees with the actual host range. 
+Especially because plant genus names are prone to change, viral species names such as \textit{Cactus Virus X} are not particularly informative.
+%note about diptera host
+We advise more sampling of hosts, particularly wild host plants, as the true ranges of many cactus-infecting potexviruses are yet unknown. 
+Our study represents a near-tripling of the amount of sequences available for this small potexvirus clade, from a relatively narrow sampling of plant transcriptomes.
+
+\subsection*{Sequence Similarity Delimitation}
+We used a sequence similarity-based delimitation method to determine the percentage of similarity a sample shared with another.
+The ICTV suggests that potexviruses with more than 72\% similarity between their RdRp or CP genes should be considered a species.
+The sequence similarity method becomes ambiguous when confronted with multiple sequences, which may share more or less similarity with an unrelated sequence where its sister taxa do not. 
+We recovered cases where distinct species emerged according to one of the two ICTV guidelines ({Figure~2}, {Figure~3}), but guidelines are less clear for edge cases, where the RdRp delimitation may disagree with the CP delimitation, or vice versa.
+For short sequences, sequence similarity delimitation is an efficient delimitation method, but may suffer due to incidental biases of evolutionary convergence.
+Particularly in cases where multiple infections are present, RNA viruses could hypothetically also receive genes from distinct species.
+Sequence similarity delimitation based on ICTV guidelines rapidly becomes imprecise and impractical when considering more than a handful of clades.
+
+\subsection*{Phylogenetic Delimitation}
+Using a phylogenetic species concept, we recover the five clades that have already been described ({Figure~1}).
+Newly assembled sequences nest squarely within and around monophyletic clades, which we have described using formally described species. 
+Of note is a single genome from \textit{Mytcor Virus 1} (MG210801), which is described as present on a bivalve host. 
+We can only postulate about the placement of this virus, but it is recovered within the putative Pitaya virus X clade.
+Multiple explanations exist for its discovery on a bivalve host, but perhaps the most likely is accidental human contamination during sampling or RNA extraction.
+Pitaya Virus X has been reported to infect \textit{Selenicereus spp}, and all members of the putative Pitaya Virus X clade were reported on  plants within the genus \textit{Selenicereus} ({Figure~S11}, {Figure~4}).
+\textit{Selenicereus} is an important crop fruit, which lends credibility to the possibility of contamination. 
+%include some kind of branch length analysis?
+We delimited the putative clades based on the full genome sequences and inclusion of a previously named viral sequence, and each clade was marked by a basal named species.
+No sequences fell between clades.
+The groups putative Cactus Virus X and putative Schlumbergera Virus X were marked by longer branches splitting the group into two distinct subclades. 
+Further discussion is needed as to whether these subclades necessitate distinct species, but we err on the side of previously established naming conventions for this study.
+Gene trees ({Figure~S1} through {Figure~S5}) did not display markedly different clade-level topologies. 
+%cophylo plots
+This may imply that the genes are inherited faithfully with regard to the full genome, although we acknowledge that longer (\~2000bp) genes such as RdRp contribute more to the full genome than smaller genes.
+
 
 %------------------------------------------------------------------------------
 \section*{Conclusion}
 %------------------------------------------------------------------------------
+
+
+
+Write a strong concluding paragraph that ends on a general theme
 
 
 %------------------------------------------------------------------------------
@@ -352,7 +389,7 @@ This work was supported by the Award for Graduate Research from the Graduate Col
 \newpage{}
  \begin{figure}[ht]
  \centering
- \includegraphics[width=1\linewidth]{figures/tree_rect_delim_info.pdf}
+ \includegraphics[width=1\linewidth]{figures/delim-edited.pdf}
  \begin{NoHyper}
  \caption{
 Maximum likelihood tree for full genome sequences from selected potexviruses. UFboot scores are represented on nodes. Tips are characteristically arranged in large groups with short branches, subtended by a longer branch. This subset of cactus-infecting potexviruses displays narrow sampling across related cohort plants which may represent local viral transmission from plant to plant. The outgroup clade consists of closely related but non-cactus infecting potexviruses.
@@ -373,10 +410,34 @@ Heatmap
  \label{fig:fig2}
  \end{NoHyper}
  \end{figure}
+ 
+ %%%%%%%%FIGURE 3
+\newpage{}
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=1\linewidth]{figures/tree_rect_delim_info.pdf}
+ \begin{NoHyper}
+ \caption{
+Heatmap
+}
+ \label{fig:fig3}
+ \end{NoHyper}
+ \end{figure}
 
 
 
-
+%%%%%%%%FIGURE 4
+\newpage{}
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=1\linewidth]{figures/hostxformalname.pdf}
+ \begin{NoHyper}
+ \caption{
+Comparing host information to formal viral species name for all samples (n=120) included in our dataset reveals the inconsistencies of viral naming schemes. Delimiting a viral species from its host plant is often an informative first step in viral discovery but may eventually lead to confusion.
+}
+ \label{fig:fig4}
+ \end{NoHyper}
+ \end{figure}
 
 
 

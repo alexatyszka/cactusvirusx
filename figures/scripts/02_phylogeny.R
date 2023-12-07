@@ -30,7 +30,7 @@ p <- ggtree(treedata.joined, ladderize=T, layout="rectangular",
             aes( family="Helvetica"), show.legend=FALSE)+
   #virus name tip labels
   geom_tiplab(aes(), align=F,
-              size=4, offset=0.15, hjust=0) +
+              size=4, offset=0.15, hjust=0, geom='label', bg.color='white', edge="white", label.size = 0) +
   geom_tippoint(aes(subset = (Formal.taxon != ""),color=Formal.taxon), size=3)+
   #host tip labels:
   #geom_tiplab(aes( label=host, color=new), align=T, linetype=NA, size=4, offset=0.6, hjust=0)+
@@ -39,8 +39,26 @@ p <- ggtree(treedata.joined, ladderize=T, layout="rectangular",
   xlim(0,5)+
   geom_text2(aes(subset = !isTip, label=UFboot), hjust=-0.3)
 p
-ggsave("tree_rect_ufboot.pdf",width = 50, height = 40, units = "cm")
+ggsave("tree_rect_ufboot.pdf",width = 50, height = 50, units = "cm")
+ggsave("tree_rect_ufboot.svg",width = 50, height = 50, units = "cm")
+phost <- ggtree(treedata.joined, ladderize=T, layout="rectangular",
+            aes( family="Helvetica"), show.legend=FALSE)+
+  #virus name tip labels
+  geom_tiplab(aes( label=host), align=T, linetype="dotted", size=4, offset=1, hjust=0)+
+  geom_tiplab(aes(), align=F,
+              size=4, offset=0.15, hjust=0, geom='label', bg.color='white', label.size = 0) +
+  geom_tippoint(aes(subset = (Formal.taxon != ""),color=Formal.taxon), size=3)+
+  #host tip labels:
+  #geom_tiplab(aes( label=host, color=new), align=T, linetype=NA, size=4, offset=0.6, hjust=0)+
+  geom_treescale(x=0.1, y=80,width=0.10, fontsize=4, linesize=1, offset=2.5, color='black', label='\n substitutions per site', offset.label=3)+
+  theme(legend.position="none")+
+  xlim(0,3)+
+  geom_text2(aes(subset = !isTip, label=UFboot), hjust=-0.3)
+  
+phost  
 
+ggsave("tree_rect_ufboot_hosts.pdf",width = 50, height = 50, units = "cm")
+ggsave("tree_rect_ufboot_hosts.svg",width = 50, height = 50, units = "cm")
 ##heatmap
 ##
 heatmapData <- as.data.frame(sapply(host.info.details, as.character))
@@ -50,16 +68,17 @@ rownames(heatmapData) <- rn$Name
 heatmapData[c(8)] <- rep(NA, 120)
 
 
-gheatmap(p, heatmapData[c(6, 7)], colnames=F, 
+gheatmap(p, heatmapData[c(6, 7)], colnames=T, 
          hjust=0, offset=0.7, width=0.2, colnames_angle=45)+
-  xlim(0,3)+
-  scale_fill_viridis_d(option="H", name="mPTP and bPTP delimitation")+ new_scale_fill()
+  xlim(0,3)
+  
+#scale_fill_viridis_d(option="H", name="mPTP and bPTP delimitation") #new_scale_fill()
 #p2 <- p1 + new_scale_fill()
 #gheatmap(p1, heatmapData[c(4)], offset=0, width=.1,
 #         colnames=F,) +
  # scale_fill_viridis_d(option="C", name="Formal taxonomy")
 
 ggsave("tree_rect_delim_info.pdf",width = 50, height = 50, units = "cm")
-
+ggsave("tree_rect_delim_info.svg",width = 50, height = 50, units = "cm")
 
 

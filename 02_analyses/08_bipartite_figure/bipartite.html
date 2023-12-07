@@ -11,7 +11,7 @@
 
 <meta name="author" content="Alexa Tyszka" />
 
-<meta name="date" content="2023-12-05" />
+<meta name="date" content="2023-12-06" />
 
 <title>bipartite</title>
 
@@ -164,12 +164,12 @@ pre code {
 
 <h1 class="title toc-ignore">bipartite</h1>
 <h4 class="author">Alexa Tyszka</h4>
-<h4 class="date">2023-12-05</h4>
+<h4 class="date">2023-12-06</h4>
 
 </div>
 
 
-<pre class="r"><code>metadata &lt;- read.csv(file = &quot;01_input/02_phylogeny_hosts.csv&quot;,header = TRUE)
+<pre class="r"><code>metadata &lt;- read.csv(file = &quot;01_input/phylogeny_hosts.csv&quot;,header = TRUE)
 
 metadata$df &lt;- &quot;df&quot;
 mdsub &lt;- metadata[c(&quot;Formal.taxon&quot;, &quot;mPTP&quot;, &quot;bPTP&quot;, &quot;df&quot;)]
@@ -218,9 +218,57 @@ visweb(md.web.mPTP.bPTP$df)
 dev.off()</code></pre>
 <pre><code>## null device 
 ##           1</code></pre>
-<p><img src="bipartite_files/figure-html/plotmain-1.png" width="672" angle=0 style="display: block; margin: auto;" /></p>
+<p><img src="bipartite_files/figure-html/plotbigplot-1.png" width="672" angle=0 style="display: block; margin: auto;" /></p>
 <pre><code>## quartz_off_screen 
 ##                 2</code></pre>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<pre class="r"><code>hostmetadata &lt;- read.csv(file = &quot;01_input/phylogeny_compare_hosts.csv&quot;,header = TRUE)
+
+hg &lt;- str_split_fixed(hostmetadata$host, &quot; &quot;, n = 2)
+hg[,1]</code></pre>
+<pre><code>##   [1] &quot;Selenicereus&quot;  &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Opuntia&quot;      
+##   [5] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##   [9] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [13] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Opuntia&quot;       &quot;Opuntia&quot;      
+##  [17] &quot;Opuntia&quot;       &quot;Diptera&quot;       &quot;Opuntia&quot;       &quot;Selenicereus&quot; 
+##  [21] &quot;Mytilus&quot;       &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [25] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [29] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [33] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [37] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [41] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [45] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [49] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [53] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [57] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [61] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [65] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [69] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [73] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [77] &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot;  &quot;Selenicereus&quot; 
+##  [81] &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot;
+##  [85] &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot;
+##  [89] &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot;
+##  [93] &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot;
+##  [97] &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot;
+## [101] &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot; &quot;Schlumbergera&quot;</code></pre>
+<pre class="r"><code>hostmetadata$df &lt;- &quot;df&quot;
+hostmetadata$hostgenus &lt;- hg[,1]
+  hostmetadata$Formal.taxon[hostmetadata$Formal.taxon ==&quot;&quot;] &lt;-&quot;Not assigned&quot;
+metadata$hostgenus[,1]</code></pre>
+<pre><code>## NULL</code></pre>
+<pre class="r"><code>mdhostsub &lt;- hostmetadata[c(&quot;Name&quot;, &quot;Formal.taxon&quot;, &quot;hostgenus&quot;, &quot;df&quot;)]
+mdhostfre &lt;- subset(data.frame(table(mdhostsub)), Freq &gt; 0)
+mdhost.web &lt;- frame2webs(
+  mdhostfre, varnames = 
+    c( &quot;Formal.taxon&quot;, &quot;hostgenus&quot;, &quot;df&quot;, &quot;Freq&quot;), 
+  type.out=&quot;list&quot;)
+
+svg(file=&quot;02_output/hostxformalname.svg&quot;)
+plot.new()
+plotweb(mdhost.web$df)
+dev.off()</code></pre>
 <pre><code>## quartz_off_screen 
 ##                 2</code></pre>
 
