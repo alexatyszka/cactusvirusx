@@ -6,7 +6,7 @@ setwd("~/Documents/GitHub/cactusvirusx/")
 getwd()
   dat <- read.csv('02_analyses/05_distdna/02_output/distance_fullseq_perc.csv', stringsAsFactors = FALSE)
 
-annot <-read.csv("figures/scripts/02_phylogeny_hosts.csv") 
+annot <-read.csv("figures/scripts/phylogeny_input/02_phylogeny_hosts.csv") 
 
 row.names(dat) <- dat$X
 dat <- subset(dat, select=-X)
