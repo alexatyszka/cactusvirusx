@@ -396,26 +396,26 @@ This work was supported by the Award for Graduate Research from the Graduate Col
 %--------------------------------------------------
 
 
-\newpage{}
-\begin{landscape}
-\begin{table}[ht]
- \caption{
-Summary statistic table for many metrics reported in this manuscript. Generally, the existing species definitions are well-supported.
-}
-
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}llllllll@{}}
-\toprule
-Formal species & Monophyletic under PSC & Number of tips under PSC & Number of formally named tips & Supported by mPTP & Supported by bPTP & Supported by 72\% RdRp & Supported by 72\% CP \\ \midrule
-Cactus virus X & Y & 34 & 3 & N, two subsp supported & N, two subsp supported & Y & Y \\
-Schlumbergera virus X & Y & 13 & 3 & N, two subsp supported & N, two subsp supported & Y & Y \\
-Zygocactus virus X & Y & 13 & 2 & Y & Y & Y & Y \\
-Opuntia virus X & Y & 3 & 3 & Y & Y & Y & Y \\
-Pitaya virus X (Including Mytcor Virus 1) & Y & 21 & 1 & Y & Y & Y & Y \\ \bottomrule
-\end{tabular}%
-}
-\end{table}
-\end{landscape}
+%\newpage{}
+%\begin{landscape}
+%\begin{table}[ht]
+% \caption{
+%Summary statistic table for many metrics reported in this manuscript. Generally, the existing species definitions are well-supported.
+%}
+%
+%\resizebox{\textwidth}{!}{%
+%\begin{tabular}{@{}llllllll@{}}
+%\toprule
+%Formal species & Monophyletic under PSC & Number of tips under PSC & Number of formally named tips & Supported by mPTP & Supported by bPTP & Supported by 72\% RdRp & Supported by 72\% CP \\ \midrule
+%Cactus virus X & Y & 34 & 3 & N, two subsp supported & N, two subsp supported & Y & Y \\
+%Schlumbergera virus X & Y & 13 & 3 & N, two subsp supported & N, two subsp supported & Y & Y \\
+%Zygocactus virus X & Y & 13 & 2 & Y & Y & Y & Y \\
+%Opuntia virus X & Y & 3 & 3 & Y & Y & Y & Y \\
+%Pitaya virus X (Including Mytcor Virus 1) & Y & 21 & 1 & Y & Y & Y & Y \\ \bottomrule
+%\end{tabular}%
+%}
+%\end{table}
+%\end{landscape}
 
 
 %--------------------------------------------------
@@ -429,57 +429,46 @@ Pitaya virus X (Including Mytcor Virus 1) & Y & 21 & 1 & Y & Y & Y & Y \\ \botto
 \newpage{}
  \begin{figure}[ht]
  \centering
- \includegraphics[width=1\linewidth]{{figures/delim-edited}.pdf}
+ \includegraphics[width=1\linewidth]{{figures/tree_rect_delim_info_jun25}.pdf}
  \begin{NoHyper}
  \caption{
+%TODO: Remove NA from scale; adjust color scheme; collapse outgroup
 Maximum likelihood tree for full genome sequences from selected potexviruses. UFboot scores are represented on nodes. Tips are characteristically arranged in large groups with short branches, subtended by a longer branch. This subset of cactus-infecting potexviruses displays narrow sampling across related cohort plants which may represent local viral transmission from plant to plant. The outgroup clade consists of closely related but non-cactus infecting potexviruses.
 }
  \label{fig:fig1}
  \end{NoHyper}
  \end{figure}
 
+
+
+
 %%%%%%%%FIGURE 2
 \newpage{}
  \begin{figure}[ht]
  \centering
- \includegraphics[width=1\linewidth]{{figures/heatmap.rdrp}.pdf}
+ \includegraphics[width=1\linewidth]{02_analyses/08_bipartite_figure/02_output/bipartite_web_jun25.pdf}
  \begin{NoHyper}
  \caption{
-Heatmap displaying sequence similarity for aligned ORF1 gene RdRp (RNA-dependent RNA polymerase), which is the largest gene in the potexvirus genome. The genes (n=95) were extracted from each assembled sequence and aligned with MAFFT v7.490 \citep{katoh_mafft_2002}. Sequence similarity percentage was calculated across the 5268 nt aligned sequences in \textit{R} using the \textit{dist.dna} function from ape v. 5.7-1. Darker squares represent areas of higher percentage similarity, and values below the ICTV-suggested 72 percent nt identity are represented in a lighter yellow green.
+ %TODO
+ %Caption should state information about groups; insert mPTP and bPTP titles into image; color according to phylogeny groups; remove diptera as host?
+Comparing host information to formal viral species name for all non-outgroup samples (n=104) included in our dataset reveals lack of host specificity when compared to mPTP and bPTP delimitations as applied to the whole viral genome.
 }
  \label{fig:fig2}
  \end{NoHyper}
  \end{figure}
- 
- %%%%%%%%FIGURE 3
-\newpage{}
- \begin{figure}[ht]
- \centering
- \includegraphics[width=1\linewidth]{{figures/heatmap.cp}.pdf}
- \begin{NoHyper}
- \caption{
-Heatmap displaying sequence similarity for Coat Protein (CP) sequences, using the same coloration as {Figure~2}. CP in potexviruses is typically located in ORF5 and this alignment represents 93 sequences each 714 nt in length.
+
+%Fig 3:  Selective pressure
+\begin{figure}
+\centering
+\caption{
+%TODO:
+%I'm not ready to let this go: should be returned to main body of paper. It's the first and only selection analysis of potexvirus genome-wide selection, including a region with overlapping reading frames. One reason for this is that even you seem a bit unclear about whether low dN/dS in the forward frame constitutes evidence for selection! Whatever it is, it ain't "noise"! 
+Selective pressure is displayed as dN/dS for amino acids across the viral genome. Due to overlaps in reading frames, higher levels of dN/dS may represent selective pressure on highly constrained functional regions which serve multiple purposes.
 }
- \label{fig:fig3}
- \end{NoHyper}
- \end{figure}
-
-
-
-%%%%%%%%FIGURE 4
-\newpage{}
- \begin{figure}[ht]
- \centering
- \includegraphics[width=1\linewidth]{figures/hostxformalname.pdf}
- \begin{NoHyper}
- \caption{
-Comparing host information to formal viral species name for all samples (n=120) included in our dataset reveals the inconsistencies of viral naming schemes. Delimiting a viral species from its host plant is often an informative first step in viral discovery but may eventually lead to confusion.
-}
- \label{fig:fig4}
- \end{NoHyper}
- \end{figure}
-
-
+\includegraphics[width=1\textwidth]{supplementaryinfo/selectionplot.pdf}
+\label{fig:selectionplot}
+\end{figure}
+\clearpage
 
 % \begin{figure}[ht]
 % \centering
@@ -490,6 +479,131 @@ Comparing host information to formal viral species name for all samples (n=120) 
 % \end{NoHyper}
 % \end{figure}
 
+%S1: RNA-seq and assembly stats
+\begin{table}[ht]
+\centering
+\caption{RNA-seq and assembly summary statistics.
+The length of all reads before trimming was 150 bp.
+Column labelled \textsuperscript{*}filt. lists numbers of read pairs and average qualities after filtering step.} %FIXME: missing most of the caption.
+% To browse your data, use SRA RunSelector:
+% https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA705387
+% To see your summary list view (availability at this link subject to 24 hour delay):
+% https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA705387
+\label{tab:seqAsmbStats}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{l|cc|cc|cc|cc|cc|c}
+\toprule
+\multicolumn{1}{c|}{} &
+\multicolumn{2}{c|}{Read~pairs} &
+\multicolumn{2}{c|}{Avg.~read~len.~trimmed} &
+\multicolumn{2}{c|}{Avg.~qual.} &
+\multicolumn{2}{c|}{Avg.~qual.~\textsuperscript{*}filt.} &
+\multicolumn{2}{c|}{Assembly} &
+\multicolumn{1}{c}{} \\
+\multicolumn{1}{c|}{Sample} & Raw & \textsuperscript{*}filt. & F & R & F & R & F & R & Isoforms & Genes & SRR \\
+\midrule
+\textit{Schlumbergera truncata} 15H01 pol   & 4,841,466 & 3,353,072 & 149 & 147 & 35.8 & 34.8 & 36.2 & 35.8 & 43,294 & 27,125 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805650}{SRR13805650} \\
+\textit{Schlumbergera truncata} 15H01 sty   & 6,769,308 & 4,628,401 & 148 & 139 & 38.8 & 35.9 & 39.9 & 38.8 & 73,047 & 42,717 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805653}{SRR13805653} \\
+\textit{Schlumbergera truncata} 15H02 pol   & 4,888,079 & 3,353,774 & 149 & 147 & 35.8 & 35.0 & 36.2 & 35.8 & 48,134 & 30,138 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805649}{SRR13805649} \\
+\textit{Schlumbergera truncata} 15H02 sty   & 6,173,982 & 4,263,304 & 147 & 139 & 38.8 & 36.3 & 39.8 & 38.8 & 56,416 & 32,918 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805652}{SRR13805652} \\
+\textit{Schlumbergera truncata} 15H03 pol   & 6,983,951 & 4,858,975 & 149 & 147 & 35.8 & 35.1 & 36.2 & 35.9 & 53,675 & 32,640 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805648}{SRR13805648} \\
+\textit{Schlumbergera truncata} 15H03 sty 1 & 9,183,100 & 5,450,149 & 147 & 139 & 38.4 & 35.9 & 39.6 & 38.6 & 59,668 & 34,275 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805641}{SRR13805641} \\
+\textit{Schlumbergera truncata} 15H03 sty 2 & 7,147,068 & 4,815,235 & 148 & 139 & 38.7 & 36.1 & 39.8 & 38.7 & 48,708 & 28,407 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805637}{SRR13805637} \\
+\textit{Schlumbergera truncata} 15H04 pol   & 8,392,597 & 5,497,308 & 148 & 138 & 38.8 & 35.8 & 39.8 & 38.6 & 58,662 & 35,689 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805647}{SRR13805647} \\
+\textit{Schlumbergera truncata} 15H04 sty   & 5,240,352 & 3,446,465 & 147 & 140 & 38.6 & 36.4 & 39.8 & 38.8 & 54,120 & 31,872 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805636}{SRR13805636} \\
+\textit{Schlumbergera truncata} 15H05 pol   & 6,347,070 & 4,365,031 & 148 & 139 & 38.8 & 35.9 & 39.8 & 38.8 & 46,638 & 28,580 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805646}{SRR13805646} \\
+\textit{Schlumbergera truncata} 15H05 sty 1 & 9,618,084 & 6,479,817 & 146 & 139 & 38.2 & 35.9 & 39.6 & 38.8 & 71,031 & 41,443 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805635}{SRR13805635} \\
+\textit{Schlumbergera truncata} 15H05 sty 2 & 5,043,649 & 3,051,699 & 147 & 141 & 38.7 & 36.8 & 39.9 & 39.0 & 59,857 & 36,264 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805634}{SRR13805634} \\
+\textit{Schlumbergera truncata} 15H06 pol   & 6,850,087 & 4,360,475 & 148 & 141 & 38.9 & 36.5 & 39.7 & 38.8 & 27,729 & 18,571 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805645}{SRR13805645} \\
+\textit{Schlumbergera truncata} 15H06 sty   & 6,632,382 & 4,203,598 & 148 & 139 & 38.8 & 36.1 & 39.7 & 38.6 & 24,392 & 16,949 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805633}{SRR13805633} \\
+\textit{Schlumbergera truncata} 15H07 pol   & 4,513,581 & 2,988,451 & 148 & 147 & 35.7 & 35.0 & 36.2 & 35.9 & 46,908 & 29,464 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805644}{SRR13805644} \\
+\textit{Schlumbergera truncata} 15H07 sty   & 6,411,850 & 4,200,344 & 148 & 139 & 38.9 & 35.9 & 39.9 & 38.6 & 68,107 & 39,657 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805632}{SRR13805632} \\
+\textit{Schlumbergera truncata} 15H08 pol   & 5,106,699 & 3,863,997 & 149 & 147 & 35.8 & 35.1 & 36.2 & 35.8 & 36,739 & 23,618 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805643}{SRR13805643} \\
+\textit{Schlumbergera truncata} 15H08 sty   & 4,521,102 & 2,741,695 & 148 & 146 & 35.7 & 34.8 & 36.2 & 35.8 & 47,754 & 29,812 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805631}{SRR13805631} \\
+\textit{Schlumbergera truncata} 15H09 pol   & 4,645,325 & 2,575,494 & 148 & 147 & 35.7 & 35.0 & 36.2 & 35.8 & 42,245 & 27,650 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805642}{SRR13805642} \\
+\textit{Schlumbergera truncata} 15H09 root  & 6,653,640 & 3,261,445 & 149 & 148 & 35.7 & 34.4 & 36.4 & 36.2 & 68,427 & 48,463 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805640}{SRR13805640} \\
+\textit{Schlumbergera truncata} 15H09 stem  & 8,275,870 & 5,731,805 & 149 & 149 & 35.8 & 35.2 & 36.4 & 36.2 & 79,859 & 51,788 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805639}{SRR13805639} \\
+\textit{Schlumbergera truncata} 15H09 sty   & 6,363,556 & 4,525,356 & 147 & 138 & 38.8 & 35.8 & 39.8 & 38.7 & 62,991 & 36,275 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805651}{SRR13805651} \\
+\textit{Matucana madisoniorum} HBG13 sty    & 4,148,932 & 2,396,890 & 145 & 140 & 38.1 & 36.4 & 39.5 & 38.9 & 41,968 & 33,810 & \href{https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR13805638}{SRR13805638} \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table}[ht]
+\caption{
+Assembled viral sequences from transcriptomes previously uploaded to GenBank. 
+}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llllll@{}}
+\toprule
+Host                                              & sample\_name & Description\_mapped\_to & Sequence Length & Size & Reported Host                  \\ \midrule
+Hylocereus\_polyrhizus & SRR11190795  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190795  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190795  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190795  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190796  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190796  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190796  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190796  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190797  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190797  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190797  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190797  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190798  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190798  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190798  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190798  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190801  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190801  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190801  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190801  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190802  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190802  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190802  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_polyrhizus & SRR11190802  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
+Hylocereus\_undatus    & SRR11190791  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11190791  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11190792  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11190792  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11190793  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11190793  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11190799  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11190799  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11190800  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11190800  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603182  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603182  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603183  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603183  & NC\_011659              & 6633            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603183  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603184  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603184  & NC\_011659              & 6633            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603184  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603186  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603186  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603186  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603187  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603187  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603187  & NC\_011659              & 6633            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603187  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603189  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603189  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603189  & NC\_011659              & 6633            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603189  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603190  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603190  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603190  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603191  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603191  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
+Hylocereus\_undatus    & SRR11603191  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\ \bottomrule
+\end{tabular}}
+\end{table}
+
+
+\clearpage
 % END =========================================================================
 
 \end{document}

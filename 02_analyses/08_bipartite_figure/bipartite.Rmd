@@ -20,9 +20,11 @@ library(igraph)
 
 
 ```{r setup-mptp-visweb}
+dev.set(dev.next())
+dev.set(dev.next())
+dev.set(dev.next())
 
-
-metadata <- read.csv(file = "01_input/phylogeny_hosts.csv",header = TRUE)
+metadata <- read.csv(file = "01_input/phylogeny_compare_hosts.csv",header = TRUE)
 
 metadata$df <- "df"
 mdsub <- metadata[c("Formal.taxon", "mPTP", "bPTP", "df")]
@@ -118,4 +120,82 @@ plotweb(mdhost.web$df)
 dev.off()
 
 ```
+```{r setup-mptp-visweb-jun25}
+dev.set(dev.next())
+dev.set(dev.next())
+dev.set(dev.next())
 
+#metadata <- read.csv(file = "01_input/phylogeny_compare_hosts.csv",header = TRUE)
+
+#metadata$df <- "df"
+mdsub_jun25 <- hostmetadata[c("hostgenus", "mPTP", "bPTP", "df")]
+mdfre_jun25 <- subset(data.frame(table(mdsub_jun25)), Freq > 0)
+md.web_jun25 <- frame2webs(
+  mdfre_jun25,varnames = 
+    c( "bPTP","mPTP", "df", "Freq"), 
+  type.out="list")
+
+md.web2_jun25 <- frame2webs(
+  mdfre_jun25,varnames = 
+    c("mPTP",  "hostgenus","df", "Freq"), 
+  type.out="list")
+
+md.web.mPTP.bPTP_jun25 <- frame2webs(
+  mdfre_jun25,varnames = 
+    c( "bPTP","mPTP", "df", "Freq"), 
+  type.out="list")
+dev.set(dev.next())
+dev.set(dev.next())
+dev.set(dev.next())
+dev.off()
+pdf(file="02_output/web.mPTP.bPTP_jun25.pdf")
+plot.new()
+plotweb(md.web.mPTP.bPTP_jun25$df)
+
+dev.off()
+svg(file="02_output/web.mPTP.bPTP_jun25.svg")
+plot.new()
+plotweb(md.web.mPTP.bPTP_jun25$df)
+
+dev.off()
+
+
+svg(file="02_output/visweb_jun25.svg")
+plot.new()
+visweb(md.web.mPTP.bPTP_jun25$df)
+dev.off()
+pdf(file="02_output/viswe_jun25b.pdf")
+plot.new()
+visweb(md.web.mPTP.bPTP_jun25$df)
+dev.off()
+```
+
+```{r plotbigplot_ptp, out.extra='angle=0', fig.align = "center", echo=FALSE}
+dev.set(dev.next())
+dev.set(dev.next())
+dev.set(dev.next())
+#https://cran.r-project.org/web/packages/bipartite/bipartite.pdf
+plotweb2( md.web_jun25$df, md.web2_jun25$df,
+            col.interaction = "lightgreen",
+            col.interaction2 = "lightgreen",
+
+)
+
+pdf(file="02_output/bipartite_web_jun25.pdf")
+plotweb2( md.web_jun25$df, md.web2_jun25$df,
+            col.interaction = "lightgreen",
+            col.interaction2 = "lightgreen",
+
+)
+dev.off()
+svg(file="02_output/bipartite_web_jun25.svg")
+par(mar=c(1,1,1,5))
+#https://cran.r-project.org/web/packages/bipartite/bipartite.pdf
+plotweb2( md.web_jun25$df, md.web2_jun25$df,
+            col.interaction = "lightgreen",
+            col.interaction2 = "lightgreen",
+
+)
+dev.off()
+
+```

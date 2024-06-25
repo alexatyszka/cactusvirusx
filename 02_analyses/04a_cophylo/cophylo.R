@@ -48,37 +48,40 @@ rerooted.five <- phytools::reroot(five, og.five)
 
 make.cophylo.plot <- function(tree1, tree2, pdfname) {
   obj<-cophylo(tree1,tree2)
-  obj
-  pdf(file=pdfname,
-      width=14, height=14)
+  #association <- cbind(tree2$tip.label, tree2$tip.label)
+  #obj <- cotangleplot(tree1, tree2, type=c("phylogram"),
+  #                    use.edge.length=TRUE, tangle="tree1")
+  svg(file=pdfname,
+      width=10, height=14)
   plot(obj,link.type="curved",link.lwd=3,link.lty="solid",
-       link.col=make.transparent("blue",0.25),fsize=0.8)
+       link.col=make.transparent("blue",0.25),fsize=0.4, show.tip.label=F)
+
   dev.off()
  # dev.off()
 }
-
+#simple.tanglegram(tree1, tree2, tip.label, Green, tiplab = T)
 ###full
-make.cophylo.plot(rerooted.zero, rerooted.one, "fullxorf1.pdf")
-make.cophylo.plot(rerooted.zero, rerooted.two, "fullxorf2.pdf")
-make.cophylo.plot(rerooted.zero, rerooted.three, "fullxorf3.pdf")
-make.cophylo.plot(rerooted.zero, rerooted.four, "fullxorf4.pdf")
-make.cophylo.plot(rerooted.zero, rerooted.five, "fullxorf5.pdf")
+make.cophylo.plot(rerooted.zero, rerooted.one, "fullxorf1.svg")
+make.cophylo.plot(rerooted.zero, rerooted.two, "fullxorf2.svg")
+make.cophylo.plot(rerooted.zero, rerooted.three, "fullxorf3.svg")
+make.cophylo.plot(rerooted.zero, rerooted.four, "fullxorf4.svg")
+make.cophylo.plot(rerooted.zero, rerooted.five, "fullxorf5.svg")
 
 ##one
-make.cophylo.plot(rerooted.one, rerooted.two, "orf1xorf2.pdf")
-make.cophylo.plot(rerooted.one, rerooted.three, "orf1xorf3.pdf")
-make.cophylo.plot(rerooted.one, rerooted.four, "orf1xorf4.pdf")
-make.cophylo.plot(rerooted.one, rerooted.five, "orf1xorf5.pdf")
+make.cophylo.plot(rerooted.one, rerooted.two, "orf1xorf2.svg")
+make.cophylo.plot(rerooted.one, rerooted.three, "orf1xorf3.svg")
+make.cophylo.plot(rerooted.one, rerooted.four, "orf1xorf4.svg")
+make.cophylo.plot(rerooted.one, rerooted.five, "orf1xorf5.svg")
 
 ##two
-make.cophylo.plot(rerooted.two, rerooted.three, "orf2xorf3.pdf")
-make.cophylo.plot(rerooted.two, rerooted.four, "orf2xorf4.pdf")
-make.cophylo.plot(rerooted.two, rerooted.five, "orf2xorf5.pdf")
+make.cophylo.plot(rerooted.two, rerooted.three, "orf2xorf3.svg")
+make.cophylo.plot(rerooted.two, rerooted.four, "orf2xorf4.svg")
+make.cophylo.plot(rerooted.two, rerooted.five, "orf2xorf5.svg")
 
 ##three
-make.cophylo.plot(rerooted.three, rerooted.four, "orf3xorf4.pdf")
-make.cophylo.plot(rerooted.three, rerooted.five, "orf3xorf5.pdf")
+make.cophylo.plot(rerooted.three, rerooted.four, "orf3xorf4.svg")
+make.cophylo.plot(rerooted.three, rerooted.five, "orf3xorf5.svg")
 
 ##four
-make.cophylo.plot(rerooted.four, rerooted.five, "orf4xorf5.pdf")
+make.cophylo.plot(rerooted.four, rerooted.five, "orf4xorf5.svg")
 
