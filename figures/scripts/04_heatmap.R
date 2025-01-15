@@ -13,7 +13,7 @@ annot <-read.csv("figures/scripts/phylogeny_input/02_phylogeny_hosts.csv")
 row.names(dat) <- dat$X
 dat <- subset(dat, select=-X)
 
-
+#Sequence: isolates of different species have less than 72% nt identity (or 80% aa identity) between their CP or Rep genes.
 
 row.names(cp) <- gsub("_-_.*", "", cp$X)
 #row.names(cp) <- gsub("_._.*", "", cp$X)
@@ -25,11 +25,11 @@ row.names(rdrp) <- gsub("_-_.*", "", rdrp$X)
 rdrp <- subset(rdrp, select=-X)
 colnames(rdrp) <- row.names(rdrp)
 
-treedata <- ape::read.tree("02_analyses/04_iqtree-output/01_trees_og_longnames/trimmed_complete_gb_and_srr-mafft.fasta.treefile")
-plot(treedata, cex=0.5)
-treedata <- ape::root(treedata, interactive=T)
-plot(treedata, cex=1)
-
+#treedata <- ape::read.tree("02_analyses/04_iqtree-output#/01_trees_og_longnames/trimmed_complete_gb_and_srr-mafft.fasta#.treefile")
+#plot(treedata, cex=0.5)
+#treedata <- ape::root(treedata, interactive=T)
+#plot(treedata, cex=1)
+#
 #plot(treedata, cex=0.5)
 #cvx <- identify(treedata, nodes = TRUE, tips = TRUE,
 #         labels = TRUE, quiet = FALSE)$tips
@@ -179,23 +179,17 @@ scvx.rdrp.subm <- scvx.rdrp.subm[,c(row.names(scvx.rdrp.subm))]
 table(scvx.rdrp.subm >72)
 #####annotations:####
 
-annotationcols <- subset(annot, select=c(Formal.taxon, Name))
+annotationcols <- subset(annot, select=c(Formal.taxon, phyname))
 
 annotfilt <- subset(annotationcols, Formal.taxon %in% c("Cactus virus X", 
                                                         "Opuntia virus X",
                                                         "Pitaya virus X",
                                                         "Schlumbergera virus X",
                                                         "Zygocactus virus X"))
-rownames(annotfilt) <- annotfilt$Name
-annotfilt <- subset(annotfilt, select=-Name)
-
-
-
-
+rownames(annotfilt) <- annotfilt$phyname
+annotfilt <- subset(annotfilt, select=-phyname)
 #flip dat
 #dat=dat[,order(ncol(dat):1)]
-
-
 
 par(mar=c(0,0,0,2))
 pheatmap::pheatmap(dat, na_col = "grey80",
@@ -219,7 +213,7 @@ pheatmap::pheatmap(dat, na_col = "grey80",
          #gaps_col = gapscol, 
          display_numbers = F,
          fontsize_number = 3,
-        filename="heatmap.rawseqdist_jun25.pdf", 
+        filename="heatmap.rawseqdist_sept13.pdf", 
         #gaps_row=9,
         # color=colors,
          #breaks=seq(range.min, range.max * 1, 0.5),

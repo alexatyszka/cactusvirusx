@@ -429,15 +429,13 @@ This work was supported by the Award for Graduate Research from the Graduate Col
 \newpage{}
  \begin{figure}[ht]
  \centering
- \includegraphics[width=1\linewidth]{{figures/tree_rect_delim_info_ed_sept10}.pdf}
+ \includegraphics[width=0.75\linewidth]{{figures/tree_rect}.pdf}
  \begin{NoHyper}
  \caption{
-%TODO: Remove NA from scale; adjust color scheme; collapse outgroup
-Maximum likelihood tree for full genome sequences from selected potexviruses. 
+A maximum likelihood tree of newly discovered, newly assembled, and previously described potexviruses. The new sequences expand the known number of potexviruses within previously described genera. Although many new samples have short branch lengths when placed on a tree, host species is variable, and each clade delimited by the phylogenetic species concept (indicated by wide gradient bars covering sample name and host) is found in more than one genus.
+The subset of cactus-infecting potexviruses found in the NCBI SRA (tip labels beginning with SRR) displays narrow sampling across related cohort plants which may represent local viral transmission from plant to plant. 
 UFboot scores are represented on nodes. 
-Tips are characteristically arranged in large groups with short branches, subtended by a longer branch. 
-This subset of cactus-infecting potexviruses displays narrow sampling across related cohort plants which may represent local viral transmission from plant to plant. 
-The outgroup clade consists of closely related but non-cactus infecting potexviruses.
+The outgroup clade consists of closely related but non-cactus infecting potexviruses and is not shown on this phylogeny. 
 }
  \label{fig:fig1}
  \end{NoHyper}
@@ -483,7 +481,30 @@ Selective pressure is displayed as dN/dS for amino acids across the viral genome
 % \end{NoHyper}
 % \end{figure}
 
-%S1: RNA-seq and assembly stats
+%Fig 3:  CVX coverage
+\begin{figure}
+\centering
+\caption{
+Read coverage of an example viral sequence, corresponding with phylogeny tip Schlumbergera\_truncata\_19JSF\_sty\_\_NC\_002815, which was mapped to the Cactus Virus X genome (NC\_002815) as part of this study.
+%FIXME: AT: Add context for the bars below the plot.
+}
+\includegraphics[width=1\textwidth]{figures/CVX-NC_002815-coverage-graph.pdf}	
+\label{fig:coverage}
+\end{figure}
+\clearpage
+
+% \begin{figure}[ht]
+% \centering
+% \includegraphics[width=0.5\linewidth]{FILE_PATH}
+% \begin{NoHyper}
+% \caption{{\fontsize{10pt}{11pt}\selectfont}
+% \label{fig:FIG_LABEL}
+% \end{NoHyper}
+% \end{figure}
+
+
+
+%Table 1: RNA-seq and assembly stats
 \begin{table}[ht]
 \centering
 \caption{RNA-seq and assembly summary statistics.
@@ -533,78 +554,8 @@ Column labelled \textsuperscript{*}filt. lists numbers of read pairs and average
 \end{tabular}}
 \end{table}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
-\begin{table}[ht]
-\caption{
-Assembled viral sequences from transcriptomes previously uploaded to GenBank. 
-}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}llllll@{}}
-\toprule
-Host                                              & sample\_name & Description\_mapped\_to & Sequence Length & Size & Reported Host                  \\ \midrule
-Hylocereus\_polyrhizus & SRR11190795  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190795  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190795  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190795  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190796  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190796  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190796  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190796  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190797  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190797  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190797  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190797  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190798  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190798  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190798  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190798  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190801  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190801  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190801  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190801  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190802  & NC\_002815              & 6614            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190802  & NC\_006059              & 6624            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190802  & NC\_011659              & 6633            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_polyrhizus & SRR11190802  & NC\_024458              & 6677            & 7 KB & Selenicereus polyrhizus \\
-Hylocereus\_undatus    & SRR11190791  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11190791  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11190792  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11190792  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11190793  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11190793  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11190799  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11190799  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11190800  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11190800  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603182  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603182  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603183  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603183  & NC\_011659              & 6633            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603183  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603184  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603184  & NC\_011659              & 6633            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603184  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603186  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603186  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603186  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603187  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603187  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603187  & NC\_011659              & 6633            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603187  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603189  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603189  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603189  & NC\_011659              & 6633            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603189  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603190  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603190  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603190  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603191  & NC\_002815              & 6614            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603191  & NC\_006059              & 6624            & 7 KB & Selenicereus undatus    \\
-Hylocereus\_undatus    & SRR11603191  & NC\_024458              & 6677            & 7 KB & Selenicereus undatus    \\ \bottomrule
-\end{tabular}}
-\end{table}
+\textbf{}
+
 
 
 \clearpage
