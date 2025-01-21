@@ -1,121 +1,121 @@
-,Name,host,Formal taxon,new,mPTP,bPTP,phyname
-1,AF308158,Selenicereus undatus,Cactus virus X,no,6,6,AF308158
-2,AY366207,Schlumbergera bridgesii,Schlumbergera virus X,no,7,7,AY366207
-3,AY366208,Schlumbergera truncata,Zygocactus virus X,no,1,1,AY366208
-4,AY366209,Opuntia sp.,Opuntia virus X,no,10,10,AY366209
-5,AY800279,,,no,NA,NA,AY800279
-6,AY863024,Phlox stolonifera cv. Sherwood Purple,,no,NA,NA,AY863024
-7,CYMRNA,,,no,NA,NA,CYMRNA
-8,FJ822136,Portulaca grandiflora,,no,NA,NA,FJ822136
-9,GQ179646,Phlox stolonifera cv. Sherwood Purple,,no,NA,NA,GQ179646
-10,GQ179647,Phlox stolonifera cv. Sherwood Purple,,no,NA,NA,GQ179647
-11,JF930326,Selenicereus sp.,Zygocactus virus X,no,1,1,JF930326
-12,JF930327,Selenicereus sp.,Pitaya virus X,no,9,9,JF930327
-13,JF937699,Selenicereus sp.,Cactus virus X,no,2,2,JF937699
-14,JX524226,Carica papaya,,no,NA,NA,JX524226
-15,KM288842,Selenicereus sp. (pitaya),Zygocactus virus X,no,1,1,KM288842
-16,KM288843,Selenicereus sp. (pitaya),Zygocactus virus X,no,1,1,KM288843
-17,KM288844,Selenicereus sp. (pitaya),Zygocactus virus X,no,1,1,KM288844
-18,KM288845,Selenicereus sp. (pitaya),Zygocactus virus X,no,1,1,KM288845
-19,KM288846,Selenicereus sp. (pitaya),Cactus virus X,no,2,2,KM288846
-20,KM288847,Selenicereus sp. (pitaya),Cactus virus X,no,2,2,KM288847
-21,KM365479,Selenicereus sp. (pitaya),Cactus virus X,no,6,6,KM365479
-22,KP090203,Opuntia cochenillifera,Schlumbergera virus X,no,7,7,KP090203
-23,KT717325,Lilium sp.,,no,NA,NA,KT717325
-24,KU159093,lily,,no,NA,NA,KU159093
-25,KU697313,Plantago asiatica,,no,NA,NA,KU697313
-26,KU854929,Opuntia ficus-indica,Schlumbergera virus X,no,8,8,KU854929
-27,KU854931,Opuntia ficus-indica,Opuntia virus X,no,10,10,KU854931
-28,KX196173,Senna occidentalis,,no,NA,NA,KX196173
-29,KX883791,Diptera,Cactus virus X,no,2,2,KX883791
-30,KY348771,Opuntia albicarpa cv. nopal tunero,Opuntia virus X,no,10,10,KY348771
-31,LC107515,Achyranthes bidentata,,no,NA,NA,LC107515
-32,LC107517,Hydrangea macrophylla,,no,NA,NA,LC107517
-33,LC128411,Selenicereus undatus,Cactus virus X,no,6,6,LC128411
-34,LC155795,Nandina domestica,,no,NA,NA,LC155795
-35,MF978248,Vasconcellea x heilbornii,,no,NA,NA,MF978248
-36,MG210801,Mytilus coruscus,Mytcor virus 1,no,9,9,MG210801
-37,MH423501,Epiphyllum sp. cv. Dragon Heart,,no,NA,NA,MH423501
-38,Hylocereus_polyrhizus_SRR11190795__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190795_NC2815
-39,Hylocereus_polyrhizus_SRR11190795__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190795_NC6059
-40,Hylocereus_polyrhizus_SRR11190795__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190795_NC11659
-41,Hylocereus_polyrhizus_SRR11190795__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190795_NC24458
-42,Hylocereus_polyrhizus_SRR11190796__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190796_NC2815
-43,Hylocereus_polyrhizus_SRR11190796__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190796_NC6059
-44,Hylocereus_polyrhizus_SRR11190796__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190796_NC11659
-45,Hylocereus_polyrhizus_SRR11190796__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190796_NC24458
-46,Hylocereus_polyrhizus_SRR11190797__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190797_NC2815
-47,Hylocereus_polyrhizus_SRR11190797__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190797_NC6059
-48,Hylocereus_polyrhizus_SRR11190797__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190797_NC11659
-49,Hylocereus_polyrhizus_SRR11190797__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190797_NC24458
-50,Hylocereus_polyrhizus_SRR11190798__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190798_NC2815
-51,Hylocereus_polyrhizus_SRR11190798__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190798_NC6059
-52,Hylocereus_polyrhizus_SRR11190798__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190798_NC11659
-53,Hylocereus_polyrhizus_SRR11190798__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190798_NC24458
-54,Hylocereus_polyrhizus_SRR11190801__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190801_NC2815
-55,Hylocereus_polyrhizus_SRR11190801__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190801_NC6059
-56,Hylocereus_polyrhizus_SRR11190801__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190801_NC11659
-57,Hylocereus_polyrhizus_SRR11190801__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190801_NC24458
-58,Hylocereus_polyrhizus_SRR11190802__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190802_NC2815
-59,Hylocereus_polyrhizus_SRR11190802__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190802_NC6059
-60,Hylocereus_polyrhizus_SRR11190802__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190802_NC11659
-61,Hylocereus_polyrhizus_SRR11190802__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190802_NC24458
-62,Hylocereus_undatus_SRR11190791__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190791_NC2815
-63,Hylocereus_undatus_SRR11190791__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190791_NC24458
-64,Hylocereus_undatus_SRR11190792__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190792_NC2815
-65,Hylocereus_undatus_SRR11190792__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190792_NC24458
-66,Hylocereus_undatus_SRR11190793__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190793_NC2815
-67,Hylocereus_undatus_SRR11190793__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190793_NC24458
-68,Hylocereus_undatus_SRR11190799__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190799_NC2815
-69,Hylocereus_undatus_SRR11190799__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190799_NC24458
-70,Hylocereus_undatus_SRR11190800__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190800_NC2815
-71,Hylocereus_undatus_SRR11190800__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190800_NC24458
-72,Hylocereus_undatus_SRR11603182__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603182_NC2815
-73,Hylocereus_undatus_SRR11603182__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603182_NC24458
-74,Hylocereus_undatus_SRR11603183__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603183_NC2815
-75,Hylocereus_undatus_SRR11603183__NC_011659,Selenicereus undatus,,yes,7,7,SRR11603183_NC11659
-76,Hylocereus_undatus_SRR11603183__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603183_NC24458
-77,Hylocereus_undatus_SRR11603184__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603184_NC2815
-78,Hylocereus_undatus_SRR11603184__NC_011659,Selenicereus undatus,,yes,7,7,SRR11603184_NC11659
-79,Hylocereus_undatus_SRR11603184__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603184_NC24458
-80,Hylocereus_undatus_SRR11603186__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603186_NC2815
-81,Hylocereus_undatus_SRR11603186__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603186_NC6059
-82,Hylocereus_undatus_SRR11603186__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603186_NC24458
-83,Hylocereus_undatus_SRR11603187__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603187_NC2815
-84,Hylocereus_undatus_SRR11603187__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603187_NC6059
-85,Hylocereus_undatus_SRR11603187__NC_011659,Selenicereus undatus,,yes,7,7,SRR11603187_NC11659
-86,Hylocereus_undatus_SRR11603187__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603187_NC24458
-87,Hylocereus_undatus_SRR11603189__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603189_NC2815
-88,Hylocereus_undatus_SRR11603189__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603189_NC6059
-89,Hylocereus_undatus_SRR11603189__NC_011659,Selenicereus undatus,,yes,7,7,SRR11603189_NC11659
-90,Hylocereus_undatus_SRR11603189__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603189_NC24458
-91,Hylocereus_undatus_SRR11603190__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603190_NC2815
-92,Hylocereus_undatus_SRR11603190__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603190_NC6059
-93,Hylocereus_undatus_SRR11603190__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603190_NC24458
-94,Hylocereus_undatus_SRR11603191__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603191_NC2815
-95,Hylocereus_undatus_SRR11603191__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603191_NC6059
-96,Hylocereus_undatus_SRR11603191__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603191_NC24458
-97,Schlumbergera_truncata_15H02_sty__NC_002815,Schlumbergera truncata,,yes,4,11,15H02_sty_NC2815
-98,Schlumbergera_truncata_15H03_pol__NC_002815,Schlumbergera truncata,,yes,4,4,15H03_pol_NC2815
-99,Schlumbergera_truncata_15H03_pol__NC_006059,Schlumbergera truncata,,yes,4,13,15H03_pol_NC6059
-100,Schlumbergera_truncata_15H03_pol__NC_011659,Schlumbergera truncata,,yes,5,5,15H03_pol_NC11659
-101,Schlumbergera_truncata_15H03_sty__NC_002815_a,Schlumbergera truncata,,yes,4,15,15H03_sty_NC2815_a
-102,Schlumbergera_truncata_15H03_sty__NC_002815_b,Schlumbergera truncata,,yes,4,12,15H03_sty_NC2815_b
-103,Schlumbergera_truncata_15H03_sty__NC_006059_a,Schlumbergera truncata,,yes,4,13,15H03_sty_NC6059_a
-104,Schlumbergera_truncata_15H03_sty__NC_006059_b,Schlumbergera truncata,,yes,4,13,15H03_sty_NC6059_b
-105,Schlumbergera_truncata_15H03_sty__NC_011659,Schlumbergera truncata,,yes,4,14,15H03_sty_NC11659
-106,Schlumbergera_truncata_15H04_pet__NC_002815,Schlumbergera truncata,,yes,5,5,15H04_pet_NC2815
-107,Schlumbergera_truncata_15H04_pet__NC_006059,Schlumbergera truncata,,yes,5,5,15H04_pet_NC6059
-108,Schlumbergera_truncata_15H04_pol__NC_002815,Schlumbergera truncata,,yes,5,5,15H04_pol_NC2815
-109,Schlumbergera_truncata_15H04_pol__NC_006059,Schlumbergera truncata,,yes,5,5,15H04_pol_NC6059
-110,Schlumbergera_truncata_15H04_sty__NC_002815,Schlumbergera truncata,,yes,5,5,15H04_sty_NC2815
-111,Schlumbergera_truncata_15H04_sty__NC_006059,Schlumbergera truncata,,yes,5,5,15H04_sty_NC6059
-112,Schlumbergera_truncata_15H05_pol__NC_002815,Schlumbergera truncata,,yes,6,6,15H05_pol_NC2815
-113,Schlumbergera_truncata_15H06_pol__NC_002815,Schlumbergera truncata,,yes,5,5,15H06_pol_NC2815
-114,Schlumbergera_truncata_15H06_pol__NC_006059,Schlumbergera truncata,,yes,5,5,15H06_pol_NC6059
-115,Schlumbergera_truncata_15H06_pol__NC_011659,Schlumbergera truncata,,yes,5,5,15H06_pol_NC11659
-116,Schlumbergera_truncata_15H06_sty__NC_002815,Schlumbergera truncata,,yes,5,5,15H06_sty_NC2815
-117,Schlumbergera_truncata_15H06_sty__NC_006059,Schlumbergera truncata,,yes,5,5,15H06_sty_NC6059
-118,Schlumbergera_truncata_15H06_sty__NC_011659,Schlumbergera truncata,,yes,5,5,15H06_sty_NC11659
-119,Schlumbergera_truncata_19JSF_sty__NC_002815,Schlumbergera truncata,,yes,5,5,19JSF_sty_NC2815
-120,Schlumbergera_truncata_19JSF_sty__NC_006059,Schlumbergera truncata,,yes,3,3,19JSF_sty_NC6059
+,Name,host,Formal taxon,new,mPTP,bPTP,phyname,heatmap,outgroup
+1,AF308158,Selenicereus undatus,Cactus virus X,no,6,6,AF308158,AF308158,N
+2,AY366207,Schlumbergera bridgesii,Schlumbergera virus X,no,7,7,AY366207,AY366207,N
+3,AY366208,Schlumbergera truncata,Zygocactus virus X,no,1,1,AY366208,AY366208,N
+4,AY366209,Opuntia sp.,Opuntia virus X,no,10,10,AY366209,AY366209,N
+5,AY800279,,,no,NA,NA,AY800279,AY800279,Y
+6,AY863024,Phlox stolonifera cv. Sherwood Purple,,no,NA,NA,AY863024,AY863024,Y
+7,CYMRNA,,,no,NA,NA,CYMRNA,CYMRNA,Y
+8,FJ822136,Portulaca grandiflora,,no,NA,NA,FJ822136,FJ822136,Y
+9,GQ179646,Phlox stolonifera cv. Sherwood Purple,,no,NA,NA,GQ179646,GQ179646,Y
+10,GQ179647,Phlox stolonifera cv. Sherwood Purple,,no,NA,NA,GQ179647,GQ179647,Y
+11,JF930326,Selenicereus sp.,Zygocactus virus X,no,1,1,JF930326,JF930326,N
+12,JF930327,Selenicereus sp.,Pitaya virus X,no,9,9,JF930327,JF930327,N
+13,JF937699,Selenicereus sp.,Cactus virus X,no,2,2,JF937699,JF937699,N
+14,JX524226,Carica papaya,,no,NA,NA,JX524226,JX524226,Y
+15,KM288842,Selenicereus sp. (pitaya),Zygocactus virus X,no,1,1,KM288842,KM288842,N
+16,KM288843,Selenicereus sp. (pitaya),Zygocactus virus X,no,1,1,KM288843,KM288843,N
+17,KM288844,Selenicereus sp. (pitaya),Zygocactus virus X,no,1,1,KM288844,KM288844,N
+18,KM288845,Selenicereus sp. (pitaya),Zygocactus virus X,no,1,1,KM288845,KM288845_extraction,N
+19,KM288846,Selenicereus sp. (pitaya),Cactus virus X,no,2,2,KM288846,KM288846,N
+20,KM288847,Selenicereus sp. (pitaya),Cactus virus X,no,2,2,KM288847,KM288847,N
+21,KM365479,Selenicereus sp. (pitaya),Cactus virus X,no,6,6,KM365479,KM365479,N
+22,KP090203,Opuntia cochenillifera,Schlumbergera virus X,no,7,7,KP090203,KP090203,N
+23,KT717325,Lilium sp.,,no,NA,NA,KT717325,KT717325,Y
+24,KU159093,lily,,no,NA,NA,KU159093,KU159093,Y
+25,KU697313,Plantago asiatica,,no,NA,NA,KU697313,KU697313,Y
+26,KU854929,Opuntia ficus-indica,Schlumbergera virus X,no,8,8,KU854929,KU854929,N
+27,KU854931,Opuntia ficus-indica,Opuntia virus X,no,10,10,KU854931,KU854931,N
+28,KX196173,Senna occidentalis,,no,NA,NA,KX196173,KX196173,Y
+29,KX883791,Diptera,Cactus virus X,no,2,2,KX883791,KX883791,N
+30,KY348771,Opuntia albicarpa cv. nopal tunero,Opuntia virus X,no,10,10,KY348771,KY348771,N
+31,LC107515,Achyranthes bidentata,,no,NA,NA,LC107515,LC107515,Y
+32,LC107517,Hydrangea macrophylla,,no,NA,NA,LC107517,LC107517,Y
+33,LC128411,Selenicereus undatus,Cactus virus X,no,6,6,LC128411,LC128411,N
+34,LC155795,Nandina domestica,,no,NA,NA,LC155795,LC155795,Y
+35,MF978248,Vasconcellea x heilbornii,,no,NA,NA,MF978248,MF978248,Y
+36,MG210801,Mytilus coruscus,Mytcor virus 1,no,9,9,MG210801,MG210801,N
+37,MH423501,Epiphyllum sp. cv. Dragon Heart,,no,NA,NA,MH423501,MH423501,Y
+38,Hylocereus_polyrhizus_SRR11190795__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190795_NC2815,Hylocereus_polyrhizus_SRR11190795__NC_002815,N
+39,Hylocereus_polyrhizus_SRR11190795__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190795_NC6059,Hylocereus_polyrhizus_SRR11190795__NC_006059,N
+40,Hylocereus_polyrhizus_SRR11190795__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190795_NC11659,Hylocereus_polyrhizus_SRR11190795__NC_011659,N
+41,Hylocereus_polyrhizus_SRR11190795__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190795_NC24458,Hylocereus_polyrhizus_SRR11190795__NC_024458,N
+42,Hylocereus_polyrhizus_SRR11190796__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190796_NC2815,Hylocereus_polyrhizus_SRR11190796__NC_002815,N
+43,Hylocereus_polyrhizus_SRR11190796__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190796_NC6059,Hylocereus_polyrhizus_SRR11190796__NC_006059,N
+44,Hylocereus_polyrhizus_SRR11190796__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190796_NC11659,Hylocereus_polyrhizus_SRR11190796__NC_011659,N
+45,Hylocereus_polyrhizus_SRR11190796__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190796_NC24458,Hylocereus_polyrhizus_SRR11190796__NC_024458,N
+46,Hylocereus_polyrhizus_SRR11190797__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190797_NC2815,Hylocereus_polyrhizus_SRR11190797__NC_002815,N
+47,Hylocereus_polyrhizus_SRR11190797__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190797_NC6059,Hylocereus_polyrhizus_SRR11190797__NC_006059,N
+48,Hylocereus_polyrhizus_SRR11190797__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190797_NC11659,Hylocereus_polyrhizus_SRR11190797__NC_011659,N
+49,Hylocereus_polyrhizus_SRR11190797__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190797_NC24458,Hylocereus_polyrhizus_SRR11190797__NC_024458,N
+50,Hylocereus_polyrhizus_SRR11190798__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190798_NC2815,Hylocereus_polyrhizus_SRR11190798__NC_002815,N
+51,Hylocereus_polyrhizus_SRR11190798__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190798_NC6059,Hylocereus_polyrhizus_SRR11190798__NC_006059,N
+52,Hylocereus_polyrhizus_SRR11190798__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190798_NC11659,Hylocereus_polyrhizus_SRR11190798__NC_011659,N
+53,Hylocereus_polyrhizus_SRR11190798__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190798_NC24458,Hylocereus_polyrhizus_SRR11190798__NC_024458,N
+54,Hylocereus_polyrhizus_SRR11190801__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190801_NC2815,Hylocereus_polyrhizus_SRR11190801__NC_002815,N
+55,Hylocereus_polyrhizus_SRR11190801__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190801_NC6059,Hylocereus_polyrhizus_SRR11190801__NC_006059,N
+56,Hylocereus_polyrhizus_SRR11190801__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190801_NC11659,Hylocereus_polyrhizus_SRR11190801__NC_011659,N
+57,Hylocereus_polyrhizus_SRR11190801__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190801_NC24458,Hylocereus_polyrhizus_SRR11190801__NC_024458,N
+58,Hylocereus_polyrhizus_SRR11190802__NC_002815,Selenicereus polyrhizus,,yes,6,6,SRR11190802_NC2815,Hylocereus_polyrhizus_SRR11190802__NC_002815,N
+59,Hylocereus_polyrhizus_SRR11190802__NC_006059,Selenicereus polyrhizus,,yes,1,1,SRR11190802_NC6059,Hylocereus_polyrhizus_SRR11190802__NC_006059,N
+60,Hylocereus_polyrhizus_SRR11190802__NC_011659,Selenicereus polyrhizus,,yes,7,7,SRR11190802_NC11659,Hylocereus_polyrhizus_SRR11190802__NC_011659,N
+61,Hylocereus_polyrhizus_SRR11190802__NC_024458,Selenicereus polyrhizus,,yes,9,9,SRR11190802_NC24458,Hylocereus_polyrhizus_SRR11190802__NC_024458,N
+62,Hylocereus_undatus_SRR11190791__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190791_NC2815,Hylocereus_undatus_SRR11190791__NC_002815,N
+63,Hylocereus_undatus_SRR11190791__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190791_NC24458,Hylocereus_undatus_SRR11190791__NC_024458,N
+64,Hylocereus_undatus_SRR11190792__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190792_NC2815,Hylocereus_undatus_SRR11190792__NC_002815,N
+65,Hylocereus_undatus_SRR11190792__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190792_NC24458,Hylocereus_undatus_SRR11190792__NC_024458,N
+66,Hylocereus_undatus_SRR11190793__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190793_NC2815,Hylocereus_undatus_SRR11190793__NC_002815,N
+67,Hylocereus_undatus_SRR11190793__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190793_NC24458,Hylocereus_undatus_SRR11190793__NC_024458,N
+68,Hylocereus_undatus_SRR11190799__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190799_NC2815,Hylocereus_undatus_SRR11190799__NC_002815,N
+69,Hylocereus_undatus_SRR11190799__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190799_NC24458,Hylocereus_undatus_SRR11190799__NC_024458,N
+70,Hylocereus_undatus_SRR11190800__NC_002815,Selenicereus undatus,,yes,6,6,SRR11190800_NC2815,Hylocereus_undatus_SRR11190800__NC_002815,N
+71,Hylocereus_undatus_SRR11190800__NC_024458,Selenicereus undatus,,yes,9,9,SRR11190800_NC24458,Hylocereus_undatus_SRR11190800__NC_024458,N
+72,Hylocereus_undatus_SRR11603182__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603182_NC2815,Hylocereus_undatus_SRR11603182__NC_002815,N
+73,Hylocereus_undatus_SRR11603182__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603182_NC24458,Hylocereus_undatus_SRR11603182__NC_024458,N
+74,Hylocereus_undatus_SRR11603183__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603183_NC2815,Hylocereus_undatus_SRR11603183__NC_002815,N
+75,Hylocereus_undatus_SRR11603183__NC_011659,Selenicereus undatus,,yes,7,7,SRR11603183_NC11659,Hylocereus_undatus_SRR11603183__NC_011659,N
+76,Hylocereus_undatus_SRR11603183__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603183_NC24458,Hylocereus_undatus_SRR11603183__NC_024458,N
+77,Hylocereus_undatus_SRR11603184__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603184_NC2815,Hylocereus_undatus_SRR11603184__NC_002815,N
+78,Hylocereus_undatus_SRR11603184__NC_011659,Selenicereus undatus,,yes,7,7,SRR11603184_NC11659,Hylocereus_undatus_SRR11603184__NC_011659,N
+79,Hylocereus_undatus_SRR11603184__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603184_NC24458,Hylocereus_undatus_SRR11603184__NC_024458,N
+80,Hylocereus_undatus_SRR11603186__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603186_NC2815,Hylocereus_undatus_SRR11603186__NC_002815,N
+81,Hylocereus_undatus_SRR11603186__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603186_NC6059,Hylocereus_undatus_SRR11603186__NC_006059,N
+82,Hylocereus_undatus_SRR11603186__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603186_NC24458,Hylocereus_undatus_SRR11603186__NC_024458,N
+83,Hylocereus_undatus_SRR11603187__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603187_NC2815,Hylocereus_undatus_SRR11603187__NC_002815,N
+84,Hylocereus_undatus_SRR11603187__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603187_NC6059,Hylocereus_undatus_SRR11603187__NC_006059,N
+85,Hylocereus_undatus_SRR11603187__NC_011659,Selenicereus undatus,,yes,7,7,SRR11603187_NC11659,Hylocereus_undatus_SRR11603187__NC_011659,N
+86,Hylocereus_undatus_SRR11603187__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603187_NC24458,Hylocereus_undatus_SRR11603187__NC_024458,N
+87,Hylocereus_undatus_SRR11603189__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603189_NC2815,Hylocereus_undatus_SRR11603189__NC_002815,N
+88,Hylocereus_undatus_SRR11603189__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603189_NC6059,Hylocereus_undatus_SRR11603189__NC_006059,N
+89,Hylocereus_undatus_SRR11603189__NC_011659,Selenicereus undatus,,yes,7,7,SRR11603189_NC11659,Hylocereus_undatus_SRR11603189__NC_011659,N
+90,Hylocereus_undatus_SRR11603189__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603189_NC24458,Hylocereus_undatus_SRR11603189__NC_024458,N
+91,Hylocereus_undatus_SRR11603190__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603190_NC2815,Hylocereus_undatus_SRR11603190__NC_002815,N
+92,Hylocereus_undatus_SRR11603190__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603190_NC6059,Hylocereus_undatus_SRR11603190__NC_006059,N
+93,Hylocereus_undatus_SRR11603190__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603190_NC24458,Hylocereus_undatus_SRR11603190__NC_024458,N
+94,Hylocereus_undatus_SRR11603191__NC_002815,Selenicereus undatus,,yes,6,6,SRR11603191_NC2815,Hylocereus_undatus_SRR11603191__NC_002815,N
+95,Hylocereus_undatus_SRR11603191__NC_006059,Selenicereus undatus,,yes,1,1,SRR11603191_NC6059,Hylocereus_undatus_SRR11603191__NC_006059,N
+96,Hylocereus_undatus_SRR11603191__NC_024458,Selenicereus undatus,,yes,9,9,SRR11603191_NC24458,Hylocereus_undatus_SRR11603191__NC_024458,N
+97,Schlumbergera_truncata_15H02_sty__NC_002815,Schlumbergera truncata,,yes,4,11,15H02_sty_NC2815,Schlumbergera_truncata_15H02_sty__NC_002815,N
+98,Schlumbergera_truncata_15H03_pol__NC_002815,Schlumbergera truncata,,yes,4,4,15H03_pol_NC2815,Schlumbergera_truncata_15H03_pol__NC_002815,N
+99,Schlumbergera_truncata_15H03_pol__NC_006059,Schlumbergera truncata,,yes,4,13,15H03_pol_NC6059,Schlumbergera_truncata_15H03_pol__NC_006059,N
+100,Schlumbergera_truncata_15H03_pol__NC_011659,Schlumbergera truncata,,yes,5,5,15H03_pol_NC11659,Schlumbergera_truncata_15H03_pol__NC_011659,N
+101,Schlumbergera_truncata_15H03_sty__NC_002815_a,Schlumbergera truncata,,yes,4,15,15H03_sty_NC2815_a,Schlumbergera_truncata_15H03_sty__NC_002815_a,N
+102,Schlumbergera_truncata_15H03_sty__NC_002815_b,Schlumbergera truncata,,yes,4,12,15H03_sty_NC2815_b,Schlumbergera_truncata_15H03_sty__NC_002815_b,N
+103,Schlumbergera_truncata_15H03_sty__NC_006059_a,Schlumbergera truncata,,yes,4,13,15H03_sty_NC6059_a,Schlumbergera_truncata_15H03_sty__NC_006059_a,N
+104,Schlumbergera_truncata_15H03_sty__NC_006059_b,Schlumbergera truncata,,yes,4,13,15H03_sty_NC6059_b,Schlumbergera_truncata_15H03_sty__NC_006059_b,N
+105,Schlumbergera_truncata_15H03_sty__NC_011659,Schlumbergera truncata,,yes,4,14,15H03_sty_NC11659,Schlumbergera_truncata_15H03_sty__NC_011659,N
+106,Schlumbergera_truncata_15H04_pet__NC_002815,Schlumbergera truncata,,yes,5,5,15H04_pet_NC2815,Schlumbergera_truncata_15H04_pet__NC_002815,N
+107,Schlumbergera_truncata_15H04_pet__NC_006059,Schlumbergera truncata,,yes,5,5,15H04_pet_NC6059,Schlumbergera_truncata_15H04_pet__NC_006059,N
+108,Schlumbergera_truncata_15H04_pol__NC_002815,Schlumbergera truncata,,yes,5,5,15H04_pol_NC2815,Schlumbergera_truncata_15H04_pol__NC_002815,N
+109,Schlumbergera_truncata_15H04_pol__NC_006059,Schlumbergera truncata,,yes,5,5,15H04_pol_NC6059,Schlumbergera_truncata_15H04_pol__NC_006059,N
+110,Schlumbergera_truncata_15H04_sty__NC_002815,Schlumbergera truncata,,yes,5,5,15H04_sty_NC2815,Schlumbergera_truncata_15H04_sty__NC_002815,N
+111,Schlumbergera_truncata_15H04_sty__NC_006059,Schlumbergera truncata,,yes,5,5,15H04_sty_NC6059,Schlumbergera_truncata_15H04_sty__NC_006059,N
+112,Schlumbergera_truncata_15H05_pol__NC_002815,Schlumbergera truncata,,yes,6,6,15H05_pol_NC2815,Schlumbergera_truncata_15H05_pol__NC_002815,N
+113,Schlumbergera_truncata_15H06_pol__NC_002815,Schlumbergera truncata,,yes,5,5,15H06_pol_NC2815,Schlumbergera_truncata_15H06_pol__NC_002815,N
+114,Schlumbergera_truncata_15H06_pol__NC_006059,Schlumbergera truncata,,yes,5,5,15H06_pol_NC6059,Schlumbergera_truncata_15H06_pol__NC_006059,N
+115,Schlumbergera_truncata_15H06_pol__NC_011659,Schlumbergera truncata,,yes,5,5,15H06_pol_NC11659,Schlumbergera_truncata_15H06_pol__NC_011659,N
+116,Schlumbergera_truncata_15H06_sty__NC_002815,Schlumbergera truncata,,yes,5,5,15H06_sty_NC2815,Schlumbergera_truncata_15H06_sty__NC_002815,N
+117,Schlumbergera_truncata_15H06_sty__NC_006059,Schlumbergera truncata,,yes,5,5,15H06_sty_NC6059,Schlumbergera_truncata_15H06_sty__NC_006059,N
+118,Schlumbergera_truncata_15H06_sty__NC_011659,Schlumbergera truncata,,yes,5,5,15H06_sty_NC11659,Schlumbergera_truncata_15H06_sty__NC_011659,N
+119,Schlumbergera_truncata_19JSF_sty__NC_002815,Schlumbergera truncata,,yes,5,5,19JSF_sty_NC2815,Schlumbergera_truncata_19JSF_sty__NC_002815,N
+120,Schlumbergera_truncata_19JSF_sty__NC_006059,Schlumbergera truncata,,yes,3,3,19JSF_sty_NC6059,Schlumbergera_truncata_19JSF_sty__NC_006059,N

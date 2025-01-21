@@ -9,21 +9,35 @@ cp <- read.csv('02_analyses/05_distdna/02_output/distance_cp_perc.csv', stringsA
 rdrp <- read.csv('02_analyses/05_distdna/02_output/distance_rdrp_perc.csv', stringsAsFactors = FALSE)
 
 annot <-read.csv("figures/scripts/phylogeny_input/02_phylogeny_hosts.csv") 
-
+annot$Formal.taxon <- gsub(" ", "_", annot$Formal.taxon) #for heatmap colors to work
 row.names(dat) <- dat$X
 dat <- subset(dat, select=-X)
 
 #Sequence: isolates of different species have less than 72% nt identity (or 80% aa identity) between their CP or Rep genes.
-
-row.names(cp) <- gsub("_-_.*", "", cp$X)
+rncp <- subset(cp, select=X)
+ rncp$X <- gsub("_-_.*", "", cp$X)
+ cp_annot <- left_join(rncp, annot, by=c("X"="heatmap"))
+row.names(cp) <- cp_annot$phyname
 #row.names(cp) <- gsub("_._.*", "", cp$X)
 cp <- subset(cp, select=-X)
 colnames(cp) <- row.names(cp)
 
+cp_no_og<-cp[colnames(cp) %in% annot$phyname[annot$outgroup=="N"]]
+cp_no_og<-cp_no_og[colnames(cp) %in% annot$phyname[annot$outgroup=="N"],]
+#cp[colnames(cp) %in% annot$phyname[annot$outgroup=="N"]]
 
-row.names(rdrp) <- gsub("_-_.*", "", rdrp$X)
+
+rnrdrp <- subset(rdrp, select=X)
+rnrdrp$X <- gsub("_-_.*", "", rdrp$X)
+rdrp_annot <- left_join(rnrdrp, annot, by=c("X"="heatmap"))
+row.names(rdrp) <- rdrp_annot$phyname
+#row.names(rdrp) <- gsub("_._.*", "", rdrp$X)
 rdrp <- subset(rdrp, select=-X)
 colnames(rdrp) <- row.names(rdrp)
+
+rdrp_no_og<-rdrp[colnames(rdrp) %in% annot$phyname[annot$outgroup=="N"]]
+rdrp_no_og<-rdrp_no_og[colnames(rdrp) %in% annot$phyname[annot$outgroup=="N"],]
+#cp[colnames(cp) %in% annot$phyname[annot$outgroup=="N"]]
 
 #treedata <- ape::read.tree("02_analyses/04_iqtree-output#/01_trees_og_longnames/trimmed_complete_gb_and_srr-mafft.fasta#.treefile")
 #plot(treedata, cex=0.5)
@@ -179,53 +193,58 @@ scvx.rdrp.subm <- scvx.rdrp.subm[,c(row.names(scvx.rdrp.subm))]
 table(scvx.rdrp.subm >72)
 #####annotations:####
 
-annotationcols <- subset(annot, select=c(Formal.taxon, phyname))
+annotationcols <- subset(annot, select=c(Formal.taxon, heatmap))
 
-annotfilt <- subset(annotationcols, Formal.taxon %in% c("Cactus virus X", 
-                                                        "Opuntia virus X",
-                                                        "Pitaya virus X",
-                                                        "Schlumbergera virus X",
-                                                        "Zygocactus virus X"))
-rownames(annotfilt) <- annotfilt$phyname
-annotfilt <- subset(annotfilt, select=-phyname)
-#flip dat
+annotfilt <- subset(annotationcols,!is.na(Formal.taxon))
+rownames(annotfilt) <- annotfilt$heatmap
+annotfilt <- subset(annotfilt, select=-heatmap)
+#########flip dat########
 #dat=dat[,order(ncol(dat):1)]
 
-par(mar=c(0,0,0,2))
-pheatmap::pheatmap(dat, na_col = "grey80",
-         cluster_rows=T, cluster_cols = T, 
-         annotation_col = annotfilt,
-         annotation_row = annotfilt,
-         annotation_names_col = T,
-         annotation_names_row = T,
-         treeheight_row = 40,
-         treeheight_col = 40,
-         border_color = "white",
-         main = "",
-         color = c(
-           "white",
-           "#addd8e",
-           "#238554",
-           "black"),
-         breaks = c(0,1, 72, 100, 100.1),
-        cellheight = 12, cellwidth = 12,
-         #gaps_row = gapsrow,
-         #gaps_col = gapscol, 
-         display_numbers = F,
-         fontsize_number = 3,
-        filename="heatmap.rawseqdist_sept13.pdf", 
-        #gaps_row=9,
-        # color=colors,
-         #breaks=seq(range.min, range.max * 1, 0.5),
-         #legend_breaks=seq(range.min, range.max, 2),
-         #legend_labels=seq(range.min, range.max, 2),
-         legend_labels = seq(10,100,10)
-         )
+# par(mar=c(0,0,0,2))
+# pheatmap::pheatmap(dat, na_col = "grey80",
+#          cluster_rows=T, cluster_cols = T, 
+#          annotation_col = annotfilt,
+#          annotation_row = annotfilt,
+#          annotation_names_col = T,
+#          annotation_names_row = T,
+#          treeheight_row = 40,
+#          treeheight_col = 40,
+#          border_color = "white",
+#          main = "",
+#          color = c(
+#            "white",
+#            "black"),
+#          breaks = c(0, 72, 100.1),
+#         cellheight = 12, cellwidth = 12,
+#          #gaps_row = gapsrow,
+#          #gaps_col = gapscol, 
+#          display_numbers = F,
+#          fontsize_number = 3,
+#         filename="heatmap.rawseqdist_sept13.pdf", 
+#         #gaps_row=9,
+#         # color=colors,
+#          #breaks=seq(range.min, range.max * 1, 0.5),
+#          #legend_breaks=seq(range.min, range.max, 2),
+#          #legend_labels=seq(range.min, range.max, 2),
+#          legend_labels = seq(10,100,10)
+#          )
 
+####colors####
+my_colour = list(
+  Formal.taxon = c(
+  Cactus_virus_X="red",
+  Schlumbergera_virus_X="#f74747",
+  Zygocactus_virus_X="#f74747",
+  Opuntia_virus_X ="#f74747",
+  Pitaya_virus_X="#f74747",
+  Mytcor_virus_1 ="#f74747"
+)
+)
 ########RDRP###########
 
 par(mar=c(0,0,0,2))
-pheatmap::pheatmap(rdrp, na_col = "grey80",
+pheatmap::pheatmap(rdrp_no_og, na_col = "grey80",
                    cluster_rows=T, cluster_cols = T, 
                    annotation_col = annotfilt,
                    annotation_row = annotfilt,
@@ -262,8 +281,9 @@ pheatmap::pheatmap(rdrp, na_col = "grey80",
 ########
 
 par(mar=c(0,0,0,2))
-pheatmap::pheatmap(cp, na_col = "grey80",
+pheatmap::pheatmap(cp_no_og, na_col = "grey80",
                    cluster_rows=T, cluster_cols = T, 
+                  # annotation_colors = my_colour,
                    annotation_col = annotfilt,
                    annotation_row = annotfilt,
                    annotation_names_col = T,
@@ -283,7 +303,7 @@ pheatmap::pheatmap(cp, na_col = "grey80",
                    #gaps_col = gapscol, 
                    display_numbers = F,
                    fontsize_number = 3,
-                   filename="heatmap.cp_jun25.pdf", 
+                   filename="heatmapcp_noannot.pdf", 
                    #gaps_row=9,
                    # color=colors,
                    #breaks=seq(range.min, range.max * 1, 0.5),
