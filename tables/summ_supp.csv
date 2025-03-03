@@ -1,6 +1,15 @@
-﻿Formal species,Monophyletic under PSC,Number of tips under largest monophyletic group,Number of formally named tips,Supported by mPTP,Supported by bPTP,Number of known host genera,RDRP support (in-group only),RDRP support (strict),CP support (in-group only),CP support (strict)
-Cactus virus X,Y,34,3,"N, two subsp supported","N, two subsp supported",,Y,N,Y,N
-Schlumbergera virus X,Y,13,3,"N, two subsp supported","N, two subsp supported",,Y,N,Y,N
-Zygocactus virus X,Y,13,2,Y,Y,,Y,N,Y,N
-Opuntia virus X,Y,3,3,Y,Y,,Y,Y,Y,Y
-Pitaya virus X (Including Mytcor Virus 1),Y,21,1,Y,Y,,,,,
+﻿PSC-based species,Monophyletic under PSC,Number of tips under largest monophyletic group,Number of formally named tips,Supported by mPTP,Supported by bPTP,Number of host genera,RDRP support (in-group only),RDRP support (strict),CP support (in-group only),CP support (strict),Proposed revision
+Cactus virus X,Y,34,3,"N, two subsp supported","N, two subsp supported",,Y,N,Y,N,Split
+Schlumbergera virus X,Y,13,3,"N, two subsp supported","N, two subsp supported",,Y,N,Y,N,No change
+Zygocactus virus X,Y,13,2,Y,Y,,Y,N,Y,N,No change
+Opuntia virus X,Y,3,3,Y,Y,,Y,Y,Y,Y,No change
+Pitaya virus X,Y,20,1,Y,Y,,,,,,Include Mytcor VX
+Mytcor Virus 1,Y,1,,NA,NA,,NA,NA,NA,NA,Include with PVX
+,,,,,,,,,,,
+Proposed species,,,,,,,,,,,
+Cactus virus X A,Y,32,,,,,,,,,
+Cactus virus X B,Y,2,,,,,,,,,
+Schlumbergera virus X,Y,,,,,,,,,,
+Zygocactus virus X,Y,13,,,,,,,,,
+Opuntia virus X,Y,3,,,,,,,,,
+Pitaya virus X (Including Mytcor Virus 1),Y,21,,,,,,,,,

@@ -214,7 +214,7 @@ Akaike and Bayesian weights exceeded 0.99.
 Branch support was assessed with IQ-Tree's {\em UFBoot}, an ultrafast bootstrap implementation \citep{hoang2018}.
 
 
-\subsection*{Species Delimitation Metrics}
+\subsection*{Species Delimitation}
 Potexviruses are traditionally named for their associated host range, which could represent a specialized ecological niche.
 Serological testing is lacking for this family, but viral co-infection across hosts and broad host ranges render the one-to-one host-to-virus model less than ideal.
 Host range is not well described for any virus included in this study, and testing should be done to conclusively establish potential or lack of viral transmission to a suite of hosts.
@@ -228,9 +228,11 @@ Percentage sequence similarity as a metric for species delimitation is complicat
 We define these as inclusive and exclusive group cohesion for the purposes of comparing patterns around the 72\% nucleotide similarity cutoff.
 A group that is inclusively delimited will share >72\% similarity with all members.
 A group that is exclusively delimited will share <72\% similarity with all non-group members.
+Because a percentage shared identity represents a one-to-many relationship, its utility as a delimitation metric is weak unless species are highly cohesive and highly dissimilar to other species.
+
 
 Many viruses included in this study already have been assigned a viral species, or are reference genomes for the species. 
-Using the Phylogenetic Species Concept viruses can be delimited by examining their closest evolutionary relationship to a previously named species (Figure~1). 
+Using the Phylogenetic Species Concept, viruses can be delimited by examining their closest evolutionary relationship to a previously named species (Figure~1). 
 This method of delimitation does not consider the possibility that a new viral species could be discovered, or provide signal when a viral species could be split into two. 
 
 Automated delimitation was also preformed using mPTP (\citealt{Kapli_2017}; http://mptp.h-its.org/\#/tree) and bPTP servers (\citealt{Zhang_2013}; http://species.h-its.org/ptp/). 
@@ -459,8 +461,12 @@ This work was supported by the Award for Graduate Research from the Graduate Col
  \includegraphics[width=0.75\linewidth]{{figures/tree_rect}.pdf}
  \begin{NoHyper}
  \caption{
-A maximum likelihood tree of newly discovered, newly assembled, and previously described potexviruses. The new sequences expand the known number of potexviruses within previously described genera. Although many new samples have short branch lengths when placed on a tree, host species is variable, and each clade delimited by the phylogenetic species concept (indicated by wide gradient bars covering sample name and host) is found in more than one genus.
+A maximum likelihood tree of all complete potexvirus genomes (including all five genes) present in this manuscript, including newly assembled viral sequences from both new sequences and publicly accessible sources, and previously described, officially classified viral samples.
+Coloration of bars along the right side of the phylogeny represents the delimited species according to each method, 
+Newly assembled viral sequences expand the phylogeny by nearly XX\%.
+ Official ICTV-determined taxonomy, if present, is listed to the right of the colored bars.
 The subset of cactus-infecting potexviruses found in the NCBI SRA (tip labels beginning with SRR) displays narrow sampling across related cohort plants which may represent local viral transmission from plant to plant. 
+Newly assembled viral samples within the topmost clade, containing Cactus Virus X samples, (colored in shades of mustard yellow), expand the host range of this clade to include \textit{Schlumbergera truncata}.
 UFboot scores are represented on nodes. 
 The outgroup clade consists of closely related but non-cactus infecting potexviruses and is not shown on this phylogeny. 
 }
